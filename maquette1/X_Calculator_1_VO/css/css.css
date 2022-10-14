@@ -22,6 +22,7 @@ body{
 .nav-logo {
     display: inline-flex;
     vertical-align: middle;
+    float: left;
     width: 69px;
     height: 100%;
     list-style: none;
