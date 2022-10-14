@@ -1,0 +1,224 @@
+/*Barre de Naviguation*/
+body{
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.menu-nav {
+    background-color: #FFFFFF;
+    margin-top: auto;
+    width: 100%;
+    height: auto;
+    text-align: right;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 24px;
+    vertical-align: center;
+    position: absolute
+}
+
+.nav-item {
+    display: inline-flex;
+}
+
+.nav-logo {
+    display: inline-flex;
+    vertical-align: middle;
+    float: left;
+    width: 69px;
+    height: 100%;
+    list-style: none;
+}
+
+.nav-logo img {
+    width: 69px;
+    height: 69px;
+}
+
+.nav-item a {
+    color: black;
+    padding: 27px;
+    font-size: 13px;
+    letter-spacing: 1.1px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+#ul-container {
+  vertical-align: center;
+  margin: 0px 40px;
+}
+
+.nav-item:hover a {
+    color: #000A7E;
+}
+
+.nav-item-services {
+    display: none;
+    background-color: #FFFFFF;
+    position: absolute;
+    height: auto;
+    visibility: visible;
+    color: black;
+    margin-top: 69px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 24px;
+    list-style: none;
+}
+
+li:hover .nav-item-services{
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    color: black;
+}
+
+.nav-item-services a {
+    color: black;
+    text-align: left;
+}
+
+.nav-item-services li {
+    color: black;
+    float: none;
+    text-align: right;
+    position: all;
+    padding: 10px 0px;
+}
+
+/*Page accueil*/
+.entete{
+    /*background-image: url("../img/carre_page_acceuil.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: center;
+    opacity: 0.1;*/
+    color: #FFFFFF;
+    background: linear-gradient(to right, rgba(39, 70, 133, 0.8) 0%, rgba(61, 179, 197, 0.8) 100%);
+    text-align: center;
+    padding: 120px 60px 60px 60px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 24px;
+}
+
+/*Page acceuil module gauche presentation*/
+.pacc_mod_pres{
+    text-align: center;
+}
+
+.pacc_mod_gauche h3{
+    color: #000A7E;
+}
+
+.pacc_mod_gauche img {
+    margin-right: 30px;
+}
+
+.pacc_mod_gauche input{
+    cursor: pointer;
+    font-weight: bold;
+    width: 500px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #000A7E;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.pacc_mod_gauche input:hover{
+    border: 2px solid #000A7E;
+}
+
+.pacc_mod_gauche {
+    padding: 75px 200px;
+}
+
+/*Page acceuil module droit presentation*/
+.pacc_mod_droit h3{
+    color: #000A7E;
+}
+
+.pacc_mod_droit img {
+    margin-left: 30px;
+}
+
+.pacc_mod_droit input{
+    cursor: pointer;
+    font-weight: bold;
+    width: 500px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #000A7E;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+         
+.pacc_mod_droit input:hover{
+    border: 2px solid #000A7E;
+}
+
+.pacc_mod_droit {
+    padding: 75px 200px;
+    text-align: right;
+}
+
+/* Footer  pour toutes les pages*/
+ footer {
+    font-family: 'Roboto', sans-serif;
+ }
+
+.footer{
+    padding:10px;
+    background-color: #FFFFFF;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 24px;
+    color: black;
+}
+
+.footer ul {
+    list-style:none;
+    text-align:center;
+    font-size:18px;
+    line-height:1.6;
+}
+
+.footer li {
+    padding:0 10px;
+}
+
+.footer a {
+    color: black;
+    text-decoration: none;
+
+}
+
+/*Page 404*/
+.erreur {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+.erreur h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 60px;
+    margin: 0px;
+}
+
+/*Module1*/
+.mod1{
+    text-align: center;
+}
+
+/*Connexion */
+.connexion table{
+    margin-left:auto;
+    margin-right:auto;
+}
