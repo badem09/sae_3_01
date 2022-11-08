@@ -222,3 +222,12 @@ li:hover .nav-item-services{
     margin-left: auto;
     margin-right: auto;
 }
+
+.cont-ins-conn {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    height: 100vh;
+}

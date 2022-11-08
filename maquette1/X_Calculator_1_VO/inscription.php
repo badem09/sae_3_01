@@ -43,7 +43,7 @@
         <?php echo"
         <div class='cont-ins-conn'>
             <form action='action.php' method='post'>
-                <p>Se connecter</p>
+                <p>S'inscrire</p>
                 <p>Identifiant : <input type='text' name='login'/></p>
                 <p>Mot de passe : <input type='text' name='mdp'/></p>
                 <p><input type='submit' value='Envoyer'></p>
