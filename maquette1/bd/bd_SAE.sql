@@ -3,21 +3,20 @@ drop table activiteConnexion;
 drop table activiteModule;
 drop table users;
 
-
-create table users(
-
-    id_user int ,
-    login char(20) unique,
-    mdp char(500) unique not null check(length(mdp)>7),
-    type_user char(20) not null check (type_user in ('admin','normal','gestion')) ,
-    primary key(id_user,login)
-
-    -- A ignorer pour l'instant :
+  -- A ignorer pour l'instant :
     -- Contraintes sur type user : soit normal soit admin soit gestionnaire
     -- Contrainte : 1 seul admine, 1 seul gestionnaire :
         ---add constraint admin_gestion_unique check ( 
     -- type_user = 'admin' and 'admin' not in select 
     --)
+
+create table users(
+
+    id_user int ,
+    login char(20) unique,
+    mdp char(255) unique not null check(length(mdp)>32),
+    type_user char(20) default 'user' check (type_user in ('admin','user','gestion')) ,
+    primary key(id_user,login)
 
 );
 
