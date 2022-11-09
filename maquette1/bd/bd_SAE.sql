@@ -14,7 +14,7 @@ create table users(
 
     id_user int ,
     login char(20) unique,
-    mdp char(255) unique not null check(length(mdp)>7),
+    mdp char(255) unique not null check(length(mdp)>32),
     type_user char(20) default 'user' check (type_user in ('admin','user','gestion')) ,
     primary key(id_user,login)
 
