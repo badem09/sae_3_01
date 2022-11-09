@@ -39,16 +39,18 @@
 
             </ul>
         </nav>
-
-        <?php echo"
         <div class='cont-ins-conn'>
-            <form action='action.php' method='post'>
-                <p>S'inscrire</p>
-                <p>Identifiant : <input type='text' name='login'/></p>
-                <p>Mot de passe : <input type='text' name='mdp'/></p>
-                <p><input type='submit' value='Envoyer'></p>
-            </form>
+            <?php echo"
+                <form method='post'>
+                    <p>S'inscrire</p>
+                    <p>Identifiant : <input type='text' name='login'/></p>
+                    <p>Mot de passe : <input type='text' name='mdp'/></p>
+                    <p><input type='submit' name='Envoyer' value='Envoyer'></p>
+                </form>
+
+            ";
+            include("inscription_traitement.php");
+            ?>
         </div>
-        ";?>
     </body>
 </html>
