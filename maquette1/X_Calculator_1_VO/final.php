@@ -1,5 +1,11 @@
 <?php
-	include("verification_session.php");
+
+session_start();
+
+if(!isset($_SESSION['user'])) {
+   header('Location: connexion.php');
+}
+
 ?>
 
 <!doctype html>
@@ -21,7 +27,7 @@
 			<ul id="ul-container">
 
 				<li class ="nav-logo">
-					<a href="#"><img class ="nav-logo" src="img\logo_t.png" alt="logo_SiteWeb_X"></a>
+					<a href="index.html"><img class ="nav-logo" src="img\logo_t.png" alt="logo_SiteWeb_X"></a>
 				</li>
 
 				<li class="nav-item">
@@ -38,7 +44,7 @@
 				</li>
 
 				<li class="nav-item">
-					<a href="404.html"><b>Se connecter</b></a>
+					<a href="deconnexion.php"><b>Se déconnecter</b></a>
 				</li>
 
 			</ul>
