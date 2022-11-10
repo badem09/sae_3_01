@@ -4,7 +4,7 @@ if((isset($_POST['Envoyer'],$_POST['login'],$_POST['mdp']))){
     foreach ($_POST as $k => $v){
         $$k=$v;
     }
-
+    
     $connexion=mysqli_connect("localhost","root","");
     $bd=mysqli_select_db($connexion,"bd_sae");
 
