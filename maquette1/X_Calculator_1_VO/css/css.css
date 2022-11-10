@@ -240,7 +240,8 @@ footer {
 }
 
 
-.table {
+.tab td {
+
     padding: 20px;
     border-collapse: collapse;
     border: 3px solid #000000;
