@@ -53,7 +53,7 @@
                 </form>
 
             ";
-            include("connexion_traitement.php");
+            include("inscription_traitement.php");
             ?>
         </div>
     </body>
