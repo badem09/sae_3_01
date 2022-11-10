@@ -17,11 +17,11 @@
             <ul id="ul-container">
 
                 <li class ="nav-logo">
-                    <a href="#"><img class ="nav-logo" src="img\logo_t.png" alt="logo_SiteWeb_X"></a>
+                    <a href="index.html"><img class ="nav-logo" src="img\logo_t.png" alt="logo_SiteWeb_X"></a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="#"><b>Page d'acceuil</b></a>
+                    <a href="index.html"><b>Page d'acceuil</b></a>
                 </li>
 
                 <li class="nav-item">
