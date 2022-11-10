@@ -42,7 +42,6 @@
         <div class='container-centrer'>
             <?php echo"
                 <form method='post'>
-<<<<<<< HEAD
                     <div class='container-insciption-connexion'>
                         <h2>Se connecter</h2>
                         <div class='inputs'>
@@ -52,12 +51,6 @@
                         <p><input type='submit' name='Envoyer' value='Envoyer'></p>
                         <a href='inscription.php'>S'inscrire</a>
                     </div>
-=======
-                    <p>Se Connecter</p>
-                    <p>Identifiant : <input type='text' name='login'/></p>
-                    <p>Mot de passe : <input type='text' name='mdp'/></p>
-                    <p><input type='submit' name='Envoyer' value='Envoyer'></p>
->>>>>>> e877cf233371b343b00509104d6c96bae5c2d3ad
                 </form>
 
             ";
