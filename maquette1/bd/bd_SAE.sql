@@ -1,28 +1,26 @@
 create table users(
-    id_user int primary key,
+    id_user int primary key auto_increment,
 	
-    login char(32) not null unique,
-    mdp char(255) not null check(length(mdp)>32),
-    type_user char(32) default 'user' check (type_user in ('admin','user','gestion')),
+    login varchar(32) not null unique,
+    mdp varchar(255) not null check(length(mdp)>31),
+    type_user varchar(32) default 'user' check (type_user in ('admin','user','gestion'))
 );
 
 create table activiteModule(
-	id_activite int primary key,
+	id_activite int primary key auto_increment,
 	
 	id_module int not null,
-    login char(32) not null unique,
-    date_horaire_utilis timestamp not null,
-    FOREIGN KEY(login) references users(login)
+    login varchar(32) not null unique,
+    date_horaire_utilis timestamp not null
 );
 
 create table activiteConnexion(
-    id_connexion int primary key,
+    id_connexion int primary key auto_increment,
 	
-    login char(32) unique,
-    reussite char not null check(reussite in ('true','false')),
-    mdp_tente char not null,
-    log_tente char not null,
+    login varchar(32) unique,
+    reussite varchar(5) not null check(reussite in ('true','false')),
+    mdp_tente varchar(32) not null,
+    log_tente varchar(255) not null,
     date_horaire_tent timestamp not null,
-    adr_ip char not null,
-    FOREIGN KEY(login) references users(login)
+    adr_ip varchar not null
 );
