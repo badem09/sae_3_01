@@ -11,7 +11,7 @@ create table activiteModule(
 	
 	id_module int not null,
     login char(32) not null unique,
-    date_horaire_utilis date not null,
+    date_horaire_utilis timestamp not null,
     FOREIGN KEY(login) references users(login)
 );
 
@@ -22,7 +22,7 @@ create table activiteConnexion(
     reussite char not null check(reussite in ('true','false')),
     mdp_tente char not null,
     log_tente char not null,
-    date_horaire_tent date not null,
+    date_horaire_tent timestamp not null,
     adr_ip char not null,
     FOREIGN KEY(login) references users(login)
 );
