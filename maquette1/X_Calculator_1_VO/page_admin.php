@@ -54,6 +54,7 @@
             <form method="post"  action="">
                 <input type='text' name="text" id="text">
                 <input type='submit' name='search' id='search' value='rechercher'>
+                <input type='submit' name='retour' id='retour' value='retour'>
             </form>
         </div>
 
@@ -62,7 +63,7 @@
         <?php
 
             $token = (bool)($connexion = mysqli_connect("localhost", "root", "")); // connexion avec serveur sql
-            $utilsateur = $_POST["text"];
+
 
             if ($token) { //vérifie connection avec serveur
                 $token2 = ($bd = mysqli_select_db($connexion, "sae_3_01")); //choisi la databse
@@ -71,6 +72,7 @@
                     $table = "activitemodule"; //choix table
 
                     if ((isset($_POST["text"], $_POST["search"]))) { //si recherche d'un login, alors on doit mettre a jour requete sql avec élément recherche
+                        $utilsateur = $_POST["text"];
                         $requete = "SELECT * from $table where login='$utilsateur'"; //Requete SQL affichant le tableau avec l'utilisateur choisi et statistiques
 
                         $token3 = (bool)($res = mysqli_query($connexion, $requete));
@@ -86,8 +88,12 @@
                             echo "</table>";
                         }
                     }
+                    elseif ( isset($_POST["retour"]) ){
+                        header("location:page_admin.php");
+                    }
+
                     else {  // si pas de recherche, alors affiche liste tout les utilisateurs
-                        $requete = "SELECT * from $table where login='$utilsateur'";
+                        $requete = "SELECT * from $table";
                         $token3 = (bool)($res = mysqli_query($connexion, $requete));
 
                         $token3 = (bool)($res = mysqli_query($connexion, $requete));
@@ -103,10 +109,7 @@
                             echo "</table>";
                         }
                     }
-
-
                 }
-
             }
         ?>
 
