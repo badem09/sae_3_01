@@ -223,11 +223,27 @@ li:hover .nav-item-services{
     margin-right: auto;
 }
 
-.cont-ins-conn {
+.container-centrer {
     display: flex;
     justify-content: center;
     flex-direction: column;
     text-align: center;
     align-items: center;
     height: 100vh;
+}
+
+.container-insciption-connexion {
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 24px;
+}
+
+.inputs {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.container-insciption-connexion h2 {
+    color: #000A7E;
+    font-weight: bold;
 }
