@@ -17,11 +17,11 @@
             <ul id="ul-container">
 
                 <li class ="nav-logo">
-                    <a href="#"><img class ="nav-logo" src="img\logo_t.png" alt="logo_SiteWeb_X"></a>
+                    <a href="index.html"><img class ="nav-logo" src="img\logo_t.png" alt="logo_SiteWeb_X"></a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="#"><b>Page d'acceuil</b></a>
+                    <a href="index.html"><b>Page d'acceuil</b></a>
                 </li>
 
                 <li class="nav-item">
@@ -39,13 +39,18 @@
 
             </ul>
         </nav>
-        <div class='cont-ins-conn'>
+        <div class='container-centrer'>
             <?php echo"
                 <form method='post'>
-                    <p>S'inscrire</p>
-                    <p>Identifiant : <input type='text' name='login'/></p>
-                    <p>Mot de passe : <input type='text' name='mdp'/></p>
-                    <p><input type='submit' name='Envoyer' value='Envoyer'></p>
+                    <div class='container-insciption-connexion'>
+                        <h2>Se connecter</h2>
+                        <div class='inputs'>
+                            <p>Identifiant : <input type='text' name='login'/></p>
+                            <p>Mot de passe : <input type='text' name='mdp'/></p>
+                        </div>
+                        <p><input type='submit' name='Envoyer' value='Envoyer'></p>
+                        <a href='inscription.php'>S'inscrire</a>
+                    </div>
                 </form>
 
             ";
