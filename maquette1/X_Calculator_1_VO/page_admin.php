@@ -60,38 +60,54 @@
 
 
         <?php
-            //si bouton rechercher, alors doit mettre a jour requete sql avec élément recherche
-            if ( (isset($_POST["text"], $_POST["search"] )) ){
-                $utilsateur=$_POST["text"];
-                echo $utilsateur;
-            }
 
-            /*//Requete SQL affichant le tableau avec liste utilisateur et nombre d'utilisation de chaque module
-            $token=(bool)($connexion=mysqli_connect("localhost", "root", "")); // se connecte
+            $token = (bool)($connexion = mysqli_connect("localhost", "root", "")); // connexion avec serveur sql
+            $utilsateur = $_POST["text"];
 
-            if ($token){ //vérifie connection avec mysql
-                $token2=($bd=mysqli_select_db($connexion, "sae_3_01")); //choisi la databse
+            if ($token) { //vérifie connection avec serveur
+                $token2 = ($bd = mysqli_select_db($connexion, "sae_3_01")); //choisi la databse
 
-                if ($token2){ //vérifie connecction avec database
-                    $table="activitemodule";
-                    $select="SELECT * from $table"; //requete à modifier
-                    $token3=(bool)($res=mysqli_query($connexion,$select));
+                if ($token2) { //vérifie connexion avec database
+                    $table = "activitemodule"; //choix table
 
-                    if ($token3){ //vérifie connexion entre mysql et requête
-                        echo "<table class='tab'>";
-                        while ($ligne=mysqli_fetch_row($res)){
-                            echo "<tr>";
-                            foreach ($ligne as $v) { //parcours tableau de mysqli_fetch_row
-                                echo "<td>" . $v . "</td>";
+                    if ((isset($_POST["text"], $_POST["search"]))) { //si recherche d'un login, alors on doit mettre a jour requete sql avec élément recherche
+                        $requete = "SELECT * from $table where login='$utilsateur'"; //Requete SQL affichant le tableau avec l'utilisateur choisi et statistiques
+
+                        $token3 = (bool)($res = mysqli_query($connexion, $requete));
+                        if ($token3) { //vérifie connexion entre mysql et requête
+                            echo "<table class='tab'>";
+                            while ($ligne = mysqli_fetch_row($res)) {
+                                echo "<tr>";
+                                foreach ($ligne as $v) { //parcours tableau de mysqli_fetch_row
+                                    echo "<td>" . $v . "</td>";
+                                }
+                                echo "</tr>";
                             }
-                            echo "</tr>";
+                            echo "</table>";
                         }
-                        echo "</table>";
-
                     }
-                }
-            }*/
+                    else {  // si pas de recherche, alors affiche liste tout les utilisateurs
+                        $requete = "SELECT * from $table where login='$utilsateur'";
+                        $token3 = (bool)($res = mysqli_query($connexion, $requete));
 
+                        $token3 = (bool)($res = mysqli_query($connexion, $requete));
+                        if ($token3) { //vérifie connexion entre mysql et requête
+                            echo "<table class='tab'>";
+                            while ($ligne = mysqli_fetch_row($res)) {
+                                echo "<tr>";
+                                foreach ($ligne as $v) { //parcours tableau de mysqli_fetch_row
+                                    echo "<td>" . $v . "</td>";
+                                }
+                                echo "</tr>";
+                            }
+                            echo "</table>";
+                        }
+                    }
+
+
+                }
+
+            }
         ?>
 
 </body>
