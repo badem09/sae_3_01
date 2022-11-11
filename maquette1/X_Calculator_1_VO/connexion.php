@@ -21,7 +21,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="index.html"><b>Page d'acceuil</b></a>
+                    <a href="index.html"><b>Page d'accueil</b></a>
                 </li>
 
                 <li class="nav-item">
@@ -41,12 +41,24 @@
         </nav>
         <div class='container-centrer'>
             <?php echo"
-                <form method='post'>
+                <form action='connexion_traitement.php' method='post'>
                     <div class='container-insciption-connexion'>
-                        <h2>Se connecter</h2>
+                        <h2>Se connecter</h2>";
+                        if(isset($_GET['err'])){
+                            switch($_GET['err']){
+
+                                case "mdp_vide" :
+                                echo "<p style=' color:red'><b>Erreur : mdp_vide.</b></p>";
+                                break;
+
+                                case "login_vide" :
+                                echo "<p style=' color:red'><b>Erreur : login_vide.</b></p>";
+                                break;
+                            }
+                        }echo "
                         <div class='inputs'>
                             <p>Identifiant : <input type='text' name='login'/></p>
-                            <p>Mot de passe : <input type='text' name='mdp'/></p>
+                            <p>Mot de passe : <input type='password' name='mdp'/></p>
                         </div>
                         <p><input type='submit' name='Envoyer' value='Envoyer'></p>
                         <a href='inscription.php'>S'inscrire</a>
@@ -54,7 +66,6 @@
                 </form>
 
             ";
-            include("connexion_traitement.php");
             ?>
         </div>
     </body>

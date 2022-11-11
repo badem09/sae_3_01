@@ -31,7 +31,7 @@ if(!isset($_SESSION['user'])) {
 				</li>
 
 				<li class="nav-item">
-					<a href="index.html"><b>Page d'acceuil</b></a>
+					<a href="index.html"><b>Page d'accueil</b></a>
 				</li>
 
 				<li class="nav-item">
