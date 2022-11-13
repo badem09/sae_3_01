@@ -26,6 +26,7 @@
 
                 <li class="nav-item">
                     <a href="#"><b>Mes Services</b></a>
+
                     <ul class = "nav-item-services">
                         <li><a href="connexion.php"><b>Module 1</b></a></li>
                         <li><a href="connexion.php"><b>Module 2</b></a></li>
@@ -52,6 +53,7 @@
         <div class="admin-main">
             <div class="recherche">
                 <h3>Rechercher un utilisateur</h3>
+
                 <form method="post">
                     <input id='researched' type='text' name="text"  placeholder="ex : demba404">
                     <input id='search' type='submit' name='search' value='Recherecher'>
@@ -62,27 +64,38 @@
 
             <div class="affichage">
             <?php
-
+                //On inclus la configuration d'accès à la base de donnée avant de commencer.
                 require_once('config_bdd.php');
-
+                //Si une recherche a été demandé.
                 if ((isset($_POST["text"], $_POST["search"]))) {
+                    //On récupere de la base de donnée "id_user", "login", "type_user" si un utilisateur correspond à l'entrée.
                     $requete2 = mysqli_query($connexion,"SELECT id_user, login, type_user from users where login='".$_POST["text"]."'");
+                    //On affiche la base d'un tableau.
                     echo "<table class='tab'>";
+                    //On affiche les titres du tableau.
                     echo "<tr id='titre_tab'><th>ID Utilisateur</th><th>Nom Utilisateur</th><th>Type Utilisateur</th></tr>";
+                    //Pour chaques lignes assigé comme plusieurs valeurs, on récupère et affiche les données (1 seul car chaque "login" est unique).
                     while ($ligne = mysqli_fetch_row($requete2)) {
                         echo "<tr>";
-                        foreach ($ligne as $v) { //parcours tableau de mysqli_fetch_row
+                        foreach ($ligne as $v) {
                             echo "<td>" . $v . "</td>";
                         }
                         echo "</tr>";
                     }
                     echo "</table>";
+                //Si un retour à été demandé, on redirige vers la meme page pour actualiser et on ferme celle-ci.
                 } elseif (isset($_POST["retour"]) ){
                     header("location:page_admin.php");
+                    die();
+                //Si aucune action n'a été effectué on affiche toutes les données présente dans la base de donnée.
+                //(Dans le cas ou nous arrivons sur la page, c'est cette condition sui est utiliser pour afficher les données sans avoir à les demander.)
                 } else {
                     $requete1 = mysqli_query($connexion,"SELECT id_user, login, type_user from users");
+                    //On affiche la base d'un tableau.
                     echo "<table class='tab'>";
+                    //On affiche les titres du tableau.
                     echo "<tr id='titre_tab'><th>ID Utilisateur</th><th>Nom Utilisateur</th><th>Type Utilisateur</th></tr>";
+                    //Pour chaques lignes assigé comme plusieurs valeurs, on récupère et affiche les données (1 seul car chaque "login" est unique).
                     while ($ligne = mysqli_fetch_row($requete1)) {
                         echo "<tr>";
                         foreach ($ligne as $v) { //parcours tableau de mysqli_fetch_row
