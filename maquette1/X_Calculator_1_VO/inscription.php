@@ -94,7 +94,7 @@
                             <input type='text' name='captcha' placeholder='ex : 7u5T5g3'/>
                         </div>
                         <p><input type='submit' name='Envoyer' value='Envoyer'></p>
-                        <p>Déjà un compte ? <a id='link-sincrip' href='connexion.php'>C'est ici !</a></p>
+                        <p>Déjà inscrit ? <a id='link-sincrip' href='connexion.php'>C'est ici !</a></p>
                     </div>
                 </form>
             ";
