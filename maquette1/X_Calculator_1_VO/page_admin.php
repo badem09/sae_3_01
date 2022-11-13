@@ -54,44 +54,63 @@
             <form method="post"  action="">
                 <input type='text' name="text" id="text">
                 <input type='submit' name='search' id='search' value='rechercher'>
+                <input type='submit' name='retour' id='retour' value='retour'>
             </form>
         </div>
 
 
 
         <?php
-            //si bouton rechercher, alors doit mettre a jour requete sql avec élément recherche
-            if ( (isset($_POST["text"], $_POST["search"] )) ){
-                $utilsateur=$_POST["text"];
-                echo $utilsateur;
-            }
 
-            /*//Requete SQL affichant le tableau avec liste utilisateur et nombre d'utilisation de chaque module
-            $token=(bool)($connexion=mysqli_connect("localhost", "root", "")); // se connecte
+            $token = (bool)($connexion = mysqli_connect("localhost", "root", "")); // connexion avec serveur sql
 
-            if ($token){ //vérifie connection avec mysql
-                $token2=($bd=mysqli_select_db($connexion, "sae_3_01")); //choisi la databse
 
-                if ($token2){ //vérifie connecction avec database
-                    $table="activitemodule";
-                    $select="SELECT * from $table"; //requete à modifier
-                    $token3=(bool)($res=mysqli_query($connexion,$select));
+            if ($token) { //vérifie connection avec serveur
+                $token2 = ($bd = mysqli_select_db($connexion, "sae_3_01")); //choisi la databse
 
-                    if ($token3){ //vérifie connexion entre mysql et requête
-                        echo "<table class='tab'>";
-                        while ($ligne=mysqli_fetch_row($res)){
-                            echo "<tr>";
-                            foreach ($ligne as $v) { //parcours tableau de mysqli_fetch_row
-                                echo "<td>" . $v . "</td>";
+                if ($token2) { //vérifie connexion avec database
+                    $table = "activitemodule"; //choix table
+
+                    if ((isset($_POST["text"], $_POST["search"]))) { //si recherche d'un login, alors on doit mettre a jour requete sql avec élément recherche
+                        $utilsateur = $_POST["text"];
+                        $requete = "SELECT * from $table where login='$utilsateur'"; //Requete SQL affichant le tableau avec l'utilisateur choisi et statistiques
+
+                        $token3 = (bool)($res = mysqli_query($connexion, $requete));
+                        if ($token3) { //vérifie connexion entre mysql et requête
+                            echo "<table class='tab'>";
+                            while ($ligne = mysqli_fetch_row($res)) {
+                                echo "<tr>";
+                                foreach ($ligne as $v) { //parcours tableau de mysqli_fetch_row
+                                    echo "<td>" . $v . "</td>";
+                                }
+                                echo "</tr>";
                             }
-                            echo "</tr>";
+                            echo "</table>";
                         }
-                        echo "</table>";
+                    }
+                    elseif ( isset($_POST["retour"]) ){
+                        header("location:page_admin.php");
+                    }
 
+                    else {  // si pas de recherche, alors affiche liste tout les utilisateurs
+                        $requete = "SELECT * from $table";
+                        $token3 = (bool)($res = mysqli_query($connexion, $requete));
+
+                        $token3 = (bool)($res = mysqli_query($connexion, $requete));
+                        if ($token3) { //vérifie connexion entre mysql et requête
+                            echo "<table class='tab'>";
+                            while ($ligne = mysqli_fetch_row($res)) {
+                                echo "<tr>";
+                                foreach ($ligne as $v) { //parcours tableau de mysqli_fetch_row
+                                    echo "<td>" . $v . "</td>";
+                                }
+                                echo "</tr>";
+                            }
+                            echo "</table>";
+                        }
                     }
                 }
-            }*/
-
+            }
         ?>
 
 </body>
