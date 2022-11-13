@@ -66,7 +66,7 @@
                             <p class='titre-form'>Mot de passe</p>
                             <input type='password' name='mdp' placeholder='ex : M0t_D3_P@55€'/>
                         </div>
-                        <p><input type='submit' name='Envoyer' value='Envoyer'></p>
+                        <p><input type='submit' name='Envoyer' value='Se connecter'></p>
                         <p>Toujours pas inscrit ? <a id='link-sincrip' href='inscription.php'>C'est ici !</a></p>
                     </div>
                 </form>
