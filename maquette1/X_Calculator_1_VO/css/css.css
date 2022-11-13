@@ -1,4 +1,4 @@
-/*Barre de Naviguation*/
+/* ##################### Barre de Naviguation ##################### */
 body{
     margin: 0;
     font-family: 'Roboto', sans-serif;
@@ -83,7 +83,7 @@ li:hover .nav-item-services{
     padding: 10px 0px;
 }
 
-/*Page accueil*/
+/* ######################### Page accueil ######################### */
 .entete{
     /*background-image: url("../img/carre_page_acceuil.png");
     background-repeat: no-repeat;
@@ -97,7 +97,7 @@ li:hover .nav-item-services{
     box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 24px;
 }
 
-/*Page acceuil module gauche presentation*/
+/* ########### Page acceuil module gauche presentation ########### */
 .pacc_mod_pres{
     text-align: center;
 }
@@ -131,9 +131,10 @@ li:hover .nav-item-services{
 
 .pacc_mod_gauche {
     padding: 75px 200px;
+    display: flex;
 }
 
-/*Page acceuil module droit presentation*/
+/* ############ Page acceuil module droit presentation ############ */
 .pacc_mod_droit h3{
     color: #000A7E;
 }
@@ -163,10 +164,11 @@ li:hover .nav-item-services{
 
 .pacc_mod_droit {
     padding: 75px 200px;
+    display: flex;
     text-align: right;
 }
 
-/* Footer  pour toutes les pages*/
+/* ################# Footer pour toutes les pages ################# */
 footer {
     font-family: 'Roboto', sans-serif;
 }
@@ -192,10 +194,13 @@ footer {
 .footer a {
     color: black;
     text-decoration: none;
-
 }
 
-/*Page 404*/
+.footer a:hover {
+    color: #000A7E;
+}
+
+/* ########################### Page 404 ########################### */
 .erreur {
     display: flex;
     justify-content: center;
@@ -212,12 +217,7 @@ footer {
     margin: 0px;
 }
 
-/*Module1*/
-.mod1{
-    text-align: center;
-}
-
-/*Connexion */
+/* ################### Connexion / inscription ################### */
 .center {
     margin-left: auto;
     margin-right: auto;
@@ -235,12 +235,85 @@ footer {
 .container-insciption-connexion {
     border-radius: 20px;
     padding: 30px;
+    width: 350px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 24px;
 }
 
 .inputs {
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.err {
+    border: 1px solid #FF6969;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #FF6969;
+    padding: 12px;
+    color: white;
+    font-weight: bold;
+}
+
+.inputs input[type=text],[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.inputs input::placeholder {
+    color: #D1D1D1;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #000A7E;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+input[type=submit]:hover {
+  background-color: #1521A5;
+}
+
+.inputs img {
+    width: 146px;
+    height: 49px;
+    border-radius: 4px;
+}
+
+.titre-form {
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #6A7887;
+    letter-spacing: 1px;
+    margin-bottom: 0px;
+}
+
+.captcha-img-desc {
+    display: flex;
+}
+
+.captcha-desc-text {
+    text-align: center;
+    font-weight: bold;
+    color: #6A7887;
+    font-size: 1px;
+}
+
+.link-sincrip {
+    text-decoration: none;
 }
 
 .container-insciption-connexion h2 {
@@ -248,16 +321,27 @@ footer {
     font-weight: bold;
 }
 
+.container-insciption-connexion p {
+    margin-bottom: 5px;
+    font-size: 13px;
+}
 
-/*Page Admin */
+.container-insciption-connexion a {
+    text-decoration: none;
+    color: #000A7E;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+
+/* ########################## Page Admin ########################## */
 .recherche {
     text-align: center;
     padding: 120px 60px 60px 60px;
 }
 
 
-.tab td {
-
+.table {
     padding: 20px;
     border-collapse: collapse;
     border: 3px solid #000000;
