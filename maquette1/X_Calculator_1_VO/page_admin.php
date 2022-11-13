@@ -61,7 +61,6 @@
                 </form>
             </div>
 
-
             <div class="affichage">
             <?php
                 //On inclus la configuration d'accès à la base de donnée avant de commencer.
