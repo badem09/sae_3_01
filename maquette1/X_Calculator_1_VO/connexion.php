@@ -64,9 +64,11 @@
                     } ?>
                     <div class='inputs'>
                         <p class='titre-form'>Identifiant</p>
-                        <input type='text' name='login' placeholder='ex : demba404'/>
+                        <label id="labe-login-login" for="login-login">
+                        <input id='login-login' type='text' name='login' placeholder='ex : demba404'/>
                         <p class='titre-form'>Mot de passe</p>
-                        <input type='password' name='mdp' placeholder='ex : M0t_D3_P@55€'/>
+                        <label id="label-login-mdp" for="login-mdp">
+                        <input id='login-mdp' type='password' name='mdp' placeholder='ex : M0t_D3_P@55€'/>
                     </div>
                     <p><input type='submit' name='Envoyer' value='Se connecter'></p>
                     <p>Toujours pas inscrit ? <a id='link-sincrip' href='inscription.php'>C'est ici !</a></p>
