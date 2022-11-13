@@ -80,20 +80,24 @@
                     } ?>
                     <div class='inputs'>
                         <p class='titre-form'>Identifiant</p>
-                        <input type='text' name='login' placeholder='ex : demba404'/>
+                        <label id="label-register-login" for="register-login">
+                        <input id='register-login' type='text' name='login' placeholder='ex : demba404'/>
 
                         <p class='titre-form'>Mot de passe</p>
-                        <input type='password' name='mdp' placeholder='ex : M0t_D3_P@55€'/>
+                        <label id="label-register-password" for="register-password">
+                        <input id='register-password' type='password' name='mdp' placeholder='ex : M0t_D3_P@55€'/>
                         
                         <p class='titre-form'>Confirmer Mot de passe</p>
-                        <input type='password' name='mdp_retype' placeholder='ex : M0t_D3_P@55€'/>
+                        <label id="label-register-password-2" for="register-password-2">
+                        <input id='register-password-2' type='password' name='mdp_retype' placeholder='ex : M0t_D3_P@55€'/>
                         
                         <p class='titre-form'>Captcha</p>
                         <div class='captcha-img-desc'>
                             <img class='img-cptcha' src='img/captcha1.png' alt='image_captcha'>
                             <p class='captcha-desc-text'> Attention : les majuscules comptent.</p>
                         </div>
-                        <input type='text' name='captcha' placeholder='ex : 7u5T5g3'/>
+                        <label id="label-register-captcha" for="register-captcha">
+                        <input id='register-captcha' type='text' name='captcha' placeholder='ex : 7u5T5g3'/>
                     </div>
                     <p><input type='submit' name='Envoyer' value='S&apos;inscrire'></p>
                     <p>Déjà inscrit ? <a id='link-sincrip' href='connexion.php'>C'est ici !</a></p>
