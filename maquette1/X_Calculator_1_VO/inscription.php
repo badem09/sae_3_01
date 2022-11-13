@@ -47,32 +47,56 @@
                         if(isset($_GET['err'])){
                             switch($_GET['err']){
                                 case "mdp_non_identique" :
-                                echo "<p style=' color:red'><b>Erreur : mdp_non_identique.</b></p>";
+                                echo "<p class='err'>Erreur : Mots de passe non identique.</p>";
                                 break;
 
                                 case "confirmation_vide" :
-                                echo "<p style=' color:red'><b>Erreur : confirmation_vide.</b></p>";
+                                echo "<p class='err>Erreur : La confirmation est vide.</p>";
                                 break;
 
                                 case "mdp_vide" :
-                                echo "<p style=' color:red'><b>Erreur : mdp_vide.</b></p>";
+                                echo "<p class='err'>Erreur : Le mot de passe est vide.</p>";
                                 break;
 
                                 case "login_vide" :
-                                echo "<p style=' color:red'><b>Erreur : login_vide.</b></p>";
+                                echo "<p class='err'>Erreur : Le login est vide.</p>";
+                                break;
+
+                                case "captcha_vide" :
+                                echo "<p class='err'>Erreur : Le Captcha est vide.</p>";
+                                break;
+
+                                case "captcha_erroné" :
+                                echo "<p class='err'>Erreur : Le captcha est erroné.</p>";
+                                break;
+
+                                case "exist" :
+                                echo "<p class='err'>Erreur : Le nom d'utilisateur est déjà éxistant.</p>";
                                 break;
                             }
                         }
                         echo"
                         <div class='inputs'>
-                            <p>Identifiant : <input type='text' name='login'/></p>
-                            <p>Mot de passe : <input type='password' name='mdp'/></p>
-                            <p>Confirmer MDP : <input type='password' name='mdp_retype'/></p>
+                            <p class='titre-form'>Identifiant</p>
+                            <input type='text' name='login' placeholder='ex : demba404'/>
+
+                            <p class='titre-form'>Mot de passe</p>
+                            <input type='password' name='mdp' placeholder='ex : M0t_D3_P@55€'/>
+                            
+                            <p class='titre-form'>Confirmer Mot de passe</p>
+                            <input type='password' name='mdp_retype' placeholder='ex : M0t_D3_P@55€'/>
+                            
+                            <p class='titre-form'>Captcha</p>
+                            <div class='captcha-img-desc'>
+                                <img class='img-cptcha' src='img/captcha1.png' alt='image_captcha'>
+                                <p class='captcha-desc-text'> Attention : les majuscules comptent</p>
+                            </div>
+                            <input type='text' name='captcha' placeholder='ex : 7u5T5g3'/>
                         </div>
                         <p><input type='submit' name='Envoyer' value='Envoyer'></p>
+                        <p>Déjà un compte ? <a id='link-sincrip' href='connexion.php'>C'est ici !</a></p>
                     </div>
                 </form>
-
             ";
             ?>
         </div>
