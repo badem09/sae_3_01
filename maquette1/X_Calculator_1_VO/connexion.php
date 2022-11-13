@@ -34,7 +34,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="connexion.php"><b>Se connecter</b></a>
+                    <a href="inscription.php"><b>S'inscrire</b></a>
                 </li>
 
             </ul>
@@ -47,21 +47,27 @@
                         if(isset($_GET['err'])){
                             switch($_GET['err']){
 
+                                case "u_introuvable" :
+                                echo "<p class='err'>Erreur : Utilisateur inexistant.</p>";
+                                break;
+
                                 case "mdp_vide" :
-                                echo "<p style=' color:red'><b>Erreur : mdp_vide.</b></p>";
+                                echo "<p class='err'>Erreur : Mot de passe vide.</p>";
                                 break;
 
                                 case "login_vide" :
-                                echo "<p style=' color:red'><b>Erreur : login_vide.</b></p>";
+                                echo "<p class='err'>Erreur : Login vide.</p>";
                                 break;
                             }
                         }echo "
                         <div class='inputs'>
-                            <p>Identifiant : <input type='text' name='login'/></p>
-                            <p>Mot de passe : <input type='password' name='mdp'/></p>
+                            <p class='titre-form'>Identifiant</p>
+                            <input type='text' name='login' placeholder='ex : demba404'/>
+                            <p class='titre-form'>Mot de passe</p>
+                            <input type='password' name='mdp' placeholder='ex : M0t_D3_P@55€'/>
                         </div>
                         <p><input type='submit' name='Envoyer' value='Envoyer'></p>
-                        <a href='inscription.php'>S'inscrire</a>
+                        <p>Toujours pas inscrit ? <a id='link-sincrip' href='inscription.php'>C'est ici !</a></p>
                     </div>
                 </form>
 
