@@ -35,7 +35,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="connexion.php"><b>Administration</b></a>
+                    <a href="page_admin.php"><b>Administration</b></a>
                 </li>
 
                 <li class="nav-item">
