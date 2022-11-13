@@ -1,7 +1,8 @@
 <?php
 
+	//On regarde si une cession existe.
 	session_start();
-
+	//Si aucune cession existe, on renvois sur la page de connexion.
 	if(!isset($_SESSION['user'])) {
 	   header('Location: connexion.php');
 	}
@@ -52,12 +53,10 @@
 
 		<div class="erreur">
 			<h1>Inscription réussie !</h1>
-			<h1>GG</h1>
-			<?php
-			echo $_SESSION['user']['login']." ".$_SESSION['user']['type_user'];
-			?>
+			<!--On récupere le login qui se trouve dans la session et on l'affiche.-->
+			<h3>Bonjour <?php echo $_SESSION['user']['login'];?> !</h3>
 			<p>
-				<br>T'as réussies ! Braveau ! (bravo pour les veaux)
+				<br>Cette page est en cours de développement !
 			</p>
 		</div>
 	
