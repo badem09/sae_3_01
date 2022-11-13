@@ -1,11 +1,11 @@
 <?php
 
-session_start();
+	session_start();
 
-if(!isset($_SESSION['user'])) {
-   header('Location: connexion.php');
-}
-
+	if(!isset($_SESSION['user'])) {
+	   header('Location: connexion.php');
+	}
+ 
 ?>
 
 <!doctype html>
@@ -53,6 +53,9 @@ if(!isset($_SESSION['user'])) {
 		<div class="erreur">
 			<h1>Inscription réussie !</h1>
 			<h1>GG</h1>
+			<?php
+			echo $_SESSION['user']['login']." ".$_SESSION['user']['type_user'];
+			?>
 			<p>
 				<br>T'as réussies ! Braveau ! (bravo pour les veaux)
 			</p>
