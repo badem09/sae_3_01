@@ -44,7 +44,7 @@
                 <div class='container-insciption-connexion'>
                     <h2>Se connecter</h2>
                     <?php 
-                    //On verifie si lors dur chargment dee la page, une erreur à été envoyé.
+                    //On verifie si lors dur chargment de la page, une erreur à été envoyé.
                     if(isset($_GET['err'])){
                         //Si oui on cherche à quelle erreur elle correspond pour l'afficher.
                         switch($_GET['err']){
