@@ -89,11 +89,11 @@
                             <p class='titre-form'>Captcha</p>
                             <div class='captcha-img-desc'>
                                 <img class='img-cptcha' src='img/captcha1.png' alt='image_captcha'>
-                                <p class='captcha-desc-text'> Attention : les majuscules comptent</p>
+                                <p class='captcha-desc-text'> Attention : les majuscules comptent.</p>
                             </div>
                             <input type='text' name='captcha' placeholder='ex : 7u5T5g3'/>
                         </div>
-                        <p><input type='submit' name='Envoyer' value='Envoyer'></p>
+                        <p><input type='submit' name='Envoyer' value='S'inscrire></p>
                         <p>Déjà inscrit ? <a id='link-sincrip' href='connexion.php'>C'est ici !</a></p>
                     </div>
                 </form>
