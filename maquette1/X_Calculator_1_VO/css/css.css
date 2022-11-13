@@ -270,7 +270,7 @@ footer {
     color: #D1D1D1;
 }
 
-input[type=submit] {
+.container-insciption-connexion input[type=submit] {
   width: 100%;
   background-color: #000A7E;
   color: white;
@@ -282,7 +282,7 @@ input[type=submit] {
   font-weight: bold;
 }
 
-input[type=submit]:hover {
+.container-insciption-connexion input[type=submit]:hover {
   background-color: #1521A5;
 }
 
