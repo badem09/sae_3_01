@@ -6,26 +6,49 @@
         if(!empty($_POST['login'])){
             if(!empty($_POST['mdp'])){
                 if(!empty($_POST['mdp_retype'])){
-                    if(($_POST['mdp']) == ($_POST['mdp_retype'])){
-                        foreach ($_POST as $k => $v){
-                            $$k=$v;
-                        }
-                        $ins="INSERT into users(login,mdp) values(?,?)";
-                        $insp=mysqli_prepare($connexion,$ins);
+                    if(!empty($_POST['captcha'])){
+                        if(($_POST['mdp']) == ($_POST['mdp_retype'])){
+                            if(($_POST['captcha'])=='95inb'){
+                                $login_verif = htmlspecialchars($_POST['login']);
+                                $Verif = mysqli_query($connexion,"SELECT * FROM users WHERE login = '".$login_verif."'");
+                                if(mysqli_num_rows($Verif) == 0){
+                                    foreach ($_POST as $k => $v){
+                                        $$k = $v;
+                                    }
+                                    $login = htmlspecialchars($_POST['login']);
+                                    $mdp = htmlspecialchars($_POST['mdp']);
 
-                        $mdpfin = md5($mdp);
+                                    $ins = "INSERT into users(login,mdp) values(?,?)";
+                                    $insp = mysqli_prepare($connexion,$ins);
 
-                        mysqli_stmt_bind_param($insp,'ss', $login, $mdpfin);
-                        mysqli_stmt_execute($insp);
-                        mysqli_close($connexion);
+                                    $mdpfin = md5($mdp);
 
-                        session_start();
-                        $_SESSION["user"]=$_POST['login'];
-                        header('Location: final.php');
-                        die();
+                                    mysqli_stmt_bind_param($insp,'ss', $login, $mdpfin);
+                                    mysqli_stmt_execute($insp);
+
+                                    session_start();
+                                    
+                                    $Requete = mysqli_query($connexion,"SELECT * FROM users WHERE login = '".$login."' AND mdp = '".md5($mdp)."'");
+                                    $data = $Requete->fetch_assoc();
+
+                                    $_SESSION["user"] = ["login"=>$login,"type_user"=>$data['type_user']];
+
+                                    mysqli_close($connexion);
+
+                                    header('Location: final.php');
+                                    die();
+                                }else{
+                                header('Location: inscription.php?err=exist');
+                                }
+                            }else{
+                                header('Location: inscription.php?err=captcha_erroné');
+                            }
+                        }else{
+                            header('Location: inscription.php?err=mdp_non_identique');
+                        } 
                     }else{
-                        header('Location: inscription.php?err=mdp_non_identique');
-                    }    
+                    header('Location: inscription.php?err=captcha_vide');
+                    }   
                 }else{
                     header('Location: inscription.php?err=confirmation_vide');
                 }
