@@ -40,39 +40,38 @@
             </ul>
         </nav>
         <div class='container-centrer'>
-            <?php echo"
-                <form action='connexion_traitement.php' method='post'>
-                    <div class='container-insciption-connexion'>
-                        <h2>Se connecter</h2>";
-                        if(isset($_GET['err'])){
-                            switch($_GET['err']){
+            <form action='connexion_traitement.php' method='post'>
+                <div class='container-insciption-connexion'>
+                    <h2>Se connecter</h2>
+                    <?php 
+                    //On verifie si lors dur chargment dee la page, une erreur à été envoyé.
+                    if(isset($_GET['err'])){
+                        //Si oui on cherche à quelle erreur elle correspond pour l'afficher.
+                        switch($_GET['err']){
 
-                                case "u_introuvable" :
-                                echo "<p class='err'>Erreur : Utilisateur inexistant.</p>";
-                                break;
+                            case "u_introuvable" :
+                            echo "<p class='err'>Erreur : Utilisateur inexistant.</p>";
+                            break;
 
-                                case "mdp_vide" :
-                                echo "<p class='err'>Erreur : Mot de passe vide.</p>";
-                                break;
+                            case "mdp_vide" :
+                            echo "<p class='err'>Erreur : Mot de passe vide.</p>";
+                            break;
 
-                                case "login_vide" :
-                                echo "<p class='err'>Erreur : Login vide.</p>";
-                                break;
-                            }
-                        }echo "
-                        <div class='inputs'>
-                            <p class='titre-form'>Identifiant</p>
-                            <input type='text' name='login' placeholder='ex : demba404'/>
-                            <p class='titre-form'>Mot de passe</p>
-                            <input type='password' name='mdp' placeholder='ex : M0t_D3_P@55€'/>
-                        </div>
-                        <p><input type='submit' name='Envoyer' value='Se connecter'></p>
-                        <p>Toujours pas inscrit ? <a id='link-sincrip' href='inscription.php'>C'est ici !</a></p>
+                            case "login_vide" :
+                            echo "<p class='err'>Erreur : Login vide.</p>";
+                            break;
+                        }
+                    } ?>
+                    <div class='inputs'>
+                        <p class='titre-form'>Identifiant</p>
+                        <input type='text' name='login' placeholder='ex : demba404'/>
+                        <p class='titre-form'>Mot de passe</p>
+                        <input type='password' name='mdp' placeholder='ex : M0t_D3_P@55€'/>
                     </div>
-                </form>
-
-            ";
-            ?>
+                    <p><input type='submit' name='Envoyer' value='Se connecter'></p>
+                    <p>Toujours pas inscrit ? <a id='link-sincrip' href='inscription.php'>C'est ici !</a></p>
+                </div>
+            </form>
         </div>
     </body>
 </html>
