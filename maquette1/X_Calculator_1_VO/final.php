@@ -52,7 +52,7 @@
 		</nav>
 
 		<div class="erreur">
-			<h1>Inscription réussie !</h1>
+			<h1>Inscription ou connexion réussie !</h1>
 			<!--On récupere le login qui se trouve dans la session et on l'affiche.-->
 			<h3>Bonjour <?php echo $_SESSION['user']['login'];?> !</h3>
 			<p>
