@@ -53,12 +53,16 @@
                             echo "<p class='err'>Erreur : Utilisateur inexistant.</p>";
                             break;
 
+                            case "mdp_faux" :
+                            echo "<p class='err'>Erreur : Mot de passe erroné.</p>";
+                            break;
+
                             case "mdp_vide" :
                             echo "<p class='err'>Erreur : Mot de passe vide.</p>";
                             break;
 
                             case "login_vide" :
-                            echo "<p class='err'>Erreur : Login vide.</p>";
+                            echo "<p class='err'>Erreur : Identifiant vide.</p>";
                             break;
                         }
                     } ?>
