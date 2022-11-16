@@ -96,7 +96,7 @@ p = [1/4, 1/2, 1/4]
 #print(esperance(x,p))
 #print(loi_normale(15, esperance(x,p), ecart_type(x,p)))
 
-print("rectangle gauche : " ,methode_rectangle_gauche(0,25,10,50))
+print("rectangle gauche : " ,methode_rectangle_gauche(-10000,-9999,10,50))
 print("rectangle droits : " , methode_rectangle_droite(0,25,10,50))
 print("rectangle medians : " , methode_rectangle_medians(0,25,10,50))
 print("trapèzes : " , methode_trapeze(0,25,10,50))
@@ -104,3 +104,20 @@ print("simpson : " , methode_Simpson(0,25,10,50))
 
 #Pour les tests :
 #site reference : https://www.codabrainy.com/loi-normale/10/50/0/25/ 
+
+## Chercher la solution en 0 de la dérivé de la loi normale fait buger 
+## les sorties changent et ne sont plus cohérentes
+
+## Ce que je peux faire c'est je regarde manuellement ou la courbe
+## devient asymptote (coté négatif) et je considère que c'est min 
+## donc que de min à -inf ya que des 0
+
+#esp= Symbol('esp')
+#et= Symbol('et')
+
+#print(diff(loi_normale(x,10,50))) # dérivé
+
+#an = Symbol('an')
+#equation = loi_normale(x,50,10)
+#y = Symbol('y')
+#print(solve(diff(loi_normale(y,10,50))))
