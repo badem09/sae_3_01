@@ -74,7 +74,7 @@
                             break;
 
                             case "exist" :
-                            echo "<p class='err'>Erreur : Le nom d'utilisateur est déjà éxistant.</p>";
+                            echo "<p class='err'>Erreur : Nom d'utilisateur déjà éxistant.</p>";
                             break;
                         }
                     } ?>
