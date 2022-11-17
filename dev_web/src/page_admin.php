@@ -1,3 +1,18 @@
+<?php
+
+    //On regarde si une cession existe.
+    session_start();
+    //Si aucune cession existe, on renvois sur la page de connexion.
+    if(!isset($_SESSION['user'])) {
+        header('Location: connexion.php');
+    //Si c'est un simple utilisateur, on renvois sur la page de connexion.
+    }elseif($_SESSION['user']['type_user'] == 'user'){
+        header('Location: connexion.php');
+        die();
+    }
+ 
+?>
+
 <!doctype html>
 <html lang="fr">
     <head>
