@@ -34,7 +34,7 @@ def loi_normale(x,esp,et):
 
     return res
 
-def methode_rectangle_gauche(a,b,esp,et):
+def methode_rectangle_gauche(esp,et,b,a=0):
     sum = 0
     n = ((b - a) ** 2 ) ** 0.5 
     for i in range(a,b):
@@ -42,14 +42,14 @@ def methode_rectangle_gauche(a,b,esp,et):
     return  ((b - a) / n) * sum #n == ??
 
 
-def methode_rectangle_droite(a,b,esp,et):
+def methode_rectangle_droite(esp,et,b,a=0):
     sum = 0
     n = ((b - a) ** 2 ) ** 0.5 
     for i in range(a,b+1):
         sum += loi_normale(i-1 ,esp,et) #* i
     return  ((b - a) / n) * sum #n == ??
 
-def methode_rectangle_medians(a,b,esp,et):
+def methode_rectangle_medians(esp,et,b,a=0):
     sum = 0
     n = ((b - a) ** 2 ) ** 0.5 
     for i in range(a,b):
@@ -57,7 +57,7 @@ def methode_rectangle_medians(a,b,esp,et):
         sum+= loi_normale(ni,esp,et)
     return ((b - a) / n) * sum
 
-def methode_trapeze(a,b,esp,et):
+def methode_trapeze(esp,et,b,a=0):
     sum = 0
     n = ((b - a) ** 2 ) ** 0.5 
     facteur = (b - a) / (2 * n)
@@ -70,7 +70,7 @@ def methode_trapeze(a,b,esp,et):
     res = facteur * (fa + fb + 2*sum)
     return res
 
-def methode_Simpson(a,b,esp,et):
+def methode_Simpson(esp,et,b,a=0):
     sum1 = 0
     sum2 = 0
     n = ((b - a) ** 2 ) ** 0.5 
@@ -98,11 +98,11 @@ p = [1/4, 1/2, 1/4]
 #print(esperance(x,p))
 #print(loi_normale(15, esperance(x,p), ecart_type(x,p)))
 
-print("rectangle gauche : " ,methode_rectangle_gauche(0,25,10,50))
-print("rectangle droits : " , methode_rectangle_droite(0,25,10,50))
-print("rectangle medians : " , methode_rectangle_medians(0,25,10,50))
-print("trapèzes : " , methode_trapeze(0,25,10,50))
-print("simpson : " , methode_Simpson(0,25,10,50))
+print("rectangle gauche : " ,methode_rectangle_gauche(10,50,25))
+print("rectangle droits : " , methode_rectangle_droite(10,50,25))
+print("rectangle medians : " , methode_rectangle_medians(10,50,25))
+print("trapèzes : " , methode_trapeze(10,50,25))
+print("simpson : " , methode_Simpson(10,50,25))
 
 #Pour les tests :
 #site reference : https://www.codabrainy.com/loi-normale/10/50/0/25/ 
