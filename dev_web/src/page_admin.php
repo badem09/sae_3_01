@@ -54,7 +54,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="connexion.php"><b>Se Deconnecter</b></a>
+                    <a href="connexion.php"><b>Se Déconnecter</b></a>
                 </li>
 
             </ul>
