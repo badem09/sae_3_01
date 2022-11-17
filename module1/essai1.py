@@ -1,4 +1,5 @@
 from math import * 
+from sympy import *
 
 
 def esperance(n,p):
@@ -98,11 +99,11 @@ p = [1/4, 1/2, 1/4]
 #print(esperance(x,p))
 #print(loi_normale(15, esperance(x,p), ecart_type(x,p)))
 
-print("rectangle gauche : " ,methode_rectangle_gauche(10,50,25))
+"""print("rectangle gauche : " ,methode_rectangle_gauche(10,50,25))
 print("rectangle droits : " , methode_rectangle_droite(10,50,25))
 print("rectangle medians : " , methode_rectangle_medians(10,50,25))
 print("trapèzes : " , methode_trapeze(10,50,25))
-print("simpson : " , methode_Simpson(10,50,25))
+print("simpson : " , methode_Simpson(10,50,25))"""
 
 #Pour les tests :
 #site reference : https://www.codabrainy.com/loi-normale/10/50/0/25/ 
@@ -127,3 +128,19 @@ print("simpson : " , methode_Simpson(10,50,25))
 #equation = loi_normale(x,50,10)
 #y = Symbol('y')
 #print(solve(diff(loi_normale(y,10,50))))
+"""
+x= Symbol('x')
+f= 1/  (2 * pi)**0.5 * exp(-(x**2)/2 )
+print(integrate(f,(x,-inf,2)))"""
+
+#print("rectangle gauche : " ,methode_rectangle_gauche(1,1,2,-100000))
+
+def f(x):
+   return 1/  (2 * pi)**0.5 * exp(-(x**2)/2 )
+
+from matplotlib.pyplot import plot, show, legend
+x= Symbol('x')
+ab = [ i for i in range(-10,10) ]
+ord = [ f(a) for a in range(-10,10) ]
+plot(ab,ord,color='orange')
+show()
