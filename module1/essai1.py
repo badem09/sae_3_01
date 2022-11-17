@@ -36,29 +36,31 @@ def loi_normale(x,esp,et):
 
 def methode_rectangle_gauche(a,b,esp,et):
     sum = 0
-
+    n = ((b - a) ** 2 ) ** 0.5 
     for i in range(a,b):
         sum += loi_normale(i-1 ,esp,et) #* i
-    return  sum #n == ??
+    return  ((b - a) / n) * sum #n == ??
 
 
 def methode_rectangle_droite(a,b,esp,et):
     sum = 0
-
+    n = ((b - a) ** 2 ) ** 0.5 
     for i in range(a,b+1):
         sum += loi_normale(i-1 ,esp,et) #* i
-    return  sum #n == ??
+    return  ((b - a) / n) * sum #n == ??
 
 def methode_rectangle_medians(a,b,esp,et):
     sum = 0
+    n = ((b - a) ** 2 ) ** 0.5 
     for i in range(a,b):
         ni = (i + i+1) / 2
         sum+= loi_normale(ni,esp,et)
-    return sum
+    return ((b - a) / n) * sum
 
 def methode_trapeze(a,b,esp,et):
     sum = 0
-    facteur = (b - a) / (2 * (b-a))
+    n = ((b - a) ** 2 ) ** 0.5 
+    facteur = (b - a) / (2 * n)
     fa = loi_normale(a,esp,et)
     fb = loi_normale(b,esp,et)
 
@@ -71,7 +73,7 @@ def methode_trapeze(a,b,esp,et):
 def methode_Simpson(a,b,esp,et):
     sum1 = 0
     sum2 = 0
-    n = (b-a)
+    n = ((b - a) ** 2 ) ** 0.5 
   
     facteur = (b - a) / (6 * n)
     fa = loi_normale(a,esp,et)
