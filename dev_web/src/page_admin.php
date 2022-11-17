@@ -1,3 +1,17 @@
+<?php
+
+    //On regarde si une cession existe.
+    session_start();
+    //On vérifie si une cession existe.
+    if(isset($_SESSION['user'])) {
+        //Si c'est un simple utilisateur, on renvois sur la page de connexion.
+        if($_SESSION['user']['type_user'] == 'user'){
+            header('Location: connexion.php');
+            die();
+        }
+    } 
+?>
+
 <!doctype html>
 <html lang="fr">
     <head>
@@ -17,11 +31,11 @@
             <ul id="ul-container">
 
                 <li class ="nav-logo">
-                    <a href="index.html"><img class ="nav-logo" src="img\logo_t.png" alt="logo_SiteWeb_X"></a>
+                    <a href="index.php"><img class ="nav-logo" src="img\logo_t.png" alt="logo_SiteWeb_X"></a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="index.html"><b>Page d'accueil</b></a>
+                    <a href="index.php"><b>Page d'accueil</b></a>
                 </li>
 
                 <li class="nav-item">
@@ -39,7 +53,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="connexion.php"><b>Se Deconnecter</b></a>
+                    <a href="connexion.php"><b>Se Déconnecter</b></a>
                 </li>
 
             </ul>

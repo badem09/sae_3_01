@@ -17,11 +17,11 @@
             <ul id="ul-container">
 
                 <li class ="nav-logo">
-                    <a href="index.html"><img class ="nav-logo" src="img\logo_t.png" alt="logo_SiteWeb_X"></a>
+                    <a href="index.php"><img class ="nav-logo" src="img\logo_t.png" alt="logo_SiteWeb_X"></a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="index.html"><b>Page d'accueil</b></a>
+                    <a href="index.php"><b>Page d'accueil</b></a>
                 </li>
 
                 <li class="nav-item">
@@ -34,9 +34,32 @@
                     </ul>
                 </li>
 
-                <li class="nav-item">
-                    <a href="connexion.php"><b>Se connecter</b></a>
-                </li>
+                <?php
+
+                    //On regarde si une cession existe.
+                    session_start();
+                    //Si aucune cession existe, on renvois sur la page de connexion.
+                    if(isset($_SESSION['user'])) {
+                        if($_SESSION['user']['type_user'] != 'user'){
+                            echo"
+                            <li class='nav-item'>
+                                <a href='page_admin.php'><b>Administration</b></a>
+                            </li>
+
+                            <li class='nav-item'>
+                                <a href='deconnexion.php'><b>Se déconnecter</b></a>
+                            </li>
+                        ";
+                            }
+                        }else{
+                            echo "
+                                <li class='nav-item'>
+                                    <a href='connexion.php'><b>Se connecter</b></a>
+                                </li>
+                            ";
+                    }
+                 
+                ?>
 
             </ul>
         </nav>
@@ -74,7 +97,7 @@
                             break;
 
                             case "exist" :
-                            echo "<p class='err'>Erreur : Le nom d'utilisateur est déjà éxistant.</p>";
+                            echo "<p class='err'>Erreur : Nom d'utilisateur déjà éxistant.</p>";
                             break;
                         }
                     } ?>
