@@ -6,7 +6,12 @@
     //on détruit la session et on ferme la page.
     if(isset($_SESSION['user'])) {
         header('Location: connexion.php');
-        session_destroy();
+          //On vide la session
+          $_SESSION = array();
+          //Destruction de la session
+          session_destroy();
+          //Destruction du tableau de session
+          unset($_SESSION);
         die();
     }
 
