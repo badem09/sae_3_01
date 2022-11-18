@@ -99,6 +99,7 @@
                     </div>
                     <p><input type='submit' name='Envoyer' value='Se connecter'></p>
                     <p>Toujours pas inscrit ? <a id='link-sincrip' href='inscription.php'>C'est ici !</a></p>
+                    <p>Mot de passe oublié ? <a id='link-sincrip' href='404.html'>C'est par là !</a></p>
                 </div>
             </form>
         </div>
