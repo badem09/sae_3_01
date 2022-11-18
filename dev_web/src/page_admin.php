@@ -1,6 +1,6 @@
 <?php
 
-    //On regarde si une cession existe.
+    //On démarre une cession existe.
     session_start();
     //On vérifie si une cession existe.
     if(isset($_SESSION['user'])) {
@@ -9,7 +9,10 @@
             header('Location: connexion.php');
             die();
         }
-    } 
+    }else{
+        header('Location: connexion.php');
+        die();
+    }
 ?>
 
 <!doctype html>
@@ -53,7 +56,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="connexion.php"><b>Se Déconnecter</b></a>
+                    <a href="deconnexion.php"><b>Se Déconnecter</b></a>
                 </li>
 
             </ul>
