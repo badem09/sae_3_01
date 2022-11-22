@@ -34,7 +34,7 @@
                             session_start();
                             $_SESSION["user"] = ["login"=>$login,"type_user"=>$data['type_user']];
                             //On le redirige ver une page (temporaire) qui lui indique qu'il est bien connecté et on ferme la page.
-                            header('Location: final.php');
+                            header('Location: page_user.php');
                             die();
                         }
                     }else{
