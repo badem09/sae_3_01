@@ -71,6 +71,11 @@
 			<p class="pacc_mod_pres">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 		</div>
 
+		<div class="presentation">
+			<h2>Texte explicatif</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas velit ex, vel sodales tellus commodo non. Vivamus aliquet metus vel purus semper tristique. Proin ipsum justo, aliquam nec faucibus nec, bibendum nec turpis.</p>
+		</div>
+
 		<div class="pacc_mod_gauche"> 
 			<div class="pacc_mod_image">
 				<img src="img\carre_page_acceuil.png" alt="image_EnCoursDeDeveloppemnt">
