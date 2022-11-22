@@ -97,6 +97,17 @@ li:hover .nav-item-services{
     box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 24px;
 }
 
+/* ####################### Texte explicatif ####################### */
+
+.presentation {
+    text-align: center;
+    padding: 60px 200px;
+}
+
+.presentation h2 {
+    color: #000A7E;
+}
+
 /* ########### Page acceuil module gauche presentation ########### */
 .pacc_mod_pres{
     text-align: center;
@@ -122,7 +133,6 @@ li:hover .nav-item-services{
     color: white;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
     font-size: 12px;
 }
 
@@ -168,6 +178,7 @@ li:hover .nav-item-services{
     padding: 75px 200px;
     display: flex;
     text-align: right;
+    display: flex;
 }
 
 /* ################# Footer pour toutes les pages ################# */
