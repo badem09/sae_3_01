@@ -56,6 +56,10 @@
                 </li>
 
                 <li class="nav-item">
+                    <a href="page_user.php"><b>Mon Espace</b></a>
+                </li>
+
+                <li class="nav-item">
                     <a href="deconnexion.php"><b>Se Déconnecter</b></a>
                 </li>
 
