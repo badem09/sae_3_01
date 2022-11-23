@@ -57,7 +57,7 @@
     </div>
 
 		<div class='container-centrer'>
-			<form action='inscription_traitement.php' method='post'>
+			<form action='modif_mdp_traitement.php' method='post'>
 	        <div class='container-insciption-connexion'>
 	            <h2>Modifier mon MDP</h2>
 	            <?php
@@ -65,45 +65,50 @@
 	            if(isset($_GET['err'])){
 	                //On cherche à quoi elle correspond et on l'affiche.
 	                switch($_GET['err']){
-	                    case "mdp_non_identique" :
-	                    echo "<p class='err'>Erreur : Mots de passe non identique.</p>";
-	                    break;
-
-	                    case "confirmation_vide" :
-	                    echo "<p class='err>Erreur : La confirmation est vide.</p>";
+	                    case "a_mdp_vide" :
+	                    echo "<p class='err'>Erreur : Ancien mot de passe vide.</p>";
 	                    break;
 
 	                    case "mdp_vide" :
-	                    echo "<p class='err'>Erreur : Le mot de passe est vide.</p>";
+	                    echo "<p class='err'>Erreur : Nouveau mot de passe vide.</p>";
 	                    break;
 
-	                    case "login_vide" :
-	                    echo "<p class='err'>Erreur : Le login est vide.</p>";
+	                    case "mdp_retype_vide" :
+	                    echo "<p class='err'>Erreur : Confirmation nouveau mot de passe vide.</p>";
 	                    break;
 
-	                    case "captcha_vide" :
-	                    echo "<p class='err'>Erreur : Le Captcha est vide.</p>";
+	                    case "non_identique" :
+	                    echo "<p class='err'>Erreur : Les nouveau mot de passe ne correspondent pas.</p>";
 	                    break;
 
-	                    case "captcha_erroné" :
-	                    echo "<p class='err'>Erreur : Le captcha est erroné.</p>";
+	                    case "a_mdp_faux" :
+	                    echo "<p class='err'>Erreur : Ancien mot de passe érroné.</p>";
 	                    break;
 
-	                    case "exist" :
-	                    echo "<p class='err'>Erreur : Nom d'utilisateur déjà éxistant.</p>";
+	                    case "captcha_faux" :
+	                    echo "<p class='err'>Erreur : Le Captcha est érroné.</p>";
 	                    break;
 	                }
-	            } ?>
+	            }
+	            if(isset($_GET['succes'])){
+	                //On cherche à quoi elle correspond et on l'affiche.
+	                switch($_GET['succes']){
+	                    case "succes" :
+	                    echo "<p class='succes'>Succès: Mot de passe modifié !</p>";
+	                    break;
+	                }
+	            }
+	            ?>
 	            <div class='inputs'>
-	            		<p class='titre-form'>Mot de passe</p>
+	            		<p class='titre-form'>Ancien mot de passe</p>
 	                <label id="label-register-password" for="register-password">
 	                <input id='register-password' type='password' name='a_mdp' placeholder='ex : M0t_D3_P@55€'/>
 
-	                <p class='titre-form'>Mot de passe</p>
+	                <p class='titre-form'>Nouveau mot de passe</p>
 	                <label id="label-register-password" for="register-password">
 	                <input id='register-password' type='password' name='mdp' placeholder='ex : N0Uv€@U_M0t_D3_P@55€'/>
 	                
-	                <p class='titre-form'>Confirmer Mot de passe</p>
+	                <p class='titre-form'>Confirmer nouveau Mot de passe</p>
 	                <label id="label-register-password-2" for="register-password-2">
 	                <input id='register-password-2' type='password' name='mdp_retype' placeholder='ex : N0Uv€@U_M0t_D3_P@55€'/>
 	                
