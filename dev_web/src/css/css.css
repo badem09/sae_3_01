@@ -269,6 +269,16 @@ footer {
     font-weight: bold;
 }
 
+.succes {
+    border: 1px solid #54D661;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #54D661;
+    padding: 12px;
+    color: white;
+    font-weight: bold;
+}
+
 .inputs input[type=text],[type=password] {
     width: 100%;
     padding: 12px 20px;
