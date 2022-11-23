@@ -36,28 +36,42 @@
 
 				<?php
 
-				    //On regarde si une cession existe.
-				    session_start();
-				    //Si aucune cession existe, on renvois sur la page de connexion.
-				    if(isset($_SESSION['user'])) {
-					    if($_SESSION['user']['type_user'] != 'user'){
-					        echo"
-					        <li class='nav-item'>
-                    <a href='page_admin.php'><b>Administration</b></a>
-	                </li>
+					//On regarde si une cession existe.
+          session_start();	 
+			    //Si aucune cession existe, on renvois sur la page de connexion.
+			    if(isset($_SESSION['user'])) {
+				    if($_SESSION['user']['type_user'] != 'user'){
+				        echo"
+				        <li class='nav-item'>
+                  <a href='page_admin.php'><b>Administration</b></a>
+                </li>
 
-	                <li class='nav-item'>
-										<a href='deconnexion.php'><b>Se déconnecter</b></a>
-									</li>
-	                ";
-				        }
-				    }else{
+                <li class='nav-item'>
+	              	<a href='page_user.php'><b>Mon Espace</b></a>
+	            	</li>
+
+                <li class='nav-item'>
+									<a href='deconnexion.php'><b>Se déconnecter</b></a>
+								</li>
+                ";
+			      }else{
 		        	echo "
-							<li class='nav-item'>
-								<a href='connexion.php'><b>Se connecter</b></a>
+			        <li class='nav-item'>
+	              <a href='page_user.php'><b>Mon Espace</b></a>
+	            </li>
+
+	            <li class='nav-item'>
+								<a href='deconnexion.php'><b>Se déconnecter</b></a>
 							</li>
 		        	";
 		        }
+			    }else{
+	        	echo "
+						<li class='nav-item'>
+							<a href='connexion.php'><b>Se connecter</b></a>
+						</li>
+	        	";
+	        }
 				 
 				?>
 
