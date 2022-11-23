@@ -44,9 +44,44 @@
 					</ul>
 				</li>
 
-				<li class="nav-item">
-					<a href="deconnexion.php"><b>Se déconnecter</b></a>
-				</li>
+				<?php
+
+			    //Si aucune cession existe, on renvois sur la page de connexion.
+			    if(isset($_SESSION['user'])) {
+				    if($_SESSION['user']['type_user'] != 'user'){
+				        echo"
+				        <li class='nav-item'>
+                  <a href='page_admin.php'><b>Administration</b></a>
+                </li>
+
+                <li class='nav-item'>
+	              	<a href='page_user.php'><b>Mon Espace</b></a>
+	            	</li>
+
+                <li class='nav-item'>
+									<a href='deconnexion.php'><b>Se déconnecter</b></a>
+								</li>
+                ";
+			      }else{
+		        	echo "
+			        <li class='nav-item'>
+	              <a href='page_user.php'><b>Mon Espace</b></a>
+	            </li>
+
+	            <li class='nav-item'>
+								<a href='deconnexion.php'><b>Se déconnecter</b></a>
+							</li>
+		        	";
+		        }
+			    }else{
+	        	echo "
+						<li class='nav-item'>
+							<a href='connexion.php'><b>Se connecter</b></a>
+						</li>
+	        	";
+	        }
+				 
+				?>
 
 			</ul>
 		</nav>
@@ -120,6 +155,7 @@
 	                <label id="label-register-captcha" for="register-captcha">
 	                <input id='register-captcha' type='text' name='captcha' placeholder='ex : 7u5T5g3'/>
 	                <p><input type='submit' name='Envoyer' value='Modifier'></p>
+	                <p>Mot de passe oublié ? <a id='link-sincrip' href='404.html'>C'est par là !</a></p>
 	            </div>
 	        </div>
 	    </form>
