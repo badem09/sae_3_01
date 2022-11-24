@@ -1,6 +1,21 @@
 import fonctions_integrales as fi
+import sys
 
 def rectangles_gauches(m, et, t,n):
     return fi.methode_rectangle_gauche(m, et, t,n)
 
-print("rectangles gauches : " ,rectangles_gauches(3,5,2.5,1000000))
+#print(sys.argv)
+# faire des tests pour que 
+try:
+    m = float(sys.argv[1])
+    et = float(sys.argv[2])
+    t = float(sys.argv[3])
+    n = 1000000
+
+    print(rectangles_gauches(m,et,t,n))
+
+except:
+    print("L'une des valeurs rentrée n'est pas au bon format")
+
+
+
