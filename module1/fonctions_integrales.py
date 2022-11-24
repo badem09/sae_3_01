@@ -17,7 +17,7 @@ def loi_normale(x, m, et):
 
     return res
 
-def methode_rectangle_gauche2(m, et, t,n):
+def methode_rectangle_gauche(m, et, t,n):
     """ 
     Calcul de l'intégrale correspondant à P(X<t) avec 
     la méthode des rectangles gauches
@@ -32,7 +32,7 @@ def methode_rectangle_gauche2(m, et, t,n):
     """
     sum = h = 0
     if t<m: # si t est "avant" m (P(t<X<m)), on calcule "l'inverse" (P(m<X<T))
-        return 1 - methode_rectangle_gauche2(t,et,m,n)
+        return 1 - methode_rectangle_gauche(t,et,m,n)
     
     a = m
     b = t
@@ -43,7 +43,7 @@ def methode_rectangle_gauche2(m, et, t,n):
     return sum*pas + 0.5 # +0.5 car P(X<t) = P(-inf<X<m) + P(m<X<t) et P(-inf<X<m)=0.5
     #Pour plus d'explications, voire le rapport.
 
-def methode_rectangle_droite2(m, et, t,n):
+def methode_rectangle_droite(m, et, t,n):
     """ 
     Calcul de l'intégrale correspondant à P(X<t) avec 
     la méthode des rectangles droits
@@ -58,7 +58,7 @@ def methode_rectangle_droite2(m, et, t,n):
     """
     sum = h = 0
     if t<m:
-        return 1 - methode_rectangle_gauche2(t,et,m,n)
+        return 1 - methode_rectangle_gauche(t,et,m,n)
     a = m
     b = t
     pas = (b-a)/n
@@ -66,7 +66,7 @@ def methode_rectangle_droite2(m, et, t,n):
         sum += loi_normale(k, m, et) 
     return sum*pas + 0.5
 
-def methode_rectangle_medians2(m, et, t,n):
+def methode_rectangle_medians(m, et, t,n):
     """ 
     Calcul de l'intégrale correspondant à P(X<t) avec 
     la méthode des rectangles médians
@@ -81,7 +81,7 @@ def methode_rectangle_medians2(m, et, t,n):
     """
     sum = h = 0
     if t<m:
-        return 1 - methode_rectangle_gauche2(t,et,m,n)
+        return 1 - methode_rectangle_gauche(t,et,m,n)
 
     a = m
     b = t
@@ -92,7 +92,7 @@ def methode_rectangle_medians2(m, et, t,n):
         sum+= h 
     return sum*pas + 0.5
 
-def methode_trapeze2(m, et, t,n):
+def methode_trapeze(m, et, t,n):
     """ 
     Calcul de l'intégrale correspondant à P(X<t) avec 
     la méthode des trapèzes
@@ -107,7 +107,7 @@ def methode_trapeze2(m, et, t,n):
     """
     sum = h = 0
     if t<m:
-        return 1 - methode_trapeze2(t,et,m,n)
+        return 1 - methode_trapeze(t,et,m,n)
     a = m
     b = t
     pas = (b-a)/n
@@ -119,7 +119,7 @@ def methode_trapeze2(m, et, t,n):
        
     return ((b-a) / (2*n) * (fa + fb + 2*sum)) + 0.5
 
-def methode_simpson2(m, et, t,n):
+def methode_simpson(m, et, t,n):
     """ 
     Calcul de l'intégrale correspondant à P(X<t) avec 
     la méthode de Simpson
@@ -134,7 +134,7 @@ def methode_simpson2(m, et, t,n):
     """
     sum1 = sum2 = 0
     if t<m:
-        return 1 - methode_simpson2(t,et,m,n)
+        return 1 - methode_simpson(t,et,m,n)
     a = m
     b = t
     pas = (b-a)/(n)
@@ -155,19 +155,20 @@ def methode_simpson2(m, et, t,n):
     return ((b-a)/(6*n)) * (fa + fb + 2*sum1 + 4*sum2) + 0.5
 
     
+if __name__ == "main":
 
-"""A tester sur Ugo
-print("rectangle gauche : " ,methode_rectangle_gauche2(1,5,2.5,1000000))
-print("rectangle droits : " , methode_rectangle_droite2(1,5,2.5,1000000))
-print("rectangle medians : " , methode_rectangle_medians2(1,5,2.5,1000000))
-print("rectangle trapeze2 : " , methode_trapeze2(1,5,2.5,1000000))
-print("rectangle simpson2: " , methode_simpson2(1,5,2.5,1000000))"""
+    """A tester sur Ugo
+    print("rectangle gauche : " ,methode_rectangle_gauche2(1,5,2.5,1000000))
+    print("rectangle droits : " , methode_rectangle_droite2(1,5,2.5,1000000))
+    print("rectangle medians : " , methode_rectangle_medians2(1,5,2.5,1000000))
+    print("rectangle trapeze2 : " , methode_trapeze2(1,5,2.5,1000000))
+    print("rectangle simpson2: " , methode_simpson2(1,5,2.5,1000000))"""
 
-print("rectangle gauche : " ,methode_rectangle_gauche2(3,5,2.5,1000000))
-print("rectangle droits : " , methode_rectangle_droite2(3,5,2.5,1000000))
-print("rectangle medians : " , methode_rectangle_medians2(3,5,2.5,1000000))
-print("rectangle trapeze2 : " , methode_trapeze2(3,5,2.5,1000000))
-print("rectangle simpson2: " , methode_simpson2(3,5,2.5,1000000))
+    print("rectangle gauche : " ,methode_rectangle_gauche(3,5,2.5,1000000))
+    print("rectangle droits : " , methode_rectangle_droite(3,5,2.5,1000000))
+    print("rectangle medians : " , methode_rectangle_medians(3,5,2.5,1000000))
+    print("rectangle trapeze : " , methode_trapeze(3,5,2.5,1000000))
+    print("rectangle simpson: " , methode_simpson(3,5,2.5,1000000))
 
 
 
