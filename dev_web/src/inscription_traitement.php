@@ -36,12 +36,12 @@
                                     //On définit le type de valeur à entrer et on execute la requete.
                                     mysqli_stmt_bind_param($insp,'ss', $login, $mdpfin);
                                     mysqli_stmt_execute($insp);
-                                    //On ouvre une nouvelle session.
-                                    session_start();
                                     //On selectionne dans la base de donnée "login" et "type_user" pour ête sur qu'ils sont bien entré.
                                     $Requete = mysqli_query($connexion,"SELECT login, type_user FROM users WHERE login = '".$login."' AND mdp = '".md5($mdp)."'");
                                     //On récupere les valeurs de la requete.
                                     $data = $Requete->fetch_assoc();
+                                    //On ouvre une nouvelle session.
+                                    session_start();
                                     //On définit les valeurs que l'on veut stocker dans la session.
                                     $_SESSION["user"] = ["login"=>$login,"type_user"=>$data['type_user']];
                                     //On ferme la connection avec la base de données.
