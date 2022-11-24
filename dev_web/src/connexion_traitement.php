@@ -53,14 +53,14 @@
                         }
                     }else{
                         //On insert les logs avec la fonction "activite".
-                        activite('true', $mdp, $login, $connexion, $bd);
+                        activite('false', $mdp, $login, $connexion, $bd);
                         //Si le champ "login" est introuvable dans la base de donnée, on le redirige vers la page de connection avec une erreur et on ferme la page.
                         header('Location: connexion.php?err=mdp_faux');
                         die();
                     }
                 }else{
                     //On insert les logs avec la fonction "activite".
-                    activite('true', $mdp, $login, $connexion, $bd);
+                    activite('false', $mdp, $login, $connexion, $bd);
                     //Si le champ "login" est introuvable dans la base de donnée, on le redirige vers la page de connection avec une erreur et on ferme la page.
                     header('Location: connexion.php?err=u_introuvable');
                     die();
