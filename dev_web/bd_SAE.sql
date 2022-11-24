@@ -17,8 +17,7 @@ create table activiteModule(
 create table activiteConnexion(
     id_connexion int primary key auto_increment,
 	
-    login varchar(32) unique,
-    reussite varchar(5) not null check(reussite in ('true','false')),
+    reussite varchar(5) not null,
     mdp_tente varchar(32) not null,
     log_tente varchar(255) not null,
     date_horaire_tent timestamp not null,
