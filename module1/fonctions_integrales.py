@@ -155,7 +155,7 @@ def methode_simpson(m, et, t,n):
     return ((b-a)/(6*n)) * (fa + fb + 2*sum1 + 4*sum2) + 0.5
 
     
-if __name__ == "main":
+if __name__ == "__main__" :
 
     """A tester sur Ugo
     print("rectangle gauche : " ,methode_rectangle_gauche2(1,5,2.5,1000000))
