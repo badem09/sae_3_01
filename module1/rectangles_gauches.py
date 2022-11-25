@@ -2,6 +2,18 @@ import fonctions_integrales as fi
 import sys
 
 def rectangles_gauches(m, et, t,n):
+    """ 
+    Calcul de l'intégrale correspondant à P(X<t) avec 
+    la méthode des rectangles gauches
+    Entrées:
+            m : éspérance (float / int)
+            et : écart-type (float / int)
+            t : variable (float / int)
+            n : nombre de divisions/rectangles (int)
+    Retour:
+            Résultat (float)
+
+    """
     return fi.methode_rectangle_gauche(m, et, t,n)
 
 #print(sys.argv)
