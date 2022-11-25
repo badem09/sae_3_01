@@ -77,19 +77,18 @@
 <?php
 
 if (isset($_POST['esp'], $_POST['et'], $_POST['t'])){
-    $esp = $_POST["esp"];
+    $esp = $_POST["esp"]; #récupere les entrées
     $et = $_POST["et"] ;
     $t = $_POST["t"];
     $fonction = $_POST["choix_methode"] ;
 
-
-
     $command = 'python'. ' '. 'python_module1/' . $fonction . ' '
-        . $esp . ' ' . $et . ' ' .$t . ' ' ;
+        . $esp . ' ' . $et . ' ' .$t . ' ' ; # Préparation de la commande 
 
-    $result = shell_exec($command);
-    $float_value = (float) $result;
-    if (strval($float_value) == $result){ # si le résultat est un nb a virgule
+    $result = shell_exec($command); # execution de la commande dans un shell 'imaginaire'
+                                    # et on récupere le resultat
+    $float_value = (float) $result; #conversion du resultat en float
+    if (strval($float_value) == $result){ # si le résultat est bien un nb a virgule (float)
         echo 'P( ' . $t . ' < X ) = ' . $result;
     }
     else{ #sinon erreur fournie par script python
