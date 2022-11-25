@@ -24,7 +24,7 @@ try:
     t = float(sys.argv[3])
     n = 1000000
 
-    print(rectangles_medians(m,et,t,n))
+    print(round(rectangles_medians(m,et,t,n),5))
 
 except:
     print("L'une des valeurs rentrée n'est pas au bon format")

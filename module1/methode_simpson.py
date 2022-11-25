@@ -26,7 +26,7 @@ try:
     t = float(sys.argv[3])
     n = 1000000
 
-    print(methode_simpson(m,et,t,n))
+    print(round(methode_simpson(m,et,t,n),5))
 
 except:
     print("L'une des valeurs rentrée n'est pas au bon format")
