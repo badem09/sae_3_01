@@ -141,61 +141,47 @@ def methode_simpson(m, et, t,n):
     fa = loi_normale(a,m,et)
     fb = loi_normale(b,m,et)
 
-    for k1 in arange(a+2*pas,b-2*pas,2*pas):# i pair
+    #for k1 in arange(a+2*pas,b-2*pas,2*pas):# i pair
+    for k1 in arange(a+1,n):# i pair
         e1 = (k1*(b-a)) / n
         e1 =+ a 
         sum1+= loi_normale(e1,m,et)
 
-    for k2 in arange(a+pas, b-2*pas, 2*pas):#i impair
+    #for k2 in arange(a+pas, b-2*pas, 2*pas):#i impair
+    for k2 in arange(a, n):#i impair
         e2 = ((2*k2 +1) * (b-a)) / (2 * n)
         e2 =+ a
         sum2+= loi_normale(e2,m,et)
 
     return ((b-a)/(6*n)) * (fa + fb + 2*sum1 + 4*sum2) + 0.5
 
-def sim(m, et, t,n):
-    sum1 = 0
-    if t<m:
-        return 1 - sim(t,et,m,n)
-    a = m
-    b = t
-    pas = ((b-a)/n)
-    fa = loi_normale(a,m,et)
-    fb = loi_normale(b,m,et)
-
-    for k in arange(a+pas,b-2*pas,pas):
-        sum1+= loi_normale(k,m,et) + 4 * loi_normale(k+pas,m,et) + loi_normale(k+2*pas,m,et)
-
-    return pas/3 * sum1 + 0.5
-
 
     
 if __name__ == "__main__" :
-    """
-        print("rectangle gauche : " ,methode_rectangle_gauche(1,5,2.5,1000000))
-        print("rectangle droits : " , methode_rectangle_droite(1,5,2.5,1000000))
-        print("rectangle medians : " , methode_rectangle_medians(1,5,2.5,1000000))
-        print("rectangle trapeze2 : " , methode_trapeze(1,5,2.5,1000000))
-        print("rectangle simpson2: " , methode_simpson(1,5,2.5,1000000))
-        print("rectangle simpson2: " , simpson(1,5,2.5,1000000))
-    """
+    
+    print("rectangle gauche : " ,methode_rectangle_gauche(1,5,2.5,1000000))
+    print("rectangle droits : " , methode_rectangle_droite(1,5,2.5,1000000))
+    print("rectangle medians : " , methode_rectangle_medians(1,5,2.5,1000000))
+    print("rectangle trapeze2 : " , methode_trapeze(1,5,2.5,1000000))
+    print("rectangle simpson2: " , methode_simpson(1,5,2.5,10000))
+    
     print()
 
     print("rectangle gauche : " ,methode_rectangle_gauche(3,5,2.5,1000000))
     print("rectangle droits : " , methode_rectangle_droite(3,5,2.5,1000000))
     print("rectangle medians : " , methode_rectangle_medians(3,5,2.5,1000000))
     print("rectangle trapeze : " , methode_trapeze(3,5,2.5,1000000))
-    print("rectangle simpson: " , methode_simpson(3,5,2.5,1000000))
+    print("rectangle simpson: " , methode_simpson(3,5,2.5,100))
 
     print()
-"""
+
     print("rectangle gauche : " ,methode_rectangle_gauche(4,2,3,1000000))
     print("rectangle droits : " , methode_rectangle_droite(4,2,3,1000000))
     print("rectangle medians : " , methode_rectangle_medians(4,2,3,1000000))
     print("rectangle trapeze : " , methode_trapeze(4,2,3,1000000))
-    print("rectangle simpson: " , methode_simpson(4,2,3,1000000))
+    print("rectangle simpson: " , methode_simpson(4,2,3,10000))
 
-"""
+
 
 
 
