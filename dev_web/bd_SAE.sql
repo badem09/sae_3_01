@@ -21,5 +21,5 @@ create table activiteConnexion(
     mdp_tente varchar(32) not null,
     log_tente varchar(255) not null,
     date_horaire_tent timestamp not null,
-    adr_ip varchar not null
+    adr_ip varchar(32) not null
 );
