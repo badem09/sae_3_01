@@ -96,7 +96,7 @@
         </div>
 
         <div class='container-centrer'>
-            <form name="form_module1" action='module1.php' method='post'>
+            <form name="form_module1" action='' method='post'>
                 <div class='container-module'>
                     <div class='container-form'>
                         <h2>Module 1</h2>
@@ -136,11 +136,11 @@
                                 $et = $_POST["et"] ;
                                 $t = $_POST["t"];
                                 $fonction = $_POST["choix_methode"] ;
-
+                                echo $fonction;
                                 $command = 'python'. ' '. 'python_module1/' . $fonction . ' '
-                                    . $esp . ' ' . $et . ' ' .$t . ' ' ; # Préparation de la commande 
-
-                                $result = shell_exec($command); # execution de la commande dans un shell 'imaginaire'
+                                    . $esp . ' ' . $et . ' ' .$t . ' ' ; # Préparation de la commande
+                                echo $command;
+                                $result = exec($command); # execution de la commande dans un shell 'imaginaire'
                                                                 # et on récupere le resultat
                                 $float_value = (float) $result; #conversion du resultat en float
                                 if (strval($float_value) == $result){ # si le résultat est bien un nb a virgule (float)
@@ -149,6 +149,7 @@
                                 else{ #sinon erreur fournie par script python
                                     echo '<h2>'.$result.'</h2>';
                                 }
+                                echo $result;
 
                             }
                             ?>
