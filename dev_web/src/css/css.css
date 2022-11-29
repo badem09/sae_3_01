@@ -1,9 +1,23 @@
-/* ##################### Barre de Naviguation ##################### */
 body{
     margin: 0;
     font-family: 'Roboto', sans-serif;
 }
 
+/* ######################## Entete accueil ######################## */
+.entete{
+    /*background-image: url("../img/carre_page_acceuil.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: center;
+    opacity: 0.1;*/
+    color: #FFFFFF;
+    background: linear-gradient(to right, rgba(39, 70, 133, 0.8) 0%, rgba(61, 179, 197, 0.8) 100%);
+    text-align: center;
+    padding: 120px 60px 60px 60px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 24px;
+}
+
+/* ########## Barre de Naviguation pour toutes les pages ########## */
 .menu-nav {
     background-color: #FFFFFF;
     margin-top: auto;
@@ -83,22 +97,39 @@ li:hover .nav-item-services{
     padding: 10px 0px;
 }
 
-/* ######################### Page accueil ######################### */
-.entete{
-    /*background-image: url("../img/carre_page_acceuil.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position-y: center;
-    opacity: 0.1;*/
-    color: #FFFFFF;
-    background: linear-gradient(to right, rgba(39, 70, 133, 0.8) 0%, rgba(61, 179, 197, 0.8) 100%);
-    text-align: center;
-    padding: 120px 60px 60px 60px;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 24px;
+/* ################# Footer pour toutes les pages ################# */
+footer {
+    font-family: 'Roboto', sans-serif;
 }
 
-/* ####################### Texte explicatif ####################### */
+.footer{
+    padding:10px;
+    background-color: #FFFFFF;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 24px;
+    color: black;
+}
 
+.footer ul {
+    list-style:none;
+    text-align:center;
+    font-size:18px;
+    line-height:1.6;
+}
+
+.footer li {
+    padding:0 10px;
+}
+
+.footer a {
+    color: black;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #000A7E;
+}
+
+/* ################### Texte explicatif acceuil ################### */
 .presentation {
     text-align: center;
     padding: 60px 200px;
@@ -181,38 +212,6 @@ li:hover .nav-item-services{
     display: flex;
 }
 
-/* ################# Footer pour toutes les pages ################# */
-footer {
-    font-family: 'Roboto', sans-serif;
-}
-
-.footer{
-    padding:10px;
-    background-color: #FFFFFF;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 24px;
-    color: black;
-}
-
-.footer ul {
-    list-style:none;
-    text-align:center;
-    font-size:18px;
-    line-height:1.6;
-}
-
-.footer li {
-    padding:0 10px;
-}
-
-.footer a {
-    color: black;
-    text-decoration: none;
-}
-
-.footer a:hover {
-    color: #000A7E;
-}
-
 /* ########################### Page 404 ########################### */
 .erreur {
     display: flex;
@@ -230,7 +229,7 @@ footer {
     margin: 0px;
 }
 
-/* ################### Connexion / inscription ################### */
+/* ############## Page Connexion / Page Inscription ############## */
 .center {
     margin-left: auto;
     margin-right: auto;
@@ -455,4 +454,22 @@ footer {
 
 .tab tr:hover {
     background-color: #ddd;
+}
+
+/* ######################### Page Module 1 ######################### */
+
+.container-module {
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 24px;
+    display: flex;
+}
+
+.container-form {
+    margin: 20px;
+    width: 350px;
+}
+
+.container-resultat {
+    margin: 20px;
+    width: 350px;
 }
