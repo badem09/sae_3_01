@@ -76,6 +76,7 @@
 
             </ul>
         </nav>
+        
         <div class='container-centrer'>
             <form action='connexion_traitement.php' method='post'>
                 <div class='container-insciption-connexion'>
