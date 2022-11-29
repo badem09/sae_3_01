@@ -28,17 +28,17 @@
 			<ul id="ul-container">
 
 				<li class ="nav-logo">
-					<a href="index.html"><img class ="nav-logo" src="img\logo_t.png" alt="logo_SiteWeb_X"></a>
+					<a href="index.php"><img class ="nav-logo" src="img\logo_t.png" alt="logo_SiteWeb_X"></a>
 				</li>
 
 				<li class="nav-item">
-					<a href="index.html"><b>Page d'accueil</b></a>
+					<a href="index.php"><b>Page d'accueil</b></a>
 				</li>
 
 				<li class="nav-item">
 					<a href="#"><b>Mes Services</b></a>
 					<ul class = "nav-item-services">
-						<li><a href="connexion.php"><b>Module 1</b></a></li>
+						<li><a href="module1.php"><b>Module 1</b></a></li>
 						<li><a href="connexion.php"><b>Module 2</b></a></li>
 						<li><a href="connexion.php"><b>Module 3</b></a></li>
 					</ul>
@@ -47,7 +47,7 @@
 				<?php
 
                     //On regarde si une cession existe.
-                    session_start();   
+                    //session_start();   
                     //Si aucune cession existe, on renvois sur la page de connexion.
                     if(isset($_SESSION['user'])) {
                         if($_SESSION['user']['type_user'] != 'user'){
