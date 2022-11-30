@@ -123,7 +123,7 @@
 
                         </div>
 
-                        <p><input id="label-login-mdp" type="submit" value="Calculer P( t < X ) "/></p>
+                        <p><input id="label-login-mdp" type="submit" value="Calculer P(X<t) "/></p>
                         <p><input id="label-login-mdp" type="reset" value="Annuler"/></p>
                     </div>
                     <div class='container-resultat'>
