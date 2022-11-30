@@ -23,7 +23,7 @@ try:
     m = float(sys.argv[1])
     et = float(sys.argv[2])
     t = float(sys.argv[3])
-    n = 1000000
+    n = 1000
 
     print(round(methode_trapeze(m,et,t,n),5))
 
