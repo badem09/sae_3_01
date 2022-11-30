@@ -22,7 +22,7 @@ try:
     m = float(sys.argv[1])
     et = float(sys.argv[2])
     t = float(sys.argv[3])
-    n = 1000
+    n = 1000000
 
     #print(round(rectangles_droite(m,et,t,n),5))
     # round : qd retour = 0.99900 ... retourne 0.999 po nice 

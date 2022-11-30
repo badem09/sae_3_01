@@ -23,12 +23,13 @@ try:
     m = float(sys.argv[1])
     et = float(sys.argv[2])
     t = float(sys.argv[3])
+
     n = 1000
     retour = rectangles_medians(m,et,t,n)
     #round
     print(rectangles_medians(m,et,t,n))
-    # print(retour[:7])
-    print(round(retour,5))
+    print(retour[:7])
+
 
 
 except:
