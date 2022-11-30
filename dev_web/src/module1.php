@@ -46,9 +46,7 @@
 
 				<?php
 
-                    //On regarde si une cession existe.
-                    //session_start();   
-                    //Si aucune cession existe, on renvois sur la page de connexion.
+                    //On attribus les bon boutons au bonnes personnes.
                     if(isset($_SESSION['user'])) {
                         if($_SESSION['user']['type_user'] != 'user'){
                             echo"
@@ -123,7 +121,7 @@
 
                         </div>
 
-                        <p><input id="label-login-mdp" type="submit" value="Calculer P(X<t) "/></p>
+                        <p><input id="label-login-mdp" type="submit" value="Calculer P( t < X ) "/></p>
                         <p><input id="label-login-mdp" type="reset" value="Annuler"/></p>
                     </div>
                     <div class='container-resultat'>
@@ -136,11 +134,18 @@
                                 $et = $_POST["et"] ;
                                 $t = $_POST["t"];
                                 $fonction = $_POST["choix_methode"] ;
+
+
+                                $command = 'python3'.' '.'python_module1/'.$fonction.' '.$esp.' '.$et.' '.$t .' '; # Préparation de la commande 
+
+                                $result = shell_exec($command); # execution de la commande dans un shell 'imaginaire'
+
                                 #echo $fonction;
                                 $command = "python python_module1/$fonction $esp $et $t "; # Préparation de la commande
                                 #echo $command;
                                 $result = exec($command); # execution de la commande dans un shell 'imaginaire'
-                                                                # et on récupere le resultat
+
+                                # et on récupere le resultat
                                 $float_value = (float) $result; #conversion du resultat en float
                                 if (strval($float_value) == $result){ # si le résultat est bien un nb a virgule (float)
                                     echo 'P(X<' . $t. ') = ' . $result;
