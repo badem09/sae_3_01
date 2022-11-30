@@ -20,9 +20,9 @@
                                 $login_verif = htmlspecialchars($_POST['login']);
                                 if((strlen($login_verif)<32) AND (strlen($login_verif)>2)){
                                     //On selection un login qui correspond à celui renseigé dans le formulaire.
-                                    $verif = mysqli_query($connexion,"SELECT login FROM users WHERE login = '".$login_verif."'");
+                                    $Verif = mysqli_query($connexion,"SELECT login FROM users WHERE login = '".$login_verif."'");
                                     //Si la requete est vide.
-                                    if(mysqli_num_rows($verif) == 0){
+                                    if(mysqli_num_rows($Verif) == 0){
                                         foreach ($_POST as $k => $v){
                                             $$k = $v;
                                         }

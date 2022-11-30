@@ -28,7 +28,7 @@
 					<a href="#"><b>Mes Services</b></a>
 					
 					<ul class = "nav-item-services">
-						<li><a href="connexion.php"><b>Module 1</b></a></li>
+						<li><a href="module1.php"><b>Module 1</b></a></li>
 						<li><a href="connexion.php"><b>Module 2</b></a></li>
 						<li><a href="connexion.php"><b>Module 3</b></a></li>
 					</ul>
@@ -38,7 +38,7 @@
 
 					//On regarde si une cession existe.
           session_start();	 
-			    //On attribus les bon boutons au bonnes personnes.
+			    //Si aucune cession existe, on renvois sur la page de connexion.
 			    if(isset($_SESSION['user'])) {
 				    if($_SESSION['user']['type_user'] != 'user'){
 				        echo"
@@ -101,7 +101,7 @@
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas velit ex, vel sodales tellus commodo non. Vivamus aliquet metus vel purus semper tristique. Proin ipsum justo, aliquam nec faucibus nec, bibendum nec turpis.</p>
 
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec egestas velit ex, vel sodales tellus commodo non. Vivamus aliquet metus vel purus semper tristique. Proin ipsum justo, aliquam nec faucibus nec, bibendum nec turpis.</p>
-				<a href="connexion.php" aria-label="lien_page_connexion"><input type="button" value="Y aller"></a>
+				<a href="module1.php" aria-label="lien_page_connexion"><input type="button" value="Y aller"></a>
 			</div>
 		</div>
 
