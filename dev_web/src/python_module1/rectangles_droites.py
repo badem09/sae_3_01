@@ -24,7 +24,14 @@ try:
     t = float(sys.argv[3])
     n = 1000
 
-    print(round(rectangles_droite(m,et,t,n),5))
+    #print(round(rectangles_droite(m,et,t,n),5))
+    # round : qd retour = 0.99900 ... retourne 0.999 po nice 
+    #print(rectangles_droite(m,et,t,n))
+    retour = str(rectangles_droite(m,et,t,n))
+    #round
+    #print(rectangles_medians(m,et,t,n))
+    print(retour[:7])
+
 
 except:
     print("L'une des valeurs rentrée n'est pas au bon format")

@@ -25,7 +25,12 @@ try:
     t = float(sys.argv[3])
     n = 1000
 
-    print(round(methode_trapeze(m,et,t,n),5))
+    #print(round(methode_trapeze(m,et,t,n),5))
+
+    retour = str(methode_trapeze(m,et,t,n))
+    #round
+    #print(rectangles_medians(m,et,t,n))
+    print(retour[:7])
 
 except:
     print("L'une des valeurs rentrée n'est pas au bon format")
