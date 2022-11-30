@@ -38,7 +38,7 @@
 
                     //On regarde si une cession existe.
                     session_start();   
-                    //Si aucune cession existe, on renvois sur la page de connexion.
+                    //On attribus les bon boutons au bonnes personnes.
                     if(isset($_SESSION['user'])) {
                         if($_SESSION['user']['type_user'] != 'user'){
                             echo"
