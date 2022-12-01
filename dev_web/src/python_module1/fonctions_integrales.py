@@ -32,15 +32,25 @@ def methode_rectangle_gauche(m, et, t,n):
     """
     sum = h = 0
     if t<m: # si t est "avant" m (P(t<X<m)), on calcule "l'inverse" (P(m<X<T))
-        return 1 - methode_rectangle_gauche(t,et,m,n)
+        res = 1 - methode_rectangle_gauche(t,et,m,n)
+        if res < 0 :
+            res = 0
+        if res > 1:
+            res = 1
+        return res
+        
     
     a = m
     b = t
     pas = (b-a)/n #distance entre 2 division
     for a in arange(a,b,pas): # la somme 
         sum += loi_normale(a, m, et) 
-
-    return sum*pas + 0.5 # +0.5 car P(X<t) = P(-inf<X<m) + P(m<X<t) et P(-inf<X<m)=0.5
+    res = sum*pas + 0.5 # +0.5 car P(X<t) = P(-inf<X<m) + P(m<X<t) et P(-inf<X<m)=0.5
+    if res < 0 :
+        res = 0
+    if res > 1:
+        res = 1
+    return res
     #Pour plus d'explications, voire le rapport.
 
 def methode_rectangle_droite(m, et, t,n):
@@ -58,13 +68,23 @@ def methode_rectangle_droite(m, et, t,n):
     """
     sum = h = 0
     if t<m:
-        return 1 - methode_rectangle_gauche(t,et,m,n)
+        res = 1 - methode_rectangle_droite(t,et,m,n)
+        if res < 0 :
+            res = 0
+        if res > 1:
+            res = 1
+        return res
     a = m
     b = t
     pas = (b-a)/n
     for k in arange(a+pas,b+pas,pas):
         sum += loi_normale(k, m, et) 
-    return sum*pas + 0.5
+    res = sum*pas + 0.5 # +0.5 car P(X<t) = P(-inf<X<m) + P(m<X<t) et P(-inf<X<m)=0.5
+    if res < 0 :
+        res = 0
+    if res > 1:
+        res = 1
+    return res
 
 def methode_rectangle_medians(m, et, t,n):
     """ 
@@ -81,7 +101,12 @@ def methode_rectangle_medians(m, et, t,n):
     """
     sum = h = 0
     if t<m:
-        return 1 - methode_rectangle_gauche(t,et,m,n)
+        res = 1 - methode_rectangle_medians(t,et,m,n)
+        if res < 0 :
+            res = 0
+        if res > 1:
+            res = 1
+        return res
 
     a = m
     b = t
@@ -90,7 +115,12 @@ def methode_rectangle_medians(m, et, t,n):
         c = (k+k+pas )/2
         h = loi_normale(c, m, et)  # * i
         sum+= h 
-    return sum*pas + 0.5
+    res = sum*pas + 0.5 # +0.5 car P(X<t) = P(-inf<X<m) + P(m<X<t) et P(-inf<X<m)=0.5
+    if res < 0 :
+        res = 0
+    if res > 1:
+        res = 1
+    return res
 
 def methode_trapeze(m, et, t,n):
     """ 
@@ -107,7 +137,12 @@ def methode_trapeze(m, et, t,n):
     """
     sum = h = 0
     if t<m:
-        return 1 - methode_trapeze(t,et,m,n)
+        res = 1 - methode_trapeze(t,et,m,n)
+        if res < 0 :
+            res = 0
+        if res > 1:
+            res = 1
+        return res
     a = m
     b = t
     pas = (b-a)/n
@@ -117,7 +152,13 @@ def methode_trapeze(m, et, t,n):
     for k in arange(a+pas, b, pas):
         sum+= loi_normale(k,m,et)
        
-    return ((b-a) / (2*n) * (fa + fb + 2*sum)) + 0.5
+    #return ((b-a) / (2*n) * (fa + fb + 2*sum)) + 0.5
+    res = ((b-a) / (2*n) * (fa + fb + 2*sum)) + 0.5
+    if res < 0 :
+        res = 0
+    if res > 1:
+        res = 1
+    return res
 
 def methode_simpson(m, et, t,n):
     """ 
@@ -134,7 +175,12 @@ def methode_simpson(m, et, t,n):
     """
     sum1 = sum2 = 0
     if t<m:
-        return 1 - methode_simpson(t,et,m,n)
+        res = 1 - methode_simpson(t,et,m,n)
+        if res < 0 :
+            res = 0
+        if res > 1:
+            res = 1
+        return res
     a = m
     b = t
     pas = (b-a)/ (2*n)
@@ -153,7 +199,12 @@ def methode_simpson(m, et, t,n):
         e2 =+ a
         sum2+= loi_normale(e2,m,et)
 
-    return ((b-a)/(6*n)) * (fa + fb + 2*sum1 + 4*sum2) + 0.5
+    res = ((b-a)/(6*n)) * (fa + fb + 2*sum1 + 4*sum2) + 0.5
+    if res < 0 :
+        res = 0
+    if res > 1:
+        res = 1
+    return res
 
 
     
