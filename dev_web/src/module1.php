@@ -141,12 +141,7 @@
                                 $result = exec($command); # execution de la commande dans un shell 'imaginaire'
                                                                 # et on récupere le resultat
                                 $float_value = (float) $result; #conversion du resultat en float
-                                if (strval($float_value) == $result){ # si le résultat est bien un nb a virgule (float)
-                                    echo 'P(X<' . $t. ') = ' . $result;
-                                }
-                                else{ #sinon erreur fournie par script python
-                                    echo '<h2>'.$result.'</h2>';
-                                }
+                                echo $result;
                             }
                             ?>
 

@@ -26,10 +26,10 @@ try:
 
     #print(round(rectangles_gauches(m,et,t,n),5))
     #print(rectangles_gauches(m,et,t,n))
-    retour = str(rectangles_medians(m,et,t,n))
+    retour = str(rectangles_gauches(m,et,t,n))
     #round
     #print(rectangles_medians(m,et,t,n))
-    print(retour[:7])
+    print("P(X<" + retour[:7] +  ")")
 
 
 except:
