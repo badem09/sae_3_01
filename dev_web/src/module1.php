@@ -39,8 +39,8 @@
 					<a href="#"><b>Mes Services</b></a>
 					<ul class = "nav-item-services">
 						<li><a href="module1.php"><b>Module 1</b></a></li>
-						<li><a href="connexion.php"><b>Module 2</b></a></li>
-						<li><a href="connexion.php"><b>Module 3</b></a></li>
+						<li><a href="404.html"><b>Module 2</b></a></li>
+						<li><a href="404.html"><b>Module 3</b></a></li>
 					</ul>
 				</li>
 
@@ -111,15 +111,14 @@
                         </select>
 
                         <div class='inputs'>
-
                             <p>Valeur de µ :</p>
-                            <input type="text" name="esp" value=""/>
+                            <input type="text" name="esp" value="<?php echo isset($_POST['esp']) ? $_POST['esp'] : '' ?>"/>
 
                             <p>Valeur de σ :</p>
-                            <input type="text" name="et" value=""/>
+                            <input type="text" name="et" value="<?php echo isset($_POST['et']) ? $_POST['et'] : '' ?>"/>
 
                             <p>Valeur de t :</p>
-                            <input type="text" name="t" value=""/>
+                            <input type="text" name="t" value="<?php echo isset($_POST['t']) ? $_POST['t'] : '' ?>"/>
 
                         </div>
 
@@ -142,12 +141,7 @@
                                 $result = exec($command); # execution de la commande dans un shell 'imaginaire'
                                                                 # et on récupere le resultat
                                 $float_value = (float) $result; #conversion du resultat en float
-                                if (strval($float_value) == $result){ # si le résultat est bien un nb a virgule (float)
-                                    echo 'P(X<' . $t. ') = ' . $result;
-                                }
-                                else{ #sinon erreur fournie par script python
-                                    echo '<h2>'.$result.'</h2>';
-                                }
+                                echo $result;
                             }
                             ?>
 

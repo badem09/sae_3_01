@@ -28,7 +28,7 @@ try:
     retour = rectangles_medians(m,et,t,n)
     #round
     print(rectangles_medians(m,et,t,n))
-    print(retour[:7])
+    print("P(X<" + retour[:7] +  ")")
 
 
 
