@@ -23,7 +23,7 @@ try:
     t = sys.argv[3]
     n = 1000
     retour = str(methode_trapeze(m,et,float(t),n))
-    print("P(X<" + t +  ") = " +  retour[:7])
+    print("P(X<" + t +  ") = " +  retour[:9])
 
 except:
     print("L'une des valeurs rentrée n'est pas au bon format")

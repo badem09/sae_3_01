@@ -25,7 +25,7 @@ try:
 
     n = 1000
     retour = str(methode_simpson(m,et,float(t),n))
-    print("P(X<" + t +  ") = " +  retour[:7])
+    print("P(X<" + t +  ") = " +  retour[:9])
 
 
 except:

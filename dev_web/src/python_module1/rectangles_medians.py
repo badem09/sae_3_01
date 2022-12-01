@@ -26,7 +26,7 @@ try:
 
     n = 1000
     retour = str(rectangles_medians(m,et,float(t),n))
-    print("P(X<" + t +  ") = " +  retour[:7])
+    print("P(X<" + t +  ") = " +  retour[:9])
 
 
 

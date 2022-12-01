@@ -24,7 +24,7 @@ try:
     t = sys.argv[3]
     n = 1000
     retour = str(rectangles_droite(m,et,float(t),n))
-    print("P(X<" + t +  ") = " +  retour[:7])
+    print("P(X<" + t +  ") = " +  retour[:9])
 
 
 except:
