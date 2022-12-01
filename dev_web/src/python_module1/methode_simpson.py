@@ -18,18 +18,15 @@ def methode_simpson(m, et, t,n):
     """
     return fi.methode_simpson(m, et, t,n)
 
-#print(sys.argv)
-# faire des tests pour que 
 try:
     m = float(sys.argv[1])
     et = float(sys.argv[2])
-    t = float(sys.argv[3])
-    n = 1000000
+    t = sys.argv[3]
 
-    retour = str(methode_simpson(m,et,t,n))
-    #round
-    #print(rectangles_medians(m,et,t,n))
-    print("P(X<" + retour[:7] +  ")")
+    n = 1000
+    retour = str(methode_simpson(m,et,float(t),n))
+    print("P(X<" + t +  ") = " +  retour[:7])
+
 
 except:
     print("L'une des valeurs rentrée n'est pas au bon format")

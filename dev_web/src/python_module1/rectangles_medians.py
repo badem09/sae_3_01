@@ -22,13 +22,11 @@ def rectangles_medians(m, et, t,n):
 try:
     m = float(sys.argv[1])
     et = float(sys.argv[2])
-    t = float(sys.argv[3])
+    t = sys.argv[3]
 
     n = 1000
-    retour = rectangles_medians(m,et,t,n)
-    #round
-    print(rectangles_medians(m,et,t,n))
-    print("P(X<" + retour[:7] +  ")")
+    retour = str(rectangles_medians(m,et,float(t),n))
+    print("P(X<" + t +  ") = " +  retour[:7])
 
 
 

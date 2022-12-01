@@ -21,15 +21,10 @@ def rectangles_gauches(m, et, t,n):
 try:
     m = float(sys.argv[1])
     et = float(sys.argv[2])
-    t = float(sys.argv[3])
-    n = 1000000
-
-    #print(round(rectangles_gauches(m,et,t,n),5))
-    #print(rectangles_gauches(m,et,t,n))
-    retour = str(rectangles_gauches(m,et,t,n))
-    #round
-    #print(rectangles_medians(m,et,t,n))
-    print("P(X<" + retour[:7] +  ")")
+    t = sys.argv[3]
+    n = 1000
+    retour = str(rectangles_gauches(m,et,float(t),n))
+    print("P(X<" + t +  ") = " +  retour[:7])
 
 
 except:
