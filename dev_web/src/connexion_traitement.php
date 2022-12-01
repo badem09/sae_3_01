@@ -48,7 +48,7 @@
                         //Si l'utilisateur est un utilisateur simple
                         } else {  
                             //On le redirige ver une page (temporaire) qui lui indique qu'il est bien connecté et on ferme la page.
-                            header('Location: page_user.php');
+                            header('Location: index.php');
                             die();
                         }
                     }else{
