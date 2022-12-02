@@ -48,21 +48,21 @@
                         //Si l'utilisateur est un utilisateur simple
                         } else {  
                             //On le redirige ver une page (temporaire) qui lui indique qu'il est bien connecté et on ferme la page.
-                            header('Location: index.php');
+                            header('Location: page_user.php');
                             die();
                         }
                     }else{
                         //On insert les logs avec la fonction "activite".
                         activite('false', $mdp, $login, $connexion, $bd);
                         //Si le champ "login" est introuvable dans la base de donnée, on le redirige vers la page de connection avec une erreur et on ferme la page.
-                        header('Location: connexion.php?err=mdp_faux');
+                        header('Location: connexion.php?err=u_ou_mdp-faux');
                         die();
                     }
                 }else{
                     //On insert les logs avec la fonction "activite".
                     activite('false', $mdp, $login, $connexion, $bd);
                     //Si le champ "login" est introuvable dans la base de donnée, on le redirige vers la page de connection avec une erreur et on ferme la page.
-                    header('Location: connexion.php?err=u_introuvable');
+                    header('Location: connexion.php?err=u_ou_mdp-faux');
                     die();
             }
             }else{

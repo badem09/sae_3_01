@@ -28,7 +28,7 @@
                     <a href="#"><b>Mes Services</b></a>
 
                     <ul class = "nav-item-services">
-                        <li><a href="module1.php"><b>Module 1</b></a></li>
+                        <li><a href="connexion.php"><b>Module 1</b></a></li>
                         <li><a href="connexion.php"><b>Module 2</b></a></li>
                         <li><a href="connexion.php"><b>Module 3</b></a></li>
                     </ul>
@@ -38,7 +38,7 @@
 
                     //On regarde si une cession existe.
                     session_start();   
-                    //Si aucune cession existe, on renvois sur la page de connexion.
+                    //On attribus les bon boutons au bonnes personnes.
                     if(isset($_SESSION['user'])) {
                         if($_SESSION['user']['type_user'] != 'user'){
                             echo"
@@ -134,8 +134,11 @@
                         
                         <p class='titre-form'>Captcha</p>
                         <div class='captcha-img-desc'>
-                            <img class='img-cptcha' src='img/captcha1.png' alt='image_captcha'>
-                            <p class='captcha-desc-text'> Attention : les majuscules comptent.</p>
+                            <img class='img-cptcha' src='captcha/img/captcha1.png' alt='image_captcha'>
+                            <audio controls>
+                                <source src="captcha/audio/captcha1.mp3" type="audio/mpeg">
+                            </audio>
+                            <p class='captcha-desc-text'> Attention : Tout caracères en minuscules.</p>
                         </div>
                         <label id="label-register-captcha" for="register-captcha">
                         <input id='register-captcha' type='text' name='captcha' placeholder='ex : 7u5T5g3' required/>

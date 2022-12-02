@@ -46,8 +46,8 @@
 
                     <ul class = "nav-item-services">
                         <li><a href="module1.php"><b>Module 1</b></a></li>
-                        <li><a href="connexion.php"><b>Module 2</b></a></li>
-                        <li><a href="connexion.php"><b>Module 3</b></a></li>
+                        <li><a href="404.html"><b>Module 2</b></a></li>
+                        <li><a href="404.html"><b>Module 3</b></a></li>
                     </ul>
                 </li>
 
