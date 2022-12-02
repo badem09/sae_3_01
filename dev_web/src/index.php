@@ -129,32 +129,10 @@
 			</div>
 		</div>
 
-		<div class="footer">
-			<footer>
+		<?php
+	  	//On inclus le footer de la page.
+	  	require("imports_html/footer.html");
+  	?>
 
-				<ul class="list-items">
-					<li class="list-inline-item">
-						<a href="404.html">Réseau 1</a>
-						<a href="404.html">Réseau 2</a>
-						<a href="404.html">Réseau 3</a>
-					</li>
-				</ul>
-
-				<ul class="list-items">
-					<li class="list-inline-item">
-						<a href="404.html">CGV</a>
-						<a href="404.html">CGU</a>
-					</li>
-				</ul>
-
-				<ul class="list-items">
-					<li class="list-inline-item">
-						<p class="copyright">©2022</p>
-					</li>
-				</ul>
-
-			</footer>
-		</div>
-	
   </body>
 </html>

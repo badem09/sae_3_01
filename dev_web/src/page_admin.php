@@ -123,5 +123,11 @@
             ?>
             </div>
         </div>
+
+    <?php
+        //On inclus le footer de la page.
+        require("imports_html/footer.html");
+    ?>
+    
     </body>
 </html>
