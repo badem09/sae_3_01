@@ -135,11 +135,11 @@
                         <p class='titre-form'>Captcha</p>
                         <div class='captcha-img-desc'>
                             <img class='img-cptcha' src='captcha/img/captcha1.png' alt='image_captcha'>
-                            <audio controls>
-                                <source src="captcha/audio/captcha1.mp3" type="audio/mpeg">
-                            </audio>
                             <p class='captcha-desc-text'> Attention : Tout caracères en minuscules.</p>
                         </div>
+                        <audio controls>
+                            <source src="captcha/audio/captcha1.mp3" type="audio/mpeg">
+                        </audio>
                         <label id="label-register-captcha" for="register-captcha">
                         <input id='register-captcha' type='text' name='captcha' placeholder='ex : 7u5T5g3' required/>
                     </div>
