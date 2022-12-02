@@ -325,6 +325,7 @@ footer {
 
 .captcha-img-desc {
     display: flex;
+    padding-bottom: 10px;
 }
 
 .captcha-desc-text {
