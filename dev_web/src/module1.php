@@ -128,14 +128,18 @@
                                 $esp = $_POST["esp"]; #récupere les entrées
                                 $et = $_POST["et"] ;
                                 $t = $_POST["t"];
+                                if ( ! (is_numeric($esp) && is_numeric($et) && is_numeric($t))){
+                                    echo "<p class='err'> Erreur : L'un des paramêtres n'est pas au bon format</p>";
+                                }
+                                else if ($et < 0){
+                                    echo "<p class='err'> La valeur de σ ne peux pas être inférieure à 0.</p>";
+                                }
+                                else {
                                 $fonction = $_POST["choix_methode"] ;
-                                #echo $fonction;
                                 $command = "python python_module1/$fonction $esp $et $t "; # Préparation de la commande
-                                #echo $command;
-                                $result = exec($command); # execution de la commande dans un shell 'imaginaire'
-                                                                # et on récupere le resultat
-                                $float_value = (float) $result; #conversion du resultat en float
+                                $result = exec($command); # execution de la commande et on récupere le resultat
                                 echo $result;
+                                }
                             }
                             ?>
 
