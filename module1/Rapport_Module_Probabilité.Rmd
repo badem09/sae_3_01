@@ -1,0 +1,63 @@
+---
+title: "Rapport_Module_Probabilité"
+author: "SASIKUMAR BA ZIHOUNE GUENFICI MENDES"
+date: "01/12/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# **Module de Probabilité**
+
+## Choix concernant les options de calcul :
+
+Afin de pouvoir réaliser le module de probabilité, permettant de calculer une probabilité dans le cadre d’une loi normale de paramètres m et σ, nous avons réalisé quelques choix, afin de pouvoir réaliser notre travail.
+
+Tout d'abord, lors de la programmation du module, nous avons remarqué l'éléments suivant concernant l'espérance  :
+- Le point correspondant à l'espérance, est le milieu de la courbe. En effet, de chaque côté de ce point, nous obtenons 50% de l'air de la courbe. Cela nous a permis de faciliter nos calculs.
+-  En effet, afin de calculer la probabilité souhaité, nous calculons la probabilité comprise entre l'infini et m et l'additionnons avec la probabilité comprise entre m et t.
+- Nous réalisions donc : P((X<t)) = P(-inf<X<m) +  P(m<X<t)
+  - avec P(-inf<X<m)=0.5
+
+De plus,  concernant le calcul de la probabilité lorsque t<m :
+- si t précède sur l'axe des abscisses  m, soit  P(t<X<m), nous calculons alors la probabilité que P(m<X<t)).
+- En effet, d'après la symétrie de la courbe nous avons :
+	- P(t<X<m) = 1 - P(m<X<t))
+- Ce qui permet de simplifier nos calculs.
+
+Enfin, concernant le nombre de que notre méthode utilise :
+- Nous avons observer que plus cette valeur était élevé, plus la précision de calculs de notre algorithme augmenterait.
+- Nous avons donc décider de définir cette valeur à 10000.
+- En effet, même si cela serait avantageux d'augmenter davantage cette valeur, cela aura également un impact sur la vitesse d'exécution de programme.
+- Cette valeur nous permet donc d'obtenir de résultat précis, tout en possédant un temps d'exécution relativement bas. 
+
+
+## Extraits Codes : 
+
+**Loi Normale :**
+```{python}
+from math import *
+from numpy import arange
+
+def loi_normale(x, m, et):
+  denom = et * sqrt(2 * pi)
+  e = exp((-1 / 2) * ((x - m) / et) ** 2)
+  res = e / denom
+  
+  return res
+```
+
+**Rectangle medians:** 
+```{python}
+from math import *
+from numpy import arange
+
+```
+
+
+
+
+## Échantillons d’exemples : 
