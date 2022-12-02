@@ -1,16 +1,10 @@
 <!doctype html>
 <html lang="fr">
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="css\css.css">
-        <link rel="icon" type="image/x-icon" href="img\logo_t.ico">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
-        <title>X Calculator | V0.1</title>
-    </head>
+    <?php
+        //On inclus le header de la page.
+        require("imports_html/head.html");
+    ?>
 
     <body>
         <nav class = "menu-nav">
@@ -110,7 +104,7 @@
                     </div>
                     <p><input type='submit' name='Envoyer' value='Se connecter'></p>
                     <p>Toujours pas inscrit ? <a id='link-sincrip' href='inscription.php'>C'est ici !</a></p>
-                    <p>Mot de passe oublié ? <a id='link-sincrip' href='404.html'>C'est par là !</a></p>
+                    <p>Mot de passe oublié ? <a id='link-sincrip' href='404.php'>C'est par là !</a></p>
                 </div>
             </form>
         </div>
