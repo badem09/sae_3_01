@@ -1,16 +1,10 @@
 <!doctype html>
 <html lang="fr">
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="css\css.css">
-        <link rel="icon" type="image/x-icon" href="img\logo_t.ico">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
-        <title>X Calculator | V0.1</title>
-    </head>
+    <?php
+        //On inclus le header de la page.
+        require("imports_html/head.html");
+    ?>
 
     <body>
         <nav class = "menu-nav">
@@ -27,16 +21,8 @@
                 <li class="nav-item">
                     <a href="#"><b>Mes Services</b></a>
                     <ul class = "nav-item-services">
-                        <li><a href="module1.php"><b>Module 1</b></a></li>
-                        <?php if(isset($_SESSION['user'])) {
-                            echo '<li><a href="404.html"><b>Module 2</b></a></li>';
-                        }
-                        else{
-                            echo '<li><a href="connexion.php"><b>Module 2</b></a></li>';
-                        }
-
-                        ?>
-                        
+                        <li><a href="connexion.php"><b>Module 1</b></a></li>
+                        <li><a href="connexion.php"><b>Module 2</b></a></li>
                         <li><a href="connexion.php"><b>Module 3</b></a></li>
                     </ul>
                 </li>
@@ -45,7 +31,7 @@
 
                     //On regarde si une cession existe.
                     session_start();   
-                    //Si aucune cession existe, on renvois sur la page de connexion.
+                    //On attribus les bon boutons au bonnes personnes.
                     if(isset($_SESSION['user'])) {
                         if($_SESSION['user']['type_user'] != 'user'){
                             echo"
@@ -95,12 +81,8 @@
                         //Si oui on cherche à quelle erreur elle correspond pour l'afficher.
                         switch($_GET['err']){
 
-                            case "u_introuvable" :
-                            echo "<p class='err'>Erreur : Utilisateur inexistant.</p>";
-                            break;
-
-                            case "mdp_faux" :
-                            echo "<p class='err'>Erreur : Mot de passe erroné.</p>";
+                            case "u_ou_mdp-faux" :
+                            echo "<p class='err'>Erreur : Utilisateur ou mot de passe erroné.</p>";
                             break;
 
                             case "mdp_vide" :
@@ -122,7 +104,7 @@
                     </div>
                     <p><input type='submit' name='Envoyer' value='Se connecter'></p>
                     <p>Toujours pas inscrit ? <a id='link-sincrip' href='inscription.php'>C'est ici !</a></p>
-                    <p>Mot de passe oublié ? <a id='link-sincrip' href='404.html'>C'est par là !</a></p>
+                    <p>Mot de passe oublié ? <a id='link-sincrip' href='404.php'>C'est par là !</a></p>
                 </div>
             </form>
         </div>
