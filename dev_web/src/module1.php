@@ -117,7 +117,7 @@
 
                         </div>
 
-                        <p><button id="label-login-mdp" type="submit">Calculer P(X &lt t)</button></p>
+                        <p><button id="label-login-mdp" name='submit' name ='submit' type="submit">Calculer P(X &lt t)</button></p>
                         <p><button id="label-login-mdp" type="reset">Annuler</button></p>
                     </div>
                     <div class='container-resultat'>
@@ -144,10 +144,11 @@
                                 }
                             }
                             else{
-                                echo "<p class='err'> Veuillez remplir tous les champs </p>";
+                                if ( isset($_POST['submit'])){
+                                    echo "<p class='err'> Veuillez remplir tous les champs </p>";
+                                }
                             }
                             ?>
-
                     </div>
                 </div>
             </form>
