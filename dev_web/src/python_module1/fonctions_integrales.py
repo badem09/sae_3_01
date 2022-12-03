@@ -193,8 +193,8 @@ def methode_simpson(m, et, t,n):
     fa = loi_normale(a,m,et)
     fb = loi_normale(b,m,et)
 
-    #if a == b :
-    #    return 0.5
+    if a == b :
+        return 0.5
     for k1 in arange(1,n):
         e1 = a + (k1*(b-a)) / n
         sum1+= loi_normale(e1,m,et)
