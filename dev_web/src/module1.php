@@ -106,13 +106,13 @@
                         </select>
 
                         <div class='inputs'>
-                            <label for="esp">Valeur de µ :</p>
+                            <label for="esp">Valeur de µ :</label>
                             <input type="text" name="esp" id="esp" value="<?php echo isset($_POST['esp']) ? $_POST['esp'] : '' ?>"/>
 
-                            <label for="et">Valeur de σ :</p>
+                            <label for="et">Valeur de σ :</label>
                             <input type="text" name="et" id="et" value="<?php echo isset($_POST['et']) ? $_POST['et'] : '' ?>"/>
 
-                            <label for="t">Valeur de t :</p>
+                            <label for="t">Valeur de t :</label>
                             <input type="text" name="t" id ="t" value="<?php echo isset($_POST['t']) ? $_POST['t'] : '' ?>"/>
 
                         </div>
@@ -145,7 +145,7 @@
                             }
                             else{
                                 if ( isset($_POST['submit'])){
-                                    echo "<p class='err'> Veuillez remplir tous les champs </p>";
+                                    echo "<p class='err'> Veuillez remplir tous les champs.</p>";
                                 }
                             }
                             ?>
