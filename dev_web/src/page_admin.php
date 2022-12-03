@@ -83,7 +83,7 @@
                 //Si une recherche a été demandé.
                 if ((isset($_POST["text"], $_POST["search"]))) {
                     //On récupere de la base de donnée "id_user", "login", "type_user" si un utilisateur correspond à l'entrée.
-                    $requete2 = mysqli_query($connexion,"SELECT id_user, login, type_user from users where login='".$_POST["text"]."'");
+                    $requete2 = mysqli_query($connexion,"SELECT id_user, login, type_user from users where login like '".$_POST["text"]."%'");
                     //On affiche la base d'un tableau.
                     echo "<table class='tab'>";
                     //On affiche les titres du tableau.
