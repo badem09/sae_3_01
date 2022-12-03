@@ -34,7 +34,7 @@
 					<ul class = "nav-item-services">
 						<li><a href="module1.php"><b>Module 1</b></a></li>
 						<li><a href="404.php"><b>Module 2</b></a></li>
-						<li><a href="404.php"><b>Module 3</b></a></li>
+						<li><a href="404."><b>Module 3</b></a></li>
 					</ul>
 				</li>
 
@@ -143,9 +143,12 @@
 	                
 	                <p class='titre-form'>Captcha</p>
 	                <div class='captcha-img-desc'>
-	                    <img class='img-cptcha' src='img/captcha1.png' alt='image_captcha'>
+	                    <img class='img-cptcha' src='captcha/img/captcha1.png' alt='image_captcha'>
 	                    <p class='captcha-desc-text'> Attention : les majuscules comptent.</p>
 	                </div>
+					<audio controls>
+                            <source src="captcha/audio/captcha1.mp3" type="audio/mpeg">
+                    </audio>
 	                <label id="label-register-captcha" for="register-captcha">
 	                <input id='register-captcha' type='text' name='captcha' placeholder='ex : 7u5T5g3'/>
 	                <p><input type='submit' name='Envoyer' value='Modifier'></p>

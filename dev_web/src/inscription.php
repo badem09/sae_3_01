@@ -20,11 +20,10 @@
 
                 <li class="nav-item">
                     <a href="#"><b>Mes Services</b></a>
-
                     <ul class = "nav-item-services">
-                        <li><a href="connexion.php"><b>Module 1</b></a></li>
-                        <li><a href="connexion.php"><b>Module 2</b></a></li>
-                        <li><a href="connexion.php"><b>Module 3</b></a></li>
+                        <li><a href="module1.php"><b>Module 1</b></a></li>
+                        <li><a href="404.php"><b>Module 2</b></a></li>
+                        <li><a href="404.php"><b>Module 3</b></a></li>
                     </ul>
                 </li>
 
@@ -129,7 +128,7 @@
                         <p class='titre-form'>Captcha</p>
                         <div class='captcha-img-desc'>
                             <img class='img-cptcha' src='captcha/img/captcha1.png' alt='image_captcha'>
-                            <p class='captcha-desc-text'> Attention : Tout caracères en minuscules.</p>
+                            <p class='captcha-desc-text'> Attention : Tous les caracères doivent être écrit en minuscules.</p>
                         </div>
                         <audio controls>
                             <source src="captcha/audio/captcha1.mp3" type="audio/mpeg">
