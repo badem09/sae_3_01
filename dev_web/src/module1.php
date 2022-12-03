@@ -84,9 +84,9 @@
 
         <div class="entete">
             <h1>X Calculator</h1>
-            <h2>Module 1</h2>
+            <h2>Module de probabilité.</h2>
             <br>
-            <p class="pacc_mod_pres">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p class="pacc_mod_pres">Vous pouvez calculer P (X < t) en saisissant la valeur de m, de σ et t.</p>
         </div>
 
         <div class='container-centrer'>
