@@ -83,7 +83,7 @@
 
 		<div class="pacc_mod_gauche"> 
 			<div class="pacc_mod_image">
-				<img src="img\module1.png" alt="image d'une courbe d'une fonction mathématique quelquonque">
+				<a href ="module1.php"><img src="img\module1.png" alt="image d'une courbe d'une fonction mathématique quelquonque"></a>
 			</div>
 
 			<div>
