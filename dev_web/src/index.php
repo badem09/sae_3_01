@@ -89,7 +89,7 @@
 			<div>
 				<h3>Module de probabilité : calcul approché d'une loi normale.</h3>
 
-				<p>Ce module vous permettra de de calculer une probabilité 
+				<p>Ce module vous permettra de calculer une probabilité 
 					dans le cadre d’une loi normale de paramètres m et σ.</br>
 					Vous pourrez calculer P (X < t) en saisissant la valeur de m, de σ et t
 					</br>
