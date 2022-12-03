@@ -1,6 +1,5 @@
 import fonctions_integrales as fi
 import sys
-import decimal as d
 
 def rectangles_medians(m, et, t,n):
     """ 
@@ -19,19 +18,12 @@ def rectangles_medians(m, et, t,n):
     
 #print(sys.argv)
 # faire des tests pour que 
-try:
-    m = float(sys.argv[1])
-    et = float(sys.argv[2])
-    t = sys.argv[3]
+m = float(sys.argv[1])
+et = float(sys.argv[2])
+t = sys.argv[3]
 
-    n = 1000
-    retour = str(rectangles_medians(m,et,float(t),n))
-    print("P(X<" + t +  ") = " +  retour[:9])
-
-
-
-except:
-    print("L'une des valeurs rentrée n'est pas au bon format")
-
+n = 1000
+retour = str(rectangles_medians(m,et,float(t),n))
+print("P(X<" + t +  ") = " +  retour[:9])
 
 

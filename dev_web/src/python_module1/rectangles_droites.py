@@ -18,17 +18,16 @@ def rectangles_droite(m, et, t,n):
     
 #print(sys.argv)
 # faire des tests pour que 
-try:
-    m = float(sys.argv[1])
-    et = float(sys.argv[2])
-    t = sys.argv[3]
-    n = 1000
-    retour = str(rectangles_droite(m,et,float(t),n))
-    print("P(X<" + t +  ") = " +  retour[:9])
 
 
-except:
-    print("L'une des valeurs rentrée n'est pas au bon format")
+m = float(sys.argv[1])
+et = float(sys.argv[2])
+t = sys.argv[3]
+n = 1000
+retour = str(rectangles_droite(m,et,float(t),n))
+print("P(X<" + t +  ") = " +  retour[:7])
+
+
 
 
 
