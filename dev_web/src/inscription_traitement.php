@@ -48,7 +48,7 @@
                                         //On ferme la connection avec la base de données.
                                         mysqli_close($connexion);
                                         //Puis on redirige ver la page "final" car par défaut, chaques utilisateurs et un "user".
-                                        header('Location: page_user.php');
+                                        header('Location: index.php');
                                         die();
                                     }else{
                                         //Si le login exixte déjà, on redirige vers la page inscription avec une erreur.
