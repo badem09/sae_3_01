@@ -86,7 +86,7 @@
             <h1>X Calculator</h1>
             <h2>Module de probabilité.</h2>
             <br>
-            <p class="pacc_mod_pres">Vous pouvez calculer P (X < t) en saisissant la valeur de m, de σ et t.</p>
+            <p class="pacc_mod_pres">Vous pouvez calculer P (X < t) en saisissant la valeur de m, de σ et t (à 10^-5 près).</p>
         </div>
 
         <div class='container-centrer'>
@@ -105,19 +105,19 @@
                         </select>
 
                         <div class='inputs'>
-                            <p>Valeur de µ :</p>
-                            <input type="text" name="esp" value="<?php echo isset($_POST['esp']) ? $_POST['esp'] : '' ?>"/>
+                            <label for="esp">Valeur de µ :</p>
+                            <input type="text" name="esp" id="esp" value="<?php echo isset($_POST['esp']) ? $_POST['esp'] : '' ?>"/>
 
-                            <p>Valeur de σ :</p>
-                            <input type="text" name="et" value="<?php echo isset($_POST['et']) ? $_POST['et'] : '' ?>"/>
+                            <label for="et">Valeur de σ :</p>
+                            <input type="text" name="et" id="et" value="<?php echo isset($_POST['et']) ? $_POST['et'] : '' ?>"/>
 
-                            <p>Valeur de t :</p>
-                            <input type="text" name="t" value="<?php echo isset($_POST['t']) ? $_POST['t'] : '' ?>"/>
+                            <label for="t">Valeur de t :</p>
+                            <input type="text" name="t" id ="t" value="<?php echo isset($_POST['t']) ? $_POST['t'] : '' ?>"/>
 
                         </div>
 
-                        <p><input id="label-login-mdp" type="submit" value="Calculer P(X<t) "/></p>
-                        <p><input id="label-login-mdp" type="reset" value="Annuler"/></p>
+                        <p><button id="label-login-mdp" type="submit">Calculer P(X &lt t)</button></p>
+                        <p><button id="label-login-mdp" type="reset">Annuler</button></p>
                     </div>
                     <div class='container-resultat'>
                         <h2>Résultat</h2>
@@ -129,7 +129,7 @@
                                 $et = $_POST["et"] ;
                                 $t = $_POST["t"];
                                 if ( ! (is_numeric($esp) && is_numeric($et) && is_numeric($t))){
-                                    echo "<p class='err'> Erreur : L'un des paramêtres n'est pas au bon format</p>";
+                                    echo "<p class='err'> Erreur : Un (ou plusieurs) paramêtres n'est pas au bon format.</p>";
                                 }
                                 else if ($et < 0){
                                     echo "<p class='err'> La valeur de σ ne peux pas être inférieure à 0.</p>";
@@ -139,7 +139,7 @@
                                 $fonction = $_POST["choix_methode"] ;
                                 $command = "python python_module1/$fonction $esp $et $t "; # Préparation de la commande
                                 $result = exec($command); # execution de la commande et on récupere le resultat
-                                echo $result . " (à 10^-5 près)";
+                                echo $result;
                                 }
                             }
                             ?>
