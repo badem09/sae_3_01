@@ -134,11 +134,12 @@
                                 else if ($et < 0){
                                     echo "<p class='err'> La valeur de σ ne peux pas être inférieure à 0.</p>";
                                 }
+
                                 else {
                                 $fonction = $_POST["choix_methode"] ;
                                 $command = "python python_module1/$fonction $esp $et $t "; # Préparation de la commande
                                 $result = exec($command); # execution de la commande et on récupere le resultat
-                                echo $result;
+                                echo $result . " (à 10^-5 près)";
                                 }
                             }
                             ?>
