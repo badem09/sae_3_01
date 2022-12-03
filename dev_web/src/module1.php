@@ -86,7 +86,7 @@
             <h1>X Calculator</h1>
             <h2>Module de probabilité.</h2>
             <br>
-            <p class="pacc_mod_pres">Vous pouvez calculer P (X < t) en saisissant la valeur de m, de σ et t (à 10^-5 près).</p>
+            <p class="pacc_mod_pres">Vous pouvez calculer P(X < t) en saisissant la valeur de m, de σ et t (à 10^-5 près).</p>
         </div>
 
         <div class='container-centrer'>
@@ -97,6 +97,7 @@
                         <h3>Calcul d'une probabilité à l'aide d'une loi normale</h3>
 
                         <select name="choix_methode" id="choix_methode">
+                            <option  selected disabled hidden>Choisissez une méthode</option>
                             <option value="rectangles_gauches.py">Rectangles gauches</option>
                             <option value="rectangles_droites.py">Rectangles droits</option>
                             <option value="rectangles_medians.py">Rectangles medians</option>
@@ -123,8 +124,8 @@
                         <h2>Résultat</h2>
 
                         <?php
-
-                            if (isset($_POST['esp'], $_POST['et'], $_POST['t'])){
+                            // garder la methode utilisée?
+                            if (isset($_POST['esp'], $_POST['et'], $_POST['t'],$_POST['choix_methode'] )){
                                 $esp = $_POST["esp"]; #récupere les entrées
                                 $et = $_POST["et"] ;
                                 $t = $_POST["t"];
@@ -141,6 +142,9 @@
                                 $result = exec($command); # execution de la commande et on récupere le resultat
                                 echo $result;
                                 }
+                            }
+                            else{
+                                echo "<p class='err'> Veuillez remplir tous les champs </p>";
                             }
                             ?>
 
