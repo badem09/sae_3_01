@@ -131,8 +131,8 @@
                                 if ( ! (is_numeric($esp) && is_numeric($et) && is_numeric($t))){
                                     echo "<p class='err'> Erreur : Un (ou plusieurs) paramêtres n'est pas au bon format.</p>";
                                 }
-                                else if ($et < 0){
-                                    echo "<p class='err'> La valeur de σ ne peux pas être inférieure à 0.</p>";
+                                else if ($et <= 0){
+                                    echo "<p class='err'> La valeur de σ ne peux pas être inférieure ou égale à 0.</p>";
                                 }
 
                                 else {
