@@ -1,5 +1,5 @@
 import fonctions_integrales as fi
-import sys
+import sys, decimal as d
 
 def rectangles_gauches(m, et, t,n):
     """ 
@@ -21,8 +21,10 @@ def rectangles_gauches(m, et, t,n):
 m = float(sys.argv[1])
 et = float(sys.argv[2])
 t = sys.argv[3]
-n = 1000
-retour = str(rectangles_gauches(m,et,float(t),n))
-print("P(X<" + t +  ") = " +  retour[:7])
 
+n = 1000
+retour = str(d.Decimal(rectangles_gauches(m,et,float(t),n)))
+if retour == '0.00000':
+    retour + str(0)
+print("P(X<" + t +  ") = " +  retour[:7])
 
