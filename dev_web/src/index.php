@@ -106,7 +106,7 @@
 				<h3>Module2</h3>
 				<p>A venir très prochainement !</p>
 				</br></br></br></br></br></br></br>
-				<a href="404.html" aria-label="lien_page_connexion"><input type="button" value="Y aller"></a>
+				<a href="404.php" aria-label="lien_page_connexion"><input type="button" value="Y aller"></a>
 			</div>
 
 			<div class="pacc_mod_image">
@@ -124,7 +124,7 @@
 
 				<p>A venir très prochainement !</p>
 				</br></br></br></br></br></br></br>
-				<a href="404.html" aria-label="lien_page_connexion"><input type="button" value="Y aller"></a>
+				<a href="404.php" aria-label="lien_page_connexion"><input type="button" value="Y aller"></a>
 			</div>
 		</div>
 
