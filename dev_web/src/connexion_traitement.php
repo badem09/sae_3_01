@@ -4,16 +4,16 @@
     require_once('config_bdd.php');
 
     //On initialise une fonction qui prends en paramètre la réussite, le mot de passe et le login de la tentative que nous utiliserons à chaque reussite ou echec, ainsi que les variables de connexion à la base de données.
-    function activite($reussite, $mdp, $log, $connexion, $bd){
+    function activite($mdp, $log, $connexion, $bd){
         //On convertie les caractères spéciaux en caratères spéciaux html.
         $adr_ip = $_SERVER['REMOTE_ADDR'];
         //On crypte le mot de passe.
         $mdpfin = md5($mdp);
         //On prépare la requete avec des valeurs indéfinie.
-        $ins = "INSERT into activiteconnexion(reussite,mdp_tente,log_tente,adr_ip) values(?,?,?,?)";
+        $ins = "INSERT into activiteconnexion(mdp_tente,log_tente,adr_ip) values(?,?,?)";
         $insp = mysqli_prepare($connexion,$ins);
         //On définit le type de valeur à entrer et on execute la requete.
-        mysqli_stmt_bind_param($insp,'ssss', $reussite, $mdpfin, $log, $adr_ip);
+        mysqli_stmt_bind_param($insp,'sss', $mdpfin, $log, $adr_ip);
         mysqli_stmt_execute($insp);
     }
 
@@ -35,8 +35,6 @@
                     $data = $Requete->fetch_assoc();
                     //Si aucune ligne n'a été trouvé, on redirige vers la page de connexion avec une erreur.
                     if(mysqli_num_rows($Requete) != 0) {
-                        //On insert les logs avec la fonction "activite".
-                        activite('true', $mdp, $login, $connexion, $bd);
                         //On crée une session qui contien son "login" et son type d'utilisateur.
                         session_start();
                         $_SESSION["user"] = ["login"=>$login,"type_user"=>$data['type_user']];
@@ -53,14 +51,14 @@
                         }
                     }else{
                         //On insert les logs avec la fonction "activite".
-                        activite('false', $mdp, $login, $connexion, $bd);
-                        //Si le champ "login" est introuvable dans la base de donnée, on le redirige vers la page de connection avec une erreur et on ferme la page.
+                        activite($mdp, $login, $connexion, $bd);
+                        //Si le champ "mdp" ne correspond pas au login de la base de donnée, on le redirige vers la page de connection avec une erreur et on ferme la page.
                         header('Location: connexion.php?err=u_ou_mdp-faux');
                         die();
                     }
                 }else{
                     //On insert les logs avec la fonction "activite".
-                    activite('false', $mdp, $login, $connexion, $bd);
+                    activite($mdp, $login, $connexion, $bd);
                     //Si le champ "login" est introuvable dans la base de donnée, on le redirige vers la page de connection avec une erreur et on ferme la page.
                     header('Location: connexion.php?err=u_ou_mdp-faux');
                     die();
