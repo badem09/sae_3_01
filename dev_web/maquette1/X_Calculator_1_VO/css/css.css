@@ -1,0 +1,437 @@
+/* ##################### Barre de Naviguation ##################### */
+body{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.menu-nav {
+    background-color: #FFFFFF;
+    margin-top: auto;
+    width: 100%;
+    height: auto;
+    text-align: right;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 24px;
+    vertical-align: center;
+    position: absolute
+}
+
+.nav-item {
+    display: inline-flex;
+}
+
+.nav-logo {
+    display: inline-flex;
+    vertical-align: middle;
+    float: left;
+    width: 69px;
+    height: 100%;
+    list-style: none;
+}
+
+.nav-logo img {
+    width: 69px;
+    height: 69px;
+}
+
+.nav-item a {
+    color: black;
+    padding: 27px;
+    font-size: 13px;
+    letter-spacing: 1.1px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+#ul-container {
+    vertical-align: center;
+    margin: 0px 40px;
+}
+
+.nav-item:hover a {
+    color: #000A7E;
+}
+
+.nav-item-services {
+    display: none;
+    background-color: #FFFFFF;
+    position: absolute;
+    height: auto;
+    visibility: visible;
+    color: black;
+    margin-top: 69px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 24px;
+    list-style: none;
+}
+
+li:hover .nav-item-services{
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    color: black;
+}
+
+.nav-item-services a {
+    color: black;
+    text-align: left;
+}
+
+.nav-item-services li {
+    color: black;
+    float: none;
+    text-align: right;
+    position: all;
+    padding: 10px 0px;
+}
+
+/* ######################### Page accueil ######################### */
+.entete{
+    /*background-image: url("../img/carre_page_acceuil.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: center;
+    opacity: 0.1;*/
+    color: #FFFFFF;
+    background: linear-gradient(to right, rgba(39, 70, 133, 0.8) 0%, rgba(61, 179, 197, 0.8) 100%);
+    text-align: center;
+    padding: 120px 60px 60px 60px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 24px;
+}
+
+/* ########### Page acceuil module gauche presentation ########### */
+.pacc_mod_pres{
+    text-align: center;
+}
+
+.pacc_mod_gauche h3{
+    color: #000A7E;
+}
+
+.pacc_mod_gauche img {
+    margin-right: 30px;
+}
+
+.pacc_mod_gauche input{
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 500px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #000A7E;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+}
+
+.pacc_mod_gauche input:hover{
+    border: 2px solid #000A7E;
+}
+
+.pacc_mod_gauche {
+    padding: 75px 200px;
+    display: flex;
+}
+
+/* ############ Page acceuil module droit presentation ############ */
+.pacc_mod_droit h3{
+    color: #000A7E;
+}
+
+.pacc_mod_droit img {
+    margin-left: 30px;
+}
+
+.pacc_mod_droit input{
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 500px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #000A7E;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+}
+
+.pacc_mod_droit input:hover{
+    border: 2px solid #000A7E;
+}
+
+.pacc_mod_droit {
+    padding: 75px 200px;
+    display: flex;
+    text-align: right;
+}
+
+/* ################# Footer pour toutes les pages ################# */
+footer {
+    font-family: 'Roboto', sans-serif;
+}
+
+.footer{
+    padding:10px;
+    background-color: #FFFFFF;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 24px;
+    color: black;
+}
+
+.footer ul {
+    list-style:none;
+    text-align:center;
+    font-size:18px;
+    line-height:1.6;
+}
+
+.footer li {
+    padding:0 10px;
+}
+
+.footer a {
+    color: black;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #000A7E;
+}
+
+/* ########################### Page 404 ########################### */
+.erreur {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+.erreur h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 60px;
+    margin: 0px;
+}
+
+/* ################### Connexion / inscription ################### */
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container-centrer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container-insciption-connexion {
+    border-radius: 20px;
+    padding: 30px;
+    width: 350px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 24px;
+}
+
+.inputs {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.err {
+    border: 1px solid #FF6969;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #FF6969;
+    padding: 12px;
+    color: white;
+    font-weight: bold;
+}
+
+.inputs input[type=text],[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.inputs input::placeholder {
+    color: #D1D1D1;
+}
+
+.container-insciption-connexion input[type=submit] {
+  width: 100%;
+  background-color: #000A7E;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.container-insciption-connexion input[type=submit]:hover {
+  background-color: #1521A5;
+}
+
+.inputs img {
+    width: 146px;
+    height: 49px;
+    border-radius: 4px;
+}
+
+.titre-form {
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #6A7887;
+    letter-spacing: 1px;
+    margin-bottom: 0px;
+}
+
+.captcha-img-desc {
+    display: flex;
+}
+
+.captcha-desc-text {
+    text-align: center;
+    font-weight: bold;
+    color: #6A7887;
+    font-size: 1px;
+}
+
+.link-sincrip {
+    text-decoration: none;
+}
+
+.container-insciption-connexion h2 {
+    color: #000A7E;
+    font-weight: bold;
+}
+
+.container-insciption-connexion p {
+    margin-bottom: 5px;
+    font-size: 13px;
+}
+
+.container-insciption-connexion a {
+    text-decoration: none;
+    color: #000A7E;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+
+/* ########################## Page Admin ########################## */
+.admin-main {
+    text-align: center;
+    padding: 100px 60px 60px 60px;
+}
+
+.recherche {
+    padding-bottom: 50px;
+}
+
+.recherche h3 {
+    color: #000A7E;
+    font-weight: bold;
+}
+
+.recherche #researched {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.recherche #researched::placeholder {
+    color: #D1D1D1;
+}
+
+.recherche #search {
+  background-color: #000A7E;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.recherche #search:hover {
+  background-color: #1521A5;
+}
+
+.recherche #clear {
+  background-color: #6A7887;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.recherche #clear:hover {
+  background-color: #CACACA;
+}
+
+.affichage {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.tab {
+    padding: 20px;
+    border-collapse: collapse;
+    background-color: E5E5E5;
+    width: 100%;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.tab th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #5669B4;
+    color: white;
+    text-align: center;
+}
+
+.tab td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.tab tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+.tab tr:hover {
+    background-color: #ddd;
+}
