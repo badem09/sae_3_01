@@ -1,3 +1,4 @@
+
 ---
 title: "Rapport_Module_Probabilité"
 author: "SASIKUMAR BA ZIHOUNE GUENFICI MENDES"
@@ -29,14 +30,13 @@ Dans le cadre de la SAE 3.01, nous devions implementer une application web de ca
 
 ### 1.1 Introduction
 
-&ensp;
+
 
 Nous avons utilisé les propriétés suivantes:
-&ensp;
+
 
 - La loi normale suivant une loi de Gauss, sa courbe est en cloche et son pic est situé à l'espérance (noté σ).
 Notre objectif est d'obtenir la probabilité P(X < t), autrement dit P(-inf < X < t).
-  
   
 - Dans le cas où t>σ (cas 1), on a P(X < t) = P(-inf < X < σ) + P(σ < X < t) = 0.5 + P(σ < X<  t) (voir Figure 1).
 Il nous reste donc plus que P(σ < X < t) à calculer, ce qui nous est possible grâce aux formules fournies
@@ -46,11 +46,10 @@ Ainsi, P(X > t) =  P(t < X < σ) + P( σ < X < +inf )= P(t < X < σ)  + 0.5 (voi
 Ou plus simplement : P(X > t) = 1 - P(X < t)  (voire Figure 1 et 2)</br>
 Il ne nous reste donc plus que P(t < X < σ) à calculer.
   
-
-On en déduit également que si σ=t (cas 3), P(X < t) = P(X < σ) = 0.5 (voir Figure 3).
+- On en déduit également que si σ=t (cas 3), P(X < t) = P(X < σ) = 0.5 (voir Figure 3).
   
   
-  De plus, nos fonctions étant des approximations, quelques précautions ont dû être mises en place pour éviter des résulats incohérents (P<0 ou P>0).
+ De plus, nos fonctions étant des approximations, quelques précautions ont dû être mises en place pour éviter des résultats incohérents (P<0 ou P>0).
   
   
 ```{python, eval=FALSE}
@@ -66,7 +65,7 @@ if res > 1:
 
 ### 1.2 Codage des méthodes
 
-&ensp;
+
 A noter que nous utilisons les bibliothèques math (notamment pour π) et numpy.
 
 ```{python, eval=FALSE}
