@@ -23,7 +23,7 @@
                         //Si oui on cherche à quelle erreur elle correspond pour l'afficher.
                         switch($_GET['err']){
 
-                            case "u_ou_mdp-faux" :
+                            case "u_ou_mdp_faux" :
                             echo "<p class='err'>Erreur : Utilisateur ou mot de passe erroné.</p>";
                             break;
 
