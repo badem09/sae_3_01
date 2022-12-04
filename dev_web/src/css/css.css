@@ -80,6 +80,7 @@ body{
 li:hover .nav-item-services{
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     padding: 0px;
     color: black;
 }
@@ -207,9 +208,9 @@ footer {
 
 .pacc_mod_droit {
     padding: 75px 200px;
-    display: flex;
     text-align: right;
     display: flex;
+    justify-content: flex-end;
 }
 
 /* ########################### Page 404 ########################### */
