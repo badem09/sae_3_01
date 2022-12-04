@@ -183,7 +183,7 @@ function remplir2(){
                                 $et = $_POST["et"] ;
                                 $t = $_POST["t"];
                                 if ( ! (is_numeric($esp) && is_numeric($et) && is_numeric($t))){
-                                    echo "<p class='err'> Erreur : Un (ou plusieurs) paramêtres n'est pas au bon format.</p>";
+                                    echo "<p class='err'> Erreur : Un (ou plusieurs) paramêtre n'est pas au bon format.</p>";
                                 }
                                 else if ($et <= 0){
                                     echo "<p class='err'> La valeur de σ ne peux pas être inférieure ou égale à 0.</p>";
