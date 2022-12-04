@@ -184,10 +184,10 @@
                         <?php
 
                             if(isset($_POST['submit'])){
-                                if(!empty($_POST['choix_methode'])){
-                                    if(!empty($_POST['esp'])){
-                                        if(!empty($_POST['et'])){
-                                            if(!empty($_POST['t'])){
+                                if(isset($_POST['choix_methode'])){
+                                    if(isset($_POST['esp'])){
+                                        if(isset($_POST['et'])){
+                                            if(isset($_POST['t'])){
 
                                                 #On récupere les entrées.
                                                 $esp = $_POST["esp"];
