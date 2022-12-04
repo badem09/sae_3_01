@@ -53,14 +53,14 @@
                         //On insert les logs avec la fonction "activite".
                         activite($mdp, $login, $connexion, $bd);
                         //Si le champ "mdp" ne correspond pas au login de la base de donnée, on le redirige vers la page de connection avec une erreur et on ferme la page.
-                        header('Location: connexion.php?err=u_ou_mdp-faux');
+                        header('Location: connexion.php?err=u_ou_mdp_faux');
                         die();
                     }
                 }else{
                     //On insert les logs avec la fonction "activite".
                     activite($mdp, $login, $connexion, $bd);
                     //Si le champ "login" est introuvable dans la base de donnée, on le redirige vers la page de connection avec une erreur et on ferme la page.
-                    header('Location: connexion.php?err=u_ou_mdp-faux');
+                    header('Location: connexion.php?err=u_ou_mdp_faux');
                     die();
             }
             }else{
