@@ -14,7 +14,7 @@
         ?>
 
         <div class='container-centrer'>
-            <form action='inscription_traitement.php' method='post'>
+            <form action='traitements/inscription_traitement.php' method='post'>
                 <div class='container-insciption-connexion'>
                     <h2>S'inscrire</h2>
                     <?php

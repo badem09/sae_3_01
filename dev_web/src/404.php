@@ -17,7 +17,7 @@
 			<h1>Erreur</h1>
 			<h1>404</h1>
 			<p>
-				<br>La page à la quel vous souhaiter accéder n'est pas encore disponible ou introuvable &#128532;
+				<br>La page dont vous souhaiter accéder n'est pas encore disponible ou introuvable &#128532;
 			</p>
 		</div>
 	

@@ -13,6 +13,7 @@
         header('Location: connexion.php');
         die();
     }
+
 ?>
 
 <!doctype html>
@@ -49,7 +50,7 @@
             <div class="affichage">
             <?php
                 //On inclus la configuration d'accès à la base de donnée avant de commencer.
-                require_once('config_bdd.php');
+                require_once('config/config_bdd.php');
                 //Si une recherche a été demandé.
                 if ((isset($_POST["text"], $_POST["search"]))) {
                     //On récupere de la base de donnée "id_user", "login", "type_user" si un utilisateur correspond à l'entrée.
