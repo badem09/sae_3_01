@@ -29,8 +29,8 @@ def PRGA (S,n) :
         
     return key    
 
-key = "KAREEM"
-text = "Mission Accomplished"
+key = "Ba"
+text = "Demba"
 
 
 def preparing_key_array(s) :
