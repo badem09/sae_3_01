@@ -17,7 +17,7 @@ def suite_chiffrante(key):                          #cf KSA dans cours
         suite[i],suite[j] = suite[j],suite[i]       # on permute car
     return suite
     
-    
+
 
 def stream_generation(suite):                       #cf PRGA(S) dans cours
     """
@@ -65,7 +65,7 @@ def crypter(texte, key):
             crypte = str(base_16[3:]) + " " 
         else:
             crypte = str(base_16[2:]) + " "          # a ^ b = xor aux niveau des bits en base 2
-        print(list(crypte))
+        #print(list(crypte))
         if len(crypte) == 2:                         # si ya une lettre et un espace 
             crypte = '0' + crypte
         texte_cripte += (crypte.upper())             #transforme texte en MAJ
