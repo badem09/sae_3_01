@@ -53,12 +53,12 @@
                 require_once('config/config_bdd.php');
                 //Si une recherche a été demandé.
                 if ((isset($_POST["text"], $_POST["search"]))) {
-                    //On récupere de la base de donnée "id_user", "login", "type_user" si un utilisateur correspond à l'entrée.
-                    $requete2 = mysqli_query($connexion,"SELECT id_user, login, type_user from users where login like '".$_POST["text"]."%'");
+                    //On récupere de la base de donnée "id_user", "login", "type_user", "nombre d'utilsiation" si un utilisateur correspond à l'entrée.
+                    $requete2 = mysqli_query($connexion,"SELECT id_user, login, type_user, nb_visites from users where login like '".$_POST["text"]."%'");
                     //On affiche la base d'un tableau.
                     echo "<table class='tab'>";
                     //On affiche les titres du tableau.
-                    echo "<tr id='titre_tab'><th>ID Utilisateur</th><th>Nom Utilisateur</th><th>Type Utilisateur</th></tr>";
+                    echo "<tr id='titre_tab'><th>ID Utilisateur</th><th>Nom Utilisateur</th><th>Type Utilisateur</th><th>Nombre Visites</th></tr>";
                     //Pour chaques lignes assigé comme plusieurs valeurs, on récupère et affiche les données (1 seul car chaque "login" est unique).
                     while ($ligne = mysqli_fetch_row($requete2)) {
                         echo "<tr>";
@@ -75,11 +75,11 @@
                 //Si aucune action n'a été effectué on affiche toutes les données présente dans la base de donnée.
                 //(Dans le cas ou nous arrivons sur la page, c'est cette condition sui est utiliser pour afficher les données sans avoir à les demander.)
                 } else {
-                    $requete1 = mysqli_query($connexion,"SELECT id_user, login, type_user from users");
+                    $requete1 = mysqli_query($connexion,"SELECT id_user, login, type_user, nb_visites from users");
                     //On affiche la base d'un tableau.
                     echo "<table class='tab'>";
                     //On affiche les titres du tableau.
-                    echo "<tr id='titre_tab'><th>ID Utilisateur</th><th>Nom Utilisateur</th><th>Type Utilisateur</th></tr>";
+                    echo "<tr id='titre_tab'><th>ID Utilisateur</th><th>Nom Utilisateur</th><th>Type Utilisateur</th><th>Nombre Visites</th></tr>";
                     //Pour chaques lignes assigé comme plusieurs valeurs, on récupère et affiche les données (1 seul car chaque "login" est unique).
                     while ($ligne = mysqli_fetch_row($requete1)) {
                         echo "<tr>";
