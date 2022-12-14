@@ -9,11 +9,26 @@ CREATE TABLE `activiteconnexion` (
 );
 
 
+
 CREATE TABLE `activitemodule` (
   `id_activite` int(11) NOT NULL,
   `id_module` int(11) NOT NULL,
   `login` varchar(32) NOT NULL,
   `bool_utilisation` tinyint(1) NOT NULL DEFAULT 0
+);
+
+
+
+
+CREATE TABLE `historique_module2` (
+  `id_historique` int(11) NOT NULL,
+  `id_module` int(11) NOT NULL DEFAULT 2,
+  `login` varchar(255) NOT NULL,
+  `bool_chiffrement` tinyint(1) NOT NULL DEFAULT 0,
+  `bool_dechiffrement` tinyint(1) NOT NULL DEFAULT 0,
+  `message` varchar(255) NOT NULL,
+  `cle` int(11) NOT NULL,
+  `resultat` varchar(255) NOT NULL
 );
 
 
