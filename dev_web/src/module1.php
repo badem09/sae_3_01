@@ -183,10 +183,10 @@
                         <?php
 
                             if(isset($_POST['submit'])){
-                                if(!empty($_POST['choix_methode'])){
-                                    if(!empty($_POST['esp'])){
-                                        if(!empty($_POST['et'])){
-                                            if(!empty($_POST['t'])){
+                                if(isset($_POST['choix_methode'])){
+                                    if(isset ($_POST['esp'])){
+                                        if( isset($_POST['et'])){
+                                            if(isset ($_POST['t'])){
 
                                                 #Insertion pour avoir les statistiques d'utilisations
                                                 require_once('config/config_bdd.php');
@@ -222,7 +222,7 @@
 
                                             }else{
                                                 //Si µ est vide, on affiche une erreur.
-                                                echo "<p class='err'> Erreur : Le champ \"µ\" est vide.</p>";
+                                                echo "<p class='err'> Erreur : Le champ \"t\" est vide.</p>";
                                             }
                                         }else{
                                             //Si σ est vide, on affiche une erreur.
@@ -230,7 +230,7 @@
                                         }
                                     }else{
                                         //Si t est vide, on affiche une erreur.
-                                        echo "<p class='err'> Erreur : Le champ \"t\" est vide.</p>";
+                                        echo "<p class='err'> Erreur : Le champ \"µ\" est vide.</p>";
                                     }
                                 }else{
                                     //Si la méthode de calcule n'est pas choisis, on affiche une erreur.
