@@ -71,11 +71,11 @@
                                     $message = '"'.$message.'"';
 
                                     if ($methode == "Cryptage"){
-                                        $result = exec("python3 crypter.py ". $message . " " . $clef);
+                                        $result = exec("python3 python_module2/crypter.py ". $message . " " . $clef);
                                     }
 
                                     if ($methode == "Decryptage"){
-                                        $result = exec("python3 decrypt.py ". $message . " " . $clef);
+                                        $result = exec("python3 python_module2/decrypt.py ". $message . " " . $clef);
                                     }
                                     echo $result;
                                 }
