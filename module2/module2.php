@@ -1,11 +1,11 @@
 <?php
 
     //On regarde si une cession existe.
-    //session_start();
+    session_start();
     //Si aucune cession existe, on renvois sur la page de connexion.
-    //if(!isset($_SESSION['user'])) {
-    //   header('Location: connexion.php');
-    //}
+    if(!isset($_SESSION['user'])) {
+       header('Location: connexion.php');
+    }
  
 ?>
 
@@ -64,10 +64,23 @@
                         if (isset($_POST['input_message'])){
                             if (isset($_POST['input_clef'])){
                                 if (isset($_POST["methode"])){
+
+                                    #Insertion pour avoir les statistiques d'utilisations
+                                    require_once('config/config_bdd.php');
+                                    //$requete="INSERT INTO activitemodule (id_module, login, bool_utilisation) VALUES  (1, '".$_SESSION["user"]["login"]."', 1)";
+                                    //$requete2 = mysqli_query($connexion, $requete);
+
+                                    $ins = "INSERT INTO activitemodule (id_module, login, bool_utilisation) values(?,?,?)";
+                                    $insp = mysqli_prepare($connexion,$ins);
+                                    mysqli_stmt_bind_param($insp,'sss', $1, $$_SESSION["user"]["login"], $1);
+                                    mysqli_stmt_execute($insp); 
+
+                                
+
                                     $methode = $_POST["methode"];
                                     $message = $_POST['input_message'];
                                     $clef = $_POST['input_clef'];
-                                    $message = trim($message);
+                                    $message = trim($message); // enleve les espaces avant après
                                     $message = '"'.$message.'"';
 
                                     if ($methode == "Cryptage"){
@@ -77,10 +90,9 @@
                                     if ($methode == "Decryptage"){
                                         $result = exec("python3 python_module2/decrypt.py ". $message . " " . $clef);
                                     }
-                                    echo $result;
+                                    echo $result;   
                                 }
                             }
-                            
                         }?>
                     </div>
                 </div>
