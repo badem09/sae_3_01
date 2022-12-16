@@ -15,12 +15,13 @@
 
 		<div class="entete">
 			<h1>X Calculator</h1>
-			<h2>On peut tout calculer !</h2>
+			<h3>On peut tout calculer !</h3>
 			<br>
 		</div>
 
 		<div class="presentation">
 			<h2>Bienvenue !</h2>
+			<P>Sur notre site, vous avez la possibilité d'utiliser trois modules différents présentés ci-dessous, vous avez accès à de nombreuses fonctionnalités et vous pouvez pleinement profiter de notre site. N'oubliez pas de vous connecter pour y avoir accès !</P>
 		</div>
 
 		<div class="pacc_mod_gauche"> 
