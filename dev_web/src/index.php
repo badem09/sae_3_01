@@ -9,9 +9,9 @@
   <body>
 		
 		<?php
-            //On inclus la barre de navigation.
-            require("imports_html/nav_bar.html");
-  	    ?>
+        //On inclus la barre de navigation.
+        require("imports_html/nav_bar.html");
+    ?>
 
 		<div class="entete">
 			<h1>X Calculator</h1>
@@ -71,16 +71,16 @@
 		</div>
 
 		<?php
-            //On inclus le footer de la page.
-            require("imports_html/footer.html");
+      //On inclus le footer de la page.
+      require("imports_html/footer.html");
 
-            #Statistique de visites du site
-            if(isset($_SESSION['user'])) {
-                require_once('config/config_bdd.php');
-                $requete2 = "UPDATE users SET nb_visites = nb_visites +1 WHERE login='".$_SESSION["user"]["login"]."'";
-                $requete2 = mysqli_query($connexion, $requete2);
-            }
-  	    ?>
+      #Statistique de visites du site
+      if(isset($_SESSION['user'])) {
+          require_once('config/config_bdd.php');
+          $requete2 = "UPDATE users SET nb_visites = nb_visites +1 WHERE login='".$_SESSION["user"]["login"]."'";
+          $requete2 = mysqli_query($connexion, $requete2);
+      }
+    ?>
 
   </body>
 </html>
