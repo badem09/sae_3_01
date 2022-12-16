@@ -101,7 +101,7 @@ Pour toutes les méthodes (sauf celle de Simpson), nous travaillons sur l'interv
 
 <center>
 ```{r méthode_rectangles_droits, echo=FALSE, fig.cap="Formule Fournie", out.width = "400px"}
-knitr::include_graphics("formule_rect_d.PNG")
+knitr::include_graphics("images/formule_rect_d.PNG")
 ```
 </center>
 
@@ -126,7 +126,7 @@ return res
 
 <center>
 ```{r méthode_rectangles_gauches, echo=FALSE, fig.cap="Formule Fournie", out.width = "400px"}
-knitr::include_graphics("formule_rect_g.PNG")
+knitr::include_graphics("images/formule_rect_g.PNG")
 ```
 </center>
 
@@ -153,7 +153,7 @@ La boucle va de a+pas à b inclus car la somme va de n=1 à n inclus.
 
 <center>
 ```{r méthode_rectangles_medians, echo=FALSE, fig.cap="Formule Fournie", out.width = "400px"}
-knitr::include_graphics("formule_rect_m.PNG")
+knitr::include_graphics("images/formule_rect_m.PNG")
 ```
 </center>
 
@@ -179,7 +179,7 @@ Le calcul de la somme :
 
 <center>
 ```{r methode_trapezes, echo=FALSE, fig.cap="Formule Fournie", out.width = "400px"}
-knitr::include_graphics("formule_trap.PNG")
+knitr::include_graphics("images/formule_trap.PNG")
 ```
 </center>
 
@@ -208,7 +208,7 @@ return res
 
 <center>
 ```{r methode_Simpson, echo=FALSE, fig.cap="Formule Fournie", out.width = "500px"}
-knitr::include_graphics("formule_simp.PNG")
+knitr::include_graphics("images/formule_simp.PNG")
 ```
 </center>
 
@@ -246,13 +246,13 @@ return res
 
 <center>
 ```{r figure1, echo=FALSE, fig.cap="Figure 1", out.width = "500px"}
-knitr::include_graphics("figure1.PNG")
+knitr::include_graphics("images/figure1.PNG")
 ```
 
 </br>
 
 ```{r figure2, echo=FALSE, fig.cap="Figure 2", out.width = "500px"}
-knitr::include_graphics("figure2.PNG")
+knitr::include_graphics("images/figure2.PNG")
 ```
 
 </br>
@@ -263,9 +263,16 @@ On peut remarquer que 0.97759 + 0.02240 = 0.99999 ~= 1 (cas 1 et 2)
 
 <center>
 ```{r figure3, echo=FALSE, fig.cap="Figure 3 (cas 3 )", out.width = "500px"}
-knitr::include_graphics("figure3.PNG")
+knitr::include_graphics("images/figure3.PNG")
 ```
 </center>
+
+
+Concernant le graphique, nous nous sommes inspirés du code de Alain Busser qu'il a mit sur son site (licence MIT) :
+https://irem.univ-reunion.fr/IMG/html/normales.html
+
+En résumé, le script va dessiner toujours la même courbe de loi nomrale (courbe de Gauss). Ce qui change d'une courbe à l'autre c'est l'intervale le la courbe qui est représenté tout cela en fonction de t et de µ.
+
 
 
 
