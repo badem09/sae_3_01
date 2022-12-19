@@ -68,7 +68,7 @@
                                     if (isset($_POST["methode"])){
 
                                         require_once('config/config_bdd.php');
-                                        $requete="INSERT INTO activitemodule (id_module, login, bool_utilisation) VALUES  (2, '".$_SESSION["user"]["login"]."', 1)";
+                                        $requete="INSERT INTO activitemodule (id_module, login) VALUES  (2, '".$_SESSION["user"]["login"]."')";
                                         $requete2 = mysqli_query($connexion, $requete);
 
                                         $methode = $_POST["methode"];

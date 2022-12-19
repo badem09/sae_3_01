@@ -191,7 +191,7 @@
 
                                                 #Insertion pour avoir les statistiques d'utilisations
                                                 require_once('config/config_bdd.php');
-                                                $requete="INSERT INTO activitemodule (id_module, login, bool_utilisation) VALUES  (1, '".$_SESSION["user"]["login"]."', 1)";
+                                                $requete="INSERT INTO activitemodule (id_module, login) VALUES  (1, '".$_SESSION["user"]["login"]."')";
                                                 $requete2 = mysqli_query($connexion, $requete);
 
                                                 #On récupere les entrées.
