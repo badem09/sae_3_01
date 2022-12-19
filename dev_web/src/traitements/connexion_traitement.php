@@ -10,7 +10,7 @@
         //On crypte le mot de passe.
         $mdpfin = md5($mdp);
         //On prépare la requete avec des valeurs indéfinie.
-        $ins = "INSERT into activiteconnexion(mdp_tente,log_tente,adr_ip) values(?,?,?)";
+        $ins = "INSERT into activiteconnexion(mdp_tente,login,adr_ip) values(?,?,?)";
         $insp = mysqli_prepare($connexion,$ins);
         //On définit le type de valeur à entrer et on execute la requete.
         mysqli_stmt_bind_param($insp,'sss', $mdpfin, $log, $adr_ip);
