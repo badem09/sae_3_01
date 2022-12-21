@@ -66,11 +66,15 @@
                         require_once('config/config_bdd.php');
                         $chiffrement = false;       //drapeau pour insertion ds BD d'un chiffrement si aucune erreur
                         $dechiffrement = false;     //drapeau pour insertion ds BD d'un dechiffrement si aucune erreur
-                        if (isset($_POST['submit'])){
-                            if (isset($_POST['input_message'])){
-                                if (isset($_POST['input_clef'])){
-                                    if (isset($_POST["option"])){
 
+
+                        if (isset($_POST['submit'])){
+                            $methode = trim($_POST["option"]);
+                            $message = trim($_POST['input_message']);
+                            $clef = trim($_POST['input_clef']);
+                            if ($message){
+                                if ($clef){
+                                    if ($methode){
                                         //Insertion pour statistiques
                                         $requete="INSERT INTO activitemodule (id_module, login) VALUES  (2, '".$_SESSION["user"]["login"]."')";
                                         $requete2 = mysqli_query($connexion, $requete);
