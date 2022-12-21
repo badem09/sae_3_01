@@ -1,36 +1,34 @@
 import sys 
 
-def rc4(action,key, data):
+def RC4(action,key, message):
     
-    # Convertir la clé en un tableau d'entiers
     key_bytes = [ord(c) for c in key]
     if action == "c" : 
-        data = [ord(c) for c in data]
+        message = [ord(c) for c in message]
     else :
-        data = joli_hexa_to_ten(data)
+        message = joli_hexa_to_ten(message)
 
-    # Initialiser l'état de l'algorithme RC4
-    state = list(range(256))
+    # Initialiser la suite chiffrante
+    suite = list(range(256))
     j = 0
     for i in range(256):
-        j = (j + state[i] + key_bytes[i % len(key_bytes)]) % 256
-        state[i], state[j] = state[j], state[i]
+        j = (j + suite[i] + key_bytes[i % len(key_bytes)]) % 256
+        suite[i], suite[j] = suite[j], suite[i]
 
-    # Appliquer l'algorithme RC4 au message
+    # Appliquer l'algorithme RC4 au message (cf PRGA(S) dans cours)
     result = []
     i = j = 0
-    for c in data:
+    for c in message:
         i = (i + 1) % 256
-        j = (j + state[i]) % 256
-        state[i], state[j] = state[j], state[i]
-        result.append(c ^ state[(state[i] + state[j]) % 256])
+        j = (j + suite[i]) % 256
+        suite[i], suite[j] = suite[j], suite[i]
+        result.append(c ^ suite[(suite[i] + suite[j]) % 256])
 
     if action == "c":
-    # Renvoyer le résultat
         return result
     else : 
         return ''.join([chr(e) for e in result])
-
+        
 
 def ten_to_joli_hexa(liste):
     """Prend une liste d'entier base décimale et le transforme en joli hexadécimaux"""
@@ -46,7 +44,7 @@ try:
     data = sys.argv[2]
     key = sys.argv[3]
 
-    res = rc4(action,key,data)
+    res = RC4(action,key,data)
 
     if action == "c":
         print(ten_to_joli_hexa(res))
