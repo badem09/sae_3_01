@@ -103,14 +103,19 @@ function affichage($table){ //affiche l'entierete de la table choisi selon le pa
     $connexion=mysqli_connect("localhost","root","");
     $bd=mysqli_select_db($connexion,"bd_sae");
 
-    $requete1 = mysqli_query($connexion,"SELECT * from $table");
+    if ($table == "users") {
+        $requete1 = mysqli_query($connexion,"SELECT id_user, login, type_user, nb_visites from $table");
+    }
+    else {
+        $requete1 = mysqli_query($connexion,"SELECT * from $table");
+    }
 
     //On affiche la base d'un tableau.
     echo "<table class='tab'>";
 
         //On affiche les titres du tableau selon la table sélectionné.
         if ($table == "users") {
-            echo "<tr id='titre_tab'><th>ID User</th><th>Login</th><th>MDP (en md5)</th><th>Type Users</th><th>Nombre de Visites</th></tr>";
+            echo "<tr id='titre_tab'><th>ID User</th><th>Login</th><th>Type Users</th><th>Nombre de Visites</th></tr>";
         }
         if ($table == "activitemodule") {
             echo "<tr id='titre_tab'><th>ID Activite</th><th>Numéro du Module utilisé</th><th>Login utilisateur</th></tr>";
@@ -137,15 +142,18 @@ function recherche($texte,$table){ //affiche le contenu de la table selon les pa
     $connexion=mysqli_connect("localhost","root","");
     $bd=mysqli_select_db($connexion,"bd_sae");
 
-
-    $requete = mysqli_query($connexion,"SELECT * from $table where login like '".$texte."%'");
-
+    if ($table == "users") {
+        $requete = mysqli_query($connexion,"SELECT id_user, login, type_user, nb_visites from $table where login like '".$texte."%'");
+    }
+    else {
+        $requete = mysqli_query($connexion, "SELECT * from $table where login like '".$texte."%'");
+    }
     //On affiche la base d'un tableau.
     echo "<table class='tab'>";
 
         //On affiche les titres du tableau selon la table sélectionné.
         if ($table == "users") {
-            echo "<tr id='titre_tab'><th>ID User</th><th>Login</th><th>MDP (en md5)</th><th>Type Users</th><th>Nombre de Visites</th></tr>";
+            echo "<tr id='titre_tab'><th>ID User</th><th>Login</th><th>Type Users</th><th>Nombre de Visites</th></tr>";
         }
         if ($table == "activitemodule") {
             echo "<tr id='titre_tab'><th>ID Activite</th><th>Numéro du Module utilisé</th><th>Login utilisateur</th></tr>";
