@@ -70,7 +70,6 @@
                             if ($message){
                                 if ($clef){
                                     if (isset($_POST["methode"])){
-                                        
                                         require_once('config/config_bdd.php');
                                         $requete="INSERT INTO activitemodule (id_module, login) VALUES  (2, '".$_SESSION["user"]["login"]."')";
                                         $requete2 = mysqli_query($connexion, $requete);

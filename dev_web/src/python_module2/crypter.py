@@ -10,4 +10,4 @@ try :
 
 
 except :
-    print("Le message n'est pas au bon format")
+    print("Le message ne possede pas le bon format")
