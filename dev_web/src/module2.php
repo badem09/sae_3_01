@@ -82,11 +82,13 @@
 
                                         $message = '"'.$message.'"';
                                         if ($methode == "Cryptage"){
-                                            $result = exec("python3 python_module2/crypter.py ". $message . " " . $clef);
+                                            //$result = exec("python3 python_module2/crypter.py ". $message . " " . $clef);
+                                            $result = exec("python3 python_module2/rc4.py". " c ".  $message . " " . $clef);
                                             $chiffrement = true;
                                         }
                                         if ($methode == "Decryptage"){
-                                            $result = exec("python3 python_module2/decrypt.py ". $message . " " . $clef);
+                                            //$result = exec("python3 python_module2/decrypt.py ". $message . " " . $clef);
+                                            $result = exec("python3 python_module2/rc4.py". " d ".  $message . " " . $clef);
                                             $dechiffrement = true;
                                         }
                                         echo $result;
