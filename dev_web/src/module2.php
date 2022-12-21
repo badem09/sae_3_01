@@ -65,12 +65,13 @@
                         
                         
                         if (isset($_POST['submit'])){
-                            $methode = trim($_POST["methode"]);
-                            $message = trim($_POST['input_message']);
-                            $clef = trim($_POST['input_clef']);
-                            if ($message){
-                                if ($clef){
-                                    if ($methode){
+                            if (! empty($_POST['input_message'])){
+                                if (! empty($_POST['input_clef'])){
+                                    if (! empty($_POST['methode'])){
+
+                                        $methode = trim($_POST["methode"]);
+                                        $message = trim($_POST['input_message']);
+                                        $clef = trim($_POST['input_clef']);
 
                                         require_once('config/config_bdd.php');
                                         $requete="INSERT INTO activitemodule (id_module, login) VALUES  (2, '".$_SESSION["user"]["login"]."')";
