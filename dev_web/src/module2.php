@@ -62,9 +62,12 @@
                 <div class='container-resultat'>
                     <h2>Résultat</h2>
                     <?php
-                        
-                        
-                        if (isset($_POST['submit'])){
+                    $chiffrement = false;       //drapeau pour insertion ds BD d'un chiffrement si aucune erreur
+                    $dechiffrement = false;     //drapeau pour insertion ds BD d'un dechiffrement si aucune erreur
+
+                    require_once('config/config_bdd.php');
+
+                    if (isset($_POST['submit'])){
                             if (! empty($_POST['input_message'])){
                                 if (! empty($_POST['input_clef'])){
                                     if (! empty($_POST['methode'])){
@@ -73,18 +76,26 @@
                                         $message = trim($_POST['input_message']);
                                         $clef = trim($_POST['input_clef']);
 
-                                        require_once('config/config_bdd.php');
+                                        //Insertion pour statistiques
                                         $requete="INSERT INTO activitemodule (id_module, login) VALUES  (2, '".$_SESSION["user"]["login"]."')";
                                         $requete2 = mysqli_query($connexion, $requete);
 
                                         $message = '"'.$message.'"';
                                         if ($methode == "Cryptage"){
                                             $result = exec("python3 python_module2/crypter.py ". $message . " " . $clef);
+                                            $chiffrement = true;
                                         }
                                         if ($methode == "Decryptage"){
                                             $result = exec("python3 python_module2/decrypt.py ". $message . " " . $clef);
+                                            $dechiffrement = true;
                                         }
                                         echo $result;
+
+                                        if ($result == "Le message ne possede pas le bon format"){  //message d'erreur de python, à ne pas insérer
+                                            $chiffrement=false;
+                                            $dechiffrement=false;
+                                        }
+
                                     }
                                     else{
                                         echo "<p class='err'> Vous n'avez pas choisi méthode.</p>";
@@ -98,8 +109,26 @@
                                 echo "<p class='err'> Vous n'avez pas rentré le message. </p>";
                             }
                         }
+                    if ($chiffrement){
+                        //Insertion pour historique utilisateurs
+                        $insertion = "INSERT INTO historique_module2 (login, bool_chiffrement, message, cle, resultat) VALUES ('".$_SESSION["user"]["login"]."', 1, $message,'".$clef."', '".$result."')";
+                        $insertion2 = mysqli_query($connexion, $insertion);
+                    }
+                    elseif ($dechiffrement){
+                        //Insertion pour historique utilisateurs
+                        $insertion = "INSERT INTO historique_module2 (login, bool_dechiffrement, message, cle, resultat) VALUES ('".$_SESSION["user"]["login"]."', 1, $message,'".$clef."', '".$result."')";
+                        $insertion2 = mysqli_query($connexion, $insertion);
+                    }
+
                     ?>
-                </div>        
+                </div>
+                <input id="historique" name='historique' type="submit" value="Historique des Mots de Passes"></input>
+                <?php
+                if (isset($_POST["historique"])){
+                    $login=$_SESSION["user"]["login"];
+                    recherche($login);
+                }
+                ?>
             </form>
         </div>
     </body>
@@ -108,3 +137,33 @@
         require("imports_html/footer.html");
     ?>
 </html>
+
+
+
+<?php
+function recherche($login){
+
+    //configuration d'accès à la base de donnée avant de commencer.
+    $connexion=mysqli_connect("localhost","root","");
+    $bd=mysqli_select_db($connexion,"bd_sae");
+
+    //requete pour afficher tout les mots de passes entrée par l'utiisateur utilisant le module
+    $recherche=mysqli_query($connexion,"SELECT * FROM historique_module2 where login like '".$login."%'");
+
+    //On affiche la base d'un tableau.
+    echo "<table class='tab'>";
+
+    echo "<tr id='titre_tab'><th>ID Historique</th><th>ID Module</th><th>Login</th><th>Chiffrement</th><th>Déchiffrement</th><th>Message</th><th>Clef</th><th>Résultat</th></tr>";
+
+
+    //Pour chaques lignes assigé comme plusieurs valeurs, on récupère et affiche les données (1 seul car chaque "login" est unique).
+    while ($ligne = mysqli_fetch_row($recherche)) {
+        echo "<tr>";
+        foreach ($ligne as $v) {
+            echo "<td>" . $v . "</td>";
+        }
+        echo "</tr>";
+    }
+    echo "</table>";
+}
+?>
