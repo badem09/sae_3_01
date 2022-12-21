@@ -65,11 +65,13 @@
                         
                         
                         if (isset($_POST['submit'])){
+                            $methode = trim($_POST["methode"]);
                             $message = trim($_POST['input_message']);
                             $clef = trim($_POST['input_clef']);
                             if ($message){
                                 if ($clef){
-                                    if (isset($_POST["methode"])){
+                                    if ($methode){
+
                                         require_once('config/config_bdd.php');
                                         $requete="INSERT INTO activitemodule (id_module, login) VALUES  (2, '".$_SESSION["user"]["login"]."')";
                                         $requete2 = mysqli_query($connexion, $requete);
