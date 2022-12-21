@@ -41,21 +41,18 @@ def joli_hexa_to_ten(str):
     liste = str.split(" ")
     return [int('0x' + cara , 0) for cara in liste]
 
-action = sys.argv[1]
-data = sys.argv[2]
-key = sys.argv[3]
+try:
+    action = sys.argv[1]
+    data = sys.argv[2]
+    key = sys.argv[3]
 
-res = rc4(action,key,data)
+    res = rc4(action,key,data)
 
-if action == "c":
-    print(ten_to_joli_hexa(res))
-else: 
-    print(res)
+    if action == "c":
+        print(ten_to_joli_hexa(res))
+    else: 
+        print(res)
 
+except:
+    print("Erreur d'éxécution")
 
-"""encrypted_data = rc4("c",key, data)
-decrypted_data = rc4("d",key, encrypted_data)
-
-print(ten_to_joli_hexa(encrypted_data))
-print(decrypted_data)  
-"""
