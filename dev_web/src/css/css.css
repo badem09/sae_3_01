@@ -571,3 +571,22 @@ footer {
     line-height: 1.5rem;
     padding: 0.5rem 0.75rem;
 }
+
+/* ######################### Page Module 2 ######################### */
+
+.titre-form-module-proba {
+    text-align: left;
+    text-transform: none;
+    font-weight: bold;
+    color: #6A7887;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    font-size: 13px;
+}
+
+.result-module2-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+}
