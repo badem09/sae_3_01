@@ -56,13 +56,27 @@ body{
     text-transform: uppercase;
 }
 
+.nav-item-services a {
+    color: black;
+    padding: 12px;
+    font-size: 13px;
+    letter-spacing: 1.1px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
 #ul-container {
     vertical-align: center;
     margin: 0px 40px;
 }
 
-.nav-item:hover a {
+.nav-item a:hover, li:hover {
     color: #000A7E;
+    background-color: #EEEEEE;
+}
+
+.nav-item-services a:hover {
+    background-color: transparent;
 }
 
 .nav-item-services {
@@ -96,6 +110,8 @@ li:hover .nav-item-services{
     text-align: right;
     position: all;
     padding: 10px 0px;
+    width: 100%;
+    text-align: left;
 }
 
 /* ################# Footer pour toutes les pages ################# */
