@@ -370,7 +370,7 @@ footer {
     padding-bottom: 50px;
 }
 
-.recherche h3 {
+.recherche h3, .recherche h2 {
     color: #000A7E;
     font-weight: bold;
 }
@@ -389,7 +389,7 @@ footer {
     color: #D1D1D1;
 }
 
-.recherche #search {
+.recherche #search, #users, #activitemodule, #activiteconnexion {
   background-color: #000A7E;
   color: white;
   padding: 14px 20px;
@@ -400,7 +400,7 @@ footer {
   font-weight: bold;
 }
 
-.recherche #search:hover {
+.recherche #search:hover, #users:hover, #activitemodule:hover, #activiteconnexion:hover {
   background-color: #1521A5;
 }
 
@@ -417,6 +417,10 @@ footer {
 
 .recherche #clear:hover {
   background-color: #CACACA;
+}
+
+#post-admin-up {
+    margin-bottom: 50px;
 }
 
 .affichage {
