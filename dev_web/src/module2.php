@@ -28,7 +28,7 @@
             <h1>X Calculator</h1>
             <h2>Module de Cryptographie</h2>
             <br>
-            <p class="pacc_mod_pres">Texte Présentation</p>
+            <p class="pacc_mod_pres">Vous pouvez crypter et décrypter un code à l'aide d'une clé personalisé avec le type de cryptage RC4.</p>
         </div>
 
         <div class='container-module-parent'>
