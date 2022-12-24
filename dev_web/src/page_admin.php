@@ -121,7 +121,7 @@ function affichage($table){ //affiche l'entierete de la table choisi selon le pa
             echo "<tr id='titre_tab'><th>ID Activite</th><th>Numéro du Module utilisé</th><th>Login utilisateur</th></tr>";
         }
         if ($table == "activiteconnexion") {
-            echo "<tr id='titre_tab'><th>ID Connexion</th><th>Reussite</th><th>MDP tente (en md5)</th><th>Login tente</th><th>Horaire de la tentative</th><th>Adresse IP</th></tr>";
+            echo "<tr id='titre_tab'><th>ID Connexion</th><th>MDP tente (en md5)</th><th>Login tente</th><th>Horaire de la tentative</th><th>Adresse IP</th></tr>";
         }
 
         //Pour chaques lignes assigé comme plusieurs valeurs, on récupère et affiche les données (1 seul car chaque "login" est unique).
@@ -159,7 +159,7 @@ function recherche($texte,$table){ //affiche le contenu de la table selon les pa
             echo "<tr id='titre_tab'><th>ID Activite</th><th>Numéro du Module utilisé</th><th>Login utilisateur</th></tr>";
         }
         if ($table == "activiteconnexion") {
-            echo "<tr id='titre_tab'><th>ID Connexion</th><th>Reussite</th><th>MDP tente (en md5)</th><th>Login tente</th><th>Horaire de la tentative</th><th>Adresse IP</th></tr>";
+            echo "<tr id='titre_tab'><th>ID Connexion</th><th>MDP tente (en md5)</th><th>Login tente</th><th>Horaire de la tentative</th><th>Adresse IP</th></tr>";
         }
 
         //Pour chaques lignes assigé comme plusieurs valeurs, on récupère et affiche les données (1 seul car chaque "login" est unique).
