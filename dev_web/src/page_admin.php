@@ -106,7 +106,7 @@
             $requete1 = mysqli_query($connexion,"SELECT id_user, login, type_user, nb_visites from $table");
         }
         else if ($table == "activiteconnexion") {
-            $requete1 = mysqli_query($connexion,"SELECT id_connexion, mdp_tente, login, date_horaire_tent, adr_ip from $table");
+            $requete1 = mysqli_query($connexion,"SELECT id_connexion, mdp_tente, log_tente, date_horaire_tent, adr_ip from $table");
         }
         else {
             $requete1 = mysqli_query($connexion,"SELECT * from $table");
