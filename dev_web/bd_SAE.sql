@@ -25,7 +25,7 @@ CREATE TABLE `historique_module2` (
   `bool_chiffrement` tinyint(1) NOT NULL DEFAULT 0,
   `bool_dechiffrement` tinyint(1) NOT NULL DEFAULT 0,
   `message` varchar(255) NOT NULL,
-  `cle` int(11) NOT NULL,
+  `cle` varchar(255) NOT NULL,
   `resultat` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -42,26 +42,32 @@ CREATE TABLE `users` (
 ALTER TABLE `activiteconnexion`
   ADD PRIMARY KEY (`id_connexion`);
 
---
--- Index pour la table `activitemodule`
---
+
 ALTER TABLE `activitemodule`
   ADD PRIMARY KEY (`id_activite`);
 
---
--- Index pour la table `users`
---
+
+ALTER TABLE `historique_module2`
+  ADD PRIMARY KEY (`id_historique`);
+
+
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id_user`);
-
 
 
 ALTER TABLE `activiteconnexion`
   MODIFY `id_connexion` int(11) NOT NULL AUTO_INCREMENT;
 
+
 ALTER TABLE `activitemodule`
   MODIFY `id_activite` int(11) NOT NULL AUTO_INCREMENT;
+
+
+ALTER TABLE `historique_module2`
+  MODIFY `id_historique` int(11) NOT NULL AUTO_INCREMENT;
+
 
 ALTER TABLE `users`
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
+
