@@ -32,6 +32,7 @@
         </div>
 
         <div class='container-module-parent'>
+
             <form name="form_module1" action='' method='post'>
                 <div class='container-module'>
                     <div class='container-form'>
@@ -62,7 +63,9 @@
 
                         <input id="input-module-send" name='submit' type="submit" value="Executer"></input>
                     </div>
+
                     <div class="vertical-line"></div>
+
                     <div class='container-resultat'>
                         <h2>Résultat</h2>
                         <?php
@@ -72,7 +75,8 @@
                             require_once('config/config_bdd.php');
 
                             if (isset($_POST['submit'])){
-                                if (!empty($_POST['input_message']) && trim($_POST["input_message"]) != ""){ # s'il rentre que des espaces marche pas
+                                if (!empty($_POST['input_message']) && trim($_POST["input_message"]) != ""){
+                                #S'il rentre que des espaces marche pas
                                     if (!empty($_POST['input_clef']) && trim($_POST["input_clef"]) != ""){
                                         if (!empty($_POST['methode']) && trim($_POST["methode"]) != ""){
 
@@ -103,43 +107,38 @@
                                                 $chiffrement=false;
                                                 $dechiffrement=false;
                                             }
-                                        }
-                                        else{
+                                            if ($chiffrement){
+                                                //Insertion pour historique utilisateurs
+                                                $insertion = "INSERT INTO historique_module2 (login, bool_chiffrement, message, cle, resultat) VALUES ('".$_SESSION["user"]["login"]."', 1, $message,'".$clef."', '".$result."')";
+                                                $insertion2 = mysqli_query($connexion, $insertion);
+                                            }elseif ($dechiffrement){
+                                                //Insertion pour historique utilisateurs
+                                                $insertion = "INSERT INTO historique_module2 (login, bool_dechiffrement, message, cle, resultat) VALUES ('".$_SESSION["user"]["login"]."', 1, $message,'".$clef."', '".$result."')";
+                                                $insertion2 = mysqli_query($connexion, $insertion);
+                                            }
+                                        }else{
                                             echo "<p class='err'>Vous n'avez pas choisi méthode.</p>";
                                         }
-                                       
-
-                           }
-                                    else{
+                                    }else{
                                         echo "<p class='err'>Vous n'avez pas rentré la clé.</p>";
                                     }
-                                }
-                                else{
+                                }else{
                                     echo "<p class='err'>Vous n'avez pas rentré le message.</p>";
                                 }
                             }
-                            if ($chiffrement){
-                                //Insertion pour historique utilisateurs
-                                $insertion = "INSERT INTO historique_module2 (login, bool_chiffrement, message, cle, resultat) VALUES ('".$_SESSION["user"]["login"]."', 1, $message,'".$clef."', '".$result."')";
-                                $insertion2 = mysqli_query($connexion, $insertion);
-                            }
-                            elseif ($dechiffrement){
-                                //Insertion pour historique utilisateurs
-                                $insertion = "INSERT INTO historique_module2 (login, bool_dechiffrement, message, cle, resultat) VALUES ('".$_SESSION["user"]["login"]."', 1, $message,'".$clef."', '".$result."')";
-                                $insertion2 = mysqli_query($connexion, $insertion);
-                            }
-
                         ?>
                     </div>
-                </div>                
-                <input id="historique" name='historique' type="submit" value="Historique des Mots de Passes"></input>
-                <?php
-                    if (isset($_POST["historique"])){
-                        $login=$_SESSION["user"]["login"];
-                        recherche($login);
-                    }
-                ?>
+                </div>
             </form>
+
+            <div class="div-affi-histo-mod2">
+                <h2>Votre historique :</h2>
+                <a href="module2.php"><input id="historique" name='historique' type="submit" value="Actualiser votre historique"></input></a>
+                <?php
+                    recherche($_SESSION["user"]["login"]);
+                ?>
+            </div>
+            
         </div>
     </body>
     <?php
@@ -147,8 +146,6 @@
         require("imports_html/footer.html");
     ?>
 </html>
-
-
 
 <?php
     function recherche($login){
