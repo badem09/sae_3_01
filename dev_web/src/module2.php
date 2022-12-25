@@ -89,11 +89,13 @@
                                                 //$result = exec("python3 python_module2/crypter.py ". $message . " " . $clef);
                                                 $result = exec("python3 python_module2/rc4.py". " c ".  $message . " " . $clef);
                                                 $chiffrement = true;
+                                                echo $result;
                                             }
                                             if ($methode == "Decryptage"){
                                                 //$result = exec("python3 python_module2/decrypt.py ". $message . " " . $clef);
                                                 $result = exec("python3 python_module2/rc4.py". " d ".  $message . " " . $clef);
                                                 $dechiffrement = true;
+                                                echo $result;
                                             }
                                             if ($result == "Le message ne possede pas le bon format"){
                                                 //message d'erreur de python, à ne pas insérer
@@ -101,7 +103,6 @@
                                                 $chiffrement=false;
                                                 $dechiffrement=false;
                                             }
-
                                         }
                                         else{
                                             echo "<p class='err'>Vous n'avez pas choisi méthode.</p>";
