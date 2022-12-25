@@ -165,16 +165,13 @@
                             </select>
 
                             <p class="titre-form-module-proba">Valeur de µ :</p>
-                            <label id="label-esp" for="esp">
-                            <input type="text" name="esp" id="esp" placeholder="ex : 1" value="<?php echo isset($_POST['esp']) ? $_POST['esp'] : '' ?>"/>
+                            <input aria-label="esp" type="text" name="esp" id="esp" placeholder="ex : 1" value="<?php echo isset($_POST['esp']) ? $_POST['esp'] : '' ?>"/>
 
                             <p class="titre-form-module-proba">Valeur de σ :</p>
-                            <label id="label-et" for="et">
-                            <input type="text" name="et" id="et" placeholder="ex : 1" value="<?php echo isset($_POST['et']) ? $_POST['et'] : '' ?>"/>
+                            <input aria-label="et" type="text" name="et" id="et" placeholder="ex : 1" value="<?php echo isset($_POST['et']) ? $_POST['et'] : '' ?>"/>
 
                             <p class="titre-form-module-proba">Valeur de t :</p>
-                            <label id="label-t" for="t">
-                            <input type="text" name="t" id ="t" placeholder="ex : 1" value="<?php echo isset($_POST['t']) ? $_POST['t'] : '' ?>"/>
+                            <input aria-label="t" type="text" name="t" id ="t" placeholder="ex : 1" value="<?php echo isset($_POST['t']) ? $_POST['t'] : '' ?>"/>
                         </div>
                         <input id="input-module-send" name='submit' type="submit" value="Calculer"></input>
                     </div>
