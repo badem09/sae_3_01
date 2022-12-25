@@ -9,6 +9,7 @@
             header('Location: connexion.php');
             die();
         }
+    //Si aucune cession n'existe on renvoie sur la page de connexion.
     }else{
         header('Location: connexion.php');
         die();
@@ -61,18 +62,19 @@
                     //On inclus la configuration d'accès à la base de donnée avant de commencer.
                     require_once('config/config_bdd.php');
 
-
-                    if ( isset($_POST["users"]) ){  //si on appuie sur le bouton utilisateur
-                        $table = "users";           // alors on récupère la table
-                        setcookie("table", $table); //et on la met dans un cookie pour la stocker
-                        affichage($table);          // et on appel la fonction avec la table en paramètre
+                    //Si on appuie sur le bouton utilisateur, alors on récupère la table, on la met le nom de la table
+                    //dans un cookie pour la stocker et on appel la fonction avec le nom de la table en paramètre.
+                    if (isset($_POST["users"])) {
+                        $table = "users";
+                        setcookie("table", $table);
+                        affichage($table);
                     }
-                    else if ( isset($_POST["activitemodule"]) ){
+                    elseif (isset($_POST["activitemodule"])) {
                         $table = "activitemodule";
                         setcookie("table", $table);
                         affichage($table);
                     }
-                    else if ( isset($_POST["activiteconnexion"]) ){
+                    elseif (isset($_POST["activiteconnexion"])) {
                         $table = "activiteconnexion";
                         setcookie("table", $table);
                         affichage($table);
@@ -80,10 +82,11 @@
 
                     //Si une recherche a été demandé.
                     if ((isset($_POST["text"], $_POST["search"]))) {
+                        //On appel la fonction recherche avec le nom de la table et le texte entrée.
                         recherche($_POST["text"], $_COOKIE["table"]);
 
-                    //Si un retour à été demandé, on redirige vers la meme page pour actualiser et on ferme celle-ci.
-                    } elseif (isset($_POST["retour"]) ){
+                    //Si un retour à été demandé, on redirige vers la meme page pour l'actualiser et on ferme celle-ci.
+                    }elseif (isset($_POST["retour"])) {
                         header("location:page_admin.php");
                         die();
                     }
@@ -95,20 +98,26 @@
 </html>
 
 <?php
+    //Affiche l'entierete de la table choisi selon le paramètre "table" si aucuns texte n'est entrée.
+    function affichage($table){
 
-    function affichage($table){ //affiche l'entierete de la table choisi selon le paramètre
-
-        //configuration d'accès à la base de donnée avant de commencer.
+        //On ajoute la configuration d'accès à la base de données.
         $connexion=mysqli_connect("localhost","root","");
         $bd=mysqli_select_db($connexion,"bd_sae");
 
+        //Si la table est user.
         if ($table == "users") {
+            //On récupère toutes les information dont ont à besoin.
             $requete1 = mysqli_query($connexion,"SELECT id_user, login, type_user, nb_visites from $table");
         }
+        //Si la table est activiteconnexion.
         else if ($table == "activiteconnexion") {
+            //On récupère toutes les information dont ont à besoin.
             $requete1 = mysqli_query($connexion,"SELECT id_connexion, mdp_tente, login, date_horaire_tent, adr_ip from $table");
         }
+        //Si la table est le dernier bouton.
         else {
+            //On récupère toutes les information dont ont à besoin.
             $requete1 = mysqli_query($connexion,"SELECT * from $table");
         }
 
@@ -119,9 +128,11 @@
         if ($table == "users") {
             echo "<tr id='titre_tab'><th>ID User</th><th>Login</th><th>Type Users</th><th>Nombre de Visites</th></tr>";
         }
+        //On affiche les titres du tableau selon la table sélectionné.
         if ($table == "activitemodule") {
             echo "<tr id='titre_tab'><th>ID Activite</th><th>Numéro du Module utilisé</th><th>Login utilisateur</th></tr>";
         }
+        //On affiche les titres du tableau selon la table sélectionné.
         if ($table == "activiteconnexion") {
             echo "<tr id='titre_tab'><th>ID Connexion</th><th>MDP tente (en md5)</th><th>Login tente</th><th>Horaire de la tentative</th><th>Adresse IP</th></tr>";
         }
@@ -139,20 +150,26 @@
 
     }
 
+    //Affiche l'entierete de la table choisi selon les paramètres "table" et "texte" si un texte est entrée.
+    function recherche($texte,$table){
 
-    function recherche($texte,$table){//affiche le contenu de la table selon les paramètres
-
-        //configuration d'accès à la base de donnée avant de commencer.
+        //On ajoute la configuration d'accès à la base de données.
         $connexion=mysqli_connect("localhost","root","");
         $bd=mysqli_select_db($connexion,"bd_sae");
 
+        //Si la table est user.
         if ($table == "users") {
+            //On récupère toutes les information dont ont à besoin.
             $requete = mysqli_query($connexion,"SELECT id_user, login, type_user, nb_visites from $table where login like '".$texte."%'");
         }
+        //Si la table est activiteconnexion.
         else if ($table == "activiteconnexion") {
+            //On récupère toutes les information dont ont à besoin.
             $requete = mysqli_query($connexion,"SELECT id_connexion, mdp_tente, login, date_horaire_tent, adr_ip from $table where login like '".$texte."%'");
         }
+        //Si la table est le dernier bouton.
         else {
+            //On récupère toutes les information dont ont à besoin.
             $requete = mysqli_query($connexion, "SELECT * from $table where login like '".$texte."%'");
         }
         //On affiche la base d'un tableau.
