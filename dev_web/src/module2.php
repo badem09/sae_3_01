@@ -93,7 +93,7 @@
                                         }
                                         echo $result;
 
-                                        if ($result == "Le message ne possede pas le bon format"){  //message d'erreur de python, à ne pas insérer
+                                        if ($result == "Erreur d'éxécution"){  //message d'erreur de python, à ne pas insérer
                                             $chiffrement=false;
                                             $dechiffrement=false;
                                         }
