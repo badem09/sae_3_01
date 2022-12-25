@@ -52,12 +52,10 @@
                             </fieldset>
 
                             <p class="titre-form">Votre message:</p>
-                            <label id="label_input_message" for="input_message">
-                            <input type="text" name="input_message" id="input_message" placeholder="Votre groupe mérite un 20/20 !" value=""/>
+                            <input aria-label="input-message" type="text" name="input_message" id="input_message" placeholder="Votre groupe mérite un 20/20 !" value=""/>
 
                             <p class="titre-form">La clef:</p>
-                            <label id="label_input_clef" for="input_clef">
-                            <input type="text" name="input_clef" id="input_clef" placeholder="20/20" value=""/>
+                            <input aria-label="input-clef" type="text" name="input_clef" id="input_clef" placeholder="20/20" value=""/>
               
                         </div>
 
