@@ -72,9 +72,9 @@
                             require_once('config/config_bdd.php');
 
                             if (isset($_POST['submit'])){
-                                if (!empty($_POST['input_message'])){
-                                    if (!empty($_POST['input_clef'])){
-                                        if (!empty($_POST['methode'])){
+                                if (!empty($_POST['input_message']) && trim($_POST["input_message"]) != ""){ # s'il rentre que des espaces marche pas
+                                    if (!empty($_POST['input_clef']) && trim($_POST["input_clef"]) != ""){
+                                        if (!empty($_POST['methode']) && trim($_POST["methode"]) != ""){
 
                                             $methode = trim($_POST["methode"]);
                                             $message = trim($_POST['input_message']);
@@ -102,17 +102,16 @@
                                                 $dechiffrement=false;
                                             }
                                             echo "<div class='result-module2-center'>". $result ."</div>";
+                                            if ( $result == "Erreur d'éxécution"){  //message d'erreur de python, à ne pas insérer
+                                                $chiffrement=false;
+                                                $dechiffrement=false;
+                                            }
 
                                         }
                                         else{
                                             echo "<p class='err'>Vous n'avez pas choisi méthode.</p>";
                                         }
-                                       // echo $result;
-
-                                        if ($result == "Erreur d'éxécution"){  //message d'erreur de python, à ne pas insérer
-                                            $chiffrement=false;
-                                            $dechiffrement=false;
-                                        }
+                                       
 
                            }
                                     else{
