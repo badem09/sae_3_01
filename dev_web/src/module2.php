@@ -94,12 +94,13 @@
                                             $requete2 = mysqli_query($connexion, $requete);
 
                                             //On définis le message.
+                                            $message1 = $message;
                                             $message = '"'.$message.'"';
 
                                             //Si la methode est Cryptage.
                                             if ($methode == "Cryptage"){
                                                 //On récupere le resultat que fournis notre commande.
-                                                $result = exec("python3 python_module2/rc4.py". " c ".  $message . " " . $clef);
+                                                $result = utf8_encode(exec("python3 python_module2/rc4.py". " c ".  "$message" . " " . $clef));
                                                 //On définit le drapeu chiffrement à true.
                                                 $chiffrement = true;
                                                 //On renvoir le résultat
@@ -107,18 +108,25 @@
                                             }
                                             //Si la methode est Decryptage.
                                             if ($methode == "Decryptage"){
-                                                //On récupere le resultat que fournis notre commande.
-                                                $result = exec("python3 python_module2/rc4.py". " d ".  $message . " " . $clef);
-                                                //On définit le drapeu chiffrement à true.
-                                                $dechiffrement = true;
-                                                //On renvoir le résultat
-                                                echo $result;
+                                                if (is_hexa($message1)){
+
+                                                    //On récupere le resultat que fournis notre commande.
+                                                    $result = utf8_encode(exec("python3 python_module2/rc4.py". " d ".  "$message" . " " . $clef));
+                                                    //On définit le drapeu chiffrement à true.
+                                                    $dechiffrement = true;
+                                                    //On renvoir le résultat
+                                                    echo $result;
+                                                }
+                                                else{
+                                                    echo "<p class='err'>Décryptage : le message doit être en héxadécimal.</p>";
+                                                    $result = "";
+                                                }
                                             }
 
                                             //Si le résultat renvoyé par le fichier est "Le message ne possede pas le bon format"
                                             if ($result == "Le message ne possede pas le bon format"){
                                                 //On affiche un message d'erreur.
-                                                echo "<p class='err'>Le message ou la clé n'existe pas.</p>";
+                                                echo "<p class='err'>Erreur d'éxecution</p>";
                                                 //On définit les drapeaux à flase.
                                                 $chiffrement=false;
                                                 $dechiffrement=false;
@@ -195,5 +203,18 @@
             echo "</tr>";
         }
         echo "</table>";
+    }
+
+    function is_hexa($num){
+        $alpha1 = 'abcdef';
+        $alpha2 = 'ABCDEF';
+        $num = str_replace(' ','',$num);
+
+        foreach(str_split($num) as $elem){
+            if (! str_contains($alpha1,$elem) && !  str_contains($alpha2,$elem) && ! is_numeric($elem)){
+                return false;
+            }
+       }
+       return true;
     }
 ?>
