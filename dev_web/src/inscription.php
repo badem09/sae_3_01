@@ -57,16 +57,13 @@
                     } ?>
                     <div class='inputs'>
                         <p class='titre-form'>Identifiant</p>
-                        <label id="label-register-login" for="register-login">
-                        <input id='register-login' type='text' name='login' placeholder='ex : demba404' required/>
+                        <input aria-label="register-login" id='register-login' type='text' name='login' placeholder='ex : demba404' required/>
 
                         <p class='titre-form'>Mot de passe</p>
-                        <label id="label-register-password" for="register-password">
-                        <input id='register-password' type='password' name='mdp' placeholder='ex : M0t_D3_P@55€' required/>
+                        <input aria-label="register-password" id='register-password' type='password' name='mdp' placeholder='ex : M0t_D3_P@55€' required/>
                         
                         <p class='titre-form'>Confirmer Mot de passe</p>
-                        <label id="label-register-password-2" for="register-password-2">
-                        <input id='register-password-2' type='password' name='mdp_retype' placeholder='ex : M0t_D3_P@55€' required/>
+                        <input aria-label="register-password-2" id='register-password-2' type='password' name='mdp_retype' placeholder='ex : M0t_D3_P@55€' required/>
                         
                         <p class='titre-form'>Captcha</p>
                         <div class='captcha-img-desc'>
@@ -76,8 +73,7 @@
                         <audio controls>
                             <source src="captcha/audio/captcha1.mp3" type="audio/mpeg">
                         </audio>
-                        <label id="label-register-captcha" for="register-captcha">
-                        <input id='register-captcha' type='text' name='captcha' placeholder='ex : 7u5T5g3' required/>
+                        <input aria-label="register-captcha" id='register-captcha' type='text' name='captcha' placeholder='ex : 7u5T5g3' required/>
                     </div>
                     <p><input type='submit' name='Envoyer' value='S&apos;inscrire'></p>
                     <p>Déjà inscrit ? <a id='link-sincrip' href='connexion.php'>C'est ici !</a></p>
