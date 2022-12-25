@@ -74,16 +74,13 @@
 	            ?>
 	            <div class='inputs'>
 	            		<p class='titre-form'>Ancien mot de passe</p>
-	                <label id="label-register-password" for="register-password">
-	                <input id='register-password' type='password' name='a_mdp' placeholder='ex : M0t_D3_P@55€'/>
+	                <input aria-label="register-old-password" id='register-old-password' type='password' name='a_mdp' placeholder='ex : M0t_D3_P@55€'/>
 
 	                <p class='titre-form'>Nouveau mot de passe</p>
-	                <label id="label-register-password" for="register-password">
-	                <input id='register-password' type='password' name='mdp' placeholder='ex : N0Uv€@U_M0t_D3_P@55€'/>
+	                <input aria-label="register-new-password" id='register-new-password' type='password' name='mdp' placeholder='ex : N0Uv€@U_M0t_D3_P@55€'/>
 	                
 	                <p class='titre-form'>Confirmer nouveau Mot de passe</p>
-	                <label id="label-register-password-2" for="register-password-2">
-	                <input id='register-password-2' type='password' name='mdp_retype' placeholder='ex : N0Uv€@U_M0t_D3_P@55€'/>
+	                <input aria-label="register-new-password2" id='register-new-password-2' type='password' name='mdp_retype' placeholder='ex : N0Uv€@U_M0t_D3_P@55€'/>
 	                
 	                <p class='titre-form'>Captcha</p>
 	                <div class='captcha-img-desc'>
@@ -93,8 +90,7 @@
 					<audio controls>
                             <source src="captcha/audio/captcha1.mp3" type="audio/mpeg">
                     </audio>
-	                <label id="label-register-captcha" for="register-captcha">
-	                <input id='register-captcha' type='text' name='captcha' placeholder='ex : 7u5T5g3'/>
+	                <input aria-label="register-captcha" id='register-captcha' type='text' name='captcha' placeholder='ex : 7u5T5g3'/>
 	                <p><input type='submit' name='Envoyer' value='Modifier'></p>
 	                <p>Mot de passe oublié ? <a id='link-sincrip' href='404.php'>C'est par là !</a></p>
 	            </div>
