@@ -30,30 +30,42 @@
 			</div>
 
 			<div>
-				<h3>Module de probabilité : calcul approché d'une loi normale.</h3>
+				<h3>Module de Probabilité : Calcul approché d'une loi normale.</h3>
 
 				<p>Ce module vous permettra de calculer une probabilité 
-					dans le cadre d’une loi normale de paramètres m et σ.</br>
+					dans le cadre d’une loi normale de paramètres m et σ.
+					</br>
 					Vous pourrez calculer P (X < t) en saisissant la valeur de m, de σ et t
 					</br>
 					Vous aurez le choix entre les méthodes des rectangles, 
 					la méthode des trapèzes et la méthode de Simpson.
+					</br></br></br></br>
 				</p>
 
-				<a href="module1.php" aria-label="lien_page_connexion"><input type="button" value="Y aller"></a>
+				<a href="module1.php" aria-label="lien_page_module1"><input type="button" value="Y aller"></a>
 			</div>
 		</div>
 
 		<div class="pacc_mod_droit"> 
 			<div>
-				<h3>Module2</h3>
-				<p>A venir très prochainement !</p>
-				</br></br></br></br></br></br></br>
-				<a href="404.php" aria-label="lien_page_connexion"><input type="button" value="Y aller"></a>
+				<h3>Module de Cryptographie :</h3>
+				<p>Cryptage et décryptage d'un code avec une clé en utilisant la méthode RC4.
+					</br>
+					Pour crypter, il vous faut un message à crypter, ex: "Bonjour" et une clé,
+					ex: "slt".
+					</br>
+					De même pour le décryptage, exepter deux conditions,
+					</br>
+					le message à décrypter doit avoir été crypté et enrengisté dans le sytème
+					</br>
+					et doit avoir la même clé de décryptage que pour l'opération inverse.
+					</br></br>
+				</p>
+				<a href="module2.php" aria-label="lien_page_module2"><input type="button" value="Y aller"></a>
 			</div>
 
 			<div class="pacc_mod_image">
-				<img src="img\carre_page_acceuil.png" alt="image_EnCoursDeDeveloppemnt">
+				<img src="img\module2.png" alt="image_XXXXXXXXXXXXXXXXXXXXXXXXXXX">
 			</div>
 		</div>
 
@@ -67,7 +79,7 @@
 
 				<p>A venir très prochainement !</p>
 				</br></br></br></br></br></br></br>
-				<a href="404.php" aria-label="lien_page_connexion"><input type="button" value="Y aller"></a>
+				<a href="404.php" aria-label="lien_page_404"><input type="button" value="Y aller"></a>
 			</div>
 		</div>
 
