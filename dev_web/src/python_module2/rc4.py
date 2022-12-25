@@ -17,7 +17,7 @@ def RC4(action,key, message):
     if action == "c" : 
         message = [ord(c) for c in message] # valeur ascii des lettre du message
     else :
-        message = joli_hexa_to_ten(message) # valeur décimale de la chaine de nombres héxadécimaux
+        message = hexa_to_ten(message) # valeur décimale de la chaine de nombres héxadécimaux
 
     # Initialiser la suite chiffrante
     suite = list(range(256))
@@ -41,7 +41,7 @@ def RC4(action,key, message):
         return ''.join([chr(e) for e in result])
         
 
-def ten_to_joli_hexa(liste):
+def ten_to_hexa(liste):
     """Convertit une liste de nombres décimaux (base 10) en 
     une chaîne de charactères de nombres héxadécimaux (base 16) 
 
@@ -54,7 +54,7 @@ def ten_to_joli_hexa(liste):
     liste = [hex(e)[2:].upper() if len(str(hex(e)))>3 else "0" + hex(e)[2:].upper() for e in liste]
     return " ".join(liste)
 
-def joli_hexa_to_ten(str):
+def hexa_to_ten(str):
     """Convertit une chaîne de charactères de nombres héxadéciamaux 
     (base 16) liste de nombres décimaux (base 10)
 
@@ -75,7 +75,7 @@ try:
     res = RC4(action,key,data)
 
     if action == "c":
-        print(ten_to_joli_hexa(res))
+        print(ten_to_hexa(res))
     else: 
         print(res)
 
