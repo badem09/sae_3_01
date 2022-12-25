@@ -49,7 +49,7 @@
                 </form>
 
                 <form method="post">
-                    <input id='researched' type='text' name="text"  placeholder="ex : demba404">
+                    <input aria-label="input-research" id='researched' type='text' name="text"  placeholder="ex : demba404">
                     <input id='search' type='submit' name='search' value='Recherecher'>
                     <input id='clear' type='submit' name='retour' value='Retour'>
                 </form>
