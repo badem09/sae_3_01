@@ -84,12 +84,12 @@
 	                
 	                <p class='titre-form'>Captcha</p>
 	                <div class='captcha-img-desc'>
-	                    <img class='img-cptcha' src='captcha/img/captcha1.png' alt='image_captcha'>
-						<p class='captcha-desc-text'> Attention : Tous les caracères doivent être écrit en minuscules.</p>
+                    <img class='img-cptcha' src='captcha/img/captcha1.png' alt='image_captcha'>
+										<p class='captcha-desc-text'> Attention : Tous les caracères doivent être écrit en minuscules.</p>
 	                </div>
-					<audio controls>
-                            <source src="captcha/audio/captcha1.mp3" type="audio/mpeg">
-                    </audio>
+									<audio controls>
+                    <source src="captcha/audio/captcha1.mp3" type="audio/mpeg">
+                  </audio>
 	                <input aria-label="register-captcha" id='register-captcha' type='text' name='captcha' placeholder='ex : 7u5T5g3'/>
 	                <p><input type='submit' name='Envoyer' value='Modifier'></p>
 	                <p>Mot de passe oublié ? <a id='link-sincrip' href='404.php'>C'est par là !</a></p>
