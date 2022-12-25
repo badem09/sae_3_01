@@ -1,72 +1,71 @@
 import sys 
 
-def RC4(action,cle, message):
+def RC4(action,key, message):
+    """Algorithme RC4 : Chiffre ou déchiffre un message selon une clé
+
+    Entrée :
+            action (str) : 'c' (chiffrement) ou 'd' (déchiffrement)
+            key (str) : clé
+            message (str) : message
+        
+    Sortie : (str)
+            si chiffrement : Chaîne de caractère de nombres héxadécimaux
+            si déchiffrement : Chaine de caractère contenant le message
     """
-        Fonction permmetant de ...
+    
+    key = [ord(c) for c in key] # valeur ascii des lettre de la clé
+    if action == "c" : 
+        message = [ord(c) for c in message] # valeur ascii des lettre du message
+    else :
+        message = joli_hexa_to_ten(message) # valeur décimale de la chaine de nombres héxadécimaux
 
-        Paramètre:
-            action (str) : Action à réaliser (chiffrement : c, dechiffrement : d)
-            cle (str) : Clé chiffrante
-            message (str) : texte à décrypter
-
-        Return:
-            Renvoi ...
-        """
-    keys = [ord(c) for c in cle]
-    if action == "c" :                                                          # si chiffrement
-        message = [ord(c) for c in message]
-    else :                                                                      # si déchiffrement
-        message = joli_hexa_to_ten(message)
-
-    # Initialiser la suite chiffrante (cf KSA dans cours)
-    suite = list(range(256))                                                    # cf ligne 3-4 algo cours
+    # Initialiser la suite chiffrante
+    suite = list(range(256))
     j = 0
     for i in range(256):
-        j = (j + suite[i] + keys[i % len(keys)]) % 256
-        suite[i], suite[j] = suite[j], suite[i]                                 # permutation
+        j = (j + suite[i] + key[i % len(key)]) % 256
+        suite[i], suite[j] = suite[j], suite[i]
 
     # Appliquer l'algorithme RC4 au message (cf PRGA(S) dans cours)
     result = []
-    i = j = 0                                                                   # 2 pointeurs servant d'index
-    for c in message:
-        i = (i + 1) % 256                                                       # car 256 permutuations
+    i = j = 0
+    for lettre in message:
+        i = (i + 1) % 256
         j = (j + suite[i]) % 256
-        suite[i], suite[j] = suite[j], suite[i]                                 # permutation
-        result.append(c ^ suite[(suite[i] + suite[j]) % 256])
+        suite[i], suite[j] = suite[j], suite[i]
+        result.append(lettre ^ suite[(suite[i] + suite[j]) % 256]) # ^ applique l'opérateur logique xor 
 
-    if action == "c":                                                           # si chiffrement
+    if action == "c":
         return result
-    else : 
+    else : #si déchiffrement
         return ''.join([chr(e) for e in result])
         
 
 def ten_to_joli_hexa(liste):
-    """
-        Fonction permmetant de transformer une liste d'entier (base 10) en joli hexadécimaux
+    """Convertit une liste de nombres décimaux (base 10) en 
+    une chaîne de charactères de nombres héxadécimaux (base 16) 
 
-        Paramètre :
-            liste (List) : liste d'entier en base 10
+    Entrée : 
+            (list) : Nombres décimaux 
+    Sortie :
+            str (str) : Nombres héxadécimaux
 
-        Return :
-            Renvoi un joli hexadécimaux
-    """
+    """    
     liste = [hex(e)[2:].upper() if len(str(hex(e)))>3 else "0" + hex(e)[2:].upper() for e in liste]
     return " ".join(liste)
 
 def joli_hexa_to_ten(str):
-    """
-        Fonction permmetant de transformer joli hexadécimaux en une liste d'entier (base 10)
+    """Convertit une chaîne de charactères de nombres héxadéciamaux 
+    (base 16) liste de nombres décimaux (base 10)
 
-        Paramètre :
-            str (String) : liste d'entier en base 10
+    Entrée : 
+            str (str) : Nombres héxadécimaux
 
-        Return :
-            Renvoi une liste d'entier en base 10
+    Sortie :
+            (list) : Nombres décimaux 
     """
     liste = str.split(" ")
     return [int('0x' + cara , 0) for cara in liste]
-
-
 
 try:
     action = sys.argv[1]
@@ -81,5 +80,5 @@ try:
         print(res)
 
 except:
-    print("Le message ne possede pas le bon format")
+    print("Erreur d'éxécution")
 
