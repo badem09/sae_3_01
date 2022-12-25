@@ -88,10 +88,15 @@
       require("imports_html/footer.html");
 
       #Statistique de visites du site
+
+      //Si l'utilisateur est connecté.
       if(isset($_SESSION['user'])) {
-          require_once('config/config_bdd.php');
-          $requete2 = "UPDATE users SET nb_visites = nb_visites +1 WHERE login='".$_SESSION["user"]["login"]."'";
-          $requete2 = mysqli_query($connexion, $requete2);
+      	//On ajoute la configuration à la base de données.
+        require_once('config/config_bdd.php');
+        //On établis la requete qui incrémente le nombre de visite.
+        $requete2 = "UPDATE users SET nb_visites = nb_visites +1 WHERE login='".$_SESSION["user"]["login"]."'";
+        //On execute la requete.
+        $requete2 = mysqli_query($connexion, $requete2);
       }
     ?>
 
