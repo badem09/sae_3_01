@@ -80,5 +80,5 @@ try:
         print(res)
 
 except:
-    print("Erreur d'éxécution")
+    print("Le message ne possede pas le bon format")
 

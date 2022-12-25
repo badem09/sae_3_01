@@ -101,11 +101,6 @@
                                                 $chiffrement=false;
                                                 $dechiffrement=false;
                                             }
-                                            echo "<div class='result-module2-center'>". $result ."</div>";
-                                            if ( $result == "Erreur d'éxécution"){  //message d'erreur de python, à ne pas insérer
-                                                $chiffrement=false;
-                                                $dechiffrement=false;
-                                            }
 
                                         }
                                         else{
