@@ -70,57 +70,82 @@
                             $chiffrement = false;   //drapeau pour insertion ds BD d'un chiffrement si aucune erreur
                             $dechiffrement = false; //drapeau pour insertion ds BD d'un dechiffrement si aucune erreur
 
+                            //On inclus la configuration de la base de données.
                             require_once('config/config_bdd.php');
 
+                            //Si le bouton executer est cliqué.
                             if (isset($_POST['submit'])){
+                                //Si le message n'est pas vide ou ne contient pas que des espaces, on continus.
                                 if (!empty($_POST['input_message']) && trim($_POST["input_message"]) != ""){
-                                #S'il rentre que des espaces marche pas
+                                    //Si la clef n'est pas vide ou ne contient pas que des espaces, on continus.
                                     if (!empty($_POST['input_clef']) && trim($_POST["input_clef"]) != ""){
+                                        //Si la methode est bien selectionné, on continus.
                                         if (!empty($_POST['methode']) && trim($_POST["methode"]) != ""){
 
+                                            //On prépare nos variables sans espaces.
                                             $methode = trim($_POST["methode"]);
                                             $message = trim($_POST['input_message']);
                                             $clef = trim($_POST['input_clef']);
 
-                                            //Insertion pour statistiques
+                                            #Insertion pour statistiques
+                                            //On prépare la requite qui insère dans "activitemodule", l'id du module et son utilisateur.
                                             $requete="INSERT INTO activitemodule (id_module, login) VALUES  (2, '".$_SESSION["user"]["login"]."')";
+                                            //On execute la requete.
                                             $requete2 = mysqli_query($connexion, $requete);
+
+                                            //On définis le message.
                                             $message = '"'.$message.'"';
 
+                                            //Si la methode est Cryptage.
                                             if ($methode == "Cryptage"){
-                                                //$result = exec("python3 python_module2/crypter.py ". $message . " " . $clef);
+                                                //On récupere le resultat que fournis notre commande.
                                                 $result = exec("python3 python_module2/rc4.py". " c ".  $message . " " . $clef);
+                                                //On définit le drapeu chiffrement à true.
                                                 $chiffrement = true;
+                                                //On renvoir le résultat
                                                 echo $result;
                                             }
+                                            //Si la methode est Decryptage.
                                             if ($methode == "Decryptage"){
-                                                //$result = exec("python3 python_module2/decrypt.py ". $message . " " . $clef);
+                                                //On récupere le resultat que fournis notre commande.
                                                 $result = exec("python3 python_module2/rc4.py". " d ".  $message . " " . $clef);
+                                                //On définit le drapeu chiffrement à true.
                                                 $dechiffrement = true;
+                                                //On renvoir le résultat
                                                 echo $result;
                                             }
+
+                                            //Si le résultat renvoyé par le fichier est "Le message ne possede pas le bon format"
                                             if ($result == "Le message ne possede pas le bon format"){
-                                                //message d'erreur de python, à ne pas insérer
+                                                //On affiche un message d'erreur.
                                                 echo "<p class='err'>Le message ou la clé n'existe pas.</p>";
+                                                //On définit les drapeaux à flase.
                                                 $chiffrement=false;
                                                 $dechiffrement=false;
                                             }
+
+                                            //Si le drapeau chiffrement est à true.
                                             if ($chiffrement){
-                                                //Insertion pour historique utilisateurs
+                                                //On prépare la requete qui insère dans historique_module2, le login, un booléans, le message, la clé, et le résultat.
                                                 $insertion = "INSERT INTO historique_module2 (login, bool_chiffrement, message, cle, resultat) VALUES ('".$_SESSION["user"]["login"]."', 1, $message,'".$clef."', '".$result."')";
+                                                //On execute la requete.
                                                 $insertion2 = mysqli_query($connexion, $insertion);
                                             }elseif ($dechiffrement){
-                                                //Insertion pour historique utilisateurs
+                                                //On prépare la requete qui insère dans historique_module2, le login, un booléans, le message, la clé, et le résultat.
                                                 $insertion = "INSERT INTO historique_module2 (login, bool_dechiffrement, message, cle, resultat) VALUES ('".$_SESSION["user"]["login"]."', 1, $message,'".$clef."', '".$result."')";
+                                                //On execute la requete.
                                                 $insertion2 = mysqli_query($connexion, $insertion);
                                             }
                                         }else{
+                                            //Si aucune méthode n'a été choisis, on renvoie une erreur.
                                             echo "<p class='err'>Vous n'avez pas choisi méthode.</p>";
                                         }
                                     }else{
+                                        //Si aucune clé n'a été entrée, on renvoie une erreur.
                                         echo "<p class='err'>Vous n'avez pas rentré la clé.</p>";
                                     }
                                 }else{
+                                    //Si aucuns message n'a été entré, on renvoie une erreur.
                                     echo "<p class='err'>Vous n'avez pas rentré le message.</p>";
                                 }
                             }
@@ -133,6 +158,7 @@
                 <h2>Votre historique :</h2>
                 <a href="module2.php"><input id="historique" name='historique' type="submit" value="Actualiser votre historique"></input></a>
                 <?php
+                    //On appel la fonction qui affiche l'historique avec le login en paramètre.
                     recherche($_SESSION["user"]["login"]);
                 ?>
             </div>
@@ -148,16 +174,16 @@
 <?php
     function recherche($login){
 
-        //configuration d'accès à la base de donnée avant de commencer.
+        //On ajoute la configuration d'accès à la base de donnée.
         $connexion=mysqli_connect("localhost","root","");
         $bd=mysqli_select_db($connexion,"bd_sae");
 
-        //requete pour afficher tout les mots de passes entrée par l'utiisateur utilisant le module
+        //On prépare la requete pour afficher tout les mots de passes entrée par l'utiisateur utilisant le module
         $recherche=mysqli_query($connexion,"SELECT bool_chiffrement, bool_dechiffrement, message, cle, resultat FROM historique_module2 where login like '".$login."%'");
 
         //On affiche la base d'un tableau.
         echo "<table class='tab'>";
-
+        //On affiche les titres du tableau.
         echo "<tr id='titre_tab'><th>Chiffrement</th><th>Déchiffrement</th><th>Message</th><th>Clef</th><th>Résultat</th></tr>";
 
         //Pour chaques lignes assigé comme plusieurs valeurs, on récupère et affiche les données (1 seul car chaque "login" est unique).
