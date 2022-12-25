@@ -596,3 +596,23 @@ footer {
     align-items: center;
     height: 20%;
 }
+
+.div-affi-histo-mod2 h2 {
+    margin: 50px 0 0 0;
+}
+
+.div-affi-histo-mod2 input{
+    width: 100%;
+    background-color: #000A7E;
+    color: white;
+    padding: 14px 20px;
+    margin: 25px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.div-affi-histo-mod2 input:hover {
+  background-color: #1521A5;
+}
