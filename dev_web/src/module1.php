@@ -179,16 +179,24 @@
                     <div class='container-resultat'>
                         <h2>Résultat</h2>
                         <?php
-
+                            //Si le bouton calculer est cliqué on continus.
                             if(isset($_POST['submit'])){
-                                if(isset($_POST['choix_methode'])){
-                                    if(isset ($_POST['esp'])){
-                                        if( isset($_POST['et'])){
-                                            if(isset ($_POST['t'])){
+                                //Si le champ "choix_methode" n'est pas vide on continus.
+                                if(!empty($_POST['choix_methode'])){
+                                    //Si le champ "esp" n'est pas vide on continus.
+                                    if(!empty($_POST['esp'])){
+                                        //Si le champ "et" n'est pas vide on continus.
+                                        if(!empty($_POST['et'])){
+                                            //Si le champ "t" n'est pas vide on continus.
+                                            if(!empty($_POST['t'])){
 
                                                 #Insertion pour avoir les statistiques d'utilisations
+
+                                                //On inclus la configuration de la base de données.
                                                 require_once('config/config_bdd.php');
+                                                //On prépare la requet qui vas inserer dans la table "activitemodule", le numéro du module et l'utilisateur.
                                                 $requete="INSERT INTO activitemodule (id_module, login) VALUES  (1, '".$_SESSION["user"]["login"]."')";
+                                                //On execute la requete.
                                                 $requete2 = mysqli_query($connexion, $requete);
 
                                                 #On récupere les entrées.
