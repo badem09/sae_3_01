@@ -67,18 +67,23 @@ def hexa_to_ten(str):
     liste = str.split(" ")
     return [int('0x' + cara , 0) for cara in liste]
 
-try:
-    action = sys.argv[1]
-    data = sys.argv[2]
-    key = sys.argv[3]
+if __name__ == '__main__':
+    try:
+        action = sys.argv[1]
+        data = sys.argv[2]
+        key = sys.argv[3]
 
-    res = RC4(action,key,data)
+        res = RC4(action,key,data)
 
-    if action == "c":
-        print(ten_to_hexa(res))
-    else: 
-        print(res)
+        if action == "c":
+            print(ten_to_hexa(res))
+        else: 
+            print(res)
 
-except:
-    print("Le message ne possede pas le bon format")
+    except:
+        print("Le message ne possede pas le bon format")
 
+
+    # ex qui marche pas good
+    #res = RC4('d','12345','56 56 56')
+    # coz chr(6)
