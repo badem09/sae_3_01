@@ -49,23 +49,23 @@
 		<div class="pacc_mod_droit"> 
 			<div>
 				<h3>Module de Cryptographie :</h3>
-				<p>Cryptage et décryptage d'un code avec une clé en utilisant la méthode RC4.
+				<p>Chiffrement et déchiffrement d'un code avec une clé en utilisant la méthode RC4 ou la méthode WEP.
 					</br>
-					Pour crypter, il vous faut un message à crypter, ex: "Bonjour" et une clé,
+					Pour chiffrer, il vous faut un message à chiffrer, ex: "Bonjour" et une clé,
 					ex: "slt".
 					</br>
-					De même pour le décryptage, exepter deux conditions,
+					De même pour le décryptage, exepté deux conditions,
 					</br>
-					le message à décrypter doit avoir été crypté et enrengisté dans le sytème
+					le message à décrypter doit avoir été crypté et enregistré dans le sytème
 					</br>
-					et doit avoir la même clé de décryptage que pour l'opération inverse.
+					Il doit aussi conserver la même clé utilisé pour le chiffrage.
 					</br></br>
 				</p>
 				<a href="module2.php" aria-label="lien_page_module2"><input type="button" value="Y aller"></a>
 			</div>
 
 			<div class="pacc_mod_image">
-				<img src="img\module2.png" alt="image_XXXXXXXXXXXXXXXXXXXXXXXXXXX">
+				<a href ="module2.php"><img src="img\rc4_2.png" alt="image_XXXXXXXXXXXXXXXXXXXXXXXXXXX">
 			</div>
 		</div>
 
