@@ -109,7 +109,7 @@
                                             //Si la methode est Decryptage.
                                             if ($methode == "Decryptage"){
                                                 if (is_hexa($message1)){
-
+                                                    $message = '"'.good_hexa($message1).'"';
                                                     //On récupere le resultat que fournis notre commande.
                                                     $result = utf8_encode(exec("python3 python_module2/wep.py". " d ".  "$message" . " " . $clef));
                                                     //On définit le drapeu chiffrement à true.
@@ -218,5 +218,17 @@
             }
        }
        return true;
+    }
+    
+    function good_hexa($num){
+        $num = str_replace(" ","",$num);
+        $retour = '';
+        for ($i=0;$i<strlen($num);$i++){
+            $retour = $retour . $num[$i];
+            if ($i % 2 == 1){
+                $retour = $retour . " ";
+            } 
+        }
+        return substr($retour, 0, -1);
     }
 ?>
