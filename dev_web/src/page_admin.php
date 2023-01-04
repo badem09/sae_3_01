@@ -44,14 +44,14 @@
                 <h3>Rechercher un utilisateur avec son login</h3>
 
                 <form method="post" id='post-admin-up'>
-                    <input id='users' type='submit' name="users" value="Utilisateurs">
-                    <input id='activitemodule' type='submit' name='activitemodule' value='Activite Module'>
-                    <input id='activiteconnexion' type='submit' name='activiteconnexion' value='Connexion Echouée'>
+                    <input class='btn-simple-bleu' id='users' type='submit' name="users" value="Utilisateurs">
+                    <input class='btn-simple-bleu' id='activitemodule' type='submit' name='activitemodule' value='Activite Module'>
+                    <input class='btn-simple-bleu' id='activiteconnexion' type='submit' name='activiteconnexion' value='Connexion Echouée'>
                 </form>
 
                 <form method="post">
                     <input aria-label="input-research" id='researched' type='text' name="text"  placeholder="ex : demba404">
-                    <input id='search' type='submit' name='search' value='Recherecher'>
+                    <input class='btn-simple-bleu' id='search' type='submit' name='search' value='Recherecher'>
                     <input id='clear' type='submit' name='retour' value='Retour'>
                 </form>
 
