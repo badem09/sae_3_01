@@ -405,7 +405,7 @@ footer {
     color: #D1D1D1;
 }
 
-.recherche #search, #users, #activitemodule, #activiteconnexion {
+.btn-simple-bleu {
   background-color: #000A7E;
   color: white;
   padding: 14px 20px;
@@ -416,7 +416,7 @@ footer {
   font-weight: bold;
 }
 
-.recherche #search:hover, #users:hover, #activitemodule:hover, #activiteconnexion:hover {
+.btn-simple-bleu:hover {
   background-color: #1521A5;
 }
 
@@ -589,6 +589,15 @@ footer {
 }
 
 /* ######################### Page Module 2 ######################### */
+
+.mod-crypt-main {
+    text-align: center;
+    padding: 100px 60px 60px 60px;
+}
+
+.crypt-recherche {
+    padding-bottom: 0px!important;
+}
 
 .result-module2-center {
     display: flex;
