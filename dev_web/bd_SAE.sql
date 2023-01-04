@@ -34,7 +34,7 @@ CREATE TABLE `historique_module2` (
 
 CREATE TABLE `users` (
   `id_user` int(11) NOT NULL,
-  `login` varchar(32) NOT NULL,
+  `login` varchar(32) NOT NULL UNIQUE,
   `mdp` varchar(255) NOT NULL CHECK (octet_length(`mdp`) > 31),
   `type_user` varchar(32) DEFAULT 'user' CHECK (`type_user` in ('admin','user','gestion')),
   `nb_visites` varchar(100) NOT NULL DEFAULT '0'
