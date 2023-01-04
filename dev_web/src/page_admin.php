@@ -1,4 +1,5 @@
 <?php
+//mettre un message quand la recherche d'user ne renvoie r
 
     //On démarre une cession existe.
     session_start();
@@ -213,7 +214,7 @@
             if ($table == "users") {    //si table users, alors on peut supprimer les utilsateurs
                 echo "<td>
                     <form action='delete.php' method='post'>
-                    <input type='hidden' name='supp' value='$ligne[0]'>
+                    <input type='hidden' name='supp' value='$ligne[1]'>
                     <button type='submit' id='suppresion'>Delete</button>
                     </form>
                 </td>";
