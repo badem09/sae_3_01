@@ -115,6 +115,11 @@
             //On récupère toutes les information dont ont à besoin.
             $requete1 = mysqli_query($connexion,"SELECT id_connexion, mdp_tente, login, date_horaire_tent, adr_ip from $table");
         }
+        //Si la table est activitemodule.
+        else if ($table == "activitemodule") {
+            //On récupère toutes les information dont ont à besoin.
+            $requete1 = mysqli_query($connexion,"SELECT id_activite, id_module, login from $table");
+        }
         //Si la table est le dernier bouton.
         else {
             //On récupère toutes les information dont ont à besoin.
@@ -126,7 +131,7 @@
 
         //On affiche les titres du tableau selon la table sélectionné.
         if ($table == "users") {
-            echo "<tr id='titre_tab'><th>ID User</th><th>Login</th><th>Type Users</th><th>Nombre de Visites</th></tr>";
+            echo "<tr id='titre_tab'><th>ID User</th><th>Login</th><th>Type Users</th><th>Nombre de Visites</th><th>Supprimer</th></tr>";
         }
         //On affiche les titres du tableau selon la table sélectionné.
         if ($table == "activitemodule") {
@@ -142,6 +147,14 @@
             echo "<tr>";
             foreach ($ligne as $v) { //parcours tableau de mysqli_fetch_row
                 echo "<td>" . $v . "</td>";
+            }
+            if ($table == "users") {    //si table users, alors on peut supprimer les utilsateurs
+                echo " <td>
+                    <form action='delete.php' method='post' >
+                    <input type='hidden' name='supp' value='$ligne[0]'>
+                    <button id='suppresion' type='submit'>Delete</button>
+                    </form>
+                </td>";
             }
             echo "</tr>";
         }
@@ -167,6 +180,11 @@
             //On récupère toutes les information dont ont à besoin.
             $requete = mysqli_query($connexion,"SELECT id_connexion, mdp_tente, login, date_horaire_tent, adr_ip from $table where login like '".$texte."%'");
         }
+        //Si la table est activitemodule.
+        else if ($table == "activitemodule") {
+            //On récupère toutes les information dont ont à besoin.
+            $requete = mysqli_query($connexion,"SELECT id_activite, id_module, login from $table where login like '".$texte."%'");
+        }
         //Si la table est le dernier bouton.
         else {
             //On récupère toutes les information dont ont à besoin.
@@ -177,7 +195,7 @@
 
         //On affiche les titres du tableau selon la table sélectionné.
         if ($table == "users") {
-            echo "<tr id='titre_tab'><th>ID User</th><th>Login</th><th>Type Users</th><th>Nombre de Visites</th></tr>";
+            echo "<tr id='titre_tab'><th>ID User</th><th>Login</th><th>Type Users</th><th>Nombre de Visites</th><th>Supprimer</th></tr>";
         }
         if ($table == "activitemodule") {
             echo "<tr id='titre_tab'><th>ID Activite</th><th>Numéro du Module utilisé</th><th>Login utilisateur</th></tr>";
@@ -191,6 +209,14 @@
             echo "<tr>";
             foreach ($ligne as $v) {
                 echo "<td>" . $v . "</td>";
+            }
+            if ($table == "users") {    //si table users, alors on peut supprimer les utilsateurs
+                echo "<td>
+                    <form action='delete.php' method='post'>
+                    <input type='hidden' name='supp' value='$ligne[0]'>
+                    <button type='submit' id='suppresion'>Delete</button>
+                    </form>
+                </td>";
             }
             echo "</tr>";
         }

@@ -45,17 +45,7 @@
 
             </div>
 
-            <?php
-                if (isset($_POST["RC4"])) {
-                    //On inclus la barre de navigation.
-                    require("imports_html/module2_1.php");
-                    
-                }
-                elseif (isset($_POST["WEP"])) {
-                    //On inclus la barre de navigation.
-                    require("imports_html/module2_2.php");
-                }
-            ?>
+
 
         </div>
 

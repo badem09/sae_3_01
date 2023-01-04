@@ -194,10 +194,14 @@
 
                                                 //On inclus la configuration de la base de données.
                                                 require_once('config/config_bdd.php');
-                                                //On prépare la requet qui vas inserer dans la table "activitemodule", le numéro du module et l'utilisateur.
-                                                $requete="INSERT INTO activitemodule (id_module, login) VALUES  (1, '".$_SESSION["user"]["login"]."')";
-                                                //On execute la requete.
-                                                $requete2 = mysqli_query($connexion, $requete);
+                                                //Requete pour récupérer id de l'users
+                                                $select_id = mysqli_query($connexion,"SELECT id_user FROM users where login like '".$_SESSION["user"]["login"]."%'" );
+                                                //On récupére cette valeur et on la stocke dans une variable.
+                                                while ($ligne = mysqli_fetch_row($select_id)) {
+                                                    $id = $ligne;
+                                                }
+                                                //On prépare la requete
+                                                $requete="INSERT INTO activitemodule (id_module, login, id_user) VALUES  (1, '".$_SESSION["user"]["login"]."','".$id[0]."')";
 
                                                 #On récupere les entrées.
                                                 $esp = $_POST["esp"];
