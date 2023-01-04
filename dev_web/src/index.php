@@ -65,7 +65,7 @@
 			</div>
 
 			<div class="pacc_mod_image">
-				<a href ="module2.php"><img src="img\rc4_2.png" alt="image_XXXXXXXXXXXXXXXXXXXXXXXXXXX">
+				<a href ="module2.php"><img src="img\rc4_2.png" alt="image_XXXXXXXXXXXXXXXXXXXXXXXXXXX"></a>
 			</div>
 		</div>
 
