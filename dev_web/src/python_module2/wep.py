@@ -3,18 +3,20 @@ from random import randint
 
 def IV():
     """
-    Génere une clé àléatoire (aussi appelée IV pour Initialization Vector) de 24 bits
-
+    Génere une clé àléatoire (aussi appelée IV pour Initialization Vector) de 24 bits.
+    
     Entrée : None
     Retour : list : 3 entiers héxadécimaux (1 héxadécimal = 8 bit)
     """
 
-    iv = randint(0,16777215) # 16777215 = FF FF FF
-    nb = str(hex(iv)[2:]).upper() #éviter les '0x' 
-    while len(nb) < 6:
+    iv = randint(0,16777215) # Génére un entier aléatoire ent 0 et 16777215 
+                             #16777215 car 16777215 = FF FF FF
+    nb = str(hex(iv)[2:]).upper() # convertion de l'entier en haxadécimal puis en string
+                                  # pour supprimer les '0x' ajoutés par python
+    while len(nb) < 6:            # remplissage de 0 : si iv = FF, donne 0000FF
         nb = "0" + nb
-    nb = [nb[i:i+2] for i in range(0,len(nb),2)] #Regroupement par 2
-    nb = [int('0x' + e,0) for e in nb] #convertion en décimal
+    nb = [nb[i:i+2] for i in range(0,len(nb),2)] #Regroupement par 2 (par bit)
+    nb = [int('0x' + e,0) for e in nb] #convertion de chaque bit en hexadécimal
     return nb
 
 def WEP(action,key, message):
@@ -30,18 +32,17 @@ def WEP(action,key, message):
             si chiffrement : Chaîne de caractère de nombres héxadécimaux
             si déchiffrement : Chaine de caractère contenant le message
     """
-    
 
-    if action == "c" : 
-        message = [ord(c) for c in message] # valeur ascii des lettre du message
-        iv = IV() # géneration de la clé aléatoire
+    if action == "c" : # Chiffrement
+        message = [ord(c) for c in message] # valeur ASCII des lettres du message
+        iv = IV() ## géneration de la clé aléatoire
 
-    else :#Déchiffrement
+    else :# Déchiffrement
         message = hexa_to_ten(message) # valeur décimale de la chaine de nombres héxadécimaux
-        iv = message[:3] #clé aléatoire
-        message = message[3:] #reste du message
+        iv = message[:3] ## clé aléatoire
+        message = message[3:] ## reste du message
 
-    key = iv + [ord(c) for c in key] # concatenation 
+    key = iv + [ord(c) for c in key] ## Concatenation IV et clé 
 
     #Algorithme RC4
     # Initialiser la suite chiffrante
@@ -61,7 +62,7 @@ def WEP(action,key, message):
         result.append(lettre ^ suite[(suite[i] + suite[j]) % 256]) # ^ applique l'opérateur logique xor 
 
     if action == "c":
-        return iv + result
+        return ten_to_hexa(iv + result) ## Concatenation IV (3 bits) et message chiffré
     else : #si déchiffrement
         return ''.join([chr(e) for e in result])
         
@@ -73,11 +74,7 @@ if __name__ == '__main__':
         key = sys.argv[3]
 
         res = WEP(action,key,data)
-
-        if action == "c":
-            print(ten_to_hexa(res))
-        else: 
-            print(res)
+        print(res)
 
     except:
         print("Le message ne possede pas le bon format")
