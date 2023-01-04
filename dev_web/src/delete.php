@@ -6,10 +6,15 @@ require("config/config_bdd.php");
 // Récupération de l'identifiant de l'enregistrement à supprimer
 $supp = $_POST['supp'];
 
-//Requete de supp
+//Requete de supp$
+
+$requete1 = mysqli_query($connexion, "DELETE FROM users where id_user = '".$supp."'");
+
 $requete2 = mysqli_query($connexion, "DELETE FROM activitemodule where login = 
                                         (SELECT login FROM users where id_user = '".$supp."')");
-$requete1 = mysqli_query($connexion, "DELETE FROM users where id_user = '".$supp."'");
+
+$requete3 = mysqli_query($connexion, "DELETE FROM historique_module2 where login = 
+                                        (SELECT login FROM users where id_user = '".$supp."')");
 
 
 
