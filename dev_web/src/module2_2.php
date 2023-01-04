@@ -132,19 +132,18 @@
                                                 $dechiffrement=false;
                                             }
 
-                                            /*
                                             //Si le drapeau chiffrement est à true.
                                             if ($chiffrement){
                                                 //On prépare la requete qui insère dans historique_module2, le login, un booléans, le message, la clé, et le résultat.
-                                                $insertion = "INSERT INTO historique_module2 (login, bool_chiffrement, message, cle, resultat) VALUES ('".$_SESSION["user"]["login"]."', 1, $message,'".$clef."', '".$result."')";
+                                                $insertion = "INSERT INTO historique_module2 (login, bool_chiffrement, message, cle, resultat, bool_wpe) VALUES ('".$_SESSION["user"]["login"]."', 1, $message,'".$clef."', '".$result."', 1)";
                                                 //On execute la requete.
                                                 $insertion2 = mysqli_query($connexion, $insertion);
                                             }elseif ($dechiffrement){
                                                 //On prépare la requete qui insère dans historique_module2, le login, un booléans, le message, la clé, et le résultat.
-                                                $insertion = "INSERT INTO historique_module2 (login, bool_dechiffrement, message, cle, resultat) VALUES ('".$_SESSION["user"]["login"]."', 1, $message,'".$clef."', '".$result."')";
+                                                $insertion = "INSERT INTO historique_module2 (login, bool_dechiffrement, message, cle, resultat, bool_wpe) VALUES ('".$_SESSION["user"]["login"]."', 1, $message,'".$clef."', '".$result."', 1)";
                                                 //On execute la requete.
                                                 $insertion2 = mysqli_query($connexion, $insertion);
-                                            }*/
+                                            }
 
                                         }else{
                                             //Si aucune méthode n'a été choisis, on renvoie une erreur.
@@ -164,14 +163,15 @@
                 </div>
             </form>
 
-           <!-- <div class="div-affi-histo-mod2">
+            <div class="div-affi-histo-mod2">
                 <h2>Votre historique :</h2>
                 <a href="module2.php"><input id="historique" name='historique' type="submit" value="Actualiser votre historique"></input></a>
                 <?php
                     //On appel la fonction qui affiche l'historique avec le login en paramètre.
                     recherche($_SESSION["user"]["login"]);
                 ?>
-            </div> -->
+            </div>
+
             <a href="module2.php" aria-label="lien_page_module2"><input type="button" value="Retour au module 2"></a>
 
         </div>
@@ -190,7 +190,7 @@
         $bd=mysqli_select_db($connexion,"bd_sae");
 
         //On prépare la requete pour afficher tout les mots de passes entrée par l'utiisateur utilisant le module
-        $recherche=mysqli_query($connexion,"SELECT bool_chiffrement, bool_dechiffrement, message, cle, resultat FROM historique_module2 where login like '".$login."%'");
+        $recherche=mysqli_query($connexion,"SELECT bool_chiffrement, bool_dechiffrement, message, cle, resultat FROM historique_module2 where login like '".$login."%' and bool_wpe = 1");
 
         //On affiche la base d'un tableau.
         echo "<table class='tab'>";
