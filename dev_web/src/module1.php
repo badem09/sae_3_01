@@ -81,19 +81,16 @@
 
                                                 //On inclus la configuration de la base de données.
                                                 require_once('config/config_bdd.php');
-                                                //Requete pour récupérer id de l'users
-                                                $select_id = mysqli_query($connexion,"SELECT id_user FROM users where login like '".$_SESSION["user"]["login"]."%'" );
-                                                //On récupére cette valeur et on la stocke dans une variable.
-                                                while ($ligne = mysqli_fetch_row($select_id)) {
-                                                    $id = $ligne;
-                                                }
+                                                
+                                            
                                                 //On prépare la requete
-                                                $requete="INSERT INTO activitemodule (id_module, login, id_user) VALUES  (1, '".$_SESSION["user"]["login"]."','".$id[0]."')";
-
+                                                $requete=mysqli_query($connexion,"INSERT INTO activitemodule (id_module, login) VALUES  (1, '".$_SESSION["user"]["login"]."')");
+                                                
                                                 #On récupere les entrées.
                                                 $esp = $_POST["esp"];
                                                 $et = $_POST["et"] ;
                                                 $t = $_POST["t"];
+                                                $methode = $_POST['choix_methode'];
                                                 #On vérifie si elle sont bien des chiffres.
                                                 if (!(is_numeric($esp) && is_numeric($et) && is_numeric($t))){
                                                     //Si non on renvois une erreur.
@@ -115,6 +112,12 @@
                                                 echo '<h4>Représentation graphique</h4>
                                                     <canvas id="can2" width="400" height="240"></canvas>
                                                     <script type="text/javascript">maj();</script>';
+
+                                                $array = str_split($result);
+                                                $res = implode("",array_slice($array,9));
+                                                $requete2 = mysqli_query($connexion,"INSERT INTO historique_module1(login,methode,esperance,ecart_type,t,res) 
+                                                                                    VALUES('".$_SESSION["user"]["login"]."','".$methode."','".$esp."','".$et."','".$t."','".$res."')");
+                                                echo $res;
                                                 }
 
                                             }else{
