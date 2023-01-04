@@ -27,7 +27,7 @@ CREATE TABLE `historique_module2` (
   `cle` varchar(255) NOT NULL,
   `resultat` varchar(255) NOT NULL,
   `bool_rc4` tinyint(1) NOT NULL DEFAULT 0,
-  `bool_webp` tinyint(1) NOT NULL DEFAULT 0
+  `bool_wpe` tinyint(1) NOT NULL DEFAULT 0
 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
