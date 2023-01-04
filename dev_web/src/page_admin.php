@@ -149,7 +149,7 @@
             foreach ($ligne as $v) { //parcours tableau de mysqli_fetch_row
                 echo "<td>" . $v . "</td>";
             }
-            if ($table == "users") {    //si table users, alors on peut supprimer les utilsateurs
+            if ($table == "users" && $ligne[1] != $_SESSION["user"]["login"] ) {    //si table users, alors on peut supprimer les utilsateurs
                 echo " <td>
                     <form action='delete.php' method='post' >
                     <input type='hidden' name='supp' value='$ligne[0]'>
@@ -205,17 +205,16 @@
             echo "<tr id='titre_tab'><th>ID Connexion</th><th>MDP tente (en md5)</th><th>Login tente</th><th>Horaire de la tentative</th><th>Adresse IP</th></tr>";
         }
 
-        //Pour chaques lignes assigé comme plusieurs valeurs, on récupère et affiche les données (1 seul car chaque "login" est unique).
-        while ($ligne = mysqli_fetch_row($requete)) {
+        while ($ligne = mysqli_fetch_row($requete1)) {
             echo "<tr>";
-            foreach ($ligne as $v) {
+            foreach ($ligne as $v) { //parcours tableau de mysqli_fetch_row
                 echo "<td>" . $v . "</td>";
             }
-            if ($table == "users") {    //si table users, alors on peut supprimer les utilsateurs
-                echo "<td>
-                    <form action='delete.php' method='post'>
-                    <input type='hidden' name='supp' value='$ligne[1]'>
-                    <button type='submit' id='suppresion'>Delete</button>
+            if ($table == "users" && $ligne[1] != $_SESSION["user"]["login"] ) {    //si table users, alors on peut supprimer les utilsateurs
+                echo " <td>
+                    <form action='delete.php' method='post' >
+                    <input type='hidden' name='supp' value='$ligne[0]'>
+                    <button id='suppresion' type='submit'>Delete</button>
                     </form>
                 </td>";
             }
