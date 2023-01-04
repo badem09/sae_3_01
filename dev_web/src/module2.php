@@ -31,12 +31,34 @@
             <p class="pacc_mod_pres">Vous pouvez chiffrer et dechiffrer un message avec le chiffrement RC4 ou le chiffrement WEP (Explications?)</p>
         </div>
 
-        <div class='container-module-parent'>
-        <a href="module2_1.php" aria-label="lien_page_module2"><input type="button" value="Chiffrement RC4"></a>
-        <a href="module2_2.php" aria-label="lien_page_module2"><input type="button" value="Chiffrement WEP"></a>
+        <div class="recherche">
 
+                <h2>Choisissez le type de cryptage</h2>
+                <h3>Choisissez la methode que vous souhaitez utiliser!</h3>
+
+                <form method="post" id='post-admin-up'>
+                    <input id='RC4' type='submit' name="RC4" value="RC4">
+                    <input id='WEP' type='submit' name='WEP' value='WEP'>
+                </form>
+
+            </div>
 
         </div>
+
+        <div class="affichage">
+            <?php
+                if (isset($_POST["RC4"])) {
+                    //On inclus la barre de navigation.
+                    require("imports_html/module2_1.php");
+                    
+                }
+                elseif (isset($_POST["WEP"])) {
+                    //On inclus la barre de navigation.
+                    require("imports_html/module2_2.php");
+                }
+            ?>
+        </div>
+
     </body>
     <?php
         //On inclus le footer de la page.
