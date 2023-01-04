@@ -140,7 +140,7 @@
         }
         //On affiche les titres du tableau selon la table sélectionné.
         if ($table == "activiteconnexion") {
-            echo "<tr id='titre_tab'><th>ID Connexion</th><th>MDP tente (en md5)</th><th>Login tente</th><th>Horaire de la tentative</th><th>Adresse IP</th></tr>";
+            echo "<tr id='titre_tab'><th>ID Connexion</th><th>MDP tente</th><th>Login tente</th><th>Horaire de la tentative</th><th>Adresse IP</th></tr>";
         }
 
         //Pour chaques lignes assigé comme plusieurs valeurs, on récupère et affiche les données (1 seul car chaque "login" est unique).
