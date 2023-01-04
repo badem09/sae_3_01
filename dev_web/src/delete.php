@@ -7,7 +7,8 @@ require("config/config_bdd.php");
 $supp = $_POST['supp'];
 
 //Requete de supp
-$requete2 = mysqli_query($connexion, "DELETE FROM activitemodule where id_user = '".$supp."'");
+$requete2 = mysqli_query($connexion, "DELETE FROM activitemodule where login = 
+                                        (SELECT login FROM users where id_user = '".$supp."')");
 $requete1 = mysqli_query($connexion, "DELETE FROM users where id_user = '".$supp."'");
 
 
