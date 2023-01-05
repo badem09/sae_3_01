@@ -1,4 +1,4 @@
-<?php
+<?php//MESSAGE DEREUR SI LUSER RENTRE QUQE DES CHIFFRES
 
     //On regarde si une cession existe.
     session_start();
