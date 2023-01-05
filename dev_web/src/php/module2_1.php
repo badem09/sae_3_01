@@ -164,7 +164,7 @@
 
             <div class="div-affi-histo-mod2">
                 <h2>Votre historique :</h2>
-                <a href="module2_1.php"><input id="historique" name='historique' type="submit" value="Actualiser votre historique"></input></a>
+                <a href="module2_1.php" aria-label="lien_page_module2_1"><input id="historique" name='historique' type="submit" value="Actualiser votre historique"></input></a>
                 <?php
                     //On appel la fonction qui affiche l'historique avec le login en paramètre.
                     recherche($_SESSION["user"]["login"]);
