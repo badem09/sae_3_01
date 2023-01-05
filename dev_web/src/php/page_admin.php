@@ -105,7 +105,7 @@
 
         //On ajoute la configuration d'accès à la base de données.
         $connexion=mysqli_connect("localhost","root","");
-        //$bd=mysqli_select_db($connexion,"bd_sae");
+        $bd=mysqli_select_db($connexion,"bd_sae");
 
         //Si la table est user.
         if ($table == "users") {
