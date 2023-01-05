@@ -93,6 +93,27 @@
                     }
                 ?>
             </div>
+            <form method="post" id='post-admin-up'>
+                <input class='btn-simple-bleu' type='submit' name="groupBy" value="Regroupement par utilisateurs">
+                <input class='btn-simple-bleu' type='submit' name='orderByASC' value='Classement croissant par utilisateurs'>
+                <input class='btn-simple-bleu' type='submit' name='orderByDESC' value='Classement décroissant par utilisateurs'>
+            </form>
+            <?php
+                //Si un filtre de recherche est demandé
+                if (isset($_POST['groupBy'])) {
+                    //groupBy();
+                    echo "groupBy";
+                }
+                if (isset($_POST['orderByASC'])) {
+                    //orderByASC();
+                    echo "orderByASC";
+                }
+                if (isset($_POST['orderByDESC'])) {
+                    //orderByDESC();
+                    echo "orderByDESC";
+                }
+                
+            ?>
         </div>
     
     </body>
