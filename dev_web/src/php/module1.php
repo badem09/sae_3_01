@@ -102,7 +102,7 @@
                                                 } else {
                                                 $fonction = $_POST["choix_methode"] ;
                                                 #Préparation de la commande.
-                                                $command = "python python_module1/$fonction $esp $et $t "; 
+                                                $command = "python ../python_module1/$fonction $esp $et $t "; 
                                                 #Execution de la commande et on récupere le resultat.
                                                 $result = exec($command); 
                                                 #On affiche le résultat.
