@@ -116,6 +116,10 @@
                                                     $dechiffrement = true;
                                                     //On renvoir le résultat
                                                     echo $result;
+                                                    if (ord($result) < 41){
+                                                        echo '<br>' . 'Le code ASCII : ' . ord($result);
+                                                        // et stocker ord(result)
+                                                    }
                                                 }
                                                 else{
                                                     echo "<p class='err'>Décryptage : le message doit être en héxadécimal.</p>";
