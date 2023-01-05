@@ -51,14 +51,13 @@
 				<h3>Module de Cryptographie :</h3>
 				<p>Chiffrement et déchiffrement d'un code avec une clé en utilisant la méthode RC4 ou la méthode WEP.
 					</br>
-					Pour chiffrer, il vous faut un message à chiffrer, ex: "Bonjour" et une clé,
-					ex: "slt".
+					Pour chiffrer, il vous faut le message que vous souhaitez chiffrer et une clé.
 					</br>
-					De même pour le décryptage, exepté deux conditions,
+					De même pour le décryptage, avec deux conditions au préalable :
 					</br>
-					le message à décrypter doit avoir été crypté et enregistré dans le sytème
+					- Le message à décrypter doit avoir été crypté et enregistré dans le système,
 					</br>
-					Il doit aussi conserver la même clé utilisé pour le chiffrage.
+					- Le message doit aussi conserver la même clé utilisée pour le chiffrage.
 					</br></br>
 				</p>
 				<a href="module2.php" aria-label="lien_page_module2"><input type="button" value="Y aller"></a>
@@ -77,7 +76,7 @@
 			<div>
 				<h3>Module3</h3>
 
-				<p>A venir très prochainement !</p>
+				<p>À venir très prochainement !</p>
 				</br></br></br></br></br></br></br>
 				<a href="404.php" aria-label="lien_page_404"><input type="button" value="Y aller"></a>
 			</div>

@@ -68,7 +68,7 @@
                         <p class='titre-form'>Captcha</p>
                         <div class='captcha-img-desc'>
                             <img class='img-cptcha' src='../captcha/img/captcha1.png' alt='image_captcha'>
-                            <p class='captcha-desc-text'> Attention : Tous les caracères doivent être écrit en minuscules.</p>
+                            <p class='captcha-desc-text'> Attention : Tous les caractères doivent être écrit en minuscules.</p>
                         </div>
                         <audio controls>
                             <source src="../captcha/audio/captcha1.mp3" type="audio/mpeg">
