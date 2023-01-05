@@ -54,40 +54,24 @@ CREATE TABLE `users` (
 
 
 ALTER TABLE `activiteconnexion`
-  ADD PRIMARY KEY (`id_connexion`);
-
-
-ALTER TABLE `activitemodule`
-  ADD PRIMARY KEY (`id_activite`);
-
-
-ALTER TABLE `historique_module2`
-  ADD PRIMARY KEY (`id_historique`);
-
-ALTER TABLE `historique_module1`
-  ADD PRIMARY KEY (`id_historique`);
-
-
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id_user`);
-
-
-ALTER TABLE `activiteconnexion`
+  ADD PRIMARY KEY (`id_connexion`),
   MODIFY `id_connexion` int(11) NOT NULL AUTO_INCREMENT;
 
-
 ALTER TABLE `activitemodule`
+  ADD PRIMARY KEY (`id_activite`),
   MODIFY `id_activite` int(11) NOT NULL AUTO_INCREMENT;
 
-
 ALTER TABLE `historique_module2`
+  ADD PRIMARY KEY (`id_historique`),
   MODIFY `id_historique` int(11) NOT NULL AUTO_INCREMENT;
 
 ALTER TABLE `historique_module1`
+  ADD PRIMARY KEY (`id_historique`),
   MODIFY `id_historique` int(11) NOT NULL AUTO_INCREMENT;
 
-
 ALTER TABLE `users`
+  ADD PRIMARY KEY (`id_user`),
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
+
 COMMIT;
 
