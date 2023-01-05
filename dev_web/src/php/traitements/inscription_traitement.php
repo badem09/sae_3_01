@@ -1,7 +1,7 @@
 <?php
     
     //On importe la configuration de la base de données en premier.
-    require_once('../config/config_bdd.php');
+    require_once('../../config/config_bdd.php');
     //On vérifie si une demande d'envoie dur formulaire ç bien été envoyé.
     if(isset($_POST['Envoyer'])){
         //On vérifie si le champ "login" n'est pas vide.
@@ -48,39 +48,39 @@
                                         //On ferme la connection avec la base de données.
                                         mysqli_close($connexion);
                                         //Puis on redirige ver la page "final" car par défaut, chaques utilisateurs et un "user".
-                                        header('Location: ../php/index.php');
+                                        header('Location: ../index.php');
                                         die();
                                     }else{
                                         //Si le login exixte déjà, on redirige vers la page inscription avec une erreur.
-                                        header('Location: ../php/inscription.php?err=exist');
+                                        header('Location: ../inscription.php?err=exist');
                                     }
                                 }else{
                                     //Si le login est > à 32 ou < à 5 caractères, on redirige vers la page inscription avec une erreur.
-                                    header('Location: ../php/inscription.php?err=bad_format');
+                                    header('Location: ../inscription.php?err=bad_format');
                                 }
                             }else{
                                 //Si le Captcha est faux, on redirige vers la page inscription avec une erreur.
-                                header('Location: ../php/inscription.php?err=captcha_erroné');
+                                header('Location: ../inscription.php?err=captcha_erroné');
                             }
                         }else{
                             //Si les mots de passe ne sont pas identiques, on redirige vers la page inscription avec une erreur.
-                            header('Location: ../php/inscription.php?err=mdp_non_identique');
+                            header('Location: ../inscription.php?err=mdp_non_identique');
                         } 
                     }else{
                         //Si le Captcha est vide, on redirige vers la page inscription avec une erreur.
-                        header('Location: ../php/inscription.php?err=captcha_vide');
+                        header('Location: ../inscription.php?err=captcha_vide');
                     }   
                 }else{
                     //Si la confirmation du mot de passe est vide, on redirige vers la page inscription avec une erreur.
-                    header('Location: ../php/inscription.php?err=confirmation_vide');
+                    header('Location: ../inscription.php?err=confirmation_vide');
                 }
             }else{
                 //Si le mot de passe est vide, on redirige vers la page inscription avec une erreur.
-                header('Location: ../php/inscription.php?err=mdp_vide');
+                header('Location: ../inscription.php?err=mdp_vide');
             }
         }else{
             //Si le login est vide, on redirige vers la page inscription avec une erreur.
-            header('Location: ../php/inscription.php?err=login_vide');
+            header('Location: ../inscription.php?err=login_vide');
         }
     }
 

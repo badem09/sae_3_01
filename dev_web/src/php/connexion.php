@@ -14,7 +14,7 @@
         ?>
         
         <div class='container-centrer'>
-            <form action='../traitements/connexion_traitement.php' method='post'>
+            <form action='traitements/connexion_traitement.php' method='post'>
                 <div class='container-insciption-connexion'>
                     <h2>Se connecter</h2>
                     <?php 
