@@ -28,7 +28,7 @@
             <h1>X Calculator</h1>
             <h2>Module de Cryptographie</h2>
             <br>
-            <p class="pacc_mod_pres">Vous pouvez crypter et décrypter un code à l'aide d'une clé personalisé avec le type de cryptage WEP.</p>
+            <p class="pacc_mod_pres">Vous pouvez crypter et décrypter un code à l'aide d'une clé personalisée en utilisant le type de cryptage WEP.</p>
         </div>
 
         <div class='container-module-parent'>
@@ -165,14 +165,14 @@
 
             <div class="div-affi-histo-mod2">
                 <h2>Votre historique :</h2>
-                <a href="module2.php"><input id="historique" name='historique' type="submit" value="Actualiser votre historique"></input></a>
+                <a href="module2_2.php"><input id="historique" name='historique' type="submit" value="Actualiser votre historique"></input></a>
                 <?php
                     //On appel la fonction qui affiche l'historique avec le login en paramètre.
                     recherche($_SESSION["user"]["login"]);
                 ?>
+                <a href="module2.php" aria-label="lien_page_module2"><input type="button" value="Retour au choix  de la méthode"></a>
             </div>
 
-            <a href="module2.php" aria-label="lien_page_module2"><input type="button" value="Retour au module 2"></a>
 
         </div>
     </body>
