@@ -95,18 +95,23 @@
             </div>
 
             <form method="post" id=''>
-                <select name="choix_tri" id="choix_tri" onchange='showInput(this.value)'>
+                <select name="choix_tri" id="choix_tri" >
                     <option  selected disabled hidden>Trier par</option>
-                    <option value="GROUP BY">Utilisateur</option>
-                    <option value="ORDER BY">Ordre alphabétique</option>
-                    <option value="ORDER BY">Ordre anti alphabétique</option>
+                    <option value="Ggroubyuser">Utilisateur</option>
+                    <option value="ORDER BY asc">Ordre alphabétique</option>
+                    <option value="ORDER BY desc">Ordre anti alphabétique</option>
                 </select>
+                <input id="input-module-send" name='submit_tri' type="submit" value="OK">
             </form>
 
             <script>
 
                 function showInput(choix){
-                    alert(choix);
+                    //alert(choix);
+                    str = "choix_tri=".concat(choix);
+                    alert()
+                    document.cookie="choix_tri=".concat(choix);
+
                 }
 
             </script>
@@ -114,9 +119,12 @@
 
             <?php
                 //Si un filtre de recherche est demandé
-                if (!empty($_POST['choix_tri'])) {
+                if (isset($_POST['submit_tri'])){
                     echo $_POST['choix_tri'];
                 }
+               /* if (!empty($_COOKIE['choix_tri'])) {
+                    echo $_COOKIE['choix_tri'];
+                }*/
             
                 
             ?>
