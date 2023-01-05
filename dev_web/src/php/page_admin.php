@@ -153,7 +153,9 @@
             if ($table == "users" && $ligne[1] != $_SESSION["user"]["login"] ) {    //si table users, alors on peut supprimer les utilsateurs
                 echo " <td>
                     <form action='delete.php' method='post' >
-                    <input type='hidden' name='supp' value='$ligne[0]'>
+                    <input type='hidden' name='id_user_suppr' value='$ligne[0]'>
+                    <input type='hidden' name='login_suppr' value='$ligne[1]'>
+
                     <button id='suppresion' type='submit'>Delete</button>
                     </form>
                 </td>";
@@ -215,7 +217,8 @@
             if ($table == "users" && $ligne[1] != $_SESSION["user"]["login"] ) {    //si table users, alors on peut supprimer les utilsateurs
                 echo " <td>
                     <form action='delete.php' method='post' >
-                    <input type='hidden' name='supp' value='$ligne[0]'>
+                    <input type='hidden' name='id_user_suppr' value='$ligne[0]'>
+                    <input type='hidden' name='login_suppr' value='$ligne[1]'>
                     <button id='suppresion' type='submit'>Delete</button>
                     </form>
                 </td>";
