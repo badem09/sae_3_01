@@ -181,7 +181,7 @@
 </html>
 
 <?php
-    function recherche($login): void
+    function recherche($login)
     {
 
         //On ajoute la configuration d'accès à la base de donnée.
@@ -189,7 +189,7 @@
         $bd=mysqli_select_db($connexion,"bd_sae");
 
         //On prépare la requete pour afficher tout les mots de passes entrée par l'utiisateur utilisant le module
-        $recherche=mysqli_query($connexion,"SELECT bool_chiffrement, bool_dechiffrement, message, cle, resultat FROM historique_module2 where login = '".$login."%' and bool_rc4 = 1");
+        $recherche=mysqli_query($connexion,"SELECT bool_chiffrement, bool_dechiffrement, message, cle, resultat FROM historique_module2 where login = '".$login."' and bool_rc4 = 1");
 
         //On affiche la base d'un tableau.
         echo "<table class='tab'>";
