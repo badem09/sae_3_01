@@ -12,7 +12,7 @@
 <!doctype html>
 <html lang="fr">
     
-  <script src="graphe_module1.js"></script> 
+  <script src="js/graphe_module1.js"></script> 
   <?php
     //On inclus le header de la page.
     require("imports_html/head.html");
@@ -116,9 +116,7 @@
                                                 $array = str_split($result);
                                                 $res = implode("",array_slice($array,9));
                                                 $requete2 = mysqli_query($connexion,"INSERT INTO historique_module1(login,methode,esperance,ecart_type,t,res) 
-                                                                                    VALUES('".$_SESSION["user"]["login"]."','".$methode."','".$esp."','".$et."','".$t."','".$res."')");
-                                                echo $res;
-                                                }
+                                                                                    VALUES('".$_SESSION["user"]["login"]."','".$methode."','".$esp."','".$et."','".$t."','".$res."')");                                                }
 
                                             }else{
                                                 //Si µ est vide, on affiche une erreur.
