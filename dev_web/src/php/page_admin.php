@@ -207,7 +207,7 @@
             echo "<tr id='titre_tab'><th>ID Connexion</th><th>MDP tente (en md5)</th><th>Login tente</th><th>Horaire de la tentative</th><th>Adresse IP</th></tr>";
         }
 
-        while ($ligne = mysqli_fetch_row($requete1)) {
+        while ($ligne = mysqli_fetch_row($requete)) {
             echo "<tr>";
             foreach ($ligne as $v) { //parcours tableau de mysqli_fetch_row
                 echo "<td>" . $v . "</td>";

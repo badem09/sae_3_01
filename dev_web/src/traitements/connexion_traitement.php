@@ -4,7 +4,8 @@
     require_once('../config/config_bdd.php');
 
     //On initialise une fonction qui prends en paramètre la réussite, le mot de passe et le login de la tentative que nous utiliserons à chaque reussite ou echec, ainsi que les variables de connexion à la base de données.
-    function activite($mdp, $log, $connexion, $bd){
+    function activite($mdp, $log, $connexion, $bd): void
+    {
         //On convertie les caractères spéciaux en caratères spéciaux html.
         $adr_ip = $_SERVER['REMOTE_ADDR'];
         //On crypte le mot de passe.
@@ -41,36 +42,36 @@
                         //Si l'utilisateur n'est pas un simple utilisateur.
                         if ($data['type_user'] != 'user'){  
                             //On le redirige vers le panel "admin" et on ferme la page.
-                            header('Location: ../page_admin.php');
+                            header('Location: ../php/page_admin.php');
                             die();
                         //Si l'utilisateur est un utilisateur simple
                         } else {  
                             //On le redirige vers la page d'acceuil
-                            header('Location: ../index.php');
+                            header('Location: ../php/index.php');
                             die();
                         }
                     }else{
                         //On insert les logs avec la fonction "activite".
                         activite($mdp, $login, $connexion, $bd);
                         //Si le champ "mdp" ne correspond pas au login de la base de donnée, on le redirige vers la page de connection avec une erreur et on ferme la page.
-                        header('Location: ../connexion.php?err=u_ou_mdp_faux');
+                        header('Location: ../php/connexion.php?err=u_ou_mdp_faux');
                         die();
                     }
                 }else{
                     //On insert les logs avec la fonction "activite".
                     activite($mdp, $login, $connexion, $bd);
                     //Si le champ "login" est introuvable dans la base de donnée, on le redirige vers la page de connection avec une erreur et on ferme la page.
-                    header('Location: ../connexion.php?err=u_ou_mdp_faux');
+                    header('Location: ../php/connexion.php?err=u_ou_mdp_faux');
                     die();
             }
             }else{
                 //Si le champ "mdp" est vide, on le redirige vers la page de connection avec une erreur et on ferme la page.
-                header('Location: ../connexion.php?err=mdp_vide');
+                header('Location: ../php/connexion.php?err=mdp_vide');
                 die();
             }
         }else{
             //Si le champ "mdp" est vide, on le redirige vers la page de connection avec une erreur et on ferme la page.
-            header('Location: ../connexion.php?err=login_vide');
+            header('Location: ../php/connexion.php?err=login_vide');
             die();
         }
     }
