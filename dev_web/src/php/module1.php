@@ -41,7 +41,7 @@
 
                         <div class='inputs-module'>
 
-                            <p class="titre-form-module-proba">Méthode de calcule :</p>
+                            <p class="titre-form-module-proba">Méthode de calcul :</p>
                             <select name="choix_methode" id="choix_methode">
                                 <option  selected disabled hidden>Choisissez une méthode</option>
                                 <option value="rectangles_gauches.py">Méthode rectangles gauches</option>
