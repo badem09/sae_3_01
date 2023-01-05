@@ -12,17 +12,17 @@
 <!doctype html>
 <html lang="fr">
     
-  <script src="graphe_module1.js"></script> 
+  <script src="../js/graphe_module1.js"></script>
   <?php
     //On inclus le header de la page.
-    require("imports_html/head.html");
+    require("../imports_html/head.html");
   ?>
   
   <body>
 		
         <?php
             //On inclus la barre de navigation.
-            require("imports_html/nav_bar.html");
+            require("../imports_html/nav_bar.html");
         ?>
 
         <div class="entete">
@@ -41,7 +41,7 @@
 
                         <div class='inputs-module'>
 
-                            <p class="titre-form-module-proba">Méthode de calcule :</p>
+                            <p class="titre-form-module-proba">Méthode de calcul :</p>
                             <select name="choix_methode" id="choix_methode">
                                 <option  selected disabled hidden>Choisissez une méthode</option>
                                 <option value="rectangles_gauches.py">Méthode rectangles gauches</option>
@@ -60,7 +60,7 @@
                             <p class="titre-form-module-proba">Valeur de t :</p>
                             <input aria-label="t" type="text" name="t" id ="t" placeholder="ex : 1" value="<?php echo isset($_POST['t']) ? $_POST['t'] : '' ?>"/>
                         </div>
-                        <input id="input-module-send" name='submit' type="submit" value="Calculer"></input>
+                        <input id="input-module-send" name='submit' type="submit" value="Calculer">
                     </div>
                     <div class="vertical-line"></div>
                     <div class='container-resultat'>
@@ -80,20 +80,16 @@
                                                 #Insertion pour avoir les statistiques d'utilisations
 
                                                 //On inclus la configuration de la base de données.
-                                                require_once('config/config_bdd.php');
-                                                //Requete pour récupérer id de l'users
-                                                $select_id = mysqli_query($connexion,"SELECT id_user FROM users where login like '".$_SESSION["user"]["login"]."%'" );
-                                                //On récupére cette valeur et on la stocke dans une variable.
-                                                while ($ligne = mysqli_fetch_row($select_id)) {
-                                                    $id = $ligne;
-                                                }
-                                                //On prépare la requete
-                                                $requete="INSERT INTO activitemodule (id_module, login, id_user) VALUES  (1, '".$_SESSION["user"]["login"]."','".$id[0]."')";
+                                                require_once('../config/config_bdd.php');
 
+                                                //On prépare la requete
+                                                $requete=mysqli_query($connexion,"INSERT INTO activitemodule (id_module, login) VALUES  (1, '".$_SESSION["user"]["login"]."')");
+                                                
                                                 #On récupere les entrées.
                                                 $esp = $_POST["esp"];
                                                 $et = $_POST["et"] ;
                                                 $t = $_POST["t"];
+                                                $methode = $_POST['choix_methode'];
                                                 #On vérifie si elle sont bien des chiffres.
                                                 if (!(is_numeric($esp) && is_numeric($et) && is_numeric($t))){
                                                     //Si non on renvois une erreur.
@@ -106,7 +102,7 @@
                                                 } else {
                                                 $fonction = $_POST["choix_methode"] ;
                                                 #Préparation de la commande.
-                                                $command = "python python_module1/$fonction $esp $et $t "; 
+                                                $command = "python ../python_module1/$fonction $esp $et $t "; 
                                                 #Execution de la commande et on récupere le resultat.
                                                 $result = exec($command); 
                                                 #On affiche le résultat.
@@ -115,7 +111,11 @@
                                                 echo '<h4>Représentation graphique</h4>
                                                     <canvas id="can2" width="400" height="240"></canvas>
                                                     <script type="text/javascript">maj();</script>';
-                                                }
+
+                                                $array = str_split($result);
+                                                $res = implode("",array_slice($array,9));
+                                                $requete2 = mysqli_query($connexion,"INSERT INTO historique_module1(login,methode,esperance,ecart_type,t,res) 
+                                                                                    VALUES('".$_SESSION["user"]["login"]."','".$methode."','".$esp."','".$et."','".$t."','".$res."')");                                                }
 
                                             }else{
                                                 //Si µ est vide, on affiche une erreur.
@@ -142,6 +142,6 @@
         </div>
     <?php
         //On inclus le footer de la page.
-        require("imports_html/footer.html");
+        require("../imports_html/footer.html");
     ?>
 </html>

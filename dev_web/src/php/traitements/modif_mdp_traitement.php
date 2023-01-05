@@ -42,36 +42,36 @@
                                 //On définit les valeurs que l'on veut stocker dans la session.
                                 mysqli_close($connexion);
                                 //Puis on redirige ver la page "final" car par défaut, chaques utilisateurs et un "user".
-                                header('Location: ../page_user.php?succes=succes');
+                                header('Location: ../php/page_user.php?succes=succes');
                                 die();
                             }else{
                                 //Si l'ancien mot de passe est faux, on redirige vers la page user avec une erreur et on ferme la page.
-                                header('Location: ../page_user.php?err=a_mdp_faux');
+                                header('Location: ../php/page_user.php?err=a_mdp_faux');
                                 die();
                             }
                         }else{
                             //Si captcha est faux, on redirige vers la page user avec une erreur et on ferme la page.
-                            header('Location: ../page_user.php?err=captcha_faux');
+                            header('Location: ../php/page_user.php?err=captcha_faux');
                             die();
                         }
                     }else{
                         //Si les MDP entrées ne correspondent pas, on redirige vers la page user avec une erreur et on ferme la page.
-                        header('Location: ../page_user.php?err=non_identique');
+                        header('Location: ../php/page_user.php?err=non_identique');
                         die();
                     }
                 }else{
                     //Si le champ "mdp" est vide, on le redirige vers la page user avec une erreur et on ferme la page.
-                    header('Location: ../page_user.php?err=mdp_retype_vide');
+                    header('Location: ../php/page_user.php?err=mdp_retype_vide');
                     die();
                 }
             }else{
                 //Si le champ "mdp" est vide, on le redirige vers la page user avec une erreur et on ferme la page.
-                header('Location: ../page_user.php?err=mdp_vide');
+                header('Location: ../php/page_user.php?err=mdp_vide');
                 die();
             }
         }else{
             //Si le champ "a_mdp" est vide, on le redirige vers la page user avec une erreur et on ferme la page.
-            header('Location: ../page_user.php?err=a_mdp_vide');
+            header('Location: ../php/page_user.php?err=a_mdp_vide');
             die();
         }            
     }
