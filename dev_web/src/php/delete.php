@@ -1,7 +1,7 @@
 <?php
 
 //On inclus la barre de navigation.
-require("config/config_bdd.php");
+require("../config/config_bdd.php");
 
 // Récupération de l'identifiant de l'enregistrement à supprimer
 $supp = $_POST['supp'];

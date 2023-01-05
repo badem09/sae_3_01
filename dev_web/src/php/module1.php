@@ -12,17 +12,17 @@
 <!doctype html>
 <html lang="fr">
     
-  <script src="js/graphe_module1.js"></script> 
+  <script src="../js/graphe_module1.js"></script>
   <?php
     //On inclus le header de la page.
-    require("imports_html/head.html");
+    require("../imports_html/head.html");
   ?>
   
   <body>
 		
         <?php
             //On inclus la barre de navigation.
-            require("imports_html/nav_bar.html");
+            require("../imports_html/nav_bar.html");
         ?>
 
         <div class="entete">
@@ -60,7 +60,7 @@
                             <p class="titre-form-module-proba">Valeur de t :</p>
                             <input aria-label="t" type="text" name="t" id ="t" placeholder="ex : 1" value="<?php echo isset($_POST['t']) ? $_POST['t'] : '' ?>"/>
                         </div>
-                        <input id="input-module-send" name='submit' type="submit" value="Calculer"></input>
+                        <input id="input-module-send" name='submit' type="submit" value="Calculer">
                     </div>
                     <div class="vertical-line"></div>
                     <div class='container-resultat'>
@@ -80,9 +80,8 @@
                                                 #Insertion pour avoir les statistiques d'utilisations
 
                                                 //On inclus la configuration de la base de données.
-                                                require_once('config/config_bdd.php');
-                                                
-                                            
+                                                require_once('../config/config_bdd.php');
+
                                                 //On prépare la requete
                                                 $requete=mysqli_query($connexion,"INSERT INTO activitemodule (id_module, login) VALUES  (1, '".$_SESSION["user"]["login"]."')");
                                                 
@@ -143,6 +142,6 @@
         </div>
     <?php
         //On inclus le footer de la page.
-        require("imports_html/footer.html");
+        require("../imports_html/footer.html");
     ?>
 </html>

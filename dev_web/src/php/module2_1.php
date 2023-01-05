@@ -14,21 +14,21 @@
 
     <?php
     //On inclus le header de la page.
-    require("imports_html/head.html");
+    require("../imports_html/head.html");
     ?>
   
     <body>
 		
         <?php
             //On inclus la barre de navigation.
-            require("imports_html/nav_bar.html");
+            require("../imports_html/nav_bar.html");
         ?>
 
         <div class="entete">
             <h1>X Calculator</h1>
             <h2>Module de Cryptographie</h2>
             <br>
-            <p class="pacc_mod_pres">Vous pouvez crypter et décrypter un code à l'aide d'une clé personalisé avec le type de cryptage WEP.</p>
+            <p class="pacc_mod_pres">Vous pouvez crypter et décrypter un code à l'aide d'une clé personalisé avec le type de cryptage RC4.</p>
         </div>
 
         <div class='container-module-parent'>
@@ -37,7 +37,7 @@
                 <div class='container-module'>
                     <div class='container-form'>
                         <h2>Module de Cryptographie</h2>
-                        <p>Cryptage/Décryptage WEP</p>
+                        <p>Cryptage/Décryptage RC4</p>
 
                         <div class='inputs-module'>
 
@@ -59,7 +59,7 @@
               
                         </div>
 
-                        <input id="input-module-send" name='submit' type="submit" value="Executer"></input>
+                        <input id="input-module-send" name='submit' type="submit" value="Executer">
                     </div>
 
                     <div class="vertical-line"></div>
@@ -71,7 +71,7 @@
                             $dechiffrement = false; //drapeau pour insertion ds BD d'un dechiffrement si aucune erreur
 
                             //On inclus la configuration de la base de données.
-                            require_once('config/config_bdd.php');
+                            require_once('../config/config_bdd.php');
 
                             //Si le bouton executer est cliqué.
                             if (isset($_POST['submit'])){
@@ -100,7 +100,7 @@
                                             //Si la methode est Cryptage.
                                             if ($methode == "Cryptage"){
                                                 //On récupere le resultat que fournis notre commande.
-                                                $result = utf8_encode(exec("python3 python_module2/wep.py". " c ".  "$message" . " " . $clef));
+                                                $result = utf8_encode(exec("python3 python_module2/rc4.py". " c ".  "$message" . " " . $clef));
                                                 //On définit le drapeu chiffrement à true.
                                                 $chiffrement = true;
                                                 //On renvoir le résultat
@@ -111,7 +111,7 @@
                                                 if (is_hexa($message1)){
 
                                                     //On récupere le resultat que fournis notre commande.
-                                                    $result = utf8_encode(exec("python3 python_module2/wep.py". " d ".  "$message" . " " . $clef));
+                                                    $result = utf8_encode(exec("python3 python_module2/rc4.py". " d ".  "$message" . " " . $clef));
                                                     //On définit le drapeu chiffrement à true.
                                                     $dechiffrement = true;
                                                     //On renvoir le résultat
@@ -135,16 +135,15 @@
                                             //Si le drapeau chiffrement est à true.
                                             if ($chiffrement){
                                                 //On prépare la requete qui insère dans historique_module2, le login, un booléans, le message, la clé, et le résultat.
-                                                $insertion = "INSERT INTO historique_module2 (login, bool_chiffrement, message, cle, resultat, bool_wpe) VALUES ('".$_SESSION["user"]["login"]."', 1, $message,'".$clef."', '".$result."', 1)";
+                                                $insertion = "INSERT INTO historique_module2 (login, bool_chiffrement, message, cle, resultat, bool_rc4) VALUES ('".$_SESSION["user"]["login"]."', 1, $message,'".$clef."', '".$result."', 1)";
                                                 //On execute la requete.
                                                 $insertion2 = mysqli_query($connexion, $insertion);
                                             }elseif ($dechiffrement){
                                                 //On prépare la requete qui insère dans historique_module2, le login, un booléans, le message, la clé, et le résultat.
-                                                $insertion = "INSERT INTO historique_module2 (login, bool_dechiffrement, message, cle, resultat, bool_wpe) VALUES ('".$_SESSION["user"]["login"]."', 1, $message,'".$clef."', '".$result."', 1)";
+                                                $insertion = "INSERT INTO historique_module2 (login, bool_dechiffrement, message, cle, resultat, bool_rc4) VALUES ('".$_SESSION["user"]["login"]."', 1, $message,'".$clef."', '".$result."', 1)";
                                                 //On execute la requete.
                                                 $insertion2 = mysqli_query($connexion, $insertion);
                                             }
-
                                         }else{
                                             //Si aucune méthode n'a été choisis, on renvoie une erreur.
                                             echo "<p class='err'>Vous n'avez pas choisi méthode.</p>";
@@ -173,24 +172,24 @@
             </div>
 
             <a href="module2.php" aria-label="lien_page_module2"><input type="button" value="Retour au module 2"></a>
-
         </div>
     </body>
     <?php
         //On inclus le footer de la page.
-        require("imports_html/footer.html");
+        require("../imports_html/footer.html");
     ?>
 </html>
 
 <?php
-    function recherche($login){
+    function recherche($login): void
+    {
 
         //On ajoute la configuration d'accès à la base de donnée.
         $connexion=mysqli_connect("localhost","root","");
         $bd=mysqli_select_db($connexion,"bd_sae");
 
         //On prépare la requete pour afficher tout les mots de passes entrée par l'utiisateur utilisant le module
-        $recherche=mysqli_query($connexion,"SELECT bool_chiffrement, bool_dechiffrement, message, cle, resultat FROM historique_module2 where login like '".$login."%' and bool_wpe = 1");
+        $recherche=mysqli_query($connexion,"SELECT bool_chiffrement, bool_dechiffrement, message, cle, resultat FROM historique_module2 where login like '".$login."%' and bool_rc4 = 1");
 
         //On affiche la base d'un tableau.
         echo "<table class='tab'>";
@@ -208,7 +207,8 @@
         echo "</table>";
     }
 
-    function is_hexa($num){
+    function is_hexa($num): bool
+    {
         $alpha1 = 'abcdef';
         $alpha2 = 'ABCDEF';
         $num = str_replace(' ','',$num);

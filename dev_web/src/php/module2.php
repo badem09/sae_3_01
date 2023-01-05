@@ -14,14 +14,14 @@
 
     <?php
     //On inclus le header de la page.
-    require("imports_html/head.html");
+    require("../imports_html/head.html");
     ?>
   
     <body>
 		
         <?php
             //On inclus la barre de navigation.
-            require("imports_html/nav_bar.html");
+            require("../imports_html/nav_bar.html");
         ?>
 
         <div class="entete">
@@ -55,6 +55,6 @@
             }
         }
         //On inclus le footer de la page.
-        require("imports_html/footer.html");
+        require("../imports_html/footer.html");
     ?>o
 </html>
