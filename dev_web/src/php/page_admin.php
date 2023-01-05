@@ -93,25 +93,31 @@
                     }
                 ?>
             </div>
-            <form method="post" id='post-admin-up'>
-                <input class='btn-simple-bleu' type='submit' name="groupBy" value="Regroupement par utilisateurs">
-                <input class='btn-simple-bleu' type='submit' name='orderByASC' value='Classement croissant par utilisateurs'>
-                <input class='btn-simple-bleu' type='submit' name='orderByDESC' value='Classement décroissant par utilisateurs'>
+
+            <form method="post" id=''>
+                <select name="choix_tri" id="choix_tri" onchange='showInput(this.value)'>
+                    <option  selected disabled hidden>Trier par</option>
+                    <option value="GROUP BY">Utilisateur</option>
+                    <option value="ORDER BY">Ordre alphabétique</option>
+                    <option value="ORDER BY">Ordre anti alphabétique</option>
+                </select>
             </form>
+
+            <script>
+
+                function showInput(choix){
+                    alert(choix);
+                }
+
+            </script>
+            
+
             <?php
                 //Si un filtre de recherche est demandé
-                if (isset($_POST['groupBy'])) {
-                    //groupBy();
-                    echo "groupBy";
+                if (!empty($_POST['choix_tri'])) {
+                    echo $_POST['choix_tri'];
                 }
-                if (isset($_POST['orderByASC'])) {
-                    //orderByASC();
-                    echo "orderByASC";
-                }
-                if (isset($_POST['orderByDESC'])) {
-                    //orderByDESC();
-                    echo "orderByDESC";
-                }
+            
                 
             ?>
         </div>
