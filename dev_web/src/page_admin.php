@@ -68,17 +68,23 @@
                     if (isset($_POST["users"])) {
                         $table = "users";
                         setcookie("table", $table);
-                        affichage($table);
-                    }
-                    elseif (isset($_POST["activitemodule"])) {
-                        $table = "activitemodule";
-                        setcookie("table", $table);
-                        affichage($table);
+                        $requete1 = "SELECT id_user, login, type_user, nb_visites from $table";
+                        $requete2 = mysqli_query($connexion, $requete1);
+                        affichage_requete($table, $requete2);
                     }
                     elseif (isset($_POST["activiteconnexion"])) {
                         $table = "activiteconnexion";
                         setcookie("table", $table);
-                        affichage($table);
+                        $requete1 = "SELECT id_connexion, mdp_tente, login, date_horaire_tent, adr_ip from $table";
+                        $requete2 = mysqli_query($connexion, $requete1);
+                        affichage_requete($table, $requete2);
+                    }
+                    elseif (isset($_POST["activitemodule"])) {
+                        $table = "activitemodule";
+                        setcookie("table", $table);
+                        $requete1 = "SELECT id_activite, id_module, login from $table";
+                        $requete2 = mysqli_query($connexion, $requete1);
+                        affichage_requete($table, $requete2);
                     }
 
                     //Si une recherche a été demandé.
@@ -93,79 +99,13 @@
                     }
                 ?>
             </div>
+            
         </div>
     
     </body>
 </html>
 
 <?php
-    //Affiche l'entierete de la table choisi selon le paramètre "table" si aucuns texte n'est entrée.
-    function affichage($table): void
-    {
-
-        //On ajoute la configuration d'accès à la base de données.
-        $connexion=mysqli_connect("localhost","root","");
-        $bd=mysqli_select_db($connexion,"bd_sae");
-
-        //Si la table est user.
-        if ($table == "users") {
-            //On récupère toutes les information dont ont à besoin.
-            $requete1 = mysqli_query($connexion,"SELECT id_user, login, type_user, nb_visites from $table");
-        }
-        //Si la table est activiteconnexion.
-        else if ($table == "activiteconnexion") {
-            //On récupère toutes les information dont ont à besoin.
-            $requete1 = mysqli_query($connexion,"SELECT id_connexion, mdp_tente, login, date_horaire_tent, adr_ip from $table");
-        }
-        //Si la table est activitemodule.
-        else if ($table == "activitemodule") {
-            //On récupère toutes les information dont ont à besoin.
-            $requete1 = mysqli_query($connexion,"SELECT id_activite, id_module, login from $table");
-        }
-        //Si la table est le dernier bouton.
-        else {
-            //On récupère toutes les information dont ont à besoin.
-            $requete1 = mysqli_query($connexion,"SELECT * from $table");
-        }
-
-        //On affiche la base d'un tableau.
-        echo "<table class='tab'>";
-
-        //On affiche les titres du tableau selon la table sélectionné.
-        if ($table == "users") {
-            echo "<tr id='titre_tab'><th>ID User</th><th>Login</th><th>Type Users</th><th>Nombre de Visites</th><th>Supprimer</th></tr>";
-        }
-        //On affiche les titres du tableau selon la table sélectionné.
-        if ($table == "activitemodule") {
-            echo "<tr id='titre_tab'><th>ID Activite</th><th>Numéro du Module utilisé</th><th>Login utilisateur</th></tr>";
-        }
-        //On affiche les titres du tableau selon la table sélectionné.
-        if ($table == "activiteconnexion") {
-            echo "<tr id='titre_tab'><th>ID Connexion</th><th>MDP tente</th><th>Login tente</th><th>Horaire de la tentative</th><th>Adresse IP</th></tr>";
-        }
-
-        //Pour chaques lignes assigé comme plusieurs valeurs, on récupère et affiche les données (1 seul car chaque "login" est unique).
-        while ($ligne = mysqli_fetch_row($requete1)) {
-            echo "<tr>";
-            foreach ($ligne as $v) { //parcours tableau de mysqli_fetch_row
-                echo "<td>" . $v . "</td>";
-            }
-            if ($table == "users" && $ligne[1] != $_SESSION["user"]["login"] ) {    //si table users, alors on peut supprimer les utilsateurs
-                echo " <td>
-                    <form action='delete.php' method='post' >
-                    <input type='hidden' name='id_user_suppr' value='$ligne[0]'>
-                    <input type='hidden' name='login_suppr' value='$ligne[1]'>
-
-                    <button id='suppresion' type='submit'>Delete</button>
-                    </form>
-                </td>";
-            }
-            echo "</tr>";
-        }
-
-        echo "</table>";
-
-    }
 
     //Affiche l'entierete de la table choisi selon les paramètres "table" et "texte" si un texte est entrée.
     function recherche($texte,$table): void
@@ -190,11 +130,15 @@
             //On récupère toutes les information dont ont à besoin.
             $requete = mysqli_query($connexion,"SELECT id_activite, id_module, login from $table where login like '".$texte."%'");
         }
-        //Si la table est le dernier bouton.
-        else {
-            //On récupère toutes les information dont ont à besoin.
-            $requete = mysqli_query($connexion, "SELECT * from $table where login like '".$texte."%'");
-        }
+        affichage_requete($table, $requete);
+    }
+
+    function affichage_requete($table, $requete){
+
+        //On ajoute la configuration d'accès à la base de données.
+        $connexion=mysqli_connect("localhost","root","");
+        $bd=mysqli_select_db($connexion,"bd_sae");
+
         //On affiche la base d'un tableau.
         echo "<table class='tab'>";
 
@@ -225,7 +169,6 @@
             }
             echo "</tr>";
         }
-
         echo "</table>";
     }
 
