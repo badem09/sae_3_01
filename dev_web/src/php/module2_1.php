@@ -14,21 +14,21 @@
 
     <?php
     //On inclus le header de la page.
-    require("imports_html/head.html");
+    require("../imports_html/head.html");
     ?>
   
     <body>
 		
         <?php
             //On inclus la barre de navigation.
-            require("imports_html/nav_bar.html");
+            require("../imports_html/nav_bar.html");
         ?>
 
         <div class="entete">
             <h1>X Calculator</h1>
             <h2>Module de Cryptographie</h2>
             <br>
-            <p class="pacc_mod_pres">Vous pouvez crypter et décrypter un code à l'aide d'une clé personalisé avec le type de cryptage RC4.</p>
+            <p class="pacc_mod_pres">Vous pouvez crypter et décrypter un code à l'aide d'une clé personalisée en utilisant le type de cryptage RC4.</p>
         </div>
 
         <div class='container-module-parent'>
@@ -51,15 +51,15 @@
                                 <label for="decrypter">Déchiffrement</label>
                             </fieldset>
 
-                            <p class="titre-form">Votre message:</p>
+                            <p class="titre-form">Votre message :</p>
                             <input aria-label="input-message" type="text" name="input_message" id="input_message" placeholder="Votre groupe mérite un 20/20 !" value=""/>
 
-                            <p class="titre-form">La clef:</p>
+                            <p class="titre-form">La clef :</p>
                             <input aria-label="input-clef" type="text" name="input_clef" id="input_clef" placeholder="20/20" value=""/>
               
                         </div>
 
-                        <input id="input-module-send" name='submit' type="submit" value="Executer"></input>
+                        <input id="input-module-send" name='submit' type="submit" value="Executer">
                     </div>
 
                     <div class="vertical-line"></div>
@@ -71,7 +71,7 @@
                             $dechiffrement = false; //drapeau pour insertion ds BD d'un dechiffrement si aucune erreur
 
                             //On inclus la configuration de la base de données.
-                            require_once('config/config_bdd.php');
+                            require_once('../config/config_bdd.php');
 
                             //Si le bouton executer est cliqué.
                             if (isset($_POST['submit'])){
@@ -100,7 +100,7 @@
                                             //Si la methode est Cryptage.
                                             if ($methode == "Cryptage"){
                                                 //On récupere le resultat que fournis notre commande.
-                                                $result = utf8_encode(exec("python3 python_module2/rc4.py". " c ".  "$message" . " " . $clef));
+                                                $result = utf8_encode(exec("python3 ../python_module2/rc4.py". " c ".  "$message" . " " . $clef));
                                                 //On définit le drapeu chiffrement à true.
                                                 $chiffrement = true;
                                                 //On renvoir le résultat
@@ -111,7 +111,7 @@
                                                 if (is_hexa($message1)){
 
                                                     //On récupere le resultat que fournis notre commande.
-                                                    $result = utf8_encode(exec("python3 python_module2/rc4.py". " d ".  "$message" . " " . $clef));
+                                                    $result = utf8_encode(exec("python3 ../python_module2/rc4.py". " d ".  "$message" . " " . $clef));
                                                     //On définit le drapeu chiffrement à true.
                                                     $dechiffrement = true;
                                                     //On renvoir le résultat
@@ -164,31 +164,32 @@
 
             <div class="div-affi-histo-mod2">
                 <h2>Votre historique :</h2>
-                <a href="module2.php"><input id="historique" name='historique' type="submit" value="Actualiser votre historique"></input></a>
+                <a href="module2_1.php" aria-label="lien_page_module2_1"><input id="historique" name='historique' type="submit" value="Actualiser votre historique"></input></a>
                 <?php
                     //On appel la fonction qui affiche l'historique avec le login en paramètre.
                     recherche($_SESSION["user"]["login"]);
                 ?>
+                <a href="module2.php" aria-label="lien_page_module2"><input type="button" value="Retour au choix  de la méthode"></a>
             </div>
 
-            <a href="module2.php" aria-label="lien_page_module2"><input type="button" value="Retour au module 2"></a>
         </div>
     </body>
     <?php
         //On inclus le footer de la page.
-        require("imports_html/footer.html");
+        require("../imports_html/footer.html");
     ?>
 </html>
 
 <?php
-    function recherche($login){
+    function recherche($login)
+    {
 
         //On ajoute la configuration d'accès à la base de donnée.
         $connexion=mysqli_connect("localhost","root","");
         $bd=mysqli_select_db($connexion,"bd_sae");
 
         //On prépare la requete pour afficher tout les mots de passes entrée par l'utiisateur utilisant le module
-        $recherche=mysqli_query($connexion,"SELECT bool_chiffrement, bool_dechiffrement, message, cle, resultat FROM historique_module2 where login like '".$login."%' and bool_rc4 = 1");
+        $recherche=mysqli_query($connexion,"SELECT bool_chiffrement, bool_dechiffrement, message, cle, resultat FROM historique_module2 where login = '".$login."' and bool_rc4 = 1");
 
         //On affiche la base d'un tableau.
         echo "<table class='tab'>";
@@ -206,7 +207,8 @@
         echo "</table>";
     }
 
-    function is_hexa($num){
+    function is_hexa($num): bool
+    {
         $alpha1 = 'abcdef';
         $alpha2 = 'ABCDEF';
         $num = str_replace(' ','',$num);

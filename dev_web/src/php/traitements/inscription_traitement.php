@@ -1,7 +1,7 @@
 <?php
     
     //On importe la configuration de la base de données en premier.
-    require_once('../config/config_bdd.php');
+    require_once('../../config/config_bdd.php');
     //On vérifie si une demande d'envoie dur formulaire ç bien été envoyé.
     if(isset($_POST['Envoyer'])){
         //On vérifie si le champ "login" n'est pas vide.

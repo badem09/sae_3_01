@@ -1,10 +1,11 @@
 <?php
 
     //On demande l'insersion du ficher config de la bse de donnée.
-    require_once('../config/config_bdd.php');
+    require_once('../../config/config_bdd.php');
 
     //On initialise une fonction qui prends en paramètre la réussite, le mot de passe et le login de la tentative que nous utiliserons à chaque reussite ou echec, ainsi que les variables de connexion à la base de données.
-    function activite($mdp, $log, $connexion, $bd){
+    function activite($mdp, $log, $connexion, $bd): void
+    {
         //On convertie les caractères spéciaux en caratères spéciaux html.
         $adr_ip = $_SERVER['REMOTE_ADDR'];
         //On crypte le mot de passe.
