@@ -2,19 +2,19 @@
     <ul id="ul-container">
 
         <li class ="nav-logo">
-            <a href="../php/index.php"><img class ="nav-logo" src="../img/logo_t.png" alt="logo_SiteWeb_X"></a>
+            <a href="index.php"><img class ="nav-logo" src="img/logo_t.png" alt="logo_SiteWeb_X"></a>
         </li>
 
         <li class="nav-item">
-            <a href="../php/index.php"><b>Page d'accueil</b></a>
+            <a href="index.php"><b>Page d'accueil</b></a>
         </li>
 
         <li class="nav-item">
             <a href="#"><b>Mes Services</b></a>
             <ul class = "nav-item-services">
-                <li><a href="../php/module1.php"><b>Module de probabilité</b></a></li>
-                <li><a href="../php/module2.php"><b>Module de Cryptographie</b></a></li>
-                <li><a href="../php/404.php"><b>Prochainement...</b></a></li>
+                <li><a href="module1.php"><b>Module de probabilité</b></a></li>
+                <li><a href="module2.php"><b>Module de Cryptographie</b></a></li>
+                <li><a href="404.php"><b>Prochainement...</b></a></li>
             </ul>
         </li>
 
@@ -32,32 +32,32 @@
                 if($_SESSION['user']['type_user'] != 'user'){
                     echo"
                     <li class='nav-item'>
-                      <a href='../php/page_admin.php'><b>Administration</b></a>
+                      <a href='page_admin.php'><b>Administration</b></a>
                     </li>
 
                     <li class='nav-item'>
-                        <a href='../php/page_user.php'><b>Mon Espace</b></a>
+                        <a href='page_user.php'><b>Mon Espace</b></a>
                     </li>
 
                     <li class='nav-item'>
-                        <a href='../php/deconnexion.php'><b>Se déconnecter</b></a>
+                        <a href='deconnexion.php'><b>Se déconnecter</b></a>
                     </li>
                     ";
                 }else{
                     echo "
                     <li class='nav-item'>
-                      <a href='../php/page_user.php'><b>Mon Espace</b></a>
+                      <a href='page_user.php'><b>Mon Espace</b></a>
                     </li>
 
                     <li class='nav-item'>
-                        <a href='../php/deconnexion.php'><b>Se déconnecter</b></a>
+                        <a href='deconnexion.php'><b>Se déconnecter</b></a>
                     </li>
                     ";
                 }
             }else{
                 echo "
                 <li class='nav-item'>
-                    <a href='../php/connexion.php'><b>Se connecter</b></a>
+                    <a href='connexion.php'><b>Se connecter</b></a>
                 </li>
                 ";
             }
