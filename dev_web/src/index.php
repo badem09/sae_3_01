@@ -64,7 +64,7 @@
 			</div>
 
 			<div class="pacc_mod_image">
-				<a href ="module2.php"><img src="img/rc4_2.png" alt="image_module_de_cryptographie"></a>
+				<a href ="module2.php"><img src="img/module2.png" alt="image_module_de_cryptographie"></a>
 			</div>
 		</div>
 
