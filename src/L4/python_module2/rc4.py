@@ -19,14 +19,14 @@ def RC4(action,key, message):
     else :
         message = hexa_to_ten(message) # valeur décimale de la chaine de nombres héxadécimaux
 
-    # Initialiser la suite chiffrante
+    # Initialiser la suite chiffrante (cf PRGA(S) dans le cours)
     suite = list(range(256))
     j = 0
     for i in range(256):
         j = (j + suite[i] + key[i % len(key)]) % 256
         suite[i], suite[j] = suite[j], suite[i]
 
-    # Appliquer l'algorithme RC4 au message (cf PRGA(S) dans cours)
+    # Appliquer l'algorithme RC4 au message (cf KSA dans le cours)
     result = []
     i = j = 0
     for lettre in message:
@@ -36,7 +36,7 @@ def RC4(action,key, message):
         result.append(lettre ^ suite[(suite[i] + suite[j]) % 256]) # ^ applique l'opérateur logique xor 
 
     if action == "c":
-        return result
+        return ten_to_hexa(result)
     else : #si déchiffrement
         return ''.join([chr(e) for e in result])
         
@@ -67,18 +67,18 @@ def hexa_to_ten(str):
     liste = str.split(" ")
     return [int('0x' + cara , 0) for cara in liste]
 
-try:
-    action = sys.argv[1]
-    data = sys.argv[2]
-    key = sys.argv[3]
-
-    res = RC4(action,key,data)
-
-    if action == "c":
-        print(ten_to_hexa(res))
-    else: 
+if __name__ == '__main__':
+    try:
+        action = sys.argv[1]
+        data = sys.argv[2]
+        key = sys.argv[3]
+        res = RC4(action,key,data)
         print(res)
 
-except:
-    print("Le message ne possede pas le bon format")
+    except:
+        print("Le message ne possede pas le bon format")
 
+
+    # ex qui marche pas good
+    #res = RC4('d','12345','56 56 56')
+    # coz chr(6)

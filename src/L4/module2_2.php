@@ -100,7 +100,7 @@
                                             //Si la methode est Cryptage.
                                             if ($methode == "Cryptage"){
                                                 //On récupere le resultat que fournis notre commande.
-                                                $result = utf8_encode(exec("python3 ../python_module2/wep.py". " c ".  "$message" . " " . $clef));
+                                                $result = utf8_encode(exec("python3 python_module2/wep.py". " c ".  "$message" . " " . $clef));
                                                 //On définit le drapeu chiffrement à true.
                                                 $chiffrement = true;
                                                 //On renvoie le résultat
@@ -111,7 +111,7 @@
                                                 if (is_hexa($message1)){
 
                                                     //On récupere le resultat que fournis notre commande.
-                                                    $result = utf8_encode(exec("python3 ../python_module2/wep.py". " d ".  "$message" . " " . $clef));
+                                                    $result = utf8_encode(exec("python3 python_module2/wep.py". " d ".  "$message" . " " . $clef));
                                                     //On définit le drapeu chiffrement à true.
                                                     $dechiffrement = true;
                                                     //On renvoir le résultat
