@@ -64,7 +64,16 @@ def hexa_to_ten(str):
     Sortie :
             (list) : Nombres décimaux 
     """
-    liste = str.split(" ")
+    # supprime tous les espaces
+    liste = [e for e in str if e != " "] 
+    # regroupe les caractère par deux ex : 999999 -> [[9],[9," "],[9],[9," "],[9],[9]]
+    liste = [[liste[e]," "] if e%2 == 1 and e != len(liste) -1  else [liste[e]]  for e in range(len(liste))]
+    #applatit la liste ex : [[9],[9," "],[9],[9," "],[9],[9]] -> [9,9," ",9,9," ",9,9]
+    liste = sum(liste, [])
+    #regroupe les elements dans une str ex : [9,9," ",9,9," ",9,9] -> "99 99 99"
+    liste = "".join(liste)
+    #sépare les éléments : "99 99 99" -> [99,99,99]
+    liste = liste.split(" ")
     return [int('0x' + cara , 0) for cara in liste]
 
 if __name__ == '__main__':
