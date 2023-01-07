@@ -108,22 +108,29 @@
                                             }
                                             //Si la methode est Decryptage.
                                             if ($methode == "Decryptage"){
-                                                if (is_hexa($message1)){
+                                                if strlen($message>6){
 
-                                                    //On récupere le resultat que fournis notre commande.
-                                                    $result = utf8_encode(exec("python3 python_module2/wep.py". " d ".  "$message" . " " . $clef));
-                                                    //On définit le drapeu chiffrement à true.
-                                                    $dechiffrement = true;
-                                                    //On renvoir le résultat
-                                                    echo $result;
-                                                    if (ord($result) < 41){
-                                                        echo '<br>' . 'Le code ASCII : ' . ord($result);
-                                                        // et stocker ord(result)
+                                                
+                                                    if (is_hexa($message1)){
+
+                                                        //On récupere le resultat que fournis notre commande.
+                                                        $result = utf8_encode(exec("python3 python_module2/wep.py". " d ".  "$message" . " " . $clef));
+                                                        //On définit le drapeu chiffrement à true.
+                                                        $dechiffrement = true;
+                                                        //On renvoir le résultat
+                                                        echo $result;
+                                                        if (ord($result) < 41){
+                                                            echo '<br>' . 'Le code ASCII : ' . ord($result);
+                                                            // et stocker ord(result)
+                                                        }
+                                                    }
+                                                    else{
+                                                        echo "<p class='err'>Décryptage : le message doit être en héxadécimal.</p>";
+                                                        $result = "";
                                                     }
                                                 }
                                                 else{
-                                                    echo "<p class='err'>Décryptage : le message doit être en héxadécimal.</p>";
-                                                    $result = "";
+                                                    echo "<p class='err'>Déchiffrement : le message est trop court.</p>";
                                                 }
                                             }
 
