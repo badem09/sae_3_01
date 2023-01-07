@@ -114,8 +114,15 @@
                                                     $result = utf8_encode(exec("python3 python_module2/rc4.py". " d ".  "$message" . " " . $clef));
                                                     //On définit le drapeu chiffrement à true.
                                                     $dechiffrement = true;
-                                                    //On renvoir le résultat
-                                                    echo $result;
+                                                    //On renvoie le résultat
+                                                    if (ord($result) < 41){
+                                                        echo "<p> Le message crypté contient un caratère spécial il se peut quil ne s'affiche pas correctement.
+                                                        Il ne sera pas stocké.";
+                                                        echo '<br>' . 'Son code ASCII : ' . ord($result);
+                                                        echo '<br>' . 'Le message : ' . $result;
+                                                        $dechiffrement = false;
+                                                    }
+                                                    else{echo $result;}
                                                 }
                                                 else{
                                                     echo "<p class='err'>Décryptage : le message doit être en héxadécimal.</p>";
