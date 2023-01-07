@@ -94,10 +94,11 @@
                                             $requete2 = mysqli_query($connexion, $requete);
 
                                             //On définis le message.
-                                            $message1 = $message;
+                                            $message_copy = str_replace(' ','',$message); // suppression des espaces
                                             $message = '"'.$message.'"';
+                                            $result = "";
 
-                                            //Si la methode est Cryptage.
+                                            //Cryptage.
                                             if ($methode == "Cryptage"){
                                                 //On récupere le resultat que fournis notre commande.
                                                 $result = utf8_encode(exec("python3 python_module2/wep.py". " c ".  "$message" . " " . $clef));
@@ -106,32 +107,26 @@
                                                 //On renvoie le résultat
                                                 echo $result;
                                             }
-                                            //Si la methode est Decryptage.
-                                            if ($methode == "Decryptage"){
-                                                if strlen($message>6){
 
-                                                
-                                                    if (is_hexa($message1)){
+                                            //Decryptage.
+                                            if ($methode == "Decryptage"){
+                                                if (strlen($message_copy)>6){                                                
+                                                    if (is_hexa($message_copy)){
 
                                                         //On récupere le resultat que fournis notre commande.
                                                         $result = utf8_encode(exec("python3 python_module2/wep.py". " d ".  "$message" . " " . $clef));
-                                                        //On définit le drapeu chiffrement à true.
+                                                        //On enregistre le résultat.
                                                         $dechiffrement = true;
-                                                        //On renvoir le résultat
+                                                        //On l'affiche
                                                         echo $result;
                                                         if (ord($result) < 41){
                                                             echo '<br>' . 'Le code ASCII : ' . ord($result);
-                                                            // et stocker ord(result)
+                                                            $dechiffrement = false;
                                                         }
                                                     }
-                                                    else{
-                                                        echo "<p class='err'>Décryptage : le message doit être en héxadécimal.</p>";
-                                                        $result = "";
-                                                    }
+                                                    else{echo "<p class='err'>Décryptage : le message doit être en héxadécimal.</p>";}
                                                 }
-                                                else{
-                                                    echo "<p class='err'>Déchiffrement : le message est trop court.</p>";
-                                                }
+                                                else{echo "<p class='err'>Déchiffrement : le message est trop court.</p>";}
                                             }
 
                                             //Si le résultat renvoyé par le fichier est "Le message ne possede pas le bon format"
