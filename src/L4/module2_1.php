@@ -101,7 +101,7 @@
                                             if ($methode == "Cryptage"){
                                                 //On récupere le resultat que fournis notre commande.
                                                 $result = utf8_encode(exec("python3 python_module2/rc4.py". " c ".  "$message" . " " . $clef));
-                                                //On définit le drapeu chiffrement à true.
+                                                //On définit le drapeau chiffrement à true.
                                                 $chiffrement = true;
                                                 //On renvoir le résultat
                                                 echo $result;
@@ -115,7 +115,14 @@
                                                     //On définit le drapeu chiffrement à true.
                                                     $dechiffrement = true;
                                                     //On renvoir le résultat
-                                                    echo $result;
+                                                    if (ord($result) < 41){
+                                                        echo "<p> Le message crypté contient un caratère spécial il se peut quil ne s'affiche pas correctement.
+                                                         Il ne sera pas stocké.";
+                                                        echo '<br>' . 'Son code ASCII : ' . ord($result);
+                                                        echo '<br>' . 'Le message : ' . $result;
+                                                        $chiffrement = false;
+                                                    }
+                                                    else{echo $result;}                                                    
                                                 }
                                                 else{
                                                     echo "<p class='err'>Décryptage : le message doit être en héxadécimal.</p>";

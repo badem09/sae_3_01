@@ -94,36 +94,50 @@
                                             $requete2 = mysqli_query($connexion, $requete);
 
                                             //On définis le message.
-                                            $message1 = $message;
+
+                                            $array = good_format($message);
+                                            $is_hexa = $array[0];
+                                            $is_all_text = $array[1];
+
                                             $message = '"'.$message.'"';
 
                                             //Si la methode est Cryptage.
                                             if ($methode == "Cryptage"){
-                                                //On récupere le resultat que fournis notre commande.
-                                                $result = utf8_encode(exec("python3 python_module2/wep.py". " c ".  "$message" . " " . $clef));
-                                                //On définit le drapeu chiffrement à true.
-                                                $chiffrement = true;
-                                                //On renvoie le résultat
-                                                echo $result;
+                                                if($is_all_text){
+
+                                                    //On récupere le resultat que fournis notre commande.
+                                                    $result = utf8_encode(exec("python3 python_module2/wep.py". " c ".  "$message" . " " . $clef));
+                                                    //On définit le drapeu chiffrement à true.
+                                                    $chiffrement = true;
+                                                    //On renvoie le résultat
+                                                    echo $result;
+                                                }
+                                                else{
+                                                    echo "<p class='err'>Chiffrement : le message ne doit contenit que des caractères ASCII.</p>";
+                                                    $result = "";
+                                                }
                                             }
                                             //Si la methode est Decryptage.
                                             if ($methode == "Decryptage"){
-                                                if (is_hexa($message1)){
+                                                if (strlen($message) > 6){
 
-                                                    //On récupere le resultat que fournis notre commande.
-                                                    $result = utf8_encode(exec("python3 python_module2/wep.py". " d ".  "$message" . " " . $clef));
-                                                    //On définit le drapeu chiffrement à true.
-                                                    $dechiffrement = true;
-                                                    //On renvoir le résultat
-                                                    echo $result;
-                                                    if (ord($result) < 41){
-                                                        echo '<br>' . 'Le code ASCII : ' . ord($result);
-                                                        // et stocker ord(result)
+                                                
+                                                    if ($is_hexa){
+                                                        //On récupere le resultat que fournis notre commande.
+                                                        $result = utf8_encode(exec("python3 python_module2/wep.py". " d ".  "$message" . " " . $clef));
+                                                        //On définit le drapeu chiffrement à true.
+                                                        $dechiffrement = true;
+                                                        //On renvoie le résultat
+                                                        echo $result;
+                                                    }
+                                                    else{
+                                                        echo "<p class='err'>Déchiffrement : le message doit être en héxadécimal.</p>";
+                                                        $result = "";
                                                     }
                                                 }
                                                 else{
-                                                    echo "<p class='err'>Décryptage : le message doit être en héxadécimal.</p>";
-                                                    $result = "";
+                                                    echo "<p class='err'>Déchiffrement : le message est trop court.</p>";
+                                                        $result = "";
                                                 }
                                             }
 
@@ -148,7 +162,6 @@
                                                 //On execute la requete.
                                                 $insertion2 = mysqli_query($connexion, $insertion);
                                             }
-
                                         }else{
                                             //Si aucune méthode n'a été choisis, on renvoie une erreur.
                                             echo "<p class='err'>Vous n'avez pas choisi méthode.</p>";
@@ -176,8 +189,6 @@
                 ?>
                 <a href="module2.php" aria-label="lien_page_module2"><input type="button" value="Retour au choix  de la méthode"></a>
             </div>
-
-
         </div>
     </body>
     <?php
@@ -187,9 +198,7 @@
 </html>
 
 <?php
-    function recherche($login)
-    {
-
+    function recherche($login){
         //On ajoute la configuration d'accès à la base de donnée.
         $connexion=mysqli_connect("localhost","root","");
         $bd=mysqli_select_db($connexion,"bd_sae");
@@ -213,23 +222,36 @@
         echo "</table>";
     }
 
-    function is_hexa($num): bool
-    {
+    function good_format($message){
+        /**
+         * @param num (str) : Message entré par l'utilisateur.
+         * @return retour (array) : [is_hexa,is_all_text]
+         * is_hexa (bool) -> le message ne contient que des lettres de A à F ou des chiffres
+         * is_all_text (bool) -> le message ne contient que des caractères alphabétiques
+         */
         $alpha1 = 'abcdef';
         $alpha2 = 'ABCDEF';
-        $num = str_replace(' ','',$num);
+        $message = str_replace(' ','',$message);
+        $retour = array(NULL, NULL);
 
-        foreach(str_split($num) as $elem){
+        foreach(str_split($message) as $elem){
             $is_maj = strpos($alpha1, $elem) !== false ;   
             $is_min = strpos($alpha2, $elem) !== false ;
 
-           /* PHP 8 :
-           if (! str_contains($alpha1,$elem) && !  str_contains($alpha2,$elem) && ! is_numeric($elem)){*/
-            if (! $is_maj && ! $is_min && ! is_numeric($elem)){
-                return false;
+           /* PHP 8 : if (! str_contains($alpha1,$elem) && !  str_contains($alpha2,$elem) && ! is_numeric($elem)){*/
+            if (! $is_maj && ! $is_min && ! is_numeric($elem)){ //Vérifie si l'entrée est au format hexadécimal
+                $retour[0] = false;
             }
-            
+            if (is_numeric($elem)){ //Vérifie si l'entrée contient des chiffres
+                $retour[1] = false;
+            }
        }
-       return true;
+       if (is_null($retour[0])){
+        $retour[0] = true;
+       }
+       if (is_null($retour[1])){
+        $retour[1] = true;
+       }
+       return $retour;
     }
 ?>
