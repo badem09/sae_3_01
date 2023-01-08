@@ -49,7 +49,7 @@ def ten_to_hexa(liste):
             (list) : Nombres décimaux 
     Sortie :
             str (str) : Nombres héxadécimaux
-
+    Ex : 10 10 10 -> A0 A0 A0
     """    
     liste = [hex(e)[2:].upper() if len(str(hex(e)))>3 else "0" + hex(e)[2:].upper() for e in liste]
     return " ".join(liste)
