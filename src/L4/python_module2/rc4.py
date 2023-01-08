@@ -43,20 +43,20 @@ def RC4(action,key, message):
 
 def ten_to_hexa(liste):
     """Convertit une liste de nombres décimaux (base 10) en 
-    une chaîne de charactères de nombres héxadécimaux (base 16) 
+    une chaîne de charactères de nombres hexadécimaux (base 16) 
 
     Entrée : 
             (list) : Nombres décimaux 
     Sortie :
             str (str) : Nombres héxadécimaux
-    Ex : 10 10 10 -> A0 A0 A0
+    Ex : [10, 10, 10] -> A0 A0 A0
     """    
     liste = [hex(e)[2:].upper() if len(str(hex(e)))>3 else "0" + hex(e)[2:].upper() for e in liste]
     return " ".join(liste)
 
 def hexa_to_ten(str):
     """Convertit une chaîne de charactères de nombres héxadéciamaux 
-    (base 16) liste de nombres décimaux (base 10)
+    (base 16) en liste de nombres décimaux (base 10)
 
     Entrée : 
             str (str) : Nombres héxadécimaux
@@ -64,17 +64,17 @@ def hexa_to_ten(str):
     Sortie :
             (list) : Nombres décimaux 
     """
-    # supprime tous les espaces
     liste = list(str)
-    # regroupe les caractère par deux ex : 999999 -> [[9],[9," "],[9],[9," "],[9],[9]]
+    
+    # regroupe les caractères par deux ex : A0A0A0  -> [[A],[0," "],[A],[0," "],[A],[0]]
     liste = [[liste[e]," "] if e%2 == 1 and e != len(liste) -1  else [liste[e]]  for e in range(len(liste))]
-    #applatit la liste ex : [[9],[9," "],[9],[9," "],[9],[9]] -> [9,9," ",9,9," ",9,9]
+    #applatit la liste ex : [[A],[0," "],[A],[0," "],[A],[0]] -> [A,0," ",A,0," ",A,0,]
     liste = sum(liste, [])
-    #regroupe les elements dans une str ex : [9,9," ",9,9," ",9,9] -> "99 99 99"
+    #regroupe les elements dans une str ex : [A,0," ",A,0," ",A,0,] -> "A0 A0 A0"
     liste = "".join(liste)
-    #sépare les éléments : "99 99 99" -> [99,99,99]
+    #sépare les éléments : "A0 A0 A0" -> [A0,A0,A0]
     liste = liste.split(" ")
-    return [int('0x' + cara , 0) for cara in liste]
+    return [int('0x' + cara , 0) for cara in liste] # [10,10,10]
 
 if __name__ == '__main__':
     try:
