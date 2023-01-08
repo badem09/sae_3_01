@@ -109,13 +109,13 @@
                                             //Si la methode est Decryptage.
                                             if ($methode == "Decryptage"){
                                                 if (is_hexa($message1)){
-
+                                                    $hexa_sans_espace = str_replace(" " , "",$message);
                                                     //On récupere le resultat que fournis notre commande.
-                                                    $result = utf8_encode(exec("python3 python_module2/rc4.py". " d ".  "$message" . " " . $clef));
+                                                    $result = utf8_encode(exec("python3 python_module2/rc4.py". " d ".  "$hexa_sans_espace" . " " . $clef));
                                                     //On définit le drapeu chiffrement à true.
                                                     $dechiffrement = true;
                                                     //On renvoie le résultat
-                                                    if (ord($result) < 41){
+                                                    if (ord($result) < 32){
                                                         echo "<p> Le message crypté contient un caratère spécial il se peut quil ne s'affiche pas correctement.
                                                         Il ne sera pas stocké.";
                                                         echo '<br>' . 'Son code ASCII : ' . ord($result);

@@ -119,7 +119,8 @@
                                                         $dechiffrement = true;
                                                         //On l'affiche
                                                         echo $result;
-                                                        if (ord($result) < 41){
+                                                        if (ord($result) < 32){
+                                                            // 32 car <32 les char sont composé (len(char)>1) et dans algo rc4 prend un elem par elem
                                                             echo '<br>' . 'Le code ASCII : ' . ord($result);
                                                             $dechiffrement = false;
                                                         }
