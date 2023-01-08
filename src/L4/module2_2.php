@@ -112,9 +112,9 @@
                                             if ($methode == "Decryptage"){
                                                 if (strlen($message_copy)>6){                                                
                                                     if (is_hexa($message_copy)){
-
+                                                        $hexa_sans_espace = str_replace(" " , "",$message);
                                                         //On récupere le resultat que fournis notre commande.
-                                                        $result = utf8_encode(exec("python3 python_module2/wep.py". " d ".  "$message" . " " . $clef));
+                                                        $result = utf8_encode(exec("python3 python_module2/wep.py". " d ".  "$hexa_sans_espace" . " " . $clef));
                                                         //On enregistre le résultat.
                                                         $dechiffrement = true;
                                                         //On l'affiche
