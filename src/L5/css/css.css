@@ -1,0 +1,768 @@
+body{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* ######################## Entete accueil ######################## */
+.entete{
+    /*background-image: url("../img/carre_page_acceuil.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: center;
+    opacity: 0.1;*/
+    color: #FFFFFF;
+    background: linear-gradient(to right, rgba(39, 70, 133, 0.8) 0%, rgba(61, 179, 197, 0.8) 100%);
+    text-align: center;
+    padding: 120px 60px 60px 60px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 24px;
+}
+
+/* ########## Barre de Naviguation pour toutes les pages ########## */
+.menu-nav {
+    background-color: #FFFFFF;
+    margin-top: auto;
+    width: 100%;
+    height: auto;
+    text-align: right;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 24px;
+    vertical-align: center;
+    position: absolute;
+}
+
+.nav-items{
+    margin-left: -150%;
+
+}
+
+.nav-item {
+    display: inline-flex;
+}
+
+.nav-logo {
+    display: inline-flex;
+    vertical-align: middle;
+    float: left;
+    width: 69px;
+    height: 100%;
+    list-style: none;
+    position: relative;
+    z-index: 100;
+}
+
+.nav-logo img {
+    width: 69px;
+    height: 69px;
+}
+
+.nav-item a {
+    color: black;
+    padding: 27px;
+    font-size: 13px;
+    letter-spacing: 1.1px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.nav-item-services a {
+    color: black;
+    padding: 12px;
+    font-size: 13px;
+    letter-spacing: 1.1px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+#ul-container {
+    vertical-align: center;
+    margin: 0px 40px;
+}
+
+.nav-item a:hover, li:hover {
+    color: #000A7E;
+    background-color: #EEEEEE;
+}
+
+.nav-item-services a:hover {
+    background-color: transparent;
+}
+
+.nav-item-services {
+    display: none;
+    background-color: #FFFFFF;
+    position: absolute;
+    height: auto;
+    visibility: visible;
+    color: black;
+    margin-top: 69px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 24px;
+    list-style: none;
+}
+
+li:hover .nav-item-services{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    color: black;
+}
+
+.nav-item-services a {
+    color: black;
+    text-align: left;
+}
+
+.nav-item-services li {
+    color: black;
+    float: none;
+    text-align: right;
+    position: all;
+    padding: 10px 0px;
+    width: 100%;
+    text-align: left;
+}
+
+.nav-burger {
+    display: none;
+    float: right;
+    width: 69px;
+    list-style: none;
+}
+
+/* ################# Footer pour toutes les pages ################# */
+footer {
+    font-family: 'Roboto', sans-serif;
+}
+
+.footer{
+    padding:10px;
+    background-color: #FFFFFF;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 24px;
+    color: black;
+}
+
+.footer ul {
+    list-style:none;
+    text-align:center;
+    font-size:18px;
+    line-height:1.6;
+    padding: 0;
+}
+
+.footer li {
+    padding:0 10px;
+}
+
+.footer a {
+    color: black;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #000A7E;
+}
+
+/* ################### Texte explicatif acceuil ################### */
+.presentation {
+    text-align: center;
+    padding: 60px 200px;
+}
+
+.presentation h2 {
+    color: #000A7E;
+}
+
+/* ########### Page acceuil module gauche presentation ########### */
+.pacc_mod_pres{
+    text-align: center;
+}
+
+.pacc_mod_gauche h3{
+    color: #000A7E;
+}
+
+.pacc_mod_gauche img {
+    margin-right: 30px;
+}
+
+.pacc_mod_gauche input{
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 500px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #000A7E;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.pacc_mod_gauche input:hover{
+    border: 2px solid #000A7E;
+}
+
+.pacc_mod_gauche {
+    padding: 75px 200px;
+    display: flex;
+}
+
+/* ############ Page acceuil module droit presentation ############ */
+.pacc_mod_droit h3{
+    color: #000A7E;
+}
+
+.pacc_mod_droit img {
+    margin-left: 30px;
+}
+
+.pacc_mod_droit input{
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 500px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #000A7E;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+}
+
+.pacc_mod_droit input:hover{
+    border: 2px solid #000A7E;
+}
+
+.pacc_mod_droit {
+    padding: 75px 200px;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* ########################### Page 404 ########################### */
+.erreur {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+.erreur h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 60px;
+    margin: 0px;
+}
+
+/* ############## Page Connexion / Page Inscription ############## */
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container-centrer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container-centrer-inscription {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 69px;
+}
+
+.container-insciption-connexion {
+    border-radius: 20px;
+    padding: 30px;
+    width: 350px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 24px;
+}
+
+/*verif inscription*/
+.container-verif .input-box{
+  position: relative;
+}
+.input-box .show_hide{
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #A6A6A6;
+  padding: 5px;
+  cursor: pointer;
+}
+.container-verif .indicator-verif{
+  display: none;
+}
+.container-verif .indicator-verif.active{
+  display: block;
+}
+.container-verif .indicator-verif.active p{
+  margin: 0;
+}
+.indicator-verif .icon-text{
+  display: flex;
+  align-items: center;
+}
+.icon-text .error_icon{
+  margin-right: 8px;
+}
+
+.inputs {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.err {
+    border: 1px solid #FF6969!important;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #FF6969;
+    padding: 12px;
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.succes {
+    border: 1px solid #54D661!important;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #54D661;
+    padding: 12px;
+    color: white;
+    font-weight: bold;
+}
+
+.inputs input[type=text],[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.inputs input::placeholder {
+    color: #D1D1D1;
+}
+
+.container-insciption-connexion input[type=submit] {
+  width: 100%;
+  background-color: #000A7E;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.container-insciption-connexion input[type=submit]:hover {
+  background-color: #1521A5;
+}
+
+.inputs img {
+    width: 146px;
+    height: 49px;
+    border-radius: 4px;
+}
+
+.titre-form {
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #6A7887;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    font-size: 13px;
+}
+
+.captcha-img-desc {
+    display: flex;
+    padding-bottom: 10px;
+}
+
+.captcha-desc-text {
+    text-align: center;
+    font-weight: bold;
+    color: #6A7887;
+    font-size: 1px;
+}
+
+.link-sincrip {
+    text-decoration: none;
+}
+
+.container-insciption-connexion h2 {
+    color: #000A7E;
+    font-weight: bold;
+}
+
+.container-insciption-connexion p {
+    margin-bottom: 5px;
+    font-size: 13px;
+}
+
+.container-insciption-connexion a {
+    text-decoration: none;
+    color: #000A7E;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+
+/* ########################## Page Admin ########################## */
+.admin-main {
+    text-align: center;
+    padding: 100px 60px 60px 60px;
+}
+
+.recherche {
+    padding-bottom: 50px;
+}
+
+.recherche h3, .recherche h2 {
+    color: #000A7E;
+    font-weight: bold;
+}
+
+.recherche #researched {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.recherche #researched::placeholder {
+    color: #D1D1D1;
+}
+
+.btn-simple-bleu {
+  background-color: #000A7E;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-simple-bleu:hover {
+  background-color: #1521A5;
+}
+
+.recherche #clear {
+  background-color: #6A7887;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.recherche #clear:hover {
+  background-color: #CACACA;
+}
+
+.affichage {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.tab {
+    padding: 20px;
+    border-collapse: collapse;
+    background-color: E5E5E5;
+    width: 100%;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.tab th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #5669B4;
+    color: white;
+    text-align: center;
+}
+
+.tab td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.tab tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+.tab tr:hover {
+    background-color: #ddd;
+}
+
+/* ######################### Page Module 1 ######################### */
+.container-module-parent {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    margin: 100px 0;
+}
+
+.container-module {
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 24px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.container-form {
+    margin: 20px;
+    width: 350px;
+}
+
+.container-resultat {
+    margin: 20px;
+    min-width: 350px;
+    width: auto;
+}
+
+.vertical-line{
+    border-left: 1px solid #ddd;
+    display: inline-block;
+    height: auto;
+    margin: 0;
+}
+
+#can2{
+    border: 1px solid #ddd;
+}
+
+.container-module h2 {
+    color: #000A7E;
+    font-weight: bold;
+}
+
+.titre-form-module-proba {
+    text-align: left;
+    text-transform: none;
+    font-weight: bold;
+    color: #6A7887;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    font-size: 13px;
+}
+
+.inputs-module {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputs-module input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.inputs-module input::placeholder {
+    color: #D1D1D1;
+}
+
+.container-module input[type=submit] {
+  width: 100%;
+  background-color: #000A7E;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.container-module input[type=submit]:hover {
+  background-color: #1521A5;
+}
+
+.container-form select {
+    background-image: url(data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIGZpbGw9J25vbmUnIHZpZXdCb3g9JzAgMCAyMCAyMCc+PHBhdGggc3Ryb2tlPScjNmI3MjgwJyBzdHJva2UtbGluZWNhcD0ncm91bmQnIHN0cm9rZS1saW5lam9pbj0ncm91bmQnIHN0cm9rZS13aWR0aD0nMS41JyBkPSdtNiA4IDQgNCA0LTQnLz48L3N2Zz4=);
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+    padding-right: 2.5rem;
+    appearance: none;
+    background-color: #fff;
+    border-color: #ddd;
+    border-radius: 4;
+    border-width: 1px;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    padding: 0.5rem 0.75rem;
+}
+
+/* ######################### Page Module 2 ######################### */
+
+.mod-crypt-main {
+    text-align: center;
+    padding: 100px 60px 60px 60px;
+}
+
+.crypt-recherche {
+    padding-bottom: 0px!important;
+}
+
+.result-module2-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+}
+
+.div-affi-histo-mod2 h2 {
+    margin: 50px 0 0 0;
+}
+
+.div-affi-histo-mod2 input{
+    width: 100%;
+    background-color: #000A7E;
+    color: white;
+    padding: 14px 20px;
+    margin: 25px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.div-affi-histo-mod2 input:hover {
+  background-color: #1521A5;
+}
+
+/* ########################## Responsive ########################## */
+
+@media (max-width: 1430px){
+
+    .pacc_mod_gauche{
+        flex-direction: column;
+    }
+
+    .pacc_mod_droit{
+        flex-direction: column-reverse;
+    }
+
+    .pacc_mod_gauche img, .pacc_mod_droit img{
+        margin: 0!important;
+        width: 100%;
+    }
+
+    .pacc_mod_gauche, .pacc_mod_droit{
+        align-items: center;
+        text-align: center!important;
+        padding: 75px 50px!important;
+    }
+}
+
+@media (max-width: 1100px){
+    .nav-item {
+        /*display: none;*/
+        display: flex;
+        flex-direction: column;
+        width: 100%;  
+    }
+
+    .nav-items {
+        display: flex;
+        position: absolute;
+        width: 100vw;
+        justify-content: center;
+        flex-direction: column;
+        left: 0;
+        z-index: 50;
+        transition: 0.5s;
+    }
+
+    .nav-items{
+        height: 100vh;
+        text-align: center;
+        background-color: #a5cfff85;
+        backdrop-filter: blur(10px);
+    }
+
+    .ul-container{
+        font-size: 30px;
+    }
+
+    .nav-item a {
+        font-size: 1.1em;
+    }
+
+    .nav-item a:hover, li:hover {
+        color: #000A7E;
+        background-color: #4d8cfd1a;
+    }
+
+    .nav-burger {
+        display: inline-flex;
+        cursor: pointer;
+        position: relative;
+        z-index: 100;
+    }
+
+    .mobile-menu{
+        margin-left: 0;
+    }
+
+    .container-module{
+        flex-direction: column!important;
+    }
+
+    .container-form{
+        width: 600px!important;
+    }
+}
+
+@media (max-width: 400px){
+
+    .nav-item a {
+        font-size: 1.2em;
+    }
+}
