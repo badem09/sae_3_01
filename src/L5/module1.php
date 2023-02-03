@@ -71,11 +71,11 @@
                                 //Si le champ "choix_methode" n'est pas vide on continus.
                                 if(!empty($_POST['choix_methode'])){
                                     //Si le champ "esp" n'est pas vide on continus.
-                                    if(!empty($_POST['esp']) || $_POST['esp'] == 0 ){
+                                    if(isset($_POST['esp'])){
                                         //Si le champ "et" n'est pas vide on continus.
-                                        if(!empty($_POST['et'] || $_POST['et'] == 0 )){
+                                        if(isset($_POST['et'])){
                                             //Si le champ "t" n'est pas vide on continus.
-                                            if(!empty($_POST['t'] || $_POST['t'] == 0)){
+                                            if(isset($_POST['t'])){
 
                                                 #Insertion pour avoir les statistiques d'utilisations
 
