@@ -214,10 +214,17 @@
         $num = str_replace(' ','',$num);
 
         foreach(str_split($num) as $elem){
-            if (! str_contains($alpha1,$elem) && !  str_contains($alpha2,$elem) && ! is_numeric($elem)){
+            $is_maj = strpos($alpha1, $elem) !== false ;   
+            $is_min = strpos($alpha2, $elem) !== false ;
+
+           /* PHP 8 :
+           if (! str_contains($alpha1,$elem) && !  str_contains($alpha2,$elem) && ! is_numeric($elem)){*/
+            if (! $is_maj && ! $is_min && ! is_numeric($elem)){
                 return false;
             }
+            
        }
        return true;
     }
+
 ?>
