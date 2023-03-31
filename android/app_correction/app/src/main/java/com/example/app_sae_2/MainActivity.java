@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -48,5 +51,41 @@ public class MainActivity extends AppCompatActivity {
     public void openPageInscription(View view){
         setContentView(R.layout.layout_inscription);
     }
+
+    public void executeModule2(View view) throws Exception {
+        Spinner spinnerAction = (Spinner) findViewById(R.id.spinnerAction);
+        String action = spinnerAction.getSelectedItem().toString();
+
+        Spinner spinnerMethode = (Spinner) findViewById(R.id.spinnerMethode);
+        String methode = spinnerMethode.getSelectedItem().toString();
+
+        System.out.println(action+ "  " +methode);
+
+
+        EditText edkey = findViewById(R.id.editTextClef);
+        EditText edmessage = findViewById(R.id.editTextMessage);
+        String key = edkey.getText().toString();
+        String message = edmessage.getText().toString();
+
+        String res = "";
+
+        try {
+            if (methode.equals("RC4")){
+                res = Module2RC4.RC4(action,key,message);
+            }
+            else{
+                res = Module2WEP.WEP(action,key,message);
+            }
+        }
+        catch (Exception e){
+            res = "Erreur d'éxecution";
+            e.printStackTrace();
+        }
+
+
+        TextView resultat = findViewById(R.id.textViewResultatModule2);
+        resultat.setText(res);
+    }
+
 
 }
