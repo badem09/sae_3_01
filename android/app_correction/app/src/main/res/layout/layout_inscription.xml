@@ -122,6 +122,7 @@
         android:layout_height="45dp"
         android:backgroundTint="#000A7E"
         android:text="@string/S_inscrire"
+        android:onClick="openPageChoixModule"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
