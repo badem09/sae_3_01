@@ -74,7 +74,7 @@
         app:layout_constraintVertical_bias="0.05" />
 
     <EditText
-        android:id="@+id/editTextESP"
+        android:id="@+id/editTextMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -88,7 +88,7 @@
         app:layout_constraintVertical_bias="0.459" />
 
     <EditText
-        android:id="@+id/editTextET"
+        android:id="@+id/editTextClef"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -98,7 +98,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextESP"
+        app:layout_constraintTop_toBottomOf="@+id/editTextMessage"
         app:layout_constraintVertical_bias="0.23" />
 
     <TextView
@@ -106,7 +106,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="La clef"
-        app:layout_constraintBottom_toTopOf="@+id/editTextET"
+        app:layout_constraintBottom_toTopOf="@+id/editTextClef"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.265"
         app:layout_constraintStart_toStartOf="parent"
@@ -118,7 +118,7 @@
         android:layout_width="311dp"
         android:layout_height="28dp"
         android:entries="@array/spinnerMethodeModule2"
-        app:layout_constraintBottom_toTopOf="@+id/editTextESP"
+        app:layout_constraintBottom_toTopOf="@+id/editTextMessage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -141,7 +141,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Votre Message"
-        app:layout_constraintBottom_toTopOf="@+id/editTextESP"
+        app:layout_constraintBottom_toTopOf="@+id/editTextMessage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.31"
         app:layout_constraintStart_toStartOf="parent"

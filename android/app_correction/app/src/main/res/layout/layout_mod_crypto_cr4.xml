@@ -7,7 +7,7 @@
 
 
     <Spinner
-        android:id="@+id/spinner2"
+        android:id="@+id/spinnerMethode"
         android:layout_width="310dp"
         android:layout_height="45dp"
         android:layout_marginTop="152dp"
@@ -24,23 +24,23 @@
         android:text="@string/action"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.448"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6"
-        app:layout_constraintVertical_bias="0.019" />
+        app:layout_constraintVertical_bias="0.023" />
 
     <EditText
-        android:id="@+id/editTextET"
+        android:id="@+id/editTextClef"
         android:layout_width="310dp"
         android:layout_height="45dp"
         android:ems="10"
         android:hint="@string/clef"
-        android:inputType="number"
+        android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextESP"
+        app:layout_constraintTop_toBottomOf="@+id/editTextMessage"
         app:layout_constraintVertical_bias="0.168" />
 
     <TextView
@@ -48,7 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/votre_message"
-        app:layout_constraintBottom_toTopOf="@+id/editTextESP"
+        app:layout_constraintBottom_toTopOf="@+id/editTextMessage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.161"
         app:layout_constraintStart_toStartOf="parent"
@@ -59,10 +59,11 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/methode"
+        android:layout_marginTop="232dp"
+        android:text="@string/action"
         app:layout_constraintBottom_toTopOf="@+id/spinner"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.14"
+        app:layout_constraintHorizontal_bias="0.181"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.995" />
@@ -77,33 +78,33 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.601"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.046" />
+        app:layout_constraintVertical_bias="0.052" />
 
     <TextView
-        android:id="@+id/textView8"
-        android:layout_width="111dp"
-        android:layout_height="32dp"
-        android:text="@string/resultat"
+        android:id="@+id/textView44"
+        android:layout_width="96dp"
+        android:layout_height="27dp"
+        android:text="@string/textViewResultatModule2"
         android:textColor="#000A7E"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.836" />
+        app:layout_constraintVertical_bias="0.795" />
 
     <EditText
-        android:id="@+id/editTextESP"
+        android:id="@+id/editTextMessage"
         android:layout_width="310dp"
         android:layout_height="45dp"
         android:ems="10"
         android:hint="@string/message"
-        android:inputType="number"
+        android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -112,11 +113,11 @@
         app:layout_constraintVertical_bias="0.501" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/spinnerAction"
         android:layout_width="310dp"
         android:layout_height="45dp"
         android:entries="@array/spinnerActionModule2"
-        app:layout_constraintBottom_toTopOf="@+id/editTextESP"
+        app:layout_constraintBottom_toTopOf="@+id/editTextMessage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
@@ -128,7 +129,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/la_clef"
-        app:layout_constraintBottom_toTopOf="@+id/editTextET"
+        app:layout_constraintBottom_toTopOf="@+id/editTextClef"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.135"
         app:layout_constraintStart_toStartOf="parent"
@@ -140,18 +141,20 @@
         android:layout_width="310dp"
         android:layout_height="45dp"
         android:backgroundTint="#000A7E"
+        android:onClick="executeModule2"
         android:text="@string/calculer"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.756" />
+        app:layout_constraintVertical_bias="0.733" />
 
     <TextView
         android:id="@+id/tv_choix_rc4_wep"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="132dp"
         android:text="@string/intro_cr4"
         app:layout_constraintBottom_toTopOf="@+id/spinner2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -173,6 +176,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2"
         app:layout_constraintVertical_bias="0.737" />
+
+    <TextView
+        android:id="@+id/textViewResultatModule2"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_width="396dp"
+        android:layout_height="67dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/button3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.912" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
