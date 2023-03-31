@@ -38,7 +38,7 @@ public class Module2WEP {
         List<Integer> iv = new ArrayList<>();
         int j = 0;
 
-        if (action.equals("c")) { // Chiffrement
+        if (action.equals("Chiffrement")) { // Chiffrement
             for (int i = 0; i < message.length(); i++) {
                 char c = message.charAt(i);
                 result.add((int) c);
@@ -80,7 +80,7 @@ public class Module2WEP {
             xorList.add(lettre ^ suite.get((suite.get(i) + suite.get(j)) % 256)); // ^ applique l'opérateur logique xor
         }
 
-        if (action.equals("c")) {
+        if (action.equals("Chiffrement")) {
             List<Integer> list = null;
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
                 list = Stream.concat(iv.stream(), xorList.stream()).collect(Collectors.toList());

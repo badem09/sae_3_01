@@ -9,7 +9,7 @@ public class Module2RC4 {
             throw new Exception("Parameter 'key' must be str");
         }
 
-        if (action.equals("c") && !(message instanceof String)) {
+        if (action.equals("Chiffrement") && !(message instanceof String)) {
             throw new Exception("Parameter 'message' must be str");
         }
 
@@ -19,7 +19,7 @@ public class Module2RC4 {
         }
 
         List<Integer> messageList;
-        if (action.equals("c")) {
+        if (action.equals("Chiffrement")) {
             messageList = new ArrayList<>();
             for (char c : message.toCharArray()) {
                 messageList.add((int) c);
@@ -51,7 +51,7 @@ public class Module2RC4 {
             result.add(lettre ^ suite.get((suite.get(i) + suite.get(j)) % 256));
         }
 
-        if (action.equals("c")) {
+        if (action.equals("Chiffrement")) {
             return tenToHexa(result);
         } else { // si déchiffrement
             StringBuilder stringBuilder = new StringBuilder();
