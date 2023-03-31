@@ -23,7 +23,7 @@
     <string name="valeur_esp">Espérance :</string>
     <string name="valeur_de_t">T :</string>
     <string name="calculer">Calculer</string>
-    <string name="resultat">Résultat</string>
+    <string name="textViewResultatModule2">Résultat</string>
     <string name="methode_de_calculs">Méthode de calcul :</string>
     <string name="t">ex : 1</string>
     <string name="valeur_ecart_type">Ecart Type :</string>

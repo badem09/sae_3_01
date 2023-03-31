@@ -12,7 +12,7 @@
     <string-array name="spinnerActionModule2">
         <item>Choisir une action</item>
         <item>Chiffrement</item>
-        <item>Déchiffrementt</item>
+        <item>Déchiffrement</item>
     </string-array>
 
     <string-array name="spinnerMethodeModule2">
