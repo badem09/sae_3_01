@@ -61,7 +61,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="232dp"
         android:text="@string/action"
-        app:layout_constraintBottom_toTopOf="@+id/spinner"
+        app:layout_constraintBottom_toTopOf="@+id/spinnerMethodeModule1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.181"
         app:layout_constraintStart_toStartOf="parent"
