@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/logo_x"
     android:backgroundTint="#37323739"
-    tools:context=".MainActivity">
+    >
 
     <TextView
         android:id="@+id/TV_AppName"
@@ -45,7 +45,7 @@
         android:id="@+id/TV_TxtPres"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/explication_accueil"
+        android:text="@string/explication"
         android:textAlignment="center"
         android:textColor="#0C0C0C"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -60,14 +60,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#03A9F4"
-<<<<<<< HEAD:android/app_correction/app/src/main/res/layout/layout_accueil.xml
         android:onClick="openPagePresModProba"
-        android:text="@string/page_suivante"
-=======
-        android:onClick="openp2"
-        android:text="@string/TextBouton_page_suivante"
->>>>>>> 68d270e3e38e837cb2e120c5596ca65684e86797:android/app_correction/app/src/main/res/layout/activity_main.xml
-        android:textSize="20sp"
+        android:text="Page suivante"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.937"
