@@ -2,6 +2,8 @@ package com.example.app_sae_2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.res.Resources;
+import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -81,11 +83,48 @@ public class MainActivity extends AppCompatActivity {
             res = "Erreur d'éxecution";
             e.printStackTrace();
         }
-
-
         TextView resultat = findViewById(R.id.textViewResultatModule2);
         resultat.setText(res);
     }
+
+    public void executeModule1(View view) throws Exception {
+        EditText edtT = findViewById(R.id.editTextT);
+        EditText edtESP = findViewById(R.id.editTextESP);
+        EditText edtET = findViewById(R.id.editTextET);
+        TextView tvRes = findViewById(R.id.textViewResultatModule1);
+
+        try {
+
+            double et = Integer.parseInt(edtET.getText().toString());
+            double esp = Integer.parseInt(edtESP.getText().toString());
+            double t = Integer.parseInt(edtT.getText().toString());
+
+            Spinner spinnerChoix = findViewById(R.id.spinnerMethodeModule1);
+            String choix = spinnerChoix.getSelectedItem().toString();
+
+            double res = 0;
+            System.out.println(choix);
+            switch (choix) {
+                case "Choisir Une méthode" : throw new Exception();
+                case "Rectangle Gauche":
+                    res = Module1.methode_rectangle_gauche(esp, et, t, 1000);
+                case "Rectangle Droit":
+                    res = Module1.methode_rectangle_droite(esp, et, t, 1000);
+                case "Rectangle Median":
+                    res = Module1.methode_rectangle_medians(esp, et, t, 1000);
+                case "Méthode des Trapèzes":
+                    res = Module1.methode_trapeze(esp, et, t, 1000);
+                case "Méthode de Simpsons":
+                    res = Module1.methode_simpson(esp, et, t, 1000);
+            }
+            tvRes.setText(String.valueOf(res));
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            tvRes.setText("Erreur");
+        }
+    }
+
 
 
 }
