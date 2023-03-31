@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="spinnerItems">
+        <item>Choisir Une méthode</item>
+        <item>Rectangle Gauche</item>
+        <item>Rectangle Droit</item>
+        <item>Rectangle Median</item>
+        <item>Méthode des Trapèzes</item>
+        <item>Méthode de Simpsons</item>
+    </string-array>
+
+    <string-array name="spinnerItemsModule2">
+        <item>Choisir Une méthode</item>
+        <item>Chiffrement</item>
+        <item>Déchiffrementt</item>
+    </string-array>
+</resources>

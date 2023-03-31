@@ -55,13 +55,59 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.915" />
 
+<<<<<<< HEAD:android/app_correction/app/src/main/res/layout/layout_pres_proba.xml
+=======
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.608"
+        app:srcCompat="@drawable/module1" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/explication_mod1"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="monospace"
+        android:text="Module de Probabilité : Calcul approché d'une loi normale "
+        android:textStyle="bold"
+        android:textColor="#121111"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.104"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.806" />
+
+>>>>>>> 6b3a0500676664e36237b3be454885cbfb227d9e:android/app_correction/app/src/main/res/layout/activity_main2.xml
     <Button
         android:id="@+id/buttonPresCryptoPagePreced"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#03A9F4"
+<<<<<<< HEAD:android/app_correction/app/src/main/res/layout/layout_pres_proba.xml
         android:onClick="openPageAccueil"
         android:text="◀"
+=======
+        android:onClick="ActionBouton3"
+        android:text="@string/page_suivante"
+        android:textSize="20sp"
+>>>>>>> 6b3a0500676664e36237b3be454885cbfb227d9e:android/app_correction/app/src/main/res/layout/activity_main2.xml
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.049"
