@@ -41,4 +41,15 @@
         android:textSize="20sp"
         tools:layout_editor_absoluteX="65dp"
         tools:layout_editor_absoluteY="40dp" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="544dp"
+        android:text="Deconnexion"
+        android:onClick="openPageAccueil"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
