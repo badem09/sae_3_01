@@ -60,6 +60,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#03A9F4"
+<<<<<<< HEAD:android/app_correction/app/src/main/res/layout/layout_pres_proba.xml
         android:onClick="openPageAccueil"
         android:text="@string/page_precedente"
         android:textSize="20sp"
@@ -77,6 +78,10 @@
         android:backgroundTint="#03A9F4"
         android:onClick="openPagePresModCrypto"
         android:text="@string/page_suivante"
+=======
+        android:onClick="ActionBouton3"
+        android:text="@string/TextBouton_page_suivante"
+>>>>>>> 68d270e3e38e837cb2e120c5596ca65684e86797:android/app_correction/app/src/main/res/layout/activity_main2.xml
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

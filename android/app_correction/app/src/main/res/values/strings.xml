@@ -5,8 +5,16 @@
     <string name="explication_mod2">Chiffrement et déchiffrement d\'un code avec une clé en utilisant la méthode RC4 ou la méthode WEP. Pour chiffrer, il vous faut le message que vous souhaitez chiffrer et une clé.</string>
     <string name="nom_app">X Calculator</string>
     <string name="slogan">On peut tout calculer</string>
-    <string name="page_suivante">▶</string>
-    <string name="page_precedente">◀</string>
+    <string name="TextBouton_page_suivante">▶</string>
+    <string name="TextBouton_page_precedente">◀</string>
     <string name="Se_connecter">Se connecter</string>
+    <string name="S_inscrire">S\'inscrire</string>
     <string name="Id">Identifiant :</string>
+    <string name="Mdp">Mot de passe :</string>
+    <string name="NotRegister">Toujours pas inscrit ? C\'est ici !</string>
+    <string name="MdpForget">Mot de passe oublié ? C\'est par la !</string>
+    <string name="Confirm_mdp">Confirmer mot de passe :</string>
+    <string name="Deja_inscrit">Déja inscrit ? C\'est ici</string>
+
+
 </resources>

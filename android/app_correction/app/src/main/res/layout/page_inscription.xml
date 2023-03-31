@@ -5,11 +5,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/TV_ConnectTitre"
+    <EditText
+        android:id="@+id/ET_inputInscrMdp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/Se_connecter"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="@string/Mdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.373"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.654" />
+
+    <TextView
+        android:id="@+id/TV_InscrConfirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Confirm_mdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.235"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ET_inputConnectName"
+        app:layout_constraintVertical_bias="0.367" />
+
+    <TextView
+        android:id="@+id/TV_InscrTitre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/S_inscrire"
         android:textColor="#3F51B5"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -54,10 +81,10 @@
         android:text="@string/Mdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.225"
+        app:layout_constraintHorizontal_bias="0.222"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ET_inputConnectName"
-        app:layout_constraintVertical_bias="0.162" />
+        app:layout_constraintVertical_bias="0.079" />
 
     <EditText
         android:id="@+id/ET_inputConnectMdp"
@@ -75,38 +102,27 @@
         app:layout_constraintVertical_bias="0.077" />
 
     <Button
-        android:id="@+id/boutonConnectSeCo"
+        android:id="@+id/boutonInscr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#2196F3"
-        android:text="@string/Se_connecter"
+        android:text="@string/S_inscrire"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ET_inputConnectMdp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.928" />
 
     <TextView
-        android:id="@+id/TV_NotRegister"
+        android:id="@+id/TV_InscrDejaInscrit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/NotRegister"
+        android:text="@string/Deja_inscrit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/boutonConnectSeCo"
-        app:layout_constraintVertical_bias="0.183" />
-
-    <TextView
-        android:id="@+id/TV_MdpForget"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/MdpForget"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.558"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TV_NotRegister"
-        app:layout_constraintVertical_bias="0.24" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.977" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
