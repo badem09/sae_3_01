@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">MySae</string>
     <string name="explication_accueil">Sur notre application vous avez la possibilité d\'utiliser trois modules différents présentés sur les prochaines pages</string>
-    <string name="explication_mod1"> Vous pourrez calculer P (X inferieur t) en saisissant la valeur de m, de σ et t,vous aurez le choix entre les méthodes des rectangles,la méthode des trapèzes et la méthode de Simpson.</string>
+    <string name="explication_mod1"> Vous pourrez calculer P (X inferieur t) en saisissant la valeur de m, de σ et t. Vous pouvez choisir entre les méthodes des rectangles, la méthode des trapèzes et la méthode de Simpson.</string>
     <string name="explication_mod2">Chiffrement et déchiffrement d\'un code avec une clé en utilisant la méthode RC4 ou la méthode WEP. Pour chiffrer, il vous faut le message que vous souhaitez chiffrer et une clé.</string>
     <string name="nom_app">X Calculator</string>
     <string name="slogan">On peut tout calculer</string>

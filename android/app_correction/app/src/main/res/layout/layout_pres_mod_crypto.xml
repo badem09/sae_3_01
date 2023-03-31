@@ -22,15 +22,14 @@
 
     <TextView
         android:id="@+id/TV_TxtPresModCrypto"
-        android:layout_width="381dp"
-        android:layout_height="58dp"
+        android:layout_width="389dp"
+        android:layout_height="106dp"
         android:text="@string/explication_mod2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/IM_ImgPresModCrypto"
-        app:layout_constraintVertical_bias="0.625" />
+        app:layout_constraintVertical_bias="0.623" />
 
     <TextView
         android:id="@+id/TV_TitrePresModCrypto"
