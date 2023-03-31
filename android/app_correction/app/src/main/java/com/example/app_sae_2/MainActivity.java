@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,6 +30,23 @@ public class MainActivity extends AppCompatActivity {
 
     public void openPageConnexion(View view){
         setContentView(R.layout.layout_connexion);
+    }
+
+    public void openPageChoixModule(View view){
+        setContentView(R.layout.layout_choix_modules);
+    }
+
+    public void openPageModCrypto(View view){
+        setContentView(R.layout.layout_mod_crypto_cr4);
+    }
+
+    public void openPageModProba(View view){
+        setContentView(R.layout.layout_mod_proba);
+    }
+
+
+    public void openPageInscription(View view){
+        setContentView(R.layout.layout_inscription);
     }
 
 }

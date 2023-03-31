@@ -9,9 +9,15 @@
         <item>Méthode de Simpsons</item>
     </string-array>
 
-    <string-array name="spinnerItemsModule2">
-        <item>Choisir Une méthode</item>
+    <string-array name="spinnerActionModule2">
+        <item>Choisir une action</item>
         <item>Chiffrement</item>
         <item>Déchiffrementt</item>
+    </string-array>
+
+    <string-array name="spinnerMethodeModule2">
+        <item>Choisir une méthode</item>
+        <item>RC4</item>
+        <item>WEP</item>
     </string-array>
 </resources>
