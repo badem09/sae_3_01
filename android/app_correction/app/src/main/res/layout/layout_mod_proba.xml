@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#000A7E"
         android:onClick="openPageChoixModule"
-        android:text="Retour"
+        android:text="@string/retour"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,7 +50,7 @@
     <EditText
         android:id="@+id/editTextET"
         android:layout_width="310dp"
-        android:layout_height="45dp"
+        android:layout_height="54dp"
         android:ems="10"
         android:hint="@string/ecart_type"
         android:inputType="numberDecimal"
@@ -63,8 +63,8 @@
 
     <EditText
         android:id="@+id/editTextESP"
-        android:layout_width="310dp"
-        android:layout_height="45dp"
+        android:layout_width="306dp"
+        android:layout_height="56dp"
         android:ems="10"
         android:hint="@string/esperance"
         android:inputType="numberDecimal"
@@ -101,11 +101,11 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="310dp"
-        android:layout_height="45dp"
+        android:layout_width="307dp"
+        android:layout_height="56dp"
         android:backgroundTint="#000A7E"
-        android:text="@string/calculer"
         android:onClick="executeModule1"
+        android:text="@string/calculer"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
@@ -116,7 +116,7 @@
     <Spinner
         android:id="@+id/spinnerMethodeModule1"
         android:layout_width="310dp"
-        android:layout_height="45dp"
+        android:layout_height="55dp"
         android:entries="@array/spinnerItemsModule1"
         app:layout_constraintBottom_toTopOf="@+id/editTextESP"
         app:layout_constraintEnd_toEndOf="parent"
@@ -129,7 +129,7 @@
         android:id="@+id/textView8"
         android:layout_width="111dp"
         android:layout_height="32dp"
-        android:text="P( X ≤ t ) = "
+        android:text="@string/Pxt"
         android:textColor="#000A7E"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -154,8 +154,8 @@
 
     <EditText
         android:id="@+id/editTextT"
-        android:layout_width="310dp"
-        android:layout_height="45dp"
+        android:layout_width="311dp"
+        android:layout_height="56dp"
         android:ems="10"
         android:hint="@string/t"
         android:inputType="numberDecimal"
@@ -180,9 +180,9 @@
 
     <TextView
         android:id="@+id/textViewResultatModule1"
-        android:layout_width="184dp"
-        android:layout_height="32dp"
-        android:text=""
+        android:layout_width="182dp"
+        android:layout_height="24dp"
+        android:text="@string/textViewResultatModule2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.784"

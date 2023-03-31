@@ -9,7 +9,7 @@
     <Spinner
         android:id="@+id/spinnerMethode"
         android:layout_width="310dp"
-        android:layout_height="45dp"
+        android:layout_height="56dp"
         android:layout_marginTop="152dp"
         android:entries="@array/spinnerMethodeModule2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,7 +32,7 @@
     <EditText
         android:id="@+id/editTextClef"
         android:layout_width="310dp"
-        android:layout_height="45dp"
+        android:layout_height="57dp"
         android:ems="10"
         android:hint="@string/clef"
         android:inputType="text"
@@ -59,14 +59,14 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="232dp"
+        android:layout_marginTop="35dp"
         android:text="@string/action"
-        app:layout_constraintBottom_toTopOf="@+id/spinnerMethodeModule1"
+        app:layout_constraintBottom_toTopOf="@+id/spinnerAction"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.181"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.995" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerMethode"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView6"
@@ -100,8 +100,8 @@
 
     <EditText
         android:id="@+id/editTextMessage"
-        android:layout_width="310dp"
-        android:layout_height="45dp"
+        android:layout_width="309dp"
+        android:layout_height="58dp"
         android:ems="10"
         android:hint="@string/message"
         android:inputType="text"
@@ -115,7 +115,7 @@
     <Spinner
         android:id="@+id/spinnerAction"
         android:layout_width="310dp"
-        android:layout_height="45dp"
+        android:layout_height="55dp"
         android:entries="@array/spinnerActionModule2"
         app:layout_constraintBottom_toTopOf="@+id/editTextMessage"
         app:layout_constraintEnd_toEndOf="parent"
@@ -138,8 +138,8 @@
 
     <Button
         android:id="@+id/button_calcul"
-        android:layout_width="310dp"
-        android:layout_height="45dp"
+        android:layout_width="311dp"
+        android:layout_height="60dp"
         android:backgroundTint="#000A7E"
         android:onClick="executeModule2"
         android:text="@string/calculer"
@@ -154,38 +154,35 @@
         android:id="@+id/tv_choix_rc4_wep"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="132dp"
+        android:layout_marginTop="38dp"
         android:text="@string/intro_cr4"
-        app:layout_constraintBottom_toTopOf="@+id/spinner2"
+        app:layout_constraintBottom_toTopOf="@+id/spinnerMethode"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.346"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
         android:backgroundTint="#000A7E"
         android:onClick="openPageChoixModule"
         android:text="@string/retour"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
-        app:layout_constraintVertical_bias="0.737" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewResultatModule2" />
 
     <TextView
         android:id="@+id/textViewResultatModule2"
-        android:gravity="center_vertical|center_horizontal"
         android:layout_width="396dp"
         android:layout_height="67dp"
-        android:text="TextView"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/textViewResultatModule2"
         app:layout_constraintBottom_toBottomOf="@+id/button3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.912" />

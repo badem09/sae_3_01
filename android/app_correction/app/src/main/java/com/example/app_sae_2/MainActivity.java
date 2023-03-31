@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.layout_pres_mod_crypto);
     }
 
+    //...
     public void openPageConnexion(View view){
         setContentView(R.layout.layout_connexion);
     }

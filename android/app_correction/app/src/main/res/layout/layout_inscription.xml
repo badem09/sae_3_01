@@ -7,23 +7,23 @@
 
     <EditText
         android:id="@+id/ET_inputInscrMdp"
-        android:layout_width="310dp"
-        android:layout_height="45dp"
+        android:layout_width="312dp"
+        android:layout_height="58dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:text="@string/Mdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.476" />
+        app:layout_constraintVertical_bias="0.497" />
 
     <EditText
         android:id="@+id/ET_captcha"
-        android:layout_width="310dp"
-        android:layout_height="45dp"
+        android:layout_width="313dp"
+        android:layout_height="60dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
@@ -76,8 +76,8 @@
 
     <EditText
         android:id="@+id/ET_inputConnectName"
-        android:layout_width="310dp"
-        android:layout_height="45dp"
+        android:layout_width="309dp"
+        android:layout_height="59dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
@@ -104,7 +104,7 @@
     <EditText
         android:id="@+id/ET_inputConnectMdp"
         android:layout_width="310dp"
-        android:layout_height="45dp"
+        android:layout_height="58dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
@@ -118,11 +118,11 @@
 
     <Button
         android:id="@+id/boutonInscr"
-        android:layout_width="310dp"
-        android:layout_height="45dp"
+        android:layout_width="313dp"
+        android:layout_height="56dp"
         android:backgroundTint="#000A7E"
-        android:text="@string/S_inscrire"
         android:onClick="openPageChoixModule"
+        android:text="@string/S_inscrire"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
@@ -132,9 +132,11 @@
 
     <TextView
         android:id="@+id/TV_InscrDejaInscrit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="132dp"
+        android:layout_height="55dp"
+        android:onClick="openPageConnexion"
         android:text="@string/Deja_inscrit"
+        android:textColor="#000A7E"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -157,9 +159,11 @@
         android:id="@+id/imageView"
         android:layout_width="120dp"
         android:layout_height="40dp"
-        app:srcCompat="@drawable/captcha1"
-        tools:layout_editor_absoluteX="50dp"
-        tools:layout_editor_absoluteY="422dp" />
+        android:layout_marginStart="48dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/ET_captcha"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/captcha1" />
 
     <TextView
         android:id="@+id/textView3"

@@ -7,8 +7,8 @@
 
     <EditText
         android:id="@+id/ET_inputConnectName"
-        android:layout_width="310dp"
-        android:layout_height="45dp"
+        android:layout_width="308dp"
+        android:layout_height="52dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
@@ -23,7 +23,7 @@
     <Button
         android:id="@+id/boutonConnectSeCo"
         android:layout_width="310dp"
-        android:layout_height="45dp"
+        android:layout_height="59dp"
         android:backgroundTint="#000A7E"
         android:onClick="openPageChoixModule"
         android:text="@string/Se_connecter"
@@ -75,8 +75,8 @@
 
     <EditText
         android:id="@+id/ET_inputConnectMdp"
-        android:layout_width="310dp"
-        android:layout_height="45dp"
+        android:layout_width="311dp"
+        android:layout_height="57dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
@@ -90,10 +90,11 @@
 
     <TextView
         android:id="@+id/TV_NotRegister"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="195dp"
+        android:layout_height="51dp"
         android:onClick="openPageInscription"
         android:text="@string/NotRegister"
+        android:textColor="#000A7E"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"

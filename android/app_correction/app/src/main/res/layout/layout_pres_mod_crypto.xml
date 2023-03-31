@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#000A7E"
         android:onClick="openPageConnexion"
-        android:text="Essayer"
+        android:text="@string/essayerPres"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -22,27 +22,27 @@
 
     <TextView
         android:id="@+id/TV_TxtPresModCrypto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Chiffrement et déchiffrement d'un code avec une clé en utilisant la méthode RC4 ou la méthode WEP. Pour chiffrer, il vous faut le message que vous souhaitez chiffrer et une clé."
+        android:layout_width="381dp"
+        android:layout_height="58dp"
+        android:text="@string/explication_mod2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/IM_ImgPresModCrypto"
-        app:layout_constraintVertical_bias="0.626" />
+        app:layout_constraintVertical_bias="0.625" />
 
     <TextView
         android:id="@+id/TV_TitrePresModCrypto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="monospace"
-        android:text="Module de Cryptographie :"
+        android:text="@string/module_de_cryptographie"
         android:textColor="#040404"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/IM_ImgPresModCrypto"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.069"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.475" />
@@ -66,7 +66,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#000A7E"
         android:onClick="openPagePresModProba"
-        android:text="◀"
+        android:text="@string/TextBouton_page_precedente"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.05"

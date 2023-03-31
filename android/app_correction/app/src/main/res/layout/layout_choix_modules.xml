@@ -7,8 +7,8 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="310dp"
-        android:layout_height="45dp"
+        android:layout_width="309dp"
+        android:layout_height="56dp"
         android:backgroundTint="#000A7E"
         android:onClick="openPageModProba"
         android:text="@string/module_de_probabilite"
@@ -21,8 +21,8 @@
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="310dp"
-        android:layout_height="45dp"
+        android:layout_width="309dp"
+        android:layout_height="57dp"
         android:backgroundTint="#000A7E"
         android:onClick="openPageModCrypto"
         android:text="@string/module_de_cryptographie"
@@ -34,13 +34,17 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="350dp"
-        android:layout_height="59dp"
+        android:layout_width="254dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="134dp"
         android:text="@string/choix_module"
         android:textColor="#000A7E"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="65dp"
-        tools:layout_editor_absoluteY="40dp" />
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button5"
@@ -48,7 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="144dp"
         android:layout_marginTop="544dp"
-        android:text="Deconnexion"
+        android:text="@string/deconexion"
         android:onClick="openPageAccueil"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
