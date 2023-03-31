@@ -16,6 +16,26 @@
     <string name="Confirm_mdp">Confirmer mot de passe :</string>
     <string name="Deja_inscrit">Déja inscrit ? C\'est ici</string>
     <string name="explication">Explications</string>
+    <string name="module_de_probabilite">Module de Probabilités</string>
+    <string name="intro">Calcul d\'une probabilité à l\'aide du loi normale</string>
+    <string name="ecart_type">ex : 1</string>
+    <string name="esperance">ex : 1</string>
+    <string name="valeur_esp">Espérance :</string>
+    <string name="valeur_de_t">T :</string>
+    <string name="calculer">Calculer</string>
+    <string name="resultat">Résultat</string>
+    <string name="methode_de_calculs">Méthode de calcul :</string>
+    <string name="t">ex : 1</string>
+    <string name="valeur_ecart_type">Ecart Type :</string>
+    <string name="intro_cr4">Choix du type de méthode (RC4 OU WEP) :</string>
+    <string name="retour">Retour</string>
+    <string name="module_de_cryptographie">Module de Cryptographie</string>
+    <string name="action">Cryptage/Décyptage</string>
+    <string name="message">Votre groupe mérite un 20/20 !</string>
+    <string name="votre_message">Votre Message :</string>
+    <string name="la_clef">La clef :</string>
+    <string name="clef">20/20</string>
+    <string name="methode">Méthode :</string>
 
 
 </resources>
