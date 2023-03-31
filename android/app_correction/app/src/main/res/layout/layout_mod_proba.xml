@@ -11,14 +11,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#000A7E"
-        android:onClick="ActionBouton3"
-        android:text=">"
+        android:onClick="openPageChoixModule"
+        android:text="Retour"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.984"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2"
-        app:layout_constraintVertical_bias="0.737" />
+        app:layout_constraintVertical_bias="0.838" />
 
     <TextView
         android:id="@+id/textView6"
@@ -49,12 +48,12 @@
         app:layout_constraintVertical_bias="0.058" />
 
     <EditText
-        android:id="@+id/editTextClef"
+        android:id="@+id/editTextET"
         android:layout_width="310dp"
         android:layout_height="45dp"
         android:ems="10"
         android:hint="@string/ecart_type"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
@@ -63,12 +62,12 @@
         app:layout_constraintVertical_bias="0.549" />
 
     <EditText
-        android:id="@+id/editTextMessage"
+        android:id="@+id/editTextESP"
         android:layout_width="310dp"
         android:layout_height="45dp"
         android:ems="10"
         android:hint="@string/esperance"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
@@ -81,7 +80,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/valeur_esp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextMessage"
+        app:layout_constraintBottom_toTopOf="@+id/editTextESP"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
@@ -106,6 +105,7 @@
         android:layout_height="45dp"
         android:backgroundTint="#000A7E"
         android:text="@string/calculer"
+        android:onClick="executeModule1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
@@ -114,11 +114,11 @@
         app:layout_constraintVertical_bias="0.785" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/spinnerMethodeModule1"
         android:layout_width="310dp"
         android:layout_height="45dp"
-        android:entries="@array/spinnerItems"
-        app:layout_constraintBottom_toTopOf="@+id/editTextMessage"
+        android:entries="@array/spinnerItemsModule1"
+        app:layout_constraintBottom_toTopOf="@+id/editTextESP"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.514"
         app:layout_constraintStart_toStartOf="parent"
@@ -129,23 +129,23 @@
         android:id="@+id/textView8"
         android:layout_width="111dp"
         android:layout_height="32dp"
-        android:text="@string/textViewResultatModule2"
+        android:text="P( X ≤ t ) = "
         android:textColor="#000A7E"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintHorizontal_bias="0.173"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.861" />
+        app:layout_constraintVertical_bias="0.869" />
 
     <TextView
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/methode_de_calculs"
-        app:layout_constraintBottom_toTopOf="@+id/spinner"
+        app:layout_constraintBottom_toTopOf="@+id/spinnerMethodeModule1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.179"
         app:layout_constraintStart_toStartOf="parent"
@@ -171,11 +171,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/valeur_ecart_type"
-        app:layout_constraintBottom_toTopOf="@+id/editTextClef"
+        app:layout_constraintBottom_toTopOf="@+id/editTextET"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.151"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textViewResultatModule1"
+        android:layout_width="184dp"
+        android:layout_height="32dp"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.784"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.869" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
