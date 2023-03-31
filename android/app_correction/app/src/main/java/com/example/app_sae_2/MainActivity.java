@@ -2,8 +2,6 @@ package com.example.app_sae_2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.res.Resources;
-import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -42,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openPageModCrypto(View view){
-        setContentView(R.layout.layout_mod_crypto_cr4);
+        setContentView(R.layout.layout_mod_crypto);
     }
 
     public void openPageModProba(View view){
