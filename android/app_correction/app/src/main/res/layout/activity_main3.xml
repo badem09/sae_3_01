@@ -65,7 +65,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#03A9F4"
         android:onClick="ActionBouton5"
-        android:text="@string/page_precedente"
+        android:text="@string/TextBouton_page_precedente"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

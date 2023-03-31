@@ -61,7 +61,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#03A9F4"
         android:onClick="openp2"
-        android:text="@string/page_suivante"
+        android:text="@string/TextBouton_page_suivante"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
