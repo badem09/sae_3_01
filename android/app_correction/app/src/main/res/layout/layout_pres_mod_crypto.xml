@@ -5,32 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-    <Button
-        android:id="@+id/buttonTryPresModCrypto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#03A9F4"
-        android:text="Essayer"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.843" />
-
-    <TextView
-        android:id="@+id/TV_TxtPresModCrypto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/explication_mod2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/IM_ImgPresModCrypto"
-        app:layout_constraintVertical_bias="0.626" />
-
     <TextView
         android:id="@+id/TV_TitrePresModCrypto"
         android:layout_width="wrap_content"
@@ -59,19 +33,39 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/module2" />
 
+    <TextView
+        android:id="@+id/TV_TxtPresModCrypto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/explication_mod2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/IM_ImgPresModCrypto"
+        app:layout_constraintVertical_bias="0.626" />
+
+    <Button
+        android:id="@+id/buttonTryPresModCrypto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#03A9F4"
+        android:text="Essayer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.843" />
+
     <Button
         android:id="@+id/buttonPresCryptoPagePeced"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#03A9F4"
-<<<<<<< HEAD:android/app_correction/app/src/main/res/layout/layout_pres_mod_crypto.xml
         android:onClick="openPagePresModProba"
-        android:text="◀"
-=======
-        android:onClick="ActionBouton5"
         android:text="@string/page_precedente"
         android:textSize="20sp"
->>>>>>> 6b3a0500676664e36237b3be454885cbfb227d9e:android/app_correction/app/src/main/res/layout/activity_main3.xml
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.05"
