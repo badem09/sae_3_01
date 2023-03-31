@@ -10,7 +10,7 @@
     <string name="Se_connecter">Se connecter</string>
     <string name="S_inscrire">S\'inscrire</string>
     <string name="Id">Identifiant :</string>
-    <string name="Mdp">Mot de passe :</string>
+    <string name="Mdp">Mot de passe </string>
     <string name="NotRegister">Toujours pas inscrit ? C\'est ici !</string>
     <string name="MdpForget">Mot de passe oublié ? C\'est par la !</string>
     <string name="Confirm_mdp">Confirmer mot de passe :</string>
@@ -36,6 +36,11 @@
     <string name="la_clef">La clef :</string>
     <string name="clef">20/20</string>
     <string name="methode">Méthode :</string>
+    <string name="captcha_rep">ex : 69pelo</string>
+    <string name="captcha">Captcha</string>
+    <string name="info_captcha">Attention : Tous les caractères doivent être écrit en miniscules</string>
+    <string name="identifiant">ex : demba404</string>
+    <string name="choix_module">Choissiez un module de calcul :</string>
 
 
 </resources>
