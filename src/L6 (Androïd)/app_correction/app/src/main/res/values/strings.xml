@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">MySae</string>
+    <string name="explication_accueil">Sur notre application vous avez la possibilité d\'utiliser trois modules différents présentés sur les prochaines pages</string>
+    <string name="explication_mod1"> Vous pourrez calculer P (X inferieur t) en saisissant la valeur de m, de σ et t,vous aurez le choix entre les méthodes des rectangles,la méthode des trapèzes et la méthode de Simpson.</string>
+    <string name="explication_mod2">Chiffrement et déchiffrement d\'un code avec une clé en utilisant la méthode RC4 ou la méthode WEP. Pour chiffrer, il vous faut le message que vous souhaitez chiffrer et une clé.</string>
+    <string name="nom_app">X Calculator</string>
+    <string name="slogan">On peut tout calculer</string>
+    <string name="TextBouton_page_suivante">▶</string>
+    <string name="TextBouton_page_precedente">◀</string>
+    <string name="Se_connecter">Se connecter</string>
+    <string name="S_inscrire">S\'inscrire</string>
+    <string name="Id">Identifiant :</string>
+    <string name="Mdp">Mot de passe </string>
+    <string name="essayerPres">Essayer !</string>
+    <string name="NotRegister">Toujours pas inscrit ? C\'est ici !</string>
+    <string name="MdpForget">Mot de passe oublié ? C\'est par la !</string>
+    <string name="Confirm_mdp">Confirmer mot de passe :</string>
+    <string name="Deja_inscrit">Déja inscrit ? C\'est ici</string>
+    <string name="deconexion">Déconnexion</string>
+    <string name="explication">Explications</string>
+    <string name="module_de_probabilite">Module de Probabilités</string>
+    <string name="intro">Calcul d\'une probabilité à l\'aide du loi normale</string>
+    <string name="presTexteExpicatif">Module de Probabilité : Calcul approché d\'une loi normale.</string>
+    <string name="ecart_type">ex : 1</string>
+    <string name="esperance">ex : 1</string>
+    <string name="valeur_esp">Espérance :</string>
+    <string name="valeur_de_t">T :</string>
+    <string name="calculer">Calculer</string>
+    <string name="textViewResultatModule2">Résultat</string>
+    <string name="methode_de_calculs">Méthode de calcul :</string>
+    <string name="t">ex : 1</string>
+    <string name="Pxt">P( X ≤ t ) = </string>
+    <string name="valeur_ecart_type">Ecart Type :</string>
+    <string name="intro_cr4">Choix du type de méthode (RC4 OU WEP) :</string>
+    <string name="retour">Retour</string>
+    <string name="module_de_cryptographie">Module de Cryptographie</string>
+    <string name="action">Cryptage/Décyptage</string>
+    <string name="message">Votre groupe mérite un 20/20 !</string>
+    <string name="votre_message">Votre Message :</string>
+    <string name="la_clef">La clef :</string>
+    <string name="clef">20/20</string>
+    <string name="methode">Méthode :</string>
+    <string name="captcha_rep">ex : 69pelo</string>
+    <string name="captcha">Captcha</string>
+    <string name="info_captcha">Attention : Tous les caractères doivent être écrit en miniscules</string>
+    <string name="identifiant">ex : demba404</string>
+    <string name="choix_module">Choissiez un module de calcul :</string>
+
+
+</resources>
