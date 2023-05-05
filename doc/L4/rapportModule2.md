@@ -16,20 +16,12 @@ Dans le cadre de notre Projet SAE du Semestre 3, nous devions réaliser
 un module de Cryptographie implémentant le cryptage RC4 et WEP. Ainsi,
 les utilisateurs peuvent chiffrer un texte avec une clé (tous deux en
 ASCII) et obtenir le texte chiffré en hexadécimal. Vous pourrez trouver
-notre code à l’adresse suivante :
-<https://bitbucket.org/bademba09/sae_3_01.git>. (branche master). Pour
-l’obtenir, il vous faut créer un nouveau dossier puis exécuter la
-commande suivante : git clone git clone
-<https://bitbucket.org/bademba09/sae_3_01.git>
+le code concerné à l'addresse suivante : /src/python_module2
 
 Par ailleurs, si vous voulez tester notre code, vous pouvez le faire
 directement en terminal. Exemple : Chiffrement : python rc4.py c
 Plaintext Key Dechiffrement : python rc4.py d ‘BB F3 16 E8 D9 40 AF 0A
 D3’ Key
-
-Ou bien vous pouvez accèder à notre Raspberry PI sur les machine de
-l’IUT à l’adresse : 192.168.1.163, créer votre compte et accéder aux
-modules.
 
 <br>
 
