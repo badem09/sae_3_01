@@ -4,7 +4,7 @@
 
 Ce projet à été réalisé en groupe dans le cadre de mes études en BUT Informatique.
 Il consiste à implémenter concevoir, réaliser et développer un site web permettant à utilisateurs connectés d'accéder à 3 modules :
-
+	
 	- Un module de Probabilité : Ce module permet de calculer et de visualiser la probabilité P(x<t)  dans le cadre d'une loi normale (voir */doc/L3/Rapport_Module_Probabilité.md*).
 	
 	- Un module de Cryptographie : Ce module permet de chiffer et déchiffrer une texte (clé publique) selon une clé (privée) avec les technologies RC4 ou WEP (*voir /doc/L4/rapportModule2.md*).
