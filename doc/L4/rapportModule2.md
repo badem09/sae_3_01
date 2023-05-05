@@ -29,7 +29,7 @@ D3’ Key
 
 <br>
 
-Notre code (chemin : sae_3\_01/src/L4/python_module2/rc4.py)
+Notre code (rc4.py)
 implémentant l’algorithme RC4 contient quatre parties :
 
 ###### 1. La conversion de la clé et du texte à chiffrer en ASCII :
@@ -152,7 +152,7 @@ RC4). Le IV occupant 3 bit, sa valeur peut varier entre 00 00 00 et FF
 FF FF (en hexadécimal), soit entre 0 et 16777215. La clef de chiffrement
 devient la concatenation de IV et de la clé entrée.
 
-Le chemin du code : sae_3\_01/src/L4/python_module2/wep.py
+le fichier : wep.py
 
 <br> Génération du vecteur d’initialisation:
 
