@@ -2,10 +2,12 @@
 title: "Compte-rendu module Cryptographie Groupe3"
 author: "BA Demba, GUENFICI Rayane, SASSIKUMAR Suban, ZIHOUNE Bilal, MENDES Fredy"
 output:
-  pdf_document: default
+  md_document:
+    variant: markdown_github
   html_document:
     df_print: paged
   html_notebook: default
+  pdf_document: default
 ---
 
 <br>

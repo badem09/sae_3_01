@@ -1,38 +1,35 @@
----
-title: "Compte-rendu module Cryptographie Groupe3"
-author: "BA Demba, GUENFICI Rayane, SASSIKUMAR Suban, ZIHOUNE Bilal, MENDES Fredy"
-output:
-  pdf_document: default
-  html_document:
-    df_print: paged
-  html_notebook: default
----
-
 <br>
 
 #### 1. Introduction
+
 #### 2. RC4
+
 #### 3. WEP
 
-<br>
-<br>
+<br> <br>
 
 #### 1. Introduction
 
-
 <br>
 
-Dans le cadre de notre Projet SAE du Semestre 3, nous devions réaliser un module de Cryptographie implémentant le cryptage RC4 et WEP. Ainsi, les utilisateurs peuvent chiffrer un texte avec une clé (tous deux en ASCII) et obtenir le texte chiffré en hexadécimal.
-Vous pourrez trouver notre code à l'adresse suivante : https://bitbucket.org/bademba09/sae_3_01.git. (branche master).
-Pour l'obtenir, il vous faut créer un nouveau dossier puis exécuter la commande suivante :
-git clone git clone https://bitbucket.org/bademba09/sae_3_01.git
+Dans le cadre de notre Projet SAE du Semestre 3, nous devions réaliser
+un module de Cryptographie implémentant le cryptage RC4 et WEP. Ainsi,
+les utilisateurs peuvent chiffrer un texte avec une clé (tous deux en
+ASCII) et obtenir le texte chiffré en hexadécimal. Vous pourrez trouver
+notre code à l’adresse suivante :
+<https://bitbucket.org/bademba09/sae_3_01.git>. (branche master). Pour
+l’obtenir, il vous faut créer un nouveau dossier puis exécuter la
+commande suivante : git clone git clone
+<https://bitbucket.org/bademba09/sae_3_01.git>
 
-Par ailleurs, si vous voulez tester notre code, vous pouvez le faire directement en terminal.
-Exemple :  Chiffrement : python rc4.py c Plaintext Key
-          Dechiffrement : python rc4.py d 'BB F3 16 E8 D9 40 AF 0A D3' Key
-          
-Ou bien vous pouvez accèder à notre Raspberry PI sur les machine de l'IUT à l'adresse : 192.168.1.163, créer votre compte et accéder aux modules.
+Par ailleurs, si vous voulez tester notre code, vous pouvez le faire
+directement en terminal. Exemple : Chiffrement : python rc4.py c
+Plaintext Key Dechiffrement : python rc4.py d ‘BB F3 16 E8 D9 40 AF 0A
+D3’ Key
 
+Ou bien vous pouvez accèder à notre Raspberry PI sur les machine de
+l’IUT à l’adresse : 192.168.1.163, créer votre compte et accéder aux
+modules.
 
 <br>
 
@@ -40,23 +37,22 @@ Ou bien vous pouvez accèder à notre Raspberry PI sur les machine de l'IUT à l
 
 <br>
 
-
-
-Notre code (chemin : sae_3_01/src/L4/python_module2/rc4.py) implémentant l’algorithme RC4 contient quatre parties :
+Notre code (chemin : sae_3\_01/src/L4/python_module2/rc4.py)
+implémentant l’algorithme RC4 contient quatre parties :
 
 ###### 1. La conversion de la clé et du texte à chiffrer en ASCII :
-```{python eval = FALSE}
+
+``` python
 key = [ord(c) for c in key] # valeur ASCII des lettres de la clé
     if action == "c" : #chiffrement
         message = [ord(c) for c in message] # valeur ASCII des lettres du message
     else : #dechiffrement
         message = hexa_to_ten(message) # convertion des du hexadécimal en décimaux (voir hexa_to_ten())
-
 ```
 
- - La fonction hexa_to_ten : 
- 
-```{python eval = FALSE}
+-   La fonction hexa_to_ten :
+
+``` python
 def hexa_to_ten(str):
     """Convertit un nombre hexadécimal (en str) en liste de nombres décimaux (base 10)
 
@@ -82,17 +78,17 @@ def hexa_to_ten(str):
     liste = liste.split(" ")
     
     return [int('0x' + cara , 0) for cara in liste] # [10,10,10]
-
 ```
 
-L'intéret de cette fonction est que, pour appliquer la permutation (voir 2.3), nous devons convertir chaque octet du message hexadécimal en décimal car la clé suite chiffrante est en décimal.
-Ce n'est donc pas une simple conversion d'hexadécimal en décimal.
-Aussi, (A0A0A0) ^(_16) =  (10526880) ^(_10)
-<br>
+L’intéret de cette fonction est que, pour appliquer la permutation (voir
+2.3), nous devons convertir chaque octet du message hexadécimal en
+décimal car la clé suite chiffrante est en décimal. Ce n’est donc pas
+une simple conversion d’hexadécimal en décimal. Aussi, (A0A0A0) ^(\_16)
+= (10526880) ^(\_10) <br>
 
 ###### 2. L’initialisation de la suite chiffrante :
- 
-```{python eval = FALSE}
+
+``` python
     #Pseudo Random Generation Algoritm
     suite = list(range(256))
     j = 0
@@ -100,11 +96,12 @@ Aussi, (A0A0A0) ^(_16) =  (10526880) ^(_10)
         j = (j + suite[i] + key[i % len(key)]) % 256
         suite[i], suite[j] = suite[j], suite[i]
 ```
+
 <br>
 
 ###### 3. Génération de la permutation:
- 
-```{python eval = FALSE}
+
+``` python
     # Appliquer l'algorithme RC4 au message (cf KSA dans le cours)
     result = []
     i = j = 0
@@ -115,19 +112,19 @@ Aussi, (A0A0A0) ^(_16) =  (10526880) ^(_10)
         result.append(lettre ^ suite[(suite[i] + suite[j]) % 256]) 
         # ^ applique l'opérateur logique xor 
 ```
+
 <br>
 
 ###### 4. Output:
 
- - La conversion en héxadécimal (en cas de chiffrement)
- 
-```{python eval = FALSE}
+-   La conversion en héxadécimal (en cas de chiffrement)
+
+``` python
 if action == "c":
     return ten_to_hexa(result)
 ```
 
-```{python eval = FALSE}
-
+``` python
 def ten_to_hexa(liste):
     """Convertit une liste de nombres décimaux (base 10) en un nombre hexadécimal
 
@@ -140,30 +137,34 @@ def ten_to_hexa(liste):
     liste = [hex(e)[2:].upper() if len(str(hex(e)))>3 else "0" + hex(e)[2:].upper() for e in liste]
     return " ".join(liste)
 ```
+
 <br>
 
- - La conversion en lettre (si déchiffrement):
- 
-```{python eval = FALSE}
+-   La conversion en lettre (si déchiffrement):
+
+``` python
 return ''.join([chr(e) for e in result])
 ```
+
 <br>
 
- 
 #### 3. WEP
 
 <br>
 
-D'après l’article de Stonic and Bogdanovic *RC4 stream cipher and possible attacks on WEP*, le protocole WEP chiffre les packets en utilisant la clé fournie par l'utilisateur et un vecteur d'initialisation (IV) généré de manière aléatoire (avec l'algorithme RC4). 
-Le IV occupant 3 bit, sa valeur peut varier entre 00 00 00 et FF FF FF (en hexadécimal), soit entre 0 et 16777215. 
-La clef de chiffrement devient la concatenation de IV et de la clé entrée.
+D’après l’article de Stonic and Bogdanovic *RC4 stream cipher and
+possible attacks on WEP*, le protocole WEP chiffre les packets en
+utilisant la clé fournie par l’utilisateur et un vecteur
+d’initialisation (IV) généré de manière aléatoire (avec l’algorithme
+RC4). Le IV occupant 3 bit, sa valeur peut varier entre 00 00 00 et FF
+FF FF (en hexadécimal), soit entre 0 et 16777215. La clef de chiffrement
+devient la concatenation de IV et de la clé entrée.
 
-Le chemin du code : sae_3_01/src/L4/python_module2/wep.py
+Le chemin du code : sae_3\_01/src/L4/python_module2/wep.py
 
-<br>
-Génération du vecteur d'initialisation:
+<br> Génération du vecteur d’initialisation:
 
-```{python eval = FALSE}
+``` python
 def IV():
     """
     Génere une clé àléatoire (aussi appelée IV pour Initialization Vector) de 3 octets (24 bits)
@@ -186,12 +187,10 @@ def IV():
     return nb
 ```
 
-<br>
-Les modifications par rapport aux RC4 sont représentés par des doubles commentaires (##):
-<br>
+<br> Les modifications par rapport aux RC4 sont représentés par des
+doubles commentaires (##): <br>
 
-
-```{python eval = FALSE}
+``` python
  if action == "c" : # Chiffrement
         message = [ord(c) for c in message] # valeur ASCII des lettres du message
         iv = IV() ## géneration de la clé aléatoire
@@ -210,10 +209,4 @@ Les modifications par rapport aux RC4 sont représentés par des doubles comment
         return ''.join([chr(e) for e in result])
         
 '''
-
-
-
-
-
- 
- 
+```
