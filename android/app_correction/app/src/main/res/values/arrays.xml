@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="spinnerItemsModule1">
-        <item>Choisir Une méthode</item>
+    <string-array name="spinnerMethodeModule1">
+        <item>Choisir une méthode</item>
         <item>Rectangle Gauche</item>
         <item>Rectangle Droit</item>
         <item>Rectangle Median</item>
