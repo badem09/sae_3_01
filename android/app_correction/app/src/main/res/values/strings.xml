@@ -45,6 +45,7 @@
     <string name="info_captcha">Attention : Tous les caractères doivent être écrit en miniscules</string>
     <string name="identifiant">ex : demba404</string>
     <string name="choix_module">Choissiez un module de calcul :</string>
-
-
+    <string name="erreur">Erreur lors de l\'éxécution.</string>
+    <string name="erreurChoixModule">Veuillez choisir une méthode</string>
+    <string name="erreurChoixParametres">Veuillez remplir tous les paramêtres</string>
 </resources>
