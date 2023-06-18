@@ -71,5 +71,7 @@ ALTER TABLE `users`
 
 ALTER TABLE historique_module3
     MODIFY AUTO_INCREMENT = 1;
+    
+INSERT INTO `users` values(1,'admin','21232f297a57a5a743894a0e4a801fc3','admin',0);
 
 COMMIT;
