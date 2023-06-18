@@ -1,26 +1,14 @@
 <!doctype html>
 <html lang="fr">
-
-    <?php
-        //On inclut le header de la page.
-        require("imports_html/head.html");
-    ?>
-
+    <?php require("imports_html/head.html");?>
     <body>
-        
-        <?php
-            //On inclut la barre de navigation.
-            require("imports_html/nav_bar.html");
-        ?>
-        
+        <?php require("imports_html/nav_bar.html"); ?>
         <div class='container-centrer'>
             <form action='traitements/connexion_traitement.php' method='post'>
                 <div class='container-insciption-connexion'>
                     <h2>Se connecter</h2>
                     <?php 
-                    //On verifie si lors du chargment de la page, une erreur à été envoyé.
                     if(isset($_GET['err'])){
-                        //Si oui on cherche à quelle erreur elle correspond pour l'afficher.
                         switch($_GET['err']){
 
                             case "u_ou_mdp_faux" :
@@ -39,7 +27,6 @@
                     <div class='inputs'>
                         <p class='titre-form'>Identifiant</p>
                         <input aria-label="input-login" id='login-login' type='text' name='login' placeholder='ex : demba404' required/>
-
                         <p class='titre-form'>Mot de passe</p>
                         <input aria-label="input-mdp" id='login-mdp' type='password' name='mdp' placeholder='ex : M0t_D3_P@55€' required/>
                     </div>
@@ -49,7 +36,5 @@
                 </div>
             </form>
         </div>
-        
     </body>
-
 </html>

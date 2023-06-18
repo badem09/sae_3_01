@@ -1,26 +1,14 @@
 <!doctype html>
 <html lang="fr">
-    
-    <?php
-        //On inclus le header de la page.
-        require("imports_html/head.html");
-    ?>
-
+    <?php require("imports_html/head.html"); ?>
     <body>
-        
-        <?php
-            //On inclus la barre de navigation.
-            require("imports_html/nav_bar.html");
-        ?>
-
+        <?php require("imports_html/nav_bar.html");?>
         <div class='container-centrer-inscription'>
             <form action='traitements/inscription_traitement.php' method='post'>
                 <div class='container-insciption-connexion'>
                     <h2>S'inscrire</h2>
                     <?php
-                    //On verifie si une erreur à été envoyé.
                     if(isset($_GET['err'])){
-                        //On cherche à quoi elle correspond et on l'affiche.
                         switch($_GET['err']){
                             case "mdp_non_identique" :
                             echo "<p class='err'>Erreur : Mots de passe non identique.</p>";
@@ -56,12 +44,9 @@
                         }
                     } ?>
                     <div class='inputs'>
-
                         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"/>
-
                         <p class='titre-form'>Identifiant</p>
                         <input aria-label="register-login" id='register-login' type='text' name='login' placeholder='ex : demba404' required/>
-
                         <p class='titre-form'>Mot de passe</p>
                         <div class="container-verif">
                             <div class="input-box">
@@ -75,7 +60,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <p class='titre-form'>Confirmer Mot de passe</p>
                         <div class="container-verif">
                             <div class="input-box">
@@ -83,7 +67,6 @@
                                 <input aria-label="register-password-2" id="register-password-2" type='password' name='mdp_retype' placeholder='ex : M0t_D3_P@55€' required/>
                             </div>
                         </div>
-                        
                         <p class='titre-form'>Captcha</p>
                         <div class='captcha-img-desc'>
                             <img class='img-cptcha' src='captcha/img/captcha1.png' alt='image_captcha'>
@@ -98,7 +81,7 @@
                     <p>Déjà inscrit ? <a id='link-sincrip' href='connexion.php'>C'est ici !</a></p>
                 </div>
             </form>
-            <!--On import le script de vérification du mot de passe-->
+            <!--script de vérification du mot de passe-->
             <script src="js/strength_psswd.js"></script>
         </div>
     </body>

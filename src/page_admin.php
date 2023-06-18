@@ -11,12 +11,11 @@ if(isset($_SESSION['user'])) { // Verification de la session
     header('Location: connexion.php');
     die();
 }
-
 ?>
 
-    <!doctype html>
-    <html lang="fr">
-    <?php require("imports_html/head.html"); ?>
+<!doctype html>
+<html lang="fr">
+<?php require("imports_html/head.html"); ?>
     <body>
     <?php require("imports_html/nav_bar.html"); ?>
     <div class="entete">
@@ -121,10 +120,7 @@ function recherche($texte,$table): void {
 }
 
 function affichage_requete($table, $requete){
-
-
     echo "<table class='tab'>";
-
     if ($table == "users") {
         echo "<tr id='titre_tab'><th>ID User</th><th>Login</th><th>Type Users</th><th>Nombre de Visites</th><th>Supprimer</th></tr>";
     }
@@ -140,7 +136,6 @@ function affichage_requete($table, $requete){
     if  ($table == "activitemodule_filtre") {
         echo "<tr id='titre_tab'><th>ID Module</th><th>Nombre d'utilisation du Module</th><th>Login utilisateur</th></tr>";
     }
-
     while ($ligne = mysqli_fetch_row($requete)) {
         echo "<tr>";
         foreach ($ligne as $v) {

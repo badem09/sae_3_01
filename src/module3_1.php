@@ -1,43 +1,24 @@
 <?php
-
-    //On regarde si une cession existe.
     session_start();
-    //Si aucune cession existe, on renvois sur la page de connexion.
     if(!isset($_SESSION['user'])) {
         header('Location: connexion.php');
     }
-    
 ?>
-
 <!doctype html>
 <html lang="fr">
-
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    <?php
-        //On inclus le header de la page.
-        require("imports_html/head.html");
-    ?>
-
+    <?php require("imports_html/head.html"); ?>
     <body>
-
-        <?php
-            //On inclus la barre de navigation.
-            require("imports_html/nav_bar.html");
-        ?>
-
+        <?php require("imports_html/nav_bar.html"); ?>
         <div class='container-height'>
-
             <div class="entete">
                 <h1>X Calculator</h1>
                 <h2>Module de Machine Learning</h2>
             </div>
-
             <div class='container-module-parent'>
                  <div class='container-module container-module-ml'>
                     <div class="div-affi-ml">
                         <h2>Module de Machine Learning</h2>
-
                         <input class="pop-up-btn pop-up-btn-2" onclick="displayInfo()" name='popup' type="button" value="I"> <!--bouton (pas mettre de submit sinon bug) permettant d'afficher un pop avec les infos d'utilsation du module-->
                         <script>
                             function displayInfo(){ //SweetAlert : libre accès
@@ -49,17 +30,12 @@
                                 });
                             }
                         </script>
-
                         <p>Prédiction et WebScappring</p>
-
                         <form name="form_module3" action='' method='post'>
                             <input id="boutonAfficher" name='submit' type="submit" value="Afficher">
                         </form>
-
                         <h2>Résultat</h2>
-
                         <div class="div-affi-ml">
-
                         <?php
                             $connexion=mysqli_connect("localhost","root","");
                             $bd=mysqli_select_db($connexion,"bd_sae");
@@ -82,9 +58,6 @@
                                 }
                                 //TODO : changer le format de la date
                                 echo "</table>";
-                                //$active = true;
-
-
                                 $insertion = "INSERT INTO historique_module3 (login) VALUES ('".$_SESSION["user"]["login"]."')";
                                 mysqli_query($connexion,$insertion);
 
@@ -99,12 +72,7 @@
                     </div>
                  </div>
             </div>
-
-            <?php
-                //On inclus le footer de la page.
-                require("imports_html/footer.html");
-            ?>
-
+            <?php require("imports_html/footer.html"); ?>
         </div>
     </body>
 </html>
